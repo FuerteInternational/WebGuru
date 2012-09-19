@@ -37,7 +37,7 @@ $conf['smtp']['pass'] 				= 'exploited';
 
 // Administration
 $conf['admin']['logintype']         = "mail";                          // infadminlogintype
-$conf['admin']['template']          = "ffs";                           // infadmintemplate
+$conf['admin']['template']          = "fuerte";                        // infadmintemplate
 $conf['admin']['deflang']           = "english";                       // infadmindeflang
 $conf['admin']['editor']            = "markitup";                      // infadmineditor
 $conf['admin']['administrator']     = "info@fuerte.cz";                // infadminadministrator
