@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        20. February 2010 18:52:53
+ * @since        19. September 2012 17:05:26
  */
 
 class InfoMotocatalogueImagesModel {

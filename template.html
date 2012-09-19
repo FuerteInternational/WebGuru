@@ -8,7 +8,42 @@
 <title>{#TITLE} - Mobile Application Store - Fuerte International</title>
 <link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />
 {#HEAD}
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-515522-56']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
+
+
+<!-- LOGIN LINE TEMPLATE -->
+
+
+<div id="loginLine">
+    <ul class="right">
+        <li><a href="{#LINK_58}" title="Login to the system">Login</a></li>
+        <li><a href="{#LINK_60}" title="Have you forgotten your password?">Forgotten password?</a></li>
+    </ul>
+</div>
+
+<div id="loginLine">
+    <ul class="left">
+        <li>Hi {%Firstname}, are you ready for some action today?</li>
+    </ul>
+    <ul class="right">
+        <li><a href="{#LINK_59}" title="My applications">My applications</a></li>
+        <li><a href="{#WEBROOT}?logout=1" title="Log-out from the system">Logout</a></li>
+    </ul>
+</div>
+
 
 
 <!-- HEADER TEMPLATE -->
@@ -24,6 +59,7 @@
 
 
 <div id="page">
+	{#BREADCRUMBS}
     {#MOD_configuration_errors_errors}
     {#CONTENT}
 </div>
@@ -40,9 +76,12 @@
 <!-- MAIN TEMPLATE -->
 
 
+{#TEMP_head}
 <body>
 <div id="container">
-	
+	{#TEMP_header}
+    {#TEMP_page}
+    {#TEMP_footer}
 </div>
 </body>
 </html>

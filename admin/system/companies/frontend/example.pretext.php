@@ -1,0 +1,1 @@
+wgModules::runModule('companies');
