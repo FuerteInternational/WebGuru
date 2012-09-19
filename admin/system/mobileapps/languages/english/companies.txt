@@ -1,0 +1,6 @@
+colname;Company name
+colidentifier;Identifier
+colid;Id
+companiesedit;Edit companies
+desccompaniesedit;Edit companies here
+editcompanies;Edit companies

@@ -1,9 +1,9 @@
 <?php
 /**
- * Page Companiesedit in the Companies module
+ * Page Users in the Mobile Apps module
  * 
  * @package      WebGuru3
- * @subpackage   modules/companies/pages/
+ * @subpackage   modules/mobileapps/pages/
  * @author       Ondrej Rafaj
  * @author       WebGuruCMS3 Framework CMS admin generator (http://www.webgurucms.com)
  * @version      1.0.0.0
@@ -13,7 +13,7 @@
  */
 
 $system['parse']['head'] = '
-<script type="text/javascript" src="./'.wgPaths::getAdminPath('url').'companiesjs/functions.js"></script>
+<script type="text/javascript" src="./'.wgPaths::getAdminPath('url').'mobileappsjs/functions.js"></script>
 '; // any code you want to include to the head section of the WebGuru administration
 $system['parse']['editor'] = true; // enable or disable wysiwyg for user on the page (leave false if you are not using this one)
 // --------------------------------- start content ---------------------------------

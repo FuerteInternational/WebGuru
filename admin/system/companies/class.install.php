@@ -23,14 +23,14 @@ class installCompanies {
 	 */
 	function __construct() {
 		
-		$this->tables[] = 'CREATE TABLE  `appstore`.`companies` (
+		$this->tables[] = 'CREATE TABLE  `companies` (
 `id` BIGINT( 20 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `name` VARCHAR( 150 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `identifier` VARCHAR( 150 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 INDEX (  `identifier` )
 ) ENGINE = MYISAM;';
 		
-		$this->queries[] = 'INSERT INTO `appstore`.`companies` (`id`, `name`, `identifier`) VALUES (NULL, \'Fuerte International\', \'fuerte-international\');';
+		$this->queries[] = 'INSERT INTO `companies` (`id`, `name`, `identifier`) VALUES (NULL, \'Fuerte International\', \'fuerte-international\');';
 		
 	}
 }

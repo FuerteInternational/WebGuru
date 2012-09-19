@@ -41,3 +41,4 @@ companies;Companies
 iblog;iBlog
 imessage;iMessage
 iwallpapers;iWallpapers
+mobileapps;Mobile Apps
