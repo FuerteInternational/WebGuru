@@ -37,3 +37,7 @@ tinyurl;TinyUrl
 codesnippets;Code Snippets
 imenu;iPhone menu
 ipromote;iPromote
+companies;Companies
+iblog;iBlog
+imessage;iMessage
+iwallpapers;iWallpapers

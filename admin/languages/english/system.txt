@@ -51,3 +51,4 @@ definitionssaved;Language definitions have been saved
 remember;Remember
 login;Login
 delrealy;Do you really want to delete
+deleted;Item has been successfully deleted
