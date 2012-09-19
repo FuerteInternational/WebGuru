@@ -49,12 +49,13 @@ var pixelpage = {
 		pixelpage.vars.maxButton = buttonPath;
 		pixelpage.vars.maxOrWidth = $(domPath).width();
 		pixelpage.vars.maxOrHeight = $(domPath).height();
+		var newValue;
 		if ($.cookie('wgContentMax') == 1) {
-			class = 'min';
+			newValue = 'min';
 			pixelpage._maximize();
 		}
-		else class = 'max';
-		$(buttonPath).html('<span class="left">' + $(buttonPath).html() + '</span><span class="wgmaximize ' + class + '"></span>');
+		else newValue = 'max';
+		$(buttonPath).html('<span class="left">' + $(buttonPath).html() + '</span><span class="wgmaximize ' + newValue + '"></span>');
 		
 		$(buttonPath + ' .wgmaximize.max').html(pixelpage.vars.maxImgPlus);
 		$(buttonPath + ' .wgmaximize.min').html(pixelpage.vars.maxImgMinus);
