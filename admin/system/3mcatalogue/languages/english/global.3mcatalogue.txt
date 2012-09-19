@@ -1,0 +1,5 @@
+items;Catalogue items
+eximport;Import
+templates;Templates
+cantimport;Import error
+importedok;Import successful

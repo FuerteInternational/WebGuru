@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="users_fields" phpName="UsersFields" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="150" type="varchar" />
+		<column name="note" null="false" type="text" />
+		<column name="users_fields_groups_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="errmessage" null="false" size="255" type="varchar" />
+		<column name="system_validations" null="false" unsigned="true" size="8" type="int" />
+		<column name="sort" null="false" unsigned="true" size="8" type="int" />
+		<column name="errtype" null="false" unsigned="true" size="3" type="int" />	
+	</table>
+</database>

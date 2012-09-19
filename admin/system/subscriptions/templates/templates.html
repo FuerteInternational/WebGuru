@@ -1,0 +1,474 @@
+<!-- BEGIN subsctiptions -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wCOLTEMPTYPE}</th>
+			<th>{wCOLMESSA}</th>
+			<th>{wCOLMESSB}</th>
+			<th>{wCOLMESSC}</th>
+			<th>{wCOLMESSD}</th>
+			<th>{wCOLMESSE}</th>
+			<th>{wCOLMESSF}</th>
+			<th>{wCOLMESSG}</th>
+			<th>{wCOLTEMPLATE}</th>
+			<th>{wCOLTEMPLATEB}</th>
+			<th>{wCOLTEMPLATEC}</th>
+			<th>{wCOLDATEFORMAT}</th>
+			<th>{wCOLREDIRECTIONA}</th>
+			<th>{wCOLREDIRECTIONB}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listsubsctiptions -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>{LIDENTIFIER}</td>
+			<td>{LTEMPTYPE}</td>
+			<td>{LMESSA}</td>
+			<td>{LMESSB}</td>
+			<td>{LMESSC}</td>
+			<td>{LMESSD}</td>
+			<td>{LMESSE}</td>
+			<td>{LMESSF}</td>
+			<td>{LMESSG}</td>
+			<td>{LTEMPLATE}</td>
+			<td>{LTEMPLATEB}</td>
+			<td>{LTEMPLATEC}</td>
+			<td>{LDATEFORMAT}</td>
+			<td>{LREDIRECTIONA}</td>
+			<td>{LREDIRECTIONB}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listsubsctiptions -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPTYPE}:</label>
+			{FULLCOLTEMPTYPE}
+		</p>
+		<p>
+			<label>{wCOLMESSA}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wCOLMESSB}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wCOLMESSC}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>
+		<p>
+			<label>{wCOLMESSD}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wCOLMESSE}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p>
+			<label>{wCOLMESSF}:</label>
+			<input name="mess6" id="mess6" type="text" value="{COLMESSF}" />
+		</p>
+		<p>
+			<label>{wCOLMESSG}:</label>
+			<input name="mess7" id="mess7" type="text" value="{COLMESSG}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPLATE}:</label>
+			<textarea cols="50" rows="9" name="template" id="template" class="editor">{COLTEMPLATE}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPLATEB}:</label>
+			<textarea cols="50" rows="9" name="template2" id="template2" class="editor">{COLTEMPLATEB}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPLATEC}:</label>
+			<textarea cols="50" rows="9" name="template3" id="template3" class="editor">{COLTEMPLATEC}</textarea>
+		</p>
+		<p>
+			<label>{wCOLDATEFORMAT}:</label>
+			<input name="dateformat" id="dateformat" type="text" value="{COLDATEFORMAT}" />
+		</p>
+		<p>
+			<label>{wCOLREDIRECTIONA}:</label>
+			<input name="redirection1" id="redirection1" type="text" value="{COLREDIRECTIONA}" />
+		</p>
+		<p>
+			<label>{wCOLREDIRECTIONB}:</label>
+			<input name="redirection2" id="redirection2" type="text" value="{COLREDIRECTIONB}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END subsctiptions -->
+
+<!-- BEGIN unsubsctiptions -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wCOLTEMPTYPE}</th>
+			<th>{wCOLMESSA}</th>
+			<th>{wCOLMESSB}</th>
+			<th>{wCOLMESSC}</th>
+			<th>{wCOLMESSD}</th>
+			<th>{wCOLMESSE}</th>
+			<th>{wCOLMESSF}</th>
+			<th>{wCOLMESSG}</th>
+			<th>{wCOLTEMPLATE}</th>
+			<th>{wCOLTEMPLATEB}</th>
+			<th>{wCOLTEMPLATEC}</th>
+			<th>{wCOLDATEFORMAT}</th>
+			<th>{wCOLREDIRECTIONA}</th>
+			<th>{wCOLREDIRECTIONB}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listunsubsctiptions -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>{LIDENTIFIER}</td>
+			<td>{LTEMPTYPE}</td>
+			<td>{LMESSA}</td>
+			<td>{LMESSB}</td>
+			<td>{LMESSC}</td>
+			<td>{LMESSD}</td>
+			<td>{LMESSE}</td>
+			<td>{LMESSF}</td>
+			<td>{LMESSG}</td>
+			<td>{LTEMPLATE}</td>
+			<td>{LTEMPLATEB}</td>
+			<td>{LTEMPLATEC}</td>
+			<td>{LDATEFORMAT}</td>
+			<td>{LREDIRECTIONA}</td>
+			<td>{LREDIRECTIONB}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listunsubsctiptions -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPTYPE}:</label>
+			{FULLCOLTEMPTYPE}
+		</p>
+		<p>
+			<label>{wCOLMESSA}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wCOLMESSB}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wCOLMESSC}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>
+		<p>
+			<label>{wCOLMESSD}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wCOLMESSE}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p>
+			<label>{wCOLMESSF}:</label>
+			<input name="mess6" id="mess6" type="text" value="{COLMESSF}" />
+		</p>
+		<p>
+			<label>{wCOLMESSG}:</label>
+			<input name="mess7" id="mess7" type="text" value="{COLMESSG}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPLATE}:</label>
+			<textarea cols="50" rows="9" name="template" id="template" class="editor">{COLTEMPLATE}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPLATEB}:</label>
+			<textarea cols="50" rows="9" name="template2" id="template2" class="editor">{COLTEMPLATEB}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPLATEC}:</label>
+			<textarea cols="50" rows="9" name="template3" id="template3" class="editor">{COLTEMPLATEC}</textarea>
+		</p>
+		<p>
+			<label>{wCOLDATEFORMAT}:</label>
+			<input name="dateformat" id="dateformat" type="text" value="{COLDATEFORMAT}" />
+		</p>
+		<p>
+			<label>{wCOLREDIRECTIONA}:</label>
+			<input name="redirection1" id="redirection1" type="text" value="{COLREDIRECTIONA}" />
+		</p>
+		<p>
+			<label>{wCOLREDIRECTIONB}:</label>
+			<input name="redirection2" id="redirection2" type="text" value="{COLREDIRECTIONB}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END unsubsctiptions -->
+
+<!-- BEGIN confirmationmail -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wCOLTEMPTYPE}</th>
+			<th>{wCOLMESSA}</th>
+			<th>{wCOLMESSB}</th>
+			<th>{wCOLMESSC}</th>
+			<th>{wCOLMESSD}</th>
+			<th>{wCOLMESSE}</th>
+			<th>{wCOLMESSF}</th>
+			<th>{wCOLMESSG}</th>
+			<th>{wCOLTEMPLATE}</th>
+			<th>{wCOLTEMPLATEB}</th>
+			<th>{wCOLTEMPLATEC}</th>
+			<th>{wCOLDATEFORMAT}</th>
+			<th>{wCOLREDIRECTIONA}</th>
+			<th>{wCOLREDIRECTIONB}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listconfirmationmail -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>{LIDENTIFIER}</td>
+			<td>{LTEMPTYPE}</td>
+			<td>{LMESSA}</td>
+			<td>{LMESSB}</td>
+			<td>{LMESSC}</td>
+			<td>{LMESSD}</td>
+			<td>{LMESSE}</td>
+			<td>{LMESSF}</td>
+			<td>{LMESSG}</td>
+			<td>{LTEMPLATE}</td>
+			<td>{LTEMPLATEB}</td>
+			<td>{LTEMPLATEC}</td>
+			<td>{LDATEFORMAT}</td>
+			<td>{LREDIRECTIONA}</td>
+			<td>{LREDIRECTIONB}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listconfirmationmail -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPTYPE}:</label>
+			{FULLCOLTEMPTYPE}
+		</p>
+		<p>
+			<label>{wCOLMESSA}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wCOLMESSB}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wCOLMESSC}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>
+		<p>
+			<label>{wCOLMESSD}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wCOLMESSE}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p>
+			<label>{wCOLMESSF}:</label>
+			<input name="mess6" id="mess6" type="text" value="{COLMESSF}" />
+		</p>
+		<p>
+			<label>{wCOLMESSG}:</label>
+			<input name="mess7" id="mess7" type="text" value="{COLMESSG}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPLATE}:</label>
+			<textarea cols="50" rows="9" name="template" id="template" class="editor">{COLTEMPLATE}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPLATEB}:</label>
+			<textarea cols="50" rows="9" name="template2" id="template2" class="editor">{COLTEMPLATEB}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPLATEC}:</label>
+			<textarea cols="50" rows="9" name="template3" id="template3" class="editor">{COLTEMPLATEC}</textarea>
+		</p>
+		<p>
+			<label>{wCOLDATEFORMAT}:</label>
+			<input name="dateformat" id="dateformat" type="text" value="{COLDATEFORMAT}" />
+		</p>
+		<p>
+			<label>{wCOLREDIRECTIONA}:</label>
+			<input name="redirection1" id="redirection1" type="text" value="{COLREDIRECTIONA}" />
+		</p>
+		<p>
+			<label>{wCOLREDIRECTIONB}:</label>
+			<input name="redirection2" id="redirection2" type="text" value="{COLREDIRECTIONB}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END confirmationmail -->
+

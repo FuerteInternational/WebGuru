@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="ipromote_campaigns" phpName="IpromoteCampaigns" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="users_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="system_users_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="added" null="false" type="datetime" />	
+	</table>
+</database>

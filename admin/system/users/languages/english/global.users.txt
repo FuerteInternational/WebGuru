@@ -1,0 +1,6 @@
+usersmanagement;Users management
+descusers;Manage users, user groups and permissions here
+templates;Templates
+desctemplates;Frontend templates management
+settings;Settings
+descsettings;Module settings

@@ -1,0 +1,25 @@
+homepage;Home page
+gopager;gopager
+moveup;Move page up
+yes;Yes
+identifier;Identifier
+id;Id
+colname;Name
+xxx;xxx
+colenabled;Enabled
+preview;Preview
+shortsett;Settings
+collapse;Collapse
+expand;Expand
+treeview;Treeview
+title;Title
+descr;Description
+heada;Header 1 (H1)
+headb;Header 2 (H2)
+url;Url
+ml;ml
+pr;pr
+seotools;SEO tools
+html;Html
+css;CSS
+pagestools;Pages tools

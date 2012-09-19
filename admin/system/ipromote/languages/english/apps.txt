@@ -1,0 +1,10 @@
+gopager;gopager
+colname;Application name
+coladded;Added
+collink;App. link
+smallicon;Small icon
+bigicon;Large Icon
+colhead;Short description
+coldescription;Long description
+colsort;Sort by No.
+apps;Applications

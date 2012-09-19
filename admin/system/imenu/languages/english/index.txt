@@ -1,0 +1,4 @@
+menus;Menu
+descmenus;Administrate your XML menus here
+items;Menu items
+descfields;Administrate items in your menu here

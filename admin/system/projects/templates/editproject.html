@@ -1,0 +1,291 @@
+
+<!-- BEGIN pagetabscontainer -->
+<form action="{ACTION}" method="post" enctype="multipart/form-data">
+	{PAGETABSCONTENT}
+	<p class="bottombuttons">
+		<input name="edit" type="hidden" value="{EDIT}" />
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END pagetabscontainer -->	
+
+
+<!-- BEGIN projectsitemsa -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLPROJECTSCATEGORIESID}:</label>
+	{FULLPROJECTSCATEGORIESID}
+</p>
+<p>
+	<label>{wCOLNAME}:</label>
+	<input name="name" id="name" type="text" value="{COLNAME}" />
+</p>
+<p>
+	<label>{wCOLIDENTIFIER}:</label>
+	<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+</p>
+<p>
+	<label>{wCOLCLIENT}:</label>
+	<input name="client" id="client" type="text" value="{COLCLIENT}" />
+</p>
+<p>
+	<label>{wCOLLINK}:</label>
+	<input name="link" id="link" type="text" value="{COLLINK}" />
+</p>
+<p>
+	<label>{wCOLDATE}:</label>
+	{FULLCOLDATE}
+</p>
+<p>
+	<label>{wBASICIMG}:</label>
+	<input type="file" name="mainImage" /><br />
+</p>
+<p>
+	<label>{wDELETEIMAGE}</label>
+	{DELETEIMAGE}
+	{IMAGE}
+</p>
+<!-- END projectsitemsa -->
+
+
+<!-- BEGIN projectsitemsb -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLINFO}:</label>
+	<input name="info" id="info" type="text" value="{COLINFO}" />
+</p>
+<p>
+	<label>{wCOLTEXTA}:</label><br />
+	<textarea cols="50" rows="9" name="text1" id="text1" class="editor">{COLTEXT1}</textarea>
+</p>
+<p>
+	<label>{wCOLTEXTB}:</label><br />
+	<textarea cols="50" rows="9" name="text2" id="text2" class="editor">{COLTEXT2}</textarea>
+</p>
+<p>
+	<label>{wCOLTEXTC}:</label><br />
+	<textarea cols="50" rows="9" name="text3" id="text3" class="small editor">{COLTEXT3}</textarea>
+</p>
+<p>
+	<label>{wCOLTEXTD}:</label><br />
+	<textarea cols="50" rows="9" name="text4" id="text4" class="small editor">{COLTEXT4}</textarea>
+</p>
+<!-- END projectsitemsb -->
+
+
+<!-- BEGIN projectsitemsc -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLHEADINGA}:</label>
+	<input name="h1" id="h1" type="text" value="{COLH1}" />
+</p>
+<p>
+	<label>{wCOLTITLE}:</label>
+	<input name="title" id="title" type="text" value="{COLTITLE}" />
+</p>
+<p>
+	<label>{wCOLMKEYWORDS}:</label>
+	<textarea cols="50" rows="9" name="mkeywords" id="mkeywords" class="small">{COLMKEYWORDS}</textarea>
+</p>
+<p>
+	<label>{wCOLMDESCRIPTION}:</label>
+	<textarea cols="50" rows="9" name="mdescription" id="mdescription" class="small">{COLMDESCRIPTION}</textarea>
+</p>
+<p>
+	<label>{wCOLHEADINGB}:</label>
+	<input name="h2" id="h2" type="text" value="{COLH2}" />
+</p>
+<p>
+	<label>{wCOLHEADINGC}:</label>
+	<input name="h3" id="h3" type="text" value="{COLH3}" />
+</p>
+<!-- END projectsitemsc -->
+
+
+<!-- BEGIN projectsitemsd -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+{ADDTABS}
+<table>
+	<colgroup>
+		<col style="width: 10%;" />
+		<col style="width: 50%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wTHUMB}</th>
+			<th>{wFILENAME}</th>
+			<th>{wVIEWS}</th>
+			<th>{wDOWNLOADS}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN imageslist -->
+		<tr>
+			<td>{THUMB}</td>
+			<td>{NAME}</td>
+			<td>{VIEWS}</td>
+			<td>{DOWNLOADS}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END imageslist -->
+	</tbody>
+</table>
+<!-- END projectsitemsd -->
+
+
+<!-- BEGIN upload -->
+{FULLUPLOAD}
+<!-- END upload -->
+
+
+<!-- BEGIN codes -->
+<p id="projects{CODE}1">
+	<label>{ADDCODE} 1</label>
+	<input type="text" name="projects{CODE}[1]" class="projects{CODE}Class" />
+</p>		
+<p id="projects{CODE}2">
+	<label>{ADDCODE} 2</label>
+	<input type="text" name="projects{CODE}[2]" class="projects{CODE}Class" />
+</p>		
+<p id="projects{CODE}3">
+	<label>{ADDCODE} 3</label>
+	<input type="text" name="projects{CODE}[3]" class="projects{CODE}Class" />
+</p>		
+
+<p id="projects{CODE}4">
+	<label>{ADDCODE} 4</label>
+	<input type="text" name="projects{CODE}[4]" class="projects{CODE}Class" />
+</p>		
+<p id="projects{CODE}5">
+	<label>{ADDCODE} 5</label>
+	<input type="text" name="projects{CODE}[5]" class="projects{CODE}Class" />
+</p>		
+<p id="projects{CODE}6">
+	<label>{ADDCODE} 6</label>
+
+	<input type="text" name="projects{CODE}[6]" class="projects{CODE}Class" />
+</p>		
+<p id="projects{CODE}7">
+	<label>{ADDCODE} 7</label>
+	<input type="text" name="projects{CODE}[7]" class="projects{CODE}Class" />
+</p>		
+<p id="projects{CODE}8">
+	<label>{ADDCODE} 8</label>
+	<input type="text" name="projects{CODE}[8]" class="projects{CODE}Class" />
+</p>		
+
+<p id="projects{CODE}9">
+	<label>{ADDCODE} 9</label>
+	<input type="text" name="projects{CODE}[9]" class="projects{CODE}Class" />
+</p>		
+<p id="projects{CODE}10">
+	<label>{ADDCODE} 10</label>
+	<input type="text" name="projects{CODE}[10]" class="projects{CODE}Class" />
+</p>		
+<div id="projects{CODE}Placer"></div>
+<p>
+	<button type="button" onclick="addprojects{CODE}Field();">{wADDFIELD}</button>
+
+</p>
+<script type="text/javascript">
+<!--
+var actualprojects{CODE}Field = 10;
+function addprojects{CODE}Field() {
+	var html = '<p id="projects{CODE}' + (actualprojects{CODE}Field + 1) + '">	<label>{ADDCODE} ' + (actualprojects{CODE}Field + 1) + '</label>	<input type="text" name="projects{CODE}[' + (actualprojects{CODE}Field + 1) + ']" class="projects{CODE}Class" /></p>		';
+	$('#projects{CODE}Placer').append(html);
+	actualprojects{CODE}Field++;
+	
+}
+-->
+</script>
+<!-- END codes -->
+
+<!-- BEGIN projectsitemsg -->
+<p id="projectsImages1">
+	<label>{wADDITEM} 1</label>
+	<input type="file" name="projectsImages[1]" class="projectsImagesClass" />
+</p>		
+<!--<p id="projectsImages2">
+	<label>{wADDITEM} 2</label>
+	<input type="file" name="projectsImages[2]" class="projectsImagesClass" />
+</p>		
+<p id="projectsImages3">
+	<label>{wADDITEM} 3</label>
+	<input type="file" name="projectsImages[3]" class="projectsImagesClass" />
+</p>		
+
+<p id="projectsImages4">
+	<label>{wADDITEM} 4</label>
+	<input type="file" name="projectsImages[4]" class="projectsImagesClass" />
+</p>		
+<p id="projectsImages5">
+	<label>{wADDITEM} 5</label>
+	<input type="file" name="projectsImages[5]" class="projectsImagesClass" />
+</p>		
+<p id="projectsImages6">
+	<label>{wADDITEM} 6</label>
+
+	<input type="file" name="projectsImages[6]" class="projectsImagesClass" />
+</p>		
+<p id="projectsImages7">
+	<label>{wADDITEM} 7</label>
+	<input type="file" name="projectsImages[7]" class="projectsImagesClass" />
+</p>		
+<p id="projectsImages8">
+	<label>{wADDITEM} 8</label>
+	<input type="file" name="projectsImages[8]" class="projectsImagesClass" />
+</p>		
+
+<p id="projectsImages9">
+	<label>{wADDITEM} 9</label>
+	<input type="file" name="projectsImages[9]" class="projectsImagesClass" />
+</p>		
+<p id="projectsImages10">
+	<label>{wADDITEM} 10</label>
+	<input type="file" name="projectsImages[10]" class="projectsImagesClass" />
+</p>		
+<div id="projectsImagesPlacer"></div>
+<p>
+	<button type="button" onclick="addprojectsImagesField();">{wADDFIELD}</button>
+
+</p>
+<script type="text/javascript">
+<!--
+var actualprojectsImagesField = 10;
+function addprojectsImagesField() {
+	var html = '<p id="projectsImages' + (actualprojectsImagesField + 1) + '">	<label>{wADDITEM} ' + (actualprojectsImagesField + 1) + '</label>	<input type="file" name="projectsImages[' + (actualprojectsImagesField + 1) + ']" class="projectsImagesClass" /></p>		';
+	$('#projectsImagesPlacer').append(html);
+	actualprojectsImagesField++;
+	
+}
+-- >
+</script>-->
+
+<!-- END projectsitemsg -->
+

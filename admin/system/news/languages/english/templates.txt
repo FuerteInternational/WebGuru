@@ -1,0 +1,27 @@
+gopager;gopager
+withpager;With pager
+nopager;Without pager
+predefinedcat;Predefined category
+allarticles;All articles
+homecat;Home category
+colname;Name
+code;Code
+colidentifier;Identifier
+colpager;Use pager
+colperpage;Items per page
+coldatasource;Data source
+predcatid;Predefined category
+coltempbegin;Template begin
+coltempitem;Main template
+coltempend;Template end
+colnotemp;No item template
+newslist;News list
+predefinedart;Predefined article
+latestall;Latest from all articles
+latestpredefinedcat;Latest from predefined category
+random;Random article
+randpredefinedcat;Random from predefined category
+selarticleid;Id of the article
+newsdetails;Article details
+allcats;All categories
+categorieslist;Categories lists

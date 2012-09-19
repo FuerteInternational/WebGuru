@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="links_urls" phpName="LinksUrls" engine="MyISAM">
+		<column name="id" null="false" size="20" type="bigint" primary="true" />
+		<column name="url" null="false" size="255" type="varchar" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="image" null="false" size="255" type="varchar" />
+		<column name="target" null="false" size="25" type="varchar" />
+		<column name="links_categories_id" null="false" size="8" type="int" />
+		<column name="description" null="false" size="255" type="varchar" />
+		<column name="visible" null="false" size="1" type="tinyint" default="1" />
+		<column name="users_id" null="false" size="11" type="int" default="1" />
+		<column name="added" null="false" type="datetime" default="0000-00-00 00:00:00" />
+		<column name="changed" null="false" type="datetime" default="0000-00-00 00:00:00" />
+		<column name="rel" null="false" size="255" type="varchar" />
+		<column name="notes" null="false" type="text" />
+		<column name="rss" null="false" size="255" type="varchar" />	
+	</table>
+</database>

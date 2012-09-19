@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="ratings" phpName="Ratings" engine="MyISAM">
+		<column name="id" null="false" size="11" type="varchar" primary="true" />
+		<column name="total_votes" null="false" size="11" type="int" />
+		<column name="total_value" null="false" size="11" type="int" />
+		<column name="used_ips" null="true" type="longtext" />	
+	</table>
+</database>

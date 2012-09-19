@@ -1,0 +1,4 @@
+contacts;Contacts
+news;News
+templates;Templates
+settings;Settings

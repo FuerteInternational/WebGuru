@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="news_items" phpName="NewsItems" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="10" type="int" primary="true" />
+		<column name="news_categories_id" null="true" unsigned="true" size="8" type="int" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="head" null="false" type="text" />
+		<column name="text" null="false" type="text" />
+		<column name="displayfrom" null="false" type="datetime" />
+		<column name="displayto" null="false" type="datetime" />
+		<column name="datefor" null="false" type="datetime" />
+		<column name="system_users_id" null="true" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

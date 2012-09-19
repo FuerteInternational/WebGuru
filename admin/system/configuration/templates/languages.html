@@ -1,0 +1,87 @@
+<!-- BEGIN languages -->
+<table>
+	<colgroup>
+		<col style="width: 23%;" />
+		<col style="width: 15%;" />
+		<col style="width: 16%;" />
+		<col style="width: 16%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLCODE}</th>
+			<th>{wCOLDIRECTORY}</th>
+			<th>{wCOLWEBSITE}</th>
+			<th>{wLOCKED}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listlanguages -->
+		<tr>
+			<td class="{LDEFAULT}">{LIMAGE} {LNAME}</td>
+			<td>{LCODE}</td>
+			<td>{LDIRECTORY}</td>
+			<td>{LSYSTEMWEBSITESID}</td>
+			<td>{LWRITABLE}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listlanguages -->
+	</tbody>
+</table>
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLDEFAULT}:</label>
+			{FULLCOLDEFAULT}
+		</p>
+		<p>
+			<label>{wCOLCODE}:</label>
+			<input name="code" id="code" type="text" value="{COLCODE}" />
+		</p>
+		<!--<p>
+			<label>{wCOLIMAGE}:</label>
+			<input name="image" id="image" type="text" value="{COLIMAGE}" />
+		</p>-->
+		<p>
+			<label>{wCOLDIRECTORY}:</label>
+			<input name="directory" id="directory" type="text" value="{COLDIRECTORY}"{STYLE} />
+			<span class="small">{FULLPATH}</span>
+		</p>
+		<p>
+			<label>{wCOLSORT}:</label>
+			<input name="sort" id="sort" type="text" value="{COLSORT}" />
+		</p>
+		<!--<p>
+			<label>{wCOLSYSTEMWEBSITESID}:</label>
+			{FULLCOLSYSTEMWEBSITESID}
+		</p>-->
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END languages -->
+

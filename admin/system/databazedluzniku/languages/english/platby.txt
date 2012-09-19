@@ -1,0 +1,6 @@
+gopager;gopager
+coluser;Uzivatel
+coladded;Placeno
+colammount;Castka
+colusersid;Uzivatel
+colddapaymenttypesid;Zpusob platby

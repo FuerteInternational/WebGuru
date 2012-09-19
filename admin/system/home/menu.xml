@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">welcomepage</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+</menu>

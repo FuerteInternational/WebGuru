@@ -1,0 +1,43 @@
+promodeleted;Promotion has been deleted
+cantdelpromo;Unable to delete this promotion
+nopermpromo;You don't have enough permissions to delete this promotion
+gopager;gopager
+colname;Template name
+code;Code
+colidentifier;Identifier
+mpdeleted;Deleted OK mess.
+mpcantdel;Can't delete mess.
+mpnoperm;No perms. mess.
+coltbegin;Template begin
+coltitem;Template
+coltend;Template end
+coltnoitem;No item template
+promolist;Promotional lists
+promosaved;Promotion has been saved
+promononame;You need to fill the name of the promotion
+promonoperm;You don't have a permissions to save this promotion
+promonotsaved;Can't save this promotion
+noredirect;Don't redirect
+mpfsaved;Promotion saved mess.
+mpfnoname;No name mess.
+mpfnoperm;No perms. mess.
+mpfnotsaved;Not saved mess.
+aftersavered;Redirect after save
+noperm;No permissions
+editpromo;Edit promotion
+appdeleted;Application has been deleted
+cantdelapp;Can't delete this application
+nopermapp;You don't have enough permissions to delete this application
+madeleted;Deleted OK mess.
+macantdel;Can't delete mess.
+manoperm;No perms. mess.
+applist;Application lists
+appsaved;Application has been saved
+appnoname;You need to fill the name of the application
+appnoperm;You dont have enough permissions to see those applications
+appnotsaved;Unable to save this application
+mafsaved;Saved OK mess.
+mafnoname;No name mess.
+mafnoperm;No perms. mess.
+mafnotsaved;Not saved mess.
+editapp;Edit applications

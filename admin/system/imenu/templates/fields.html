@@ -1,0 +1,88 @@
+<!-- BEGIN items -->
+<form action="{CHCAC}" method="get">
+	<p>
+		<label for="mymenu">{wSELECTMENU}</label>
+		{FULLMENU}
+		<button type="submit">{wGOTOMENU}</button>
+	</p>
+</form>
+<table>
+	<colgroup>
+		<col style="width: 60%;" />
+		<col style="width: 20%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLTYPE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listitems -->
+		<tr valign="center">
+			<td>{LIMAGE}&nbsp;&nbsp;{LNAME}</td>
+			<td>{LTYPE}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listitems -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLTYPE}:</label>
+			{COLTYPE}
+		</p>
+		<!--<p>
+			<label>{wCOLIMAGETYPE}:</label>
+			{FULLCOLIMAGETYPE}
+		</p>-->
+		<p>
+			<label>{wCOLIMAGE}:</label>
+			<input name="image" id="image" type="text" value="{COLIMAGE}" />
+		</p>
+		<p>
+			<label>{wCOLVARIABLEA}:</label>
+			<input name="variable1" id="variable1" type="text" value="{COLVARIABLEA}" />
+		</p>
+		<p>
+			<label>{wCOLVARIABLEB}:</label>
+			<input name="variable2" id="variable2" type="text" value="{COLVARIABLEB}" />
+		</p>
+		<p>
+			<label>{wCOLVARIABLEC}:</label>
+			<input name="variable3" id="variable3" type="text" value="{COLVARIABLEC}" />
+		</p>
+		<p>
+			<label>{wCOLSORT}:</label>
+			<input name="sort" id="sort" type="text" value="{COLSORT}" class="short" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END items -->
+

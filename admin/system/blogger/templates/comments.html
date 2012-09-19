@@ -1,0 +1,74 @@
+<!-- BEGIN comments -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLPASSWORD}</th>
+			<th>{wCOLBLOGID}</th>
+			<th>{wCOLNOTE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcomments -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>{LPASSWORD}</td>
+			<td>{LBLOGID}</td>
+			<td>{LNOTE}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcomments -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLPASSWORD}:</label>
+			<input name="password" id="password" type="text" value="{COLPASSWORD}" />
+		</p>
+		<p>
+			<label>{wCOLBLOGID}:</label>
+			<input name="blogid" id="blogid" type="text" value="{COLBLOGID}" />
+		</p>
+		<p>
+			<label>{wCOLNOTE}:</label>
+			<textarea cols="50" rows="9" name="note" id="note">{COLNOTE}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END comments -->
+

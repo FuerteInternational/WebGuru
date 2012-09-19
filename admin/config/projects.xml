@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+	<a key="images">
+		<a key="xsmall">
+			<a key="0">65</a>
+			<a key="1">80000</a>
+		</a>
+		<a key="small">
+			<a key="0">410</a>
+			<a key="1">80000</a>
+		</a>
+		<a key="medium">
+			<a key="0">720</a>
+			<a key="1">80000</a>
+		</a>
+		<a key="large">
+			<a key="0">1024</a>
+			<a key="1">80000</a>
+		</a>
+		<a key="quality">90</a>
+	</a>
+	<a key="video">
+		<a key="width">800</a>
+		<a key="height">600</a>
+	</a>
+	<a key="imagesrewrite">
+		<a key="rewritesmall">images/small/{%ProjectId}-{%ImageId}-{%Identifier}.jpg</a>
+		<a key="rewritexsmall">images/xsmall/{%ProjectId}-{%ImageId}-{%Identifier}.jpg</a>
+		<a key="rewritemedium">images/medium/{%ProjectId}-{%ImageId}-{%Identifier}.jpg</a>
+		<a key="rewritelarge">images/large/{%ProjectId}-{%ImageId}-{%Identifier}.jpg</a>
+	</a>
+</response>

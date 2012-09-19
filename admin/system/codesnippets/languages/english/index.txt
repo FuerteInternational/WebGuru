@@ -1,0 +1,3 @@
+desccategories;Administration for Code Snippets categories
+descsnippets;Administration for Code Snippets
+desctemplates;Front-end template administration

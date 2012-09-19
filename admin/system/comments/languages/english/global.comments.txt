@@ -1,0 +1,3 @@
+comments;Comments
+templates;Templates
+settings;Settings

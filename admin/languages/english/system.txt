@@ -1,0 +1,53 @@
+logged;You are now logged in!
+loggedout;You are now logged out!
+helpforpage;Get help for this page
+home;Home
+saved;Entry has been saved
+cantsave;Unable to save entry
+system;System
+modules;Modules
+debugger;Debugger
+moduleinfo;Module info
+modname;Module name
+modver;Module version
+modsize;Module size
+path;Path
+noname;The Name field can not be empty
+sessionexpired;Session expired!
+selects;Selects
+updates;Updates
+wrongsessvercode;Wrong server verification code!
+deletes;Deletes
+inserts;Inserts
+specials;Specials
+totalq;Total queries
+totalt;Total time
+functions;Functions
+index;Module home
+generate;Generate website
+generating;Generating website
+loggedusr;Logged user
+logout;Logout
+edit;Edit
+delete;Delete
+genpage;Generating page
+save;Save
+apply;Apply
+reset;Reset
+create;Create
+createnew;Create new
+generated;Files were generated!
+cantgenerate;Can't generate files!
+headerssent;Can't send headers. Header were already sent!
+newmodule;New module
+goback;Go back
+systemdialogs;System
+websites;Websites
+defaultweb;Default website
+queries;Database queries
+translations;System translations
+help;Online help
+definitionssaved;Language definitions have been saved
+remember;Remember
+login;Login
+delrealy;Do you really want to delete

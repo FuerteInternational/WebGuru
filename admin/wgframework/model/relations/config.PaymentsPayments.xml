@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="payments_payments" phpName="PaymentsPayments" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="ammount" null="false" unsigned="true" size="6" type="int" />
+		<column name="users_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="payments_services_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="system_users_id" null="false" size="8" type="int" />	
+	</table>
+</database>

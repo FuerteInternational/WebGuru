@@ -1,0 +1,22 @@
+<!-- BEGIN import -->
+<form action="{ACTION}" method="post" enctype="multipart/form-data">
+	<p>
+		<label>{wIMPORTFILE}:</label>
+		<input name="dataimport" id="dataimport" type="file" value="{PAGEEXPORT}" />
+		<span class="small">({wXLSFILESNOFIRSTROW})</span>
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="submit" type="submit" value="{wIMPORT}" />
+	</p>
+</form>
+
+<!-- END import -->
+
+<!-- BEGIN export -->
+<form action="{ACTION}" method="post">
+	<p>
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="submit" type="submit" value="{wEXPORT}" />
+	</p>
+</form>
+<!-- END export -->
+

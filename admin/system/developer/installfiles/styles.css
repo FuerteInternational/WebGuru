@@ -1,0 +1,185 @@
+/* BASIC STYLES */
+form {
+}
+form input[type="button"] {
+	float:left;
+}
+form input[type="submit"] {
+	float:right;
+	font-size:1.1em;
+	font-weight:bold;
+}
+h1, h2, ul, li, p, form, html, body {
+	margin:0;
+	padding:0;
+	
+}
+.red {
+	color:#FF0000;
+}
+.green {
+	color:#339900;
+}
+.orange {
+	color:#FF9900;
+}
+.window {
+	height:300px;
+	overflow:scroll;
+	border-style:inset;
+	border-width:thin;
+}
+.small {
+	font-size:0.8em;
+	color:#666666;
+}
+.clear {
+	clear:both;
+}
+.hidebutton {
+	display:block;
+	float:left;
+	width:16px;
+	height:16px;
+	text-align:center;
+	line-height:16px;
+	text-decoration:none;
+	color:#333333;
+	border:solid 1px #333333;
+	margin-right:6px;
+}
+.js {
+	/*display:none;*/
+}
+/* MAIN STYLES */
+html {
+	margin-bottom:30px;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: #000000;
+	background-image: url(img/bcg-page.png);
+	background-repeat: repeat-x;
+	background-position: top;
+	background-color:#406D8E;
+}
+#container {
+	width:800px;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
+	border:solid 3px #333333;
+	background-color:#FFFFFF;
+}
+#header {
+	padding:10px;
+	height:100px;
+}
+#header h1 {
+	font-size:1.3em;
+	font-weight:bold;
+	line-height:100px;
+}
+#leftbar {
+	width:190px;
+	float:left;
+	margin-left:10px;
+}
+#leftbar ul {
+}
+#leftbar ul li {
+	list-style:none;
+}
+#leftbar ul li a {
+	line-height:45px;
+	font-size:0.9em;
+	font-weight:bold;
+	margin-bottom:15px;
+	color:#333333;
+}
+#leftbar ul li a.active {
+	font-size:1em;
+}
+#leftbar ul li a.deactivate {
+	text-decoration:none;
+	cursor:text;
+}
+#leftbar ul li a:hover, #leftbar ul li a.active {
+	color:#80AB1D;
+	
+}
+#error, #content {
+	width:550px;
+	float:right;
+	font-size:0.8em;
+	margin-right:10px;
+}    	
+#error {
+}
+#error p {
+	margin-bottom:3px;
+	font-weight:bold;
+}
+#error p.errorgreen {
+	color:#339900;
+}
+#error p.errororange {
+	color:#FF9900;
+}
+#error p.errorred {
+	color:#FF0000;
+}
+#content {
+}
+#content div.box {
+	clear:both;
+	padding-top:5px;
+}
+#content div.box h2 {
+	font-size:1.1em;
+	margin-bottom:3px;
+}
+#content div.box div.legend {
+	width:38%;
+	float:left;
+	font-size:0.9em;
+}
+#content div.box .content {
+	width:60%;
+	float:right;
+}
+#content div.box table tr {
+}
+#content div.box table tr td {
+	font-weight:bold;
+}
+#content form {
+	padding-top:25px;
+	clear:both;
+}
+#content form p {
+	display:table;
+	width:100%;
+	margin-bottom:5px;
+}
+#content form p label {
+	display:block;
+	width:150px;
+	float:left;
+	font-weight:bold;
+}
+#content form p input[type="text"] {
+	width:170px;
+}
+#content form p select {
+	width:170px;
+}
+#footer {
+	padding:20px;
+	clear:both;
+	font-size:0.7em;
+	color:#333333;
+	text-align:right;
+}

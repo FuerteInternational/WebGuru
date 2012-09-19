@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="csnippets_snippets" phpName="CsnippetsSnippets" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="approved" null="false" size="1" type="tinyint" />
+		<column name="snippet" null="false" type="longtext" />
+		<column name="excerpt" null="false" type="text" />
+		<column name="description" null="false" type="longtext" />
+		<column name="keywords" null="false" type="text" />
+		<column name="csnippets_categories_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="users_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="system_users_id" null="false" unsigned="true" size="11" type="int" />	
+	</table>
+</database>

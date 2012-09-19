@@ -1,0 +1,13 @@
+gopager;gopager
+homecat;Home category
+chcat;Change category
+colname;Name
+colprice;Price
+colpaymentscategoriesid;Category
+colhead;Head
+coldescription;Description
+colperiod;Payment period
+colminperiods;Minimum periods
+services;Services
+colparent;Parent category
+categories;Categories

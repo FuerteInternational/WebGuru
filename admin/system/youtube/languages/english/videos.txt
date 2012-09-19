@@ -1,0 +1,10 @@
+homecat;Home category
+gopager;gopager
+chcat;Change category
+colname;Name
+coladded;Added
+colcode;Code
+colyoutubecategoriesid;Category
+coldescription;Description
+colparent;Parent category
+categories;Categories

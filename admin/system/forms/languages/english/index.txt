@@ -1,0 +1,3 @@
+descforms;Administration for forms on your website
+descmessages;Messages sent to you trough module forms
+descsettings;Settings for module forms

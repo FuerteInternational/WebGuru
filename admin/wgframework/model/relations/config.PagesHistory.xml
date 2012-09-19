@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="pages_history" phpName="PagesHistory" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="10" type="int" primary="true" />
+		<column name="added" null="false" type="datetime" />
+		<column name="system_users_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="title" null="false" size="255" type="varchar" />
+		<column name="heading1" null="false" size="255" type="varchar" />
+		<column name="heading2" null="false" size="255" type="varchar" />
+		<column name="heading3" null="false" size="255" type="varchar" />
+		<column name="rewrite" null="false" size="255" type="varchar" />
+		<column name="keywords" null="false" type="text" />
+		<column name="description" null="false" type="text" />
+		<column name="parentid" null="false" unsigned="true" size="11" type="int" />
+		<column name="head" null="false" type="text" />
+		<column name="page" null="false" type="longtext" />
+		<column name="pages_id" null="false" unsigned="true" size="11" type="int" />	
+	</table>
+</database>

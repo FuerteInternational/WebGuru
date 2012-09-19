@@ -1,0 +1,8 @@
+desccategories;Projects categories administration
+descprojects;Projects administration page
+descsettings;Module Projects settings
+desctemplates;Templates for projecs
+editimage;Edit image
+desceditimage;Edit image
+editproject;Edit project
+desceditproject;Edit project

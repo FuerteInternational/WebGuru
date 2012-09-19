@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_codebackups" phpName="SystemCodebackups" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="filename" null="false" size="255" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="code" null="false" type="longtext" />	
+	</table>
+</database>

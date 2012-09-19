@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="innoportal_ideas" phpName="InnoportalIdeas" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="idea" null="false" type="text" />
+		<column name="innoportal_groups_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="rating" null="false" size="11" type="int" />
+		<column name="comments" null="false" unsigned="true" size="11" type="int" />
+		<column name="ansvered" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="added" null="false" type="datetime" />
+		<column name="lastcomment" null="false" type="datetime" />
+		<column name="lastvote" null="false" type="datetime" />
+		<column name="votes" null="false" unsigned="true" size="11" type="int" />
+		<column name="users_id" null="true" unsigned="true" size="11" type="int" />	
+	</table>
+</database>

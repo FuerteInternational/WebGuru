@@ -1,0 +1,41 @@
+<!-- BEGIN dbinstaller -->
+<form action="{ACTION}" method="post">
+	<p>
+		<label>{wMODULE}:</label>
+		<select name="modname" onchange="getModuleTables(this.value, '{MODULE}');">
+			<option value="#">{wSELECTMOD}</option>
+			<!-- BEGIN partlist -->
+			<optgroup label="{LMODGROUP}">
+				<!-- BEGIN modulelist -->
+				<option value="{LMODNAME}">{LMODNAME}</option>
+				<!-- END modulelist -->
+			</optgroup>
+			<!-- END partlist -->
+		</select>
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>{wTABLENAME}</th>
+				<th>{wDATA}</th>
+				<th>{wROWS}</th>
+			</tr>
+		</thead>
+		<tbody id="tablelist">
+			<!-- BEGIN tablelist -->
+			<tr>
+				<td><input type="checkbox" name="table[{TABLENAME}]" value="{TABLENAME}"{TBLCHECKED} /></td>
+				<td>{TABLENAME}</td>
+				<td><input type="checkbox" name="tdata[{TABLENAME}]" value="{TABLENAME}"{DATCHECKED} /></td>
+				<td>{TABLEROWS}</td>
+			</tr>
+			<!-- END tablelist -->
+		</tbody>
+	</table>
+	<p>
+		<input name="act" id="act" type="hidden" value="createinst" />
+		<input name="submit" id="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END dbinstaller -->

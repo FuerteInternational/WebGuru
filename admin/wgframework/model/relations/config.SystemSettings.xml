@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_settings" phpName="SystemSettings" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="16" type="int" primary="true" />
+		<column name="group" null="false" size="40" type="varchar" />
+		<column name="prop" null="false" size="40" type="varchar" />
+		<column name="value" null="false" size="255" type="varchar" />	
+	</table>
+</database>

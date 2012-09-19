@@ -1,0 +1,5 @@
+cronjobs;Cron jobs
+userjobs;Virtual jobs
+logs;Logs
+templates;Templates
+settings;Settings

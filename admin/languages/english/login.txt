@@ -1,0 +1,5 @@
+login;Login to the system
+remember;Remember me
+email;Email
+password;Password
+username;Username

@@ -1,0 +1,4 @@
+nolink;Link to the iTunes AppStore needs to be present
+nopromoselected;No promotion has been selected
+promotions;Promotions
+templates;Templates

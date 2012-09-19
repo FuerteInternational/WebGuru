@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="campaign_translations" phpName="CampaignTranslations" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="campaign_languages_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="campaign_definitions_id" null="false" unsigned="true" size="20" type="bigint" />
+		<column name="definition" null="false" type="text" />
+		<column name="key" null="false" size="255" type="varchar" />	
+	</table>
+</database>

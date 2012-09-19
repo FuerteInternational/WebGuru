@@ -1,0 +1,9 @@
+gopager;gopager
+colid;Id
+colname;Jmeno firmy
+colic;IC
+coldic;DIC
+colzalozena;Datum zalozeni
+colkapital;Zakladni kapital
+coltyp;Typ spolecnosti
+firmy;Firmy

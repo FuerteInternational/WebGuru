@@ -1,0 +1,9 @@
+image;Image
+deleteimage;Delete image
+gopager;gopager
+selectblog;Select blog
+changeblog;Change blog
+colname;Category name
+colidentifier;Identifier
+colhead;Short description
+coldescription;Long description

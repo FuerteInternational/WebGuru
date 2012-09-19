@@ -1,0 +1,27 @@
+permissions;Permissions
+adminpage;Administrate pages
+htmlcontent;HTML content
+phpcontent;PHP content
+addfile;Add file
+generatexmlmenu;Generate XML menu
+generatexml;Generate XML
+tabfunction;Function
+tabname;Name
+editfields;Edit fields
+useeditfields;Use edit fields
+parentpage;Parent page
+pleaseselecttype;Please select type
+adminpages;Admin pages
+gpformodule;Generate for module
+page;Page
+useeditor;Use WYSIWYG
+tab;Tab
+blank;Blank tab
+dontuse;Don't use
+name;Name
+addtab;Add new tab
+selectmod;Select module
+pleaseselect;Please select module first
+pagesadmin;Pages administration
+adminonetable;Administrate one table
+pleaseselectmodfirst;Please select modul where you want to generate XML menu file first.

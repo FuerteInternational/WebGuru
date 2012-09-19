@@ -1,0 +1,5 @@
+descadmin;Create administration for tables in databse, xml for module menu or edit HTML / PHP for pages in module
+descdbinstaller;Create an database installation file from your databse
+descdbmodel;Generate advanced database model if you have a new (or you have changed the old ones) tables or columns in the databse
+descinstaller;Create a new WebGuru3 instaler adn define which modules do you want to use
+descmodule;Create a new blank module

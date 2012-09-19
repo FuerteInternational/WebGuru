@@ -1,0 +1,92 @@
+<!-- BEGIN kontakty -->
+<script type="text/javascript">
+function zmenitFirmu() {
+	document.getElementById('firmaForm').submit();
+}
+</script>
+<form action="" method="post" id="firmaForm">
+	<p>
+		<label>{wCHANGEFIRMU}:</label>
+		{FULLFIRMA}
+		<input type="button" name="button" value="{wCHANGE}" onclick="zmenitFirmu()" />
+	</p>
+</form>
+<table>
+	<colgroup>
+		<col style="width: 40%;" />
+		<col style="width: 20%;" />
+		<col style="width: 20%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLPRIJMENI}, {wCOLNAME}</th>
+			<th>{wCOLTELEFON}</th>
+			<th>{wCOLMOBIL}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listkontakty -->
+		<tr>
+			<td><a href="mailto:{LMAIL}">{LPRIJMENI}, {LNAME}</a></td>
+			<td>{LTELEFON}</td>
+			<td>{LMOBIL}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listkontakty -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLPRIJMENI}:</label>
+			<input name="prijmeni" id="prijmeni" type="text" value="{COLPRIJMENI}" />
+		</p>
+		<p>
+			<label>{wCOLFUNKCE}:</label>
+			<input name="funkce" id="funkce" type="text" value="{COLFUNKCE}" />
+		</p>
+		<p>
+			<label>{wCOLMAIL}:</label>
+			<input name="mail" id="mail" type="text" value="{COLMAIL}" />
+		</p>
+		<p>
+			<label>{wCOLTELEFON}:</label>
+			<input name="telefon" id="telefon" type="text" value="{COLTELEFON}" />
+		</p>
+		<p>
+			<label>{wCOLMOBIL}:</label>
+			<input name="mobil" id="mobil" type="text" value="{COLMOBIL}" />
+		</p>
+		<p>
+			<label>{wCOLDDAFIRMYID}:</label>
+			{FULLDDAFIRMYID}
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END kontakty -->
+

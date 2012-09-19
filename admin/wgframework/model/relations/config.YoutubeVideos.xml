@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="youtube_videos" phpName="YoutubeVideos" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="description" null="false" type="text" />
+		<column name="code" null="false" size="45" type="varchar" />
+		<column name="youtube_categories_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="enabled" null="false" unsigned="true" size="1" type="tinyint" default="1" />	
+	</table>
+</database>

@@ -1,0 +1,2 @@
+descvideos;YouTube videos and categories management tool
+desctemplates;Frontend templates for videos, categories and details

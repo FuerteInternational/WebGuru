@@ -1,0 +1,49 @@
+close;close
+mailtemplates;Email templates
+usehtmltemplate;Custom HTML template
+colhtmltemplate;HTML template
+usetxttemplate;Custom TEXT template
+coltxttemplate;TEXT template
+number;Number
+colsystemlanguageid;Language
+colsystemwebsitesid;Website
+colmailfield;Email field
+colformsmessagesgroupid;Messages group
+coladminmail;Administrators email
+colokmessage;Message sent
+colerrormessage;Final error message
+colwarningmessage;Final warning message
+colredirect;Redirect to (if success)
+colname;Name
+colidentifier;Identifier
+form;Form
+recipientsemail;Recipients email
+addfield;Add field
+deleterecipient;Delete recipient
+recipients;Recipients
+coltemplate;Template
+template;Template
+text;Text
+password;Password
+textarea;Textarea
+checkbox;Checkbox
+radio;Radio button
+file;File
+captcha;CAPTCHA form
+empty;Empty
+mail;Email
+novalid;No validation
+error;Error
+alert;Alert
+noerror;No error
+formfield;Form field
+deletefield;Delete field
+fname;Field name
+flabel;Field label
+ftype;Field type
+validation;Validation
+errormessage;Error message
+typeerrmessg;Error message type
+successmessage;Fields's OK message
+sort;Sort number
+fields;Fields

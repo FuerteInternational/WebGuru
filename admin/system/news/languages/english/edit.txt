@@ -1,0 +1,10 @@
+homecat;Home category
+coltitle;Title
+colcategory;Category
+colhead;Article pretext
+coltext;Article content
+text;Text
+coldisplayfrom;Publish from
+coldisplayto;Publish until
+coldatefor;Related date (sorted by)
+settings;Settings

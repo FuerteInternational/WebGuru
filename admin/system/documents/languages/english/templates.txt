@@ -1,0 +1,19 @@
+alldocs;alldocs
+favorites;Favorites
+withpager;With pager
+nopager;Without pager
+predefinedvar;Predefined variable
+unlimited;Unlimited
+collink;Link
+gopager;gopager
+colname;Name
+colcode;Code
+colidentifier;Identifier
+colpager;Use pager
+colperpage;Items per page
+coldatasource;Data source
+coltempbegin;Template begin
+coltempitem;Template for one item
+coltempend;Template end
+categories;Categories
+details;Details

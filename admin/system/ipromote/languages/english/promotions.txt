@@ -1,0 +1,4 @@
+gopager;gopager
+colname;Campaign name
+coluser;User
+apps;Apps.

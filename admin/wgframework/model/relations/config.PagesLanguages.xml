@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="pages_languages" phpName="PagesLanguages" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="system_languages_id" null="false" size="3" type="int" />
+		<column name="code" null="false" size="120" type="varchar" />
+		<column name="definition" null="false" type="text" />	
+	</table>
+</database>

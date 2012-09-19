@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="comments_message_old" phpName="CommentsMessageOld" engine="InnoDB">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="users_id" null="true" unsigned="true" size="11" type="int">
+			<constraint refTable="users" refColumn="id" />
+		</column>
+		<column name="comments_groups_id" null="false" unsigned="true" size="8" type="int">
+			<constraint refTable="comments_groups" refColumn="id" />
+		</column>
+		<column name="ip" null="false" size="17" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="name" null="true" size="255" type="varchar" />
+		<column name="lastname" null="true" size="255" type="varchar" />
+		<column name="mail" null="true" size="255" type="varchar" />
+		<column name="subject" null="false" size="255" type="varchar" />
+		<column name="message" null="false" type="text" />	
+	</table>
+</database>

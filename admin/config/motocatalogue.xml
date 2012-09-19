@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+	<a key="images">
+		<a key="xsmall">
+			<a key="0">80</a>
+			<a key="1">60</a>
+		</a>
+		<a key="small">
+			<a key="0">100</a>
+			<a key="1">75</a>
+		</a>
+		<a key="medium">
+			<a key="0">400</a>
+			<a key="1">300</a>
+		</a>
+		<a key="large">
+			<a key="0">800</a>
+			<a key="1">600</a>
+		</a>
+		<a key="quality">80</a>
+	</a>
+</response>

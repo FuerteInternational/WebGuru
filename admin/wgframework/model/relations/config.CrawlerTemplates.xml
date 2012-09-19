@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="crawler_templates" phpName="CrawlerTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="typetemp" null="false" size="2" type="int" />
+		<column name="begintemp" null="false" type="text" />
+		<column name="item" null="false" type="text" />
+		<column name="endtemp" null="false" type="text" />
+		<column name="search" null="false" type="text" />
+		<column name="notemp" null="false" type="text" />
+		<column name="pager" null="false" size="1" type="tinyint" default="1" />
+		<column name="perpage" null="false" size="8" type="int" default="10" />	
+	</table>
+</database>

@@ -1,0 +1,109 @@
+<!-- BEGIN custoerrors -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcustoerrors -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_configuration_errors_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcustoerrors -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLGROUPMESSAGES}:</label>
+			{FULLCOLGROUPMESSAGES}
+		</p>
+		<!--<p>
+			<label>{wCOLFIRSTINLIST}:</label>
+			{FULLCOLFIRSTINLIST}
+		</p>-->
+		<p>
+			<label>{wCOLERRORBEGIN}:</label>
+			<textarea cols="50" rows="9" name="errorbegin" id="errorbegin" class="html small">{COLERRORBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLGROUPOKBEGIN}:</label>
+			<textarea cols="50" rows="9" name="groupokbegin" id="groupokbegin" class="html small">{COLGROUPOKBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLITEMOK}:</label>
+			<textarea cols="50" rows="9" name="itemok" id="itemok" class="html small">{COLITEMOK}</textarea>
+		</p>
+		<p>
+			<label>{wCOLGROUPOKEND}:</label>
+			<textarea cols="50" rows="9" name="groupokend" id="groupokend" class="html small">{COLGROUPOKEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLGROUPALERTBEGIN}:</label>
+			<textarea cols="50" rows="9" name="groupalertbegin" id="groupalertbegin" class="html small">{COLGROUPALERTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLITEMALERT}:</label>
+			<textarea cols="50" rows="9" name="itemalert" id="itemalert" class="html small">{COLITEMALERT}</textarea>
+		</p>
+		<p>
+			<label>{wCOLGROUPALERTEND}:</label>
+			<textarea cols="50" rows="9" name="groupalertend" id="groupalertend" class="html small">{COLGROUPALERTEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLGROUPERRORBEGIN}:</label>
+			<textarea cols="50" rows="9" name="grouperrorbegin" id="grouperrorbegin" class="html small">{COLGROUPERRORBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLITEMERROR}:</label>
+			<textarea cols="50" rows="9" name="itemerror" id="itemerror" class="html small">{COLITEMERROR}</textarea>
+		</p>
+		<p>
+			<label>{wCOLGROUPERROREND}:</label>
+			<textarea cols="50" rows="9" name="grouperrorend" id="grouperrorend" class="html small">{COLGROUPERROREND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLERROREND}:</label>
+			<textarea cols="50" rows="9" name="errorend" id="errorend" class="html small">{COLERROREND}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END custoerrors -->
+

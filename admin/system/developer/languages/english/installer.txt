@@ -1,0 +1,4 @@
+modulename;Module name
+version;Version
+size;Size
+name;Name

@@ -1,0 +1,36 @@
+<!-- BEGIN pages -->
+<table>
+	<colgroup>
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLREWRITE}</th>
+			<th>{wCOLENABLED}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listpages -->
+		<tr>
+			<td>{LNAME}</td>
+			<td>{LREWRITE}</td>
+			<td>{LENABLED}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listpages -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<!-- END pages -->
+

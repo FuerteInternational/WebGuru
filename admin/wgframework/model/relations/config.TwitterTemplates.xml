@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="twitter_templates" phpName="TwitterTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="temptype" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="limit" null="false" size="4" type="int" default="20" />
+		<column name="datasource" null="false" unsigned="true" size="4" type="int" />
+		<column name="dateformat" null="false" size="150" type="varchar" />
+		<column name="tempbegin" null="false" type="text" />
+		<column name="tempitem" null="false" type="text" />
+		<column name="tempend" null="false" type="text" />
+		<column name="twitter_accounts_id" null="false" unsigned="true" size="11" type="int" />	
+	</table>
+</database>

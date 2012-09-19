@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="blog_posts" phpName="BlogPosts" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="blog_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="users_id" null="false" size="20" type="bigint" />
+		<column name="system_users_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="blog_categories_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="blog_groups_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="added" null="false" type="datetime" default="0000-00-00 00:00:00" />
+		<column name="added_gmt" null="false" type="datetime" default="0000-00-00 00:00:00" />
+		<column name="content" null="false" type="longtext" />
+		<column name="title" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="category" null="false" size="4" type="int" />
+		<column name="excerpt" null="false" type="text" />
+		<column name="status" null="false" size="1" type="tinyint" default="1" />
+		<column name="password" null="false" size="40" type="varchar" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="changed" null="false" type="datetime" default="0000-00-00 00:00:00" />
+		<column name="changed_gmt" null="false" type="datetime" default="0000-00-00 00:00:00" />
+		<column name="content_filtered" null="false" type="text" />
+		<column name="parent" null="false" size="20" type="bigint" />
+		<column name="menu_order" null="false" size="11" type="int" />
+		<column name="post_type" null="false" size="1" type="tinyint" default="1" />
+		<column name="views" null="false" size="20" type="bigint" />
+		<column name="rssviews" null="false" size="20" type="bigint" />
+		<column name="featured" null="false" size="1" type="tinyint" />	
+	</table>
+</database>

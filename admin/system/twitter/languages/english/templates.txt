@@ -1,0 +1,18 @@
+gopager;gopager
+desc;Descending
+asc;Ascending
+colname;Template name
+colidentifier;Identifier
+collimit;Posts limit
+max;max
+sortdate;Sort by date
+coldateformat;Formate date
+coltempbegin;Template begin
+coltempitem;Template for repetitive item
+coltempend;Template end
+coltwitteraccounts;Twitter account
+listmessages;List of messages
+lastmessage;Last message
+formtemplate;Update status forms
+nopermissions;Insufficient permissions
+sendmessage;Send message

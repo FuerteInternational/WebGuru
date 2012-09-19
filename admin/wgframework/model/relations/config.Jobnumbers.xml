@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="jobnumbers" phpName="Jobnumbers" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="shortname" null="false" size="255" type="varchar" />
+		<column name="jnumber" null="false" size="255" type="varchar" />
+		<column name="status" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="changed" null="false" type="datetime" />	
+	</table>
+</database>

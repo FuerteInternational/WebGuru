@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="pages_templates_revisions" phpName="PagesTemplatesRevisions" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="pages_templates_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="revision" null="false" size="11" type="int" default="1" />
+		<column name="added" null="false" type="datetime" />
+		<column name="name" null="true" size="255" type="varchar" />
+		<column name="identifier" null="true" size="255" type="varchar" />
+		<column name="master" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="registered" null="false" size="1" type="tinyint" />
+		<column name="system_language_id" null="true" size="3" type="int" default="1" />
+		<column name="pages_templates_groups_id" null="true" unsigned="true" size="4" type="int" default="1" />
+		<column name="template" null="true" type="longtext" />
+		<column name="note" null="true" type="text" />	
+	</table>
+</database>

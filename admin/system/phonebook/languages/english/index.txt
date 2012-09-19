@@ -1,0 +1,30 @@
+gopager;gopager
+image;Image
+colonline;Online
+collastlogin;Last login
+colpassword;Password
+colfirstname;Firstname
+
+collastname;Lastname
+
+colid;Id
+
+colline;Phone line
+
+colmobile;Mobile phone
+
+colphone;Phone
+
+colnote;Note
+
+colmail;Email
+
+coltitle;Title
+
+colinitials;Initials
+
+people;Contacts
+
+groups;Groups
+
+colname;Group name

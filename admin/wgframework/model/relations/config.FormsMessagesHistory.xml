@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="forms_messages_history" phpName="FormsMessagesHistory" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="forms_messages_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="system_users_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="action" null="false" unsigned="true" size="3" type="int" />	
+	</table>
+</database>

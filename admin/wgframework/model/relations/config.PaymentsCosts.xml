@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="payments_costs" phpName="PaymentsCosts" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="description" null="false" type="text" />
+		<column name="costs" null="false" unsigned="true" size="6" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />	
+	</table>
+</database>

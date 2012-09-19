@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="innoportal_groups" phpName="InnoportalGroups" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="variable" null="false" size="50" type="varchar" />
+		<column name="note" null="false" type="text" />
+		<column name="users_groups_id" null="true" size="11" type="int" />	
+	</table>
+</database>

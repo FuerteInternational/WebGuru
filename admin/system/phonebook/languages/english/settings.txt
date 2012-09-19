@@ -1,0 +1,11 @@
+name;Name
+images;Images
+value;Value
+xsmall;Extra small
+small;Small
+medium;Medium
+large;Large
+quality;Quality
+sort;Sort
+newdefaultpicture;New default picture
+defpic;Default picture

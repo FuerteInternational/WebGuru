@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="editmail">
+		<a key="name">editmail</a>
+		<a key="show">0</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="subscibtions">
+		<a key="name">subscibtions</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="unsubscriptions">
+		<a key="name">unsubscriptions</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="groups">
+		<a key="name">testpage</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+</menu>

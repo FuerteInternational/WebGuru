@@ -1,0 +1,16 @@
+globaltranslation;globaltranslation
+export;Export translations
+import;Import translations
+importpage;Import to the page
+importfile;Import file
+exportimport;Export / Import
+gopager;gopager
+selectpage;Select page
+changepage;Change page
+langkey;Language key
+coldefinition;Definition
+youveenter;You have entered
+minch;Min
+maxch;Max
+pagetranslations;Page translations
+globaltranslations;Global translations

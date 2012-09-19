@@ -1,0 +1,65 @@
+messdeletedok;Snippet has been deleted
+messcantdelete;Unable to delete this snippet
+nopermstodelete;You don't have enough permissions to delete this snippet
+variablecat;Category variable
+usersallsnippets;All snippets from user
+userspublishedsnippets;Published snippets from user
+noredirect;No redirect
+deletedokmess;Deleted OK message
+cantdelete;Can't delete message
+afterdeleteredir;After delete redirection
+coledittitem;Edit item template
+colnewtitem;New item template
+coluseseo;Use SEO
+useseoinfo;(Check if you want to use advanced SEO functionality for this module)
+nonamemessform;Please check the snippet name
+nocodemessform;Snippet field can not be empty
+nopermissionsmessform;You dont have enough permissions to send a snippet
+successfulsentform;Your snippet has been sent
+nonamemess;No name message
+nocodemess;No code message
+nopermsmess;No permissions message
+oksentmess;OK message
+gopager;gopager
+selectedcat;Selected category
+variable;Variable
+all;All
+usersallvar;All snippets from user variable
+usersallvarcat;All snippets from user variable in specified category
+colname;Name
+code;Code
+colidentifier;Identifier
+colissearch;Enable search
+datasource;Datasource
+category;Category
+colpager;Use pager
+colperpage;Items per page
+coltbegin;Template begin
+coltitem;Template for one item
+coltend;Template end
+colnoitem;No item template
+searchvar;Search variable
+snippetvar;Snippet variable
+uservar;User variable
+listing;Listing
+latest;Latest snippet
+latestcat;Latest snippet from category
+random;Random snippet
+randomcat;Random snippet from category
+colfofred;Redirect to 404 page
+snipdetails;Snippet details
+catlist;Categories
+justnew;Only add new snippet
+onlyonecat;Add to one category only
+forall;For everyone
+forregred;Only for registered users, redirect if not
+forregtmp;Only for registered users, another template if not
+forregfof;Only for registered users, 404 if not
+adminmustapprove;Administrator must approve snippet
+otherwregusr;( if not checked, every snippet goes live automaticaly )
+sendtype;Type of form
+notregwhattodo;Not registered users
+usefof;Use 404 error page
+notregredir;Rediret non registered users
+notregtemp;Different template for non registered users
+sendsnippet;Edit snippets

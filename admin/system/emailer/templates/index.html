@@ -1,0 +1,33 @@
+<!-- BEGIN groups -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listgroups -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listgroups -->
+	</tbody>
+</table>
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+{DATAPAGER}
+<!-- END groups -->
+

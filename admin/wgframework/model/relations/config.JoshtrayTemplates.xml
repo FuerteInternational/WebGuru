@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="joshtray_templates" phpName="JoshtrayTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="temptype" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="pager" null="false" unsigned="true" size="11" type="int" default="1" />
+		<column name="perpage" null="false" unsigned="true" size="11" type="int" default="20" />
+		<column name="search" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="tempbegin" null="false" type="text" />
+		<column name="tempitem" null="false" type="text" />
+		<column name="tempend" null="false" type="text" />	
+	</table>
+</database>

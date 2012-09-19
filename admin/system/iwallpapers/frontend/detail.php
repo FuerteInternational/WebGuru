@@ -1,0 +1,4 @@
+<?php
+
+
+?>wallpaper detail

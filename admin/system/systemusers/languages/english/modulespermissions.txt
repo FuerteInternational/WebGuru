@@ -1,0 +1,3 @@
+team;Team
+swtchteam;Switch team
+forsuonly;This functionality is available only for users with "Super Admin" account

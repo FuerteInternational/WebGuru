@@ -1,0 +1,5 @@
+gopager;gopager
+colname;Menu name
+colidentifier;Menu identifier
+colrewriteurl;Rewrite url for XML file
+menus;Menus

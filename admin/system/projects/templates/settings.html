@@ -1,0 +1,41 @@
+<!-- BEGIN settings -->
+<form action="{ACTION}" method="post">
+	<p class="topbuttons">
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="submitconfig" type="submit" value="{wSAVE}" />
+	</p>
+	{CONFIG}
+	<p class="bottombuttons">
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="submitconfig" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END settings -->			
+
+<!-- BEGIN defpic -->
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wREGENERATEIMGS}</legend>
+		<p class="bottombuttons">
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="regenerate" type="submit" value="{wREGENERATEIMGS}" />
+		</p>
+	</fieldset>
+</form>
+<form action="{ACTION}" method="post" enctype="multipart/form-data">
+	<fieldset><legend>{wDEFAULTIMGS}</legend>
+		<p class="topbuttons">
+			<input name="submitdefpic" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wNEWDEFAULTPICTURE}:</label>
+			<input name="defpic" id="defpic" type="file" value="{MYVALUE}" />
+		</p>
+		<p>{XSML}{SML}{MED}{LRG}</p>
+		<p class="bottombuttons">
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="submitdefpic" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END defpic -->			

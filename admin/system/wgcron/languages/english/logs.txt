@@ -1,0 +1,11 @@
+alljobs;All cron jobs
+nomessageselected;No message is selected
+gopager;gopager
+changejob;Chenge job
+errorsonly;Errors only
+changejobsel;Change selection
+colmessage;Message
+coladded;From
+view;View
+message;Message
+changeusrjobsel;Change selection

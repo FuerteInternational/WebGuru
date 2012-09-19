@@ -1,0 +1,152 @@
+<!-- BEGIN documents -->
+<form action="{CHGROUPACTION}" method="post">
+	<p>
+		{SWITCHCAT}
+		<button type="submit" name="chgroup">{wCHCAT}</button>
+	</p>
+</form>
+<p class="breadcrumbs">{BREADCRUMBS}</p>
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 25%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLSIZE}</th>
+			<th>{wCOLCHANGED}</th>
+			<th>{wDOWNLOAD}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listdocuments -->
+		<tr>
+			<td class="{CLASS}">{LNAME}</td>
+			<td>{LSIZE}</td>
+			<td>{LCHANGED}</td>
+			<td>{DOWNLOADROW}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listdocuments -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post" enctype="multipart/form-data">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLDOCUMENTSCATEGORIESID}:</label>
+			{FULLDOCUMENTSCATEGORIES}
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLFILE}:</label>
+			<input name="file" id="file" type="file" /> <input name="fileold" id="fileold" type="text" value="{COLFILE}" readonly="readonly" />
+		</p>
+		<p>
+			<label>{wENABLED}:</label>
+			{FULLENABLED}
+		</p>
+		<p>
+			<label>{wCOLSIZE}:</label>
+			<span>{COLSIZE}</span>
+		</p>
+		<p>
+			<label>{wCOLDESCRIPTION}:</label>
+			<textarea cols="50" rows="9" name="description" id="description">{COLDESCRIPTION}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END documents -->
+
+<!-- BEGIN categories -->
+<p class="breadcrumbs">{BREADCRUMBS}</p>
+<table>
+	<colgroup>
+		<col style="width: 80%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="3">
+				{PARENTLINK}
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<!-- BEGIN listcategories -->
+		<tr>
+			<td>{LNAME}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcategories -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLPARENT}:</label>
+			{FULLPARENT}
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLDESC}:</label>
+			<textarea cols="50" rows="9" name="desc" id="desc">{COLDESC}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END categories -->
+

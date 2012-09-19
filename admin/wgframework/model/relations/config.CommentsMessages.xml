@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="comments_messages" phpName="CommentsMessages" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="comments_groups_id" null="false" size="8" type="int" />
+		<column name="for_id" null="false" size="11" type="int" />
+		<column name="author" null="false" type="tinytext" />
+		<column name="author_email" null="false" size="100" type="varchar" />
+		<column name="author_url" null="false" size="255" type="varchar" />
+		<column name="author_ip" null="false" size="20" type="varchar" />
+		<column name="added" null="false" type="datetime" default="0000-00-00 00:00:00" />
+		<column name="added_gmt" null="false" type="datetime" default="0000-00-00 00:00:00" />
+		<column name="content" null="false" type="text" />
+		<column name="karma" null="false" size="11" type="int" />
+		<column name="approved" null="false" size="1" type="tinyint" default="1" />
+		<column name="agent" null="false" size="255" type="varchar" />
+		<column name="parent" null="false" size="20" type="bigint" />
+		<column name="users_id" null="false" size="11" type="int" />	
+	</table>
+</database>

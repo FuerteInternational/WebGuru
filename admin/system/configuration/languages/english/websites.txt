@@ -1,0 +1,15 @@
+lock_delete;Folder is not writable
+lock_open;Folder is writable
+locked;Writable
+gopager;gopager
+colid;Id
+colname;Name
+colcode;Code
+colimage;Image
+coldirectory;Path to root
+colsort;Sort
+coldefault;Default website
+colalternativepath;Web path
+colsystemwebsitesid;Website
+colsystemusersid;User
+colpermissions;Permissions

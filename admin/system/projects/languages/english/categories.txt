@@ -1,0 +1,13 @@
+homecat;Home category
+selectcat;Select category
+changecat;Change category
+gopager;gopager
+homecategory;Home category
+colname;Category name
+colidentifier;Identifier
+colviews;Views
+parentcat;Parent category
+colhead;Head
+coldescription;Description
+colnote;Note
+categories;Categories

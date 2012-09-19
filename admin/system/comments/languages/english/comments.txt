@@ -1,0 +1,7 @@
+gopager;gopager
+no;No
+yes;Yes
+colname;Group name
+colregistered;For registered
+colparameter;Parameter
+groups;Comments groups

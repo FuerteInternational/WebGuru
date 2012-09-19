@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_images_folders" phpName="SystemImagesFolders" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int">
+			<constraint refTable="" refColumn="" />
+		</column>
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="system_websites_id" null="true" size="4" type="int" default="1" />
+		<column name="parentid" null="false" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

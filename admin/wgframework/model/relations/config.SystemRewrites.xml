@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_rewrites" phpName="SystemRewrites" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="rule" null="false" size="255" type="varchar" />
+		<column name="document" null="false" size="255" type="varchar" />
+		<column name="system_modules_id" null="false" unsigned="true" size="6" type="int" />	
+	</table>
+</database>

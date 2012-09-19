@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="dda_pohledavky" phpName="DdaPohledavky" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="users_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="dda_firmy_id" null="false" unsigned="true" size="10" type="int" />
+		<column name="dda_firmy_dluznik_id" null="false" unsigned="true" size="10" type="int" />
+		<column name="castka" null="false" size="11" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="status" null="true" size="1" type="tinyint" default="1" />	
+	</table>
+</database>

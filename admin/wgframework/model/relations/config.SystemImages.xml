@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_images" phpName="SystemImages" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="10" type="int">
+			<constraint refTable="" refColumn="" />
+		</column>
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="filename" null="false" size="255" type="varchar" />
+		<column name="alttext" null="false" size="255" type="varchar" />
+		<column name="system_images_folders_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="note" null="false" type="text" />
+		<column name="image" null="false" type="longblob" />	
+	</table>
+</database>

@@ -1,0 +1,130 @@
+
+<!-- BEGIN pagetabscontainer -->
+<form action="{ACTION}" method="post" enctype="multipart/form-data">
+	{PAGETABSCONTENT}
+	<p class="bottombuttons">
+		<input name="edit" type="hidden" value="{EDIT}" />
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END pagetabscontainer -->	
+
+
+<!-- BEGIN blogpostsa -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLTITLE}:</label>
+	<input name="title" id="title" type="text" value="{COLTITLE}" />
+</p>
+<p>
+	<label>{wCOLCATEGORY}:</label>
+	{FULLCATEGORY}
+</p>
+<p>
+	<label>{wCOLSTATUS}:</label>
+	{FULLCOLSTATUS}
+</p>
+<p>
+	<label>{wCOLBLOGGROUPSID}:</label>
+	{FULLBLOGGROUPSID}
+</p>
+<p>
+	<label>{wARTIMAGE}:</label>
+	<input type="file" name="artimage" />
+	<span style="float: right;">{ARTIMAGE}</span>
+</p>
+<p>
+	<label>{wCOLEXCERPT}:</label><br />
+	<textarea cols="50" rows="9" name="excerpt" id="excerpt" class="small editor">{COLEXCERPT}</textarea>
+</p>
+<p>
+	<label>{wCOLCONTENT}:</label><br />
+	<textarea cols="50" rows="9" name="content" class="large editor">{COLCONTENT}</textarea>
+</p>
+<!-- END blogpostsa -->
+
+<!-- BEGIN blogpostsb -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLFEATURED}:</label>
+	{FULLFEATURED}
+</p>
+<!--<p>
+	<label>{wCOLBLOGID}:</label>
+	{FULLBLOGID}
+</p>
+<p>
+	<label>{wCOLACCESSNAME}:</label>
+	<input name="name" id="name" type="text" value="{COLNAME}" />
+</p>
+<p>
+	<label>{wCOLACCESSPASSWORD}:</label>
+	<input name="password" id="password" type="text" value="{COLPASSWORD}" />
+</p>
+<p>
+	<label>{wCOLCONTENTFILTERED}:</label>
+	<textarea cols="50" rows="9" name="content_filtered" id="content_filtered">{COLCONTENTFILTERED}</textarea>
+</p>
+<p>
+	<label>{wCOLPARENT}:</label>
+	<input name="parent" id="parent" type="text" value="{COLPARENT}" />
+</p>
+<p>
+	<label>{wCOLMENUORDER}:</label>
+	<input name="menu_order" id="menu_order" type="text" value="{COLMENUORDER}" />
+</p>-->
+<!-- END blogpostsb -->
+
+<!-- BEGIN projectsitemsd -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+{FULLUPLOAD}
+<table>
+	<colgroup>
+		<col style="width: 10%;" />
+		<col style="width: 40%;" />
+		<col style="width: 15%;" />
+		<col style="width: 15%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wTHUMB}</th>
+			<th>{wFILENAME}</th>
+			<th>{wVIEWS}</th>
+			<th>{wDOWNLOADS}</th>
+			<th>{wDOWNLOAD}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN fileslist -->
+		<tr>
+			<td>{THUMB}</td>
+			<td>{NAME}</td>
+			<td>{VIEWS}</td>
+			<td>{DOWNLOADS}</td>
+			<td>{DOWNLOAD}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END fileslist -->
+	</tbody>
+</table>
+<!-- END projectsitemsd -->
+
+

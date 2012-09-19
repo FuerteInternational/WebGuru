@@ -1,0 +1,14 @@
+homecat;Home category
+gopager;gopager
+chcat;Change category
+colname;Name
+colsize;Filesize
+colchanged;Updated
+download;Download
+coldocumentscategoriesid;Category
+colfile;File
+enabled;Enabled
+coldescription;Description
+colparent;Parent category
+coldesc;Description
+categories;Categories

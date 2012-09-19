@@ -1,0 +1,92 @@
+<!-- BEGIN cronjobs -->
+<form action="{ACTION}" method="post">
+	<p>
+		<label>{wCHANGEJOB}:</label>
+		{FULLCOLCRONJOBSID}
+	</p>
+	<p>
+		<label>{wERRORSONLY}:</label>
+		{FULLJOBISERR}
+	</p>
+	<p>
+		<button type="submit" name="submit">{wCHANGEJOBSEL}</button>
+	</p>
+</form>
+<table>
+	<colgroup>
+		<col style="width: 60%;" />
+		<col style="width: 20%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLMESSAGE}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wVIEW}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcronjobs -->
+		<tr>
+			<td class="{LISERROR}">{IMAGE} {LMESSAGE}</td>
+			<td>{LADDED}</td>
+			<td>{VIEWROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcronjobs -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="" method="post">
+	<fieldset><legend>{wMESSAGE} {JOBNAME}</legend>
+		<p>{IMAGE} {ADDEDDET} - <span class="{LISERROR}">{COLMESSAGE}</span></p>
+	</fieldset>
+</form>
+<!-- END cronjobs -->
+
+<!-- BEGIN userjobs -->
+<form action="{ACTION}" method="post">
+	<p>
+		<label>{wERRORSONLY}:</label>
+		{FULLJOBISERR}
+	</p>
+	<p>
+		<button type="submit" name="submituj">{wCHANGEUSRJOBSEL}</button>
+	</p>
+</form>
+<table>
+	<colgroup>
+		<col style="width: 60%;" />
+		<col style="width: 20%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLMESSAGE}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wVIEW}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listuserjobs -->
+		<tr>
+			<td class="{LISERROR}">{IMAGE} {LMESSAGE}</td>
+			<td>{LADDED}</td>
+			<td>{VIEWROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listuserjobs -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="" method="post">
+	<fieldset><legend>{wMESSAGE} {JOBNAME}</legend>
+		<p>{IMAGE} {ADDEDDET} - <span class="{LISERROR}">{COLMESSAGE}</span></p>
+	</fieldset>
+</form>
+<!-- END userjobs -->
+

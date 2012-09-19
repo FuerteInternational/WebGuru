@@ -1,0 +1,12 @@
+itypeweb;Web address
+ityperss;RSS feed
+itypemap;Map coordinates
+gopager;gopager
+colname;Name
+coltype;Type
+colimagetype;Image type
+colimage;Image URL
+colvariablea;Variable 1
+colvariableb;Variable 2
+colvariablec;Variable 3
+colsort;Sort order No.

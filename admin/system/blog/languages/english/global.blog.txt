@@ -1,0 +1,9 @@
+setupblogfirst;Please setup a new blog on the Settings page
+setupcatsfirst;Please setup at least one category for this blog
+selectblogfirst;Please select which blog you want to edit
+newarticle;New article
+articles;Articles
+categories;Categories
+groups;Groups
+settings;Settings
+templates;Tempates

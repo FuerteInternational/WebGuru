@@ -1,0 +1,211 @@
+<!-- BEGIN pagedefinitions -->
+<form action="" method="post">
+	<p>
+		<label>{wSELECTPAGE}:</label>
+		{FULLMYPAGE}
+		<button type="submit" name="changepage">{wCHANGEPAGE}</button>
+	</p>
+</form>
+<table>
+	<colgroup>
+		<col style="width: 25%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLMINCHAR}</th>
+			<th>{wCOLMAXCHAR}</th>
+			<th>{wPAGECODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listpagedefinitions -->
+		<tr>
+			<td class="{LENABLED}">{LNAME}</td>
+			<td>{LMINCHAR}</td>
+			<td>{LMAXCHAR}</td>
+			<td class="wgcode">{#LANG_{LCODE}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listpagedefinitions -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLMINCHAR}:</label>
+			<input name="minchar" id="minchar" type="text" value="{COLMINCHAR}" onchange="checkCaracters(document.getElementById('default_text'), '#translationstxt')" />
+		</p>
+		<p>
+			<label>{wCOLMAXCHAR}:</label>
+			<input name="maxchar" id="maxchar" type="text" value="{COLMAXCHAR}" onchange="checkCaracters(document.getElementById('default_text'), '#translationstxt')" />
+		</p>
+		<p>
+			<label>{wCOLDEFAULTLANGID}:</label>
+			{FULLDEFAULTLANGID}
+		</p>
+		<p>
+			<label>{wCOLENABLED}:</label>
+			{FULLCOLENABLED}
+		</p>
+		<p>
+			<label>{wCOLALLOWHTML}:</label>
+			{FULLCOLALLOWHTML}
+		</p>
+		<p>
+			<label>{wCOLISGLOBAL}:</label>
+			{FULLCOLISGLOBAL}
+		</p>
+		<p>
+			<label>{wCOLDEFAULTTEXT}:</label>
+			<textarea cols="50" rows="9" name="default_text" id="default_text" class="small" onkeyup="checkCaracters(this, '#translationstxt');" onchange="checkCaracters(this, '#translationstxt', {MIN}, {MAX});">{COLDEFAULTTEXT}</textarea>
+		</p>
+		<p id="translationstxt" class="small"></p>
+		<p class="bottombuttons">
+			<input name="pages_id" type="hidden" value="{MYPAGEID}" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+function checkCaracters(area, display) {
+	var txt = area.value;
+	var length = txt.length;
+	var min = $('#minchar').val();
+	var max = $('#maxchar').val();
+	var ok = true;
+	if (length < min && min != 0) ok = false;
+	if (length > max && max != 0) ok = false;
+	if (ok == true) {
+		//$(area).css('background-color', '#D1E0CE');
+		$(display).addClass('green');
+		$(display).removeClass('red');
+	}
+	else {
+		//$(area).css('background-color', '#EBDEDE');
+		$(display).addClass('red');
+		$(display).removeClass('green');
+	}
+	var message = '{wYOUVEENTER}: ' + length + '; {wMINCH}: ' + min + ', {wMAXCH}: ' + max;
+	$(display).html(message);
+}
+$(document).ready(function() {
+	checkCaracters(document.getElementById('default_text'), '#translationstxt');
+});
+-->
+</script>
+<!-- END pagedefinitions -->
+
+<!-- BEGIN globaldefinitions -->
+<table>
+	<colgroup>
+		<col style="width: 25%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLMINCHAR}</th>
+			<th>{wCOLMAXCHAR}</th>
+			<th>{wPAGECODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listglobaldefinitions -->
+		<tr>
+			<td class="{LENABLED}">{LNAME}</td>
+			<td>{LMINCHAR}</td>
+			<td>{LMAXCHAR}</td>
+			<td class="wgcode">{#LANG_{LCODE}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listglobaldefinitions -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLMINCHAR}:</label>
+			<input name="minchar" id="minchar" type="text" value="{COLMINCHAR}" />
+		</p>
+		<p>
+			<label>{wCOLMAXCHAR}:</label>
+			<input name="maxchar" id="maxchar" type="text" value="{COLMAXCHAR}" />
+		</p>
+		<p>
+			<label>{wCOLDEFAULTLANGID}:</label>
+			{FULLDEFAULTLANGID}
+		</p>
+		<p>
+			<label>{wCOLENABLED}:</label>
+			{FULLCOLENABLED}
+		</p>
+		<p>
+			<label>{wCOLALLOWHTML}:</label>
+			{FULLCOLALLOWHTML}
+		</p>
+		<p>
+			<label>{wCOLISGLOBAL}:</label>
+			{FULLCOLISGLOBAL}
+		</p>
+		<p>
+			<label>{wCOLDEFAULTTEXT}:</label>
+			<textarea cols="50" rows="9" name="default_text" id="default_text" class="small">{COLDEFAULTTEXT}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END globaldefinitions -->
+

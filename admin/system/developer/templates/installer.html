@@ -1,0 +1,46 @@
+<!-- BEGIN installer -->
+<form action="{ACTION}" method="post">
+	<!-- BEGIN partlist -->
+	<h3>{LMODGROUP}</h3>
+	<table>
+		<colgroup>
+			<col style="width: 10%;">
+			<col style="width: 60%;">
+			<col style="width: 15%;">
+			<col style="width: 15%;">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>{wNAME}</th>
+				<th>{wVERSION}</th>
+				<th>{wSIZE}</th>
+			</tr>
+		</thead>
+		<tbody id="tablelist">
+			<!-- BEGIN modulelist -->
+			<tr>
+				<td><input type="checkbox" name="{LPART}[]" value="{LMODID}"{LMODCHECKED} /></td>
+				<td><strong>{LMODNAME}</strong></td>
+				<td>{LMODVERSION}</td>
+				<td>{LMODSIZE}</td>
+			</tr>
+			<!-- END modulelist -->
+		</tbody>
+	</table>
+	<p>&nbsp;</p>
+	<!-- END partlist -->
+	<p>
+		<input name="act" id="act" type="hidden" value="{BLOCK}" />
+		<input name="submit" id="submit" type="submit" value="{wCREATE}" />
+	</p>
+</form>
+<!-- END installer -->
+<!-- BEGIN backup -->
+<form action="{ACTION}" method="post">
+	<p>
+		<input name="act" id="act" type="hidden" value="createbackup" />
+		<input name="submit" id="submit" type="submit" value="{wBACKUP}" />
+	</p>
+</form>
+<!-- END backup -->

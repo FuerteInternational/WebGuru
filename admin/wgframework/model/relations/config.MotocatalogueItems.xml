@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="motocatalogue_items" phpName="MotocatalogueItems" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="pretext" null="false" type="text" />
+		<column name="description" null="false" type="text" />
+		<column name="cubature" null="false" size="50" type="varchar" />
+		<column name="power" null="false" size="50" type="varchar" />
+		<column name="kilometers" null="false" size="50" type="varchar" />
+		<column name="price" null="false" size="11" type="int" />
+		<column name="discounted_price" null="false" unsigned="true" size="11" type="int" />
+		<column name="vintage" null="false" type="date" />
+		<column name="technical_approve" null="false" size="1" type="tinyint" default="1" />
+		<column name="origin" null="true" size="11" type="int" />
+		<column name="leasing" null="false" size="1" type="tinyint" default="1" />
+		<column name="tax" null="false" size="1" type="tinyint" />
+		<column name="brand" null="false" size="100" type="varchar" />
+		<column name="type" null="false" size="100" type="varchar" />
+		<column name="promo" null="false" size="1" type="tinyint" />
+		<column name="state" null="false" size="50" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="avail" null="false" size="255" type="varchar" />	
+	</table>
+</database>

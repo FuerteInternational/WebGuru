@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="projects_items" phpName="ProjectsItems" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="projects_categories_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="client" null="false" size="255" type="varchar" />
+		<column name="link" null="false" size="255" type="varchar" />
+		<column name="info" null="false" size="255" type="varchar" />
+		<column name="views" null="false" size="11" type="int" />
+		<column name="date" null="false" type="datetime" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="h1" null="false" size="255" type="varchar" />
+		<column name="title" null="false" size="255" type="varchar" />
+		<column name="mkeywords" null="false" type="text" />
+		<column name="mdescription" null="false" type="text" />
+		<column name="h2" null="false" size="255" type="varchar" />
+		<column name="h3" null="false" size="255" type="varchar" />
+		<column name="text1" null="false" type="text" />
+		<column name="text2" null="false" type="text" />
+		<column name="text3" null="false" type="text" />
+		<column name="text4" null="false" type="text" />	
+	</table>
+</database>

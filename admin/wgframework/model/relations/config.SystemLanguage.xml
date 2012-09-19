@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_language" phpName="SystemLanguage" engine="MyISAM">
+		<column name="id" null="false" size="3" type="int" primary="true" />
+		<column name="name" null="false" size="32" type="varchar" />
+		<column name="code" null="false" size="3" type="char" />
+		<column name="image" null="true" size="15" type="varchar" />
+		<column name="directory" null="true" size="15" type="varchar" />
+		<column name="sort" null="true" size="3" type="int" />
+		<column name="isdefault" null="false" size="1" type="tinyint" />
+		<column name="system_websites_id" null="false" size="4" type="int" default="1" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />	
+	</table>
+</database>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="languages_definitions" phpName="LanguagesDefinitions" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="minchar" null="false" size="11" type="int" />
+		<column name="maxchar" null="false" size="11" type="int" default="99999" />
+		<column name="pages_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="isglobal" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="system_websites_id" null="true" unsigned="true" size="4" type="int" />
+		<column name="enabled" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="default_lang_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="default_text" null="false" type="text" />
+		<column name="allowhtml" null="false" unsigned="true" size="1" type="tinyint" default="1" />	
+	</table>
+</database>

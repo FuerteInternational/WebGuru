@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="joshtray_people" phpName="JoshtrayPeople" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="joshtray_groups_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="firstname" null="false" size="255" type="varchar" />
+		<column name="lastname" null="false" size="255" type="varchar" />
+		<column name="line" null="false" size="255" type="varchar" />
+		<column name="phone" null="false" size="255" type="varchar" />
+		<column name="mobile" null="false" size="255" type="varchar" />
+		<column name="note" null="false" size="45" type="varchar" />
+		<column name="online" null="false" type="datetime" />
+		<column name="lastlogin" null="false" type="datetime" />
+		<column name="mail" null="false" size="255" type="varchar" />
+		<column name="title" null="false" size="255" type="varchar" />
+		<column name="password" null="false" size="40" type="varchar" />
+		<column name="initials" null="false" size="10" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />	
+	</table>
+</database>

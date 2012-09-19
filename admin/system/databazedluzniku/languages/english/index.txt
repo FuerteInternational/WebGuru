@@ -1,0 +1,14 @@
+firmy;Firmy
+descfirmy;Administrace firem
+kontakty;Kontakty
+desckontakty;Administrace kontaktnich informaci
+platby;Platby
+descplatby;Administrace plateb od klientu
+pohledavky;Pohledavky
+descpohledavky;Administrace zadanych pohledavek
+registrace;Registrace
+descregistrace;Administrace registraci
+settings;Nastaveni
+descsettings;Nastaveni modulu databaze dluzniku
+templates;Sablony
+desctemplates;Sablony modulu databaze dluzniku

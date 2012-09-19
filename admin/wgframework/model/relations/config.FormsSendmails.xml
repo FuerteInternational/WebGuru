@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="forms_sendmails" phpName="FormsSendmails" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="forms_items_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="emails_templates_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="type" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="mail" null="false" size="255" type="varchar" />	
+	</table>
+</database>

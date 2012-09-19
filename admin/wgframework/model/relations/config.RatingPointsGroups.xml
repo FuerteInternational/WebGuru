@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="rating_points_groups" phpName="RatingPointsGroups" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="variable" null="false" size="50" type="varchar" />
+		<column name="type" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="note" null="false" type="text" />
+		<column name="enabled" null="false" unsigned="true" size="1" type="tinyint" default="1" />	
+	</table>
+</database>

@@ -1,0 +1,24 @@
+noidsyserror;System error: There is no system id
+emptyauthor;Please fill your name
+emptyemail;Please check your email address
+emptycomment;Please put some comment
+coliderr;No id error
+colnoname;No name error
+colnomail;No mail error
+colnocomment;No comment error
+asc;By date ascending
+desc;By date descending
+gopager;gopager
+colname;Name
+colidentifier;Identifier
+colpager;Use pager
+colperpage;Comments per page
+colcommentsgroupsid;Comments group
+colvariable;Id of the commented item
+or;or
+coldatasource;Datat source
+coltempbegin;Template begin
+coltempitem;One comment template
+coltempend;Template end
+colregistered;For logged users
+colnotregistered;Form template

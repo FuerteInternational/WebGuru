@@ -1,0 +1,10 @@
+modname;Module name
+modidentifier;Module identifier
+modpages;Module pages
+author;Module author
+admin;Administration
+dbinstaller;Database installer
+dbmodel;Database model
+installer;Installer
+module;Module
+modelgenerated;Database model has been generated

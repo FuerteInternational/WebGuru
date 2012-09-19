@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="blog_files" phpName="BlogFiles" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="filename" null="false" size="200" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="blog_posts_id" null="false" unsigned="true" size="20" type="bigint" />
+		<column name="size" null="false" size="11" type="int" />
+		<column name="mime" null="false" size="60" type="varchar" />
+		<column name="views" null="false" unsigned="true" size="16" type="bigint" />
+		<column name="downloads" null="false" unsigned="true" size="16" type="bigint" />	
+	</table>
+</database>

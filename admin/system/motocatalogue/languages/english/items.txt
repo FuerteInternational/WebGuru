@@ -1,0 +1,21 @@
+gopager;gopager
+motonew;Nove
+motoused;Pouzite
+motorefurbished;Renovovane
+colname;Jmeno
+colprice;Cena
+colvintage;R.V.
+colbrand;Znacka
+coltype;Typ
+colpromo;Promo
+colstate;Stav
+colcubature;Kubatura
+colpower;Sila
+colkilometers;Najeto
+coltechnicalapprove;Technicka
+colorigin;Puvod
+colleasing;Leasing
+coltax;DPH
+colpretext;Kratky popis
+coldescription;Plny popis
+items;Polozky

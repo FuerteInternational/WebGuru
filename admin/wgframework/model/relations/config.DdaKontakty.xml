@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="dda_kontakty" phpName="DdaKontakty" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="prijmeni" null="false" size="255" type="varchar" />
+		<column name="funkce" null="false" size="255" type="varchar" />
+		<column name="mail" null="false" size="150" type="varchar" />
+		<column name="telefon" null="false" size="60" type="varchar" />
+		<column name="mobil" null="false" size="60" type="varchar" />
+		<column name="dda_firmy_id" null="true" unsigned="true" size="11" type="int" />	
+	</table>
+</database>

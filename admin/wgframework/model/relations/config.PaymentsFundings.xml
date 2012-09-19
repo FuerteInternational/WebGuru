@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="payments_fundings" phpName="PaymentsFundings" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="payments_services_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="percent" null="false" size="3" type="int" default="100" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />	
+	</table>
+</database>

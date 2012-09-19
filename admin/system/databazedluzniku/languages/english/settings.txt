@@ -1,0 +1,6 @@
+gopager;gopager
+colname;Nazev platby
+colcost;Poplatek
+colsort;Razeni
+coldefault;Defaultni platba
+ptypes;Zpusoby plateb

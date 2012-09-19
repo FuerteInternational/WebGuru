@@ -1,0 +1,66 @@
+<!-- BEGIN file -->
+<script type="text/javascript">
+<!--
+function addRow(where) {
+	var code = '<tr>';
+	code = '<td>aaaa</td>';
+	code = '<td>bbbbb</td>';
+	code = '</tr>';
+	$('#' + where + 'tr:last-child').append(code);
+}
+function getInfo(info) {
+	alert(info);
+}
+function deleteRow(where) {
+	$('#' + where).remove();
+}
+-->
+</script>
+<form action="{ACTION}" method="post">
+	<p class="topbuttons">
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+	<!-- BEGIN listgroups -->
+	<table>
+		<colgroup>
+			<col style="width: 35%;" />
+			<col style="width: 45%;" />
+			<col style="width: 10%;" />
+			<col style="width: 10%;" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th>{wNAME} ({LGROUP})</th>
+				<th>{wVALUE}</th>
+				<th>{wINFO}</th>
+				<th>{wDELETE}</th>
+			</tr>
+		</thead>
+		<!--<tfoot>
+			<tr>
+				<td colspan="4">
+					<input type="button" value="{wADDROW}" onclick="addRow('confGroup{LGROUP}')" />
+				</td>
+			</tr>
+		</tfoot>-->
+		<tbody id="confGroup{LGROUP}">
+			<!-- BEGIN listfile -->
+			<tr id="confRowId{ID}">
+				<td>{LNAME}</td>
+				<td>{LVALUE}</td>
+				<td>{INFO}</td>
+				<td>{DELETEROW}</td>
+			</tr>
+			<!-- END listfile -->
+		</tbody>
+	</table>
+	<!-- END listgroups -->
+	<p class="bottombuttons">
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END file -->
+

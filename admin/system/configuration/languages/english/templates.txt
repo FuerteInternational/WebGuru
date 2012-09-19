@@ -1,0 +1,21 @@
+gopager;gopager
+errorred;Red error message
+errororange;Orange error message
+errorgreen;Green error message
+colname;Template name
+code;Code
+colidentifier;Identifier
+colgroupmessages;Messages group
+colfirstinlist;First part of the list
+colerrorbegin;Error messages begin
+colgroupokbegin;Green error begin
+colitemok;Green error template
+colgroupokend;Green error end
+colgroupalertbegin;Orange error begin
+colitemalert;Orange error template
+colgroupalertend;Orange error end
+colgrouperrorbegin;Red error begin
+colitemerror;Red error template
+colgrouperrorend;Red error end
+colerrorend;Error messages end
+custoerrors;Custom errors

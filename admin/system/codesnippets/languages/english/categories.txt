@@ -1,0 +1,4 @@
+gopager;gopager
+colname;Category name
+colidentifier;Identifier
+coldescription;Description

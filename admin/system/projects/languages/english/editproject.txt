@@ -1,0 +1,28 @@
+homecat;homecat
+colprojectscategoriesid;Project category
+colname;Project name
+colidentifier;Identifier
+colclient;Client name
+collink;Project URL
+coldate;Date
+main;Main settings
+colinfo;Info
+coltexta;Text 1
+coltextb;Text 2
+coltextc;Text 3
+coltextd;Text 4
+texts;Texts
+colheadinga;H1
+coltitle;Page title
+colmkeywords;Meta keywords
+colmdescription;Meta description
+colheadingb;H2
+colheadingc;H3
+seo;SEO
+image;Image
+addfield;Add field
+images;Images
+file;File
+files;Files
+video;Video
+link;Link

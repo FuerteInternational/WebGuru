@@ -1,0 +1,927 @@
+<!-- BEGIN userdetails -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listuserdetails -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_users_detail_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listuserdetails -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASRC}
+		</p>
+		<p id="detailVariable">
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+			<span class="small">(http://www.example.co ... /page/?<strong>user</strong>=123)</span>
+		</p>
+		<!--<p>
+			<label>{wCOLUSEEDIT}:</label>
+			{FULLCOLUSEEDIT}
+		</p>
+		<div id="editdetail">
+			<p>
+				<label>{wNOPERMS}:</label>
+				<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+			</p>
+			<p>
+				<label>{wWRONGMAIL}:</label>
+				<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+			</p>
+			<p>
+				<label>{wCOLMESSC}:</label>
+				<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+			</p>
+			<p>
+				<label>{wCOLMESSD}:</label>
+				<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+			</p>
+			<p>
+				<label>{wCOLMESSE}:</label>
+				<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+			</p>
+		</div>-->
+		<p>
+			<label>{wDETAILTEMP}:</label>
+			<textarea cols="50" rows="9" name="temp" id="temp" class="editor">{COLTEMP}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" id="noitem" class="editor">{COLNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="0" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+function checkCheck(id) {
+	id = '#' + id;
+	if ($(id).prev().children('input').is(':checked')) $(id).show();
+	else $(id).hide();
+}
+
+function checkDetailDS() {
+	var val = $('#detailDS').val();
+	if (val == 0) $('#detailVariable').hide();
+	else $('#detailVariable').show();
+}
+
+$('#editdetail').prev().children('input').click(function() { checkCheck('editdetail'); });
+$('#detailDS').change(function () { checkDetailDS(); });
+$(document).ready(function() {
+	checkCheck('editdetail');
+	checkDetailDS();
+});
+
+
+-->
+</script>
+<!-- END userdetails -->
+
+<!-- BEGIN userlists -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listuserlists -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_users_list_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listuserlists -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p>
+			<label>{wCOLPERPAGE}:</label>
+			<input name="perpage" id="perpage" type="text" value="{COLPERPAGE}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASRC}
+		</p>
+		<p>
+			<label>{wCOLDATASOURCEB}:</label>
+			<input name="datasource2" id="datasource2" type="text" value="{COLDATASOURCEB}" />
+		</p>
+		<p>
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+		</p>
+		<p>
+			<label>{wCOLUSEEDIT}:</label>
+			{FULLCOLUSEEDIT}
+		</p>
+		<p>
+			<label>{wCOLTEMPSTART}:</label>
+			<textarea cols="50" rows="9" name="tempstart" id="tempstart" class="editor">{COLTEMPSTART}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMP}:</label>
+			<textarea cols="50" rows="9" name="temp" id="temp" class="editor">{COLTEMP}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPEND}:</label>
+			<textarea cols="50" rows="9" name="tempend" id="tempend" class="editor">{COLTEMPEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" id="noitem" class="editor">{COLNOITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLMESSA}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wCOLMESSB}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wCOLMESSC}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>
+		<p>
+			<label>{wCOLMESSD}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wCOLMESSE}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="1" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END userlists -->
+
+<!-- BEGIN messageslist -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listmessageslist -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_users_messages_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listmessageslist -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p>
+			<label>{wCOLPERPAGE}:</label>
+			<input name="perpage" id="perpage" type="text" value="{COLPERPAGE}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASRC}
+		</p>
+		<p>
+			<label>{wCOLDATASOURCEB}:</label>
+			<input name="datasource2" id="datasource2" type="text" value="{COLDATASOURCEB}" />
+		</p>
+		<p>
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+		</p>
+		<p>
+			<label>{wCOLUSEEDIT}:</label>
+			{FULLCOLUSEEDIT}
+		</p>
+		<p>
+			<label>{wCOLTEMPSTART}:</label>
+			<textarea cols="50" rows="9" name="tempstart" id="tempstart" class="editor">{COLTEMPSTART}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMP}:</label>
+			<textarea cols="50" rows="9" name="temp" id="temp" class="editor">{COLTEMP}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPEND}:</label>
+			<textarea cols="50" rows="9" name="tempend" id="tempend" class="editor">{COLTEMPEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" id="noitem" class="editor">{COLNOITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLMESSA}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wCOLMESSB}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wCOLMESSC}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>
+		<p>
+			<label>{wCOLMESSD}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wCOLMESSE}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="2" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END messageslist -->
+
+<!-- BEGIN messagesforms -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listmessagesforms -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_users_mform_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listmessagesforms -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p>
+			<label>{wCOLPERPAGE}:</label>
+			<input name="perpage" id="perpage" type="text" value="{COLPERPAGE}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASRC}
+		</p>
+		<p>
+			<label>{wCOLDATASOURCEB}:</label>
+			<input name="datasource2" id="datasource2" type="text" value="{COLDATASOURCEB}" />
+		</p>
+		<p>
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+		</p>
+		<p>
+			<label>{wCOLUSEEDIT}:</label>
+			{FULLCOLUSEEDIT}
+		</p>
+		<p>
+			<label>{wCOLTEMPSTART}:</label>
+			<textarea cols="50" rows="9" name="tempstart" id="tempstart" class="editor">{COLTEMPSTART}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMP}:</label>
+			<textarea cols="50" rows="9" name="temp" id="temp" class="editor">{COLTEMP}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPEND}:</label>
+			<textarea cols="50" rows="9" name="tempend" id="tempend" class="editor">{COLTEMPEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" id="noitem" class="editor">{COLNOITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLMESSA}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wCOLMESSB}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wCOLMESSC}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>
+		<p>
+			<label>{wCOLMESSD}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wCOLMESSE}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="3" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END messagesforms -->
+
+<!-- BEGIN friendslist -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listfriendslist -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_users_friends_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listfriendslist -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p>
+			<label>{wCOLPERPAGE}:</label>
+			<input name="perpage" id="perpage" type="text" value="{COLPERPAGE}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASRC}
+		</p>
+		<p>
+			<label>{wCOLDATASOURCEB}:</label>
+			<input name="datasource2" id="datasource2" type="text" value="{COLDATASOURCEB}" />
+		</p>
+		<p>
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+		</p>
+		<p>
+			<label>{wCOLUSEEDIT}:</label>
+			{FULLCOLUSEEDIT}
+		</p>
+		<p>
+			<label>{wCOLTEMPSTART}:</label>
+			<textarea cols="50" rows="9" name="tempstart" id="tempstart" class="editor">{COLTEMPSTART}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMP}:</label>
+			<textarea cols="50" rows="9" name="temp" id="temp" class="editor">{COLTEMP}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPEND}:</label>
+			<textarea cols="50" rows="9" name="tempend" id="tempend" class="editor">{COLTEMPEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" id="noitem" class="editor">{COLNOITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLMESSA}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wCOLMESSB}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wCOLMESSC}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>
+		<p>
+			<label>{wCOLMESSD}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wCOLMESSE}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="4" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END friendslist -->
+
+<!-- BEGIN addfriends -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listaddfriends -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_users_addfriend_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listaddfriends -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p>
+			<label>{wCOLPERPAGE}:</label>
+			<input name="perpage" id="perpage" type="text" value="{COLPERPAGE}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASRC}
+		</p>
+		<p>
+			<label>{wCOLDATASOURCEB}:</label>
+			<input name="datasource2" id="datasource2" type="text" value="{COLDATASOURCEB}" />
+		</p>
+		<p>
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+		</p>
+		<p>
+			<label>{wCOLUSEEDIT}:</label>
+			{FULLCOLUSEEDIT}
+		</p>
+		<p>
+			<label>{wCOLTEMPSTART}:</label>
+			<textarea cols="50" rows="9" name="tempstart" id="tempstart" class="editor">{COLTEMPSTART}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMP}:</label>
+			<textarea cols="50" rows="9" name="temp" id="temp" class="editor">{COLTEMP}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPEND}:</label>
+			<textarea cols="50" rows="9" name="tempend" id="tempend" class="editor">{COLTEMPEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" id="noitem" class="editor">{COLNOITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLMESSA}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wCOLMESSB}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wCOLMESSC}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>
+		<p>
+			<label>{wCOLMESSD}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wCOLMESSE}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="5" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END addfriends -->
+
+<!-- BEGIN login -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listlogin -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_users_login_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listlogin -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wLOGINTYPE}:</label>
+			{FULLVARIABLE}
+		</p>
+		<p>
+			<label>{wWRONGLOGIN}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wLOGGEDIN}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wLOGGEDINREDIRECT}:</label>
+			{LOGGEDINREDIRECT}
+		</p>
+		<!--<p>
+			<label>{wLOGGEDOUT}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>-->
+		<p>
+			<label>{wLOGOUTMESS}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p>
+			<label>{wLOGOUTREDIRECT}:</label>
+			{LOGOUTREDIRECT}
+		</p>
+		<p>
+			<label>{wNOPERMS}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wLOGINTEMP}:</label>
+			<textarea cols="50" rows="9" name="temp" id="temp" class="editor big">{COLTEMP}</textarea>
+		</p>
+		<p>
+			<label>{wLOGGEDINTEMP}:</label>
+			<textarea cols="50" rows="9" name="noitem" id="noitem" class="editor big">{COLNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="6" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END login -->
+
+<!-- BEGIN registration -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listregistration -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_users_registration_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listregistration -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<!--<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASRC}
+		</p>-->
+		<p>
+			<label>{wUSERGROUP}:</label>
+			{COLDATASOURCEB}
+		</p>
+		<p>
+			<label>{wMESSCHECKNAME}:</label>
+			<input name="mess2" id="mess2" type="text" value="{COLMESSB}" />
+		</p>
+		<p>
+			<label>{wMESSCHECKNICKNAME}:</label>
+			<input name="mess5" id="mess5" type="text" value="{COLMESSE}" />
+		</p>
+		<p>
+			<label>{wMESSNICKEXISTS}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+		</p>
+		<p>
+			<label>{wMESSCHECKPASS}:</label>
+			<input name="mess3" id="mess3" type="text" value="{COLMESSC}" />
+		</p>
+		<p>
+			<label>{wMESSNOMATCHPASS}:</label>
+			<input name="tempstart" id="tempstart" type="text" value="{COLTEMPSTART}" />
+		</p>
+		<p>
+			<label>{wMESSCHECKMAIL}:</label>
+			<input name="mess4" id="mess4" type="text" value="{COLMESSD}" />
+		</p>
+		<p>
+			<label>{wMESSREGISTEREDOK}:</label>
+			<input name="mess1" id="mess1" type="text" value="{COLMESSA}" />
+		</p>
+		<p>
+			<label>{wREGISTEREDREDIRECT}:</label>
+			{REGREDIRECT}
+		</p>
+		<p>
+			<label>{wMESSREGISTRTIONFAILED}:</label>
+			<input name="tempend" id="tempend" type="text" value="{COLTEMPEND}" />
+		</p>
+		<!--<p>
+			<label>{wCOLUSEEDIT}:</label>
+			{FULLCOLUSEEDIT}
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" id="noitem" class="editor">{COLNOITEM}</textarea>
+		</p>-->
+		<p>
+			<label>{wREGISTRATIONTEMP}:</label>
+			<textarea cols="50" rows="9" name="temp" id="temp" class="html large">{COLTEMP}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="7" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END registration -->
+

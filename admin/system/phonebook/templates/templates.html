@@ -1,0 +1,165 @@
+<!-- BEGIN people -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listpeople -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_phonebook_people_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listpeople -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLISSEARCH}:</label>
+			{FULLCOLSEARCH}
+		</p>
+		<div id="listPager">
+			<p>
+				<label>{wCOLPAGER}:</label>
+				{FULLCOLPAGER}
+			</p>
+			<p>
+				<label>{wCOLPERPAGE}:</label>
+				<input name="perpage" id="perpage" type="text" value="{COLPERPAGE}" />
+			</p>
+		</div>
+		<p>
+			<label>{wCOLTEMPBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tempbegin" id="tempbegin" class="html">{COLTEMPBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPITEM}:</label>
+			<textarea cols="50" rows="9" name="tempitem" id="tempitem" class="html">{COLTEMPITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPEND}:</label>
+			<textarea cols="50" rows="9" name="tempend" id="tempend" class="html">{COLTEMPEND}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="0" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready( function() {
+	$('#listSearchCheck').click( function() {
+		if ($(this).is(':checked')) $('#listPager').hide();
+		else $('#listPager').show();
+	});
+	if ($('#listSearchCheck').is(':checked')) $('#listPager').hide();
+	else $('#listPager').show();
+});
+-->
+</script>
+<!-- END people -->
+<!-- BEGIN details -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listdetails -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_phonebook_detail_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listdetails -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wDATASOURCE}:</label>
+			{FULLPERPAGE}
+		</p>
+		<p>
+			<label>{wMAINTEMP}:</label>
+			<textarea cols="50" rows="9" name="tempitem" id="tempitem" class="html">{COLTEMPITEM}</textarea>
+		</p>
+		<p>
+			<label>{wNODETTEMP}:</label>
+			<textarea cols="50" rows="9" name="tempend" id="tempend" class="html">{COLTEMPEND}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="1" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END details -->
+

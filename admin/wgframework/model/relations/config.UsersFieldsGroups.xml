@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="users_fields_groups" phpName="UsersFieldsGroups" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="users_groups_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="sort" null="false" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

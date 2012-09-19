@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="emails_permissions" phpName="EmailsPermissions" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="emails_groups_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="system_teams_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="permissions" null="false" unsigned="true" size="1" type="tinyint" />	
+	</table>
+</database>

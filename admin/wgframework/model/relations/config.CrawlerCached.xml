@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="crawler_cached" phpName="CrawlerCached" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="addr" null="false" type="text" />
+		<column name="root" null="false" size="255" type="varchar" />
+		<column name="crawler_websites_id" null="false" size="8" type="int" />
+		<column name="level" null="false" size="4" type="int" />
+		<column name="html" null="true" type="text" />
+		<column name="text" null="true" type="text" />
+		<column name="links" null="true" type="text" />
+		<column name="title" null="true" type="text" />
+		<column name="h1" null="true" type="text" />
+		<column name="keywords" null="true" type="text" />
+		<column name="description" null="true" type="text" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="cached" null="false" type="datetime" />
+		<column name="cid" null="false" size="11" type="int" />
+		<column name="ilinks" null="false" size="11" type="int" />
+		<column name="elinks" null="false" size="11" type="int" />	
+	</table>
+</database>

@@ -1,0 +1,11 @@
+colname;Name
+colcode;Code
+coldirectory;Directory
+colwebsite;Website
+colimage;Image
+colsort;Sort
+coldefault;Default language
+colsystemwebsitesid;Website
+gopager;gopager
+lock_delete;Folder is not writable
+locked;Writable

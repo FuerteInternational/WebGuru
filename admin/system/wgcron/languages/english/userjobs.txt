@@ -1,0 +1,10 @@
+gopager;gopager
+coluserid;User
+colname;Job name
+collastrun;Last run
+colcounter;Counter
+coldatefrom;Start date
+coldateto;End date
+colperiod;Time period (seconds)
+colreportmail;Error reports email
+colurl;Url

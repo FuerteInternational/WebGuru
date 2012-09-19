@@ -1,0 +1,39 @@
+<!-- BEGIN generate -->
+<!--<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{w COLID}</th>
+			<th>{w COLCRAWLERRESULTSID}</th>
+			<th>{w COLHTML}</th>
+			<th>{w EDIT}</th>
+			<th>{w DELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listgenerate -- >
+		<tr>
+			<td>{LID}</td>
+			<td>{LCRAWLERRESULTSID}</td>
+			<td>{LHTML}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listgenerate -- >
+	</tbody>
+</table>
+{DATAPAGER}-->
+<form action="{ACTION}" method="post">
+	<p>
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<button name="new" type="submit">{wGENERATEMODEL}</button>
+	</p>
+</form>
+<!-- END generate -->
+

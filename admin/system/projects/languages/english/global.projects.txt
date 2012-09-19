@@ -1,0 +1,4 @@
+categories;Categories
+projects;Projects
+settings;Settings
+templates;Templates

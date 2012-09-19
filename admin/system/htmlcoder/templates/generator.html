@@ -1,0 +1,131 @@
+<!-- BEGIN issuesadmin -->
+<table>
+	<colgroup>
+		<col style="width: 45%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wNAME}</th>
+			<th>{wPATH}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listissuesadmin -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{LPATH}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listissuesadmin -->
+	</tbody>
+</table>
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<!--<input name="apply" type="submit" value="{wAPPLY}" />-->
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+        <p>
+			<label>{wISSUENAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{EDIT}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<!--<input name="apply" type="submit" value="{wAPPLY}" />-->
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END issuesadmin -->
+
+<!-- BEGIN basiclayout -->
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="submit" type="submit" value="{wGENERATEISSUE}" />
+		</p>
+        <p>
+			<label>{wISSUE}:</label>
+			{ISSUESELECT}
+		</p>
+        <p>
+			<label>{wPAGENAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+        <p><img src="./system/htmlcoder/data/layout-basic.png"</p>
+		<p class="bottombuttons">
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="submit" type="submit" value="{wGENERATEISSUE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END basiclayout -->
+
+<!-- BEGIN layoutselector -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listlayoutselector -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listlayoutselector -->
+	</tbody>
+</table>
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+        <p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END layoutselector -->
+

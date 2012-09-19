@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="projects_templates" phpName="ProjectsTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="pager" null="false" size="1" type="tinyint" default="1" />
+		<column name="perpage" null="false" size="4" type="int" />
+		<column name="search" null="false" size="1" type="tinyint" />
+		<column name="variable1" null="false" size="50" type="varchar" />
+		<column name="variable2" null="false" size="50" type="varchar" />
+		<column name="dateformat" null="false" size="100" type="varchar" />
+		<column name="linkformat" null="false" size="255" type="varchar" />
+		<column name="seo" null="false" size="1" type="tinyint" default="1" />
+		<column name="datasource" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="projects_categories_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="sorting" null="false" size="255" type="varchar" />
+		<column name="tbegin" null="false" type="text" />
+		<column name="titem1" null="false" type="text" />
+		<column name="titem2" null="false" type="text" />
+		<column name="titem3" null="false" type="text" />
+		<column name="titem4" null="false" type="text" />
+		<column name="titem5" null="false" type="text" />
+		<column name="tend" null="false" type="text" />
+		<column name="tnoitem" null="false" type="text" />
+		<column name="temptype" null="false" size="1" type="tinyint" />	
+	</table>
+</database>

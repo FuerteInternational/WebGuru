@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_modules_permissions" phpName="SystemModulesPermissions" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="system_modules_id" null="true" unsigned="true" size="6" type="int" />
+		<column name="system_teams_id" null="true" unsigned="true" size="8" type="int" />
+		<column name="perm" null="false" unsigned="true" size="1" type="tinyint" />	
+	</table>
+</database>

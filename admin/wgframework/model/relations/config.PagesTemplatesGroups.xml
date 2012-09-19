@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="pages_templates_groups" phpName="PagesTemplatesGroups" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="4" type="int" primary="true" />
+		<column name="name" null="false" size="150" type="varchar" />
+		<column name="identifier" null="false" size="150" type="varchar" />
+		<column name="folder" null="false" size="255" type="varchar" />	
+	</table>
+</database>

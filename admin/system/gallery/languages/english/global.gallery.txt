@@ -1,0 +1,6 @@
+categories;Categories
+albums;Albums
+photos;Photos
+settings;Settings
+templates;Templates
+

@@ -1,0 +1,3 @@
+flash;Flash
+settings;Settings
+templates;Templates

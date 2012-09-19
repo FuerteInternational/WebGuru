@@ -1,0 +1,20 @@
+homecat;Home category
+infolink;Link help
+colname;Name
+colidentifier;Identifier
+colversion;RSS feed version
+colnewscategoriesid;Feeds from cat
+coldescription;Description
+collink;Link to website
+examplelinks;Example links
+code;Code
+main;Main
+colshowitems;Items on feed
+colfolder;Generate to folder
+coldisplaylanguage;Display language
+colcopyright;Copyright
+colttl;TTL
+colimage;Image
+colimagetitle;Image title
+settings;Settings
+colnewscategories;News category

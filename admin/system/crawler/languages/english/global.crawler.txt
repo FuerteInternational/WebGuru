@@ -1,0 +1,6 @@
+websites;Websites
+search;Search
+sitemaps;Sitemap generators
+templates;Templates
+cronjobs;Automatic tasks
+website;Edit website

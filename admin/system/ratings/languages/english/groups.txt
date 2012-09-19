@@ -1,0 +1,6 @@
+gopager;gopager
+colname;Group name
+colvariable;Group variable
+coltype;Rating type
+colnote;Note
+groups;Groups

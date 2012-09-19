@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="cron_userjobs_log" phpName="CronUserjobsLog" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="cron_userjobs_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="message" null="false" size="255" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="iserror" null="false" unsigned="true" size="1" type="tinyint" />	
+	</table>
+</database>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="generator">
+		<a key="name">generator</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="editor">
+		<a key="name">editor</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="layout">
+		<a key="name">layouts</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="settings">
+		<a key="name">settings</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+</menu>

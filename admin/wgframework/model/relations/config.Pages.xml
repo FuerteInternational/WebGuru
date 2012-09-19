@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="pages" phpName="Pages" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="system_websites_id" null="false" size="4" type="int" default="1" />
+		<column name="system_language_id" null="false" size="3" type="int" default="1" />
+		<column name="pages_templates_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="revision" null="false" size="11" type="int" default="1" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="title" null="false" size="255" type="varchar" />
+		<column name="heading1" null="false" size="255" type="varchar" />
+		<column name="heading2" null="false" size="255" type="varchar" />
+		<column name="heading3" null="false" size="255" type="varchar" />
+		<column name="rewrite" null="false" size="255" type="varchar" />
+		<column name="keywords" null="false" type="text" />
+		<column name="description" null="false" type="text" />
+		<column name="addtext1" null="false" size="255" type="varchar" />
+		<column name="addtext2" null="false" size="255" type="varchar" />
+		<column name="enabled" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="master" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="parentid" null="false" unsigned="true" size="10" type="int" default="1" />
+		<column name="home" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="sort" null="false" unsigned="true" size="8" type="int" />
+		<column name="head" null="false" type="text" />
+		<column name="page" null="false" type="longtext" />
+		<column name="note" null="false" type="text" />
+		<column name="redirect1" null="false" unsigned="true" size="11" type="int" />
+		<column name="redirect2" null="false" unsigned="true" size="11" type="int" />
+		<column name="redirect3" null="false" size="255" type="varchar" />
+		<column name="redirect4" null="false" size="255" type="varchar" />	
+	</table>
+</database>

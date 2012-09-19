@@ -1,0 +1,6 @@
+gopager;gopager
+colid;Id
+colname;Campaign name
+colidentifier;Identifier
+coladded;Created
+colchanged;Changed

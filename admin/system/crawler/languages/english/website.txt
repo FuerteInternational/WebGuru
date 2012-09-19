@@ -1,0 +1,17 @@
+homecat;Home category
+colcategory;Category
+gopager;gopager
+colid;Id
+pagetitle;Title
+definitionssaved;definitionssaved
+Name;Name
+Url address;Url address
+Description;Description
+Settings;Settings
+Images;Images
+description;Description
+colname;Name
+colurl;Url address
+coldescription;description
+settings;Settings
+images;Images

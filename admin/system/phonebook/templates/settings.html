@@ -1,0 +1,33 @@
+<!-- BEGIN settings -->
+<form action="{ACTION}" method="post">
+	<p class="topbuttons">
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+	{CONFIG}
+	<p class="bottombuttons">
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END settings -->			
+
+<!-- BEGIN defpic -->
+<form action="{ACTION}" method="post" enctype="multipart/form-data">
+	<p class="topbuttons">
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+	<p>
+		<label>{wNEWDEFAULTPICTURE}:</label>
+		<input name="defpic" id="defpic" type="file" value="{MYVALUE}" />
+	</p>
+	<p class="bottombuttons">
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+	<p>{XSML}{SML}{MED}{LRG}</p>
+</form>
+<!-- END defpic -->			

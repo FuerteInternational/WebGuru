@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_teams" phpName="SystemTeams" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="note" null="false" type="text" />
+		<column name="ipfilter" null="false" type="text" />
+		<column name="superadmin" null="false" unsigned="true" size="1" type="tinyint" />	
+	</table>
+</database>

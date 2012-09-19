@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_errors_templates" phpName="SystemErrorsTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="errorbegin" null="false" type="text" />
+		<column name="groupokbegin" null="false" type="text" />
+		<column name="itemok" null="false" type="text" />
+		<column name="groupokend" null="false" type="text" />
+		<column name="groupalertbegin" null="false" type="text" />
+		<column name="itemalert" null="false" type="text" />
+		<column name="groupalertend" null="false" type="text" />
+		<column name="grouperrorbegin" null="false" type="text" />
+		<column name="itemerror" null="false" type="text" />
+		<column name="grouperrorend" null="false" type="text" />
+		<column name="errorend" null="false" type="text" />
+		<column name="groupmessages" null="false" size="1" type="tinyint" />
+		<column name="firstinlist" null="false" size="1" type="tinyint" />	
+	</table>
+</database>

@@ -1,0 +1,207 @@
+<!-- BEGIN payments -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 15%;" />
+		<col style="width: 10%;" />
+		<col style="width: 30%;" />
+		<col style="width: 20%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLDATE}</th>
+			<th>{wCOLAMMOUNT}</th>
+			<th>{wCOLUSER}</th>
+			<th>{wSERVICE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listpayments -->
+		<tr>
+			<td>{LID}</td>
+			<td class="bold">{LCHANGED}</td>
+			<td>{LAMMOUNT}</td>
+			<td class="bold">{LUSERSID}</td>
+			<td>{LSERVICE}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listpayments -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLAMMOUNT}:</label>
+			<input name="ammount" id="ammount" type="text" value="{COLAMMOUNT}" />
+		</p>
+		<p>
+			<label>{wCOLUSERSID}:</label>
+			{FULLCOLUSERSID}
+		</p>
+		<p>
+			<label>{wCOLPAYMENTSSERVICESID}:</label>
+			{FULLCOLPAYMENTSSERVICESID}
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END payments -->
+
+<!-- BEGIN costs -->
+<table>
+	<colgroup>
+		<col style="width: 50%;" />
+		<col style="width: 20%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLCOSTS}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td>{wTOTAL}:</td>
+			<td class="bold {COLOR}">{TOTALCOSTS}</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<!-- BEGIN listcosts -->
+		<tr>
+			<td>{LNAME}</td>
+			<td>{LCOSTS} {CURRENCY}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcosts -->
+	</tbody>
+</table>
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wMONTHLYCOSTS}:</label>
+			<input name="costs" id="costs" type="text" value="{COLCOSTS}" /> {CURRENCY}
+		</p>
+		<p>
+			<label>{wCOLDESCRIPTION}:</label>
+			<textarea cols="50" rows="9" name="description" id="description" class="small">{COLDESCRIPTION}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END costs -->
+
+<!-- BEGIN funding -->
+<table>
+	<colgroup>
+		<col style="width: 50%;" />
+		<col style="width: 15%;" />
+		<col style="width: 15%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLPAYMENTSSERVICE}</th>
+			<th>{wCOPERCENT}</th>
+			<th>{wCOLINCOME}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td>&nbsp;</td>
+			<td>{wTOTAL}:</td>
+			<td class="bold {COLOR}">{TOTALINCOME}</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<!-- BEGIN listfunding -->
+		<tr>
+			<td>{LPAYMENTSSERVICE}</td>
+			<td>{LPERCENT}</td>
+			<td>{LINCOME}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listfunding -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLPAYMENTSSERVICESID}:</label>
+			{FULLSERVICES}
+		</p>
+		<p>
+			<label>{wCOLPERCENT}:</label>
+			<input name="percent" id="percent" type="text" class="small" value="{COLPERCENT}" /> %
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END funding -->
+

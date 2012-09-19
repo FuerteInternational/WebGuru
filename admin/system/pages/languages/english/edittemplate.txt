@@ -1,0 +1,14 @@
+nogroup;No group
+colname;Name
+colidentifier;Identifier
+colmaster;Master template
+coltemplate;Template
+template;Template
+foreveryone;For everyone
+forregistered;For registered users
+fornotregistered;For not registered users
+colregistered;Permissions
+colsystemlanguageid;Language
+colpagestemplatesgroupsid;Template group
+colnote;Note
+settings;Settings

@@ -1,0 +1,892 @@
+<!-- BEGIN lists -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wTEMPCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listlists -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_blog_list_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listlists -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wSELECTBLOG}:</label>
+			{FULLMYBLOG}
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p id="listsCategories">
+			<label>{wCOLBLOGCATSID}:</label>
+			{FULLCATEGORIES}
+		</p>
+		<p id="listsVariable">
+			<label>{wCOLVARIABLE}:</label>
+			<input name="someid" id="listsVariableField" type="text" value="{COLSOMEID}" />
+			<span id="listsVariableInfo"></span>
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p>
+			<label>{wCOLLIMIT}:</label>
+			<input name="limit" id="limit" type="text" value="{COLLIMIT}" />
+		</p>
+		<p>
+			<label>{wCOLSEARCH}:</label>
+			{FULLCOLSEARCH}
+		</p>
+		<p id="searchVariable">
+			<label>{wCOLSEARCHVARIABLE}:</label>
+			<input name="variable" id="sVariable" onchange="$('#sVarEx').html(this.value);" type="text" value="{COLVARIABLE}" />
+			<span class="small">( $_GET['<span id="sVarEx">{COLVARIABLE}</span>'] )</span>
+		</p>
+		<p>
+			<label>{wCOLTBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tbegin" id="tbegin" class="html small">{COLTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" id="titem" class="html">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEND}:</label>
+			<textarea cols="50" rows="9" name="tend" id="tend" class="html small">{COLTEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTNOITEM}:</label>
+			<textarea cols="50" rows="9" name="tnoitem" id="tnoitem" class="html">{COLTNOITEM}</textarea>
+		</p>
+		<!--<p>
+			<label>{wCOLTNOPERM}:</label>
+			<textarea cols="50" rows="9" name="tnoperm" id="tnoperm" class="html">{COLTNOPERM}</textarea>
+		</p>-->
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="temptype" type="hidden" value="0" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready( function() {
+	if ($('#checkButtSearch').is(':checked')) $('#searchVariable').show();
+	else $('#searchVariable').hide();
+	
+	$('#checkButtSearch').click( function() {
+		if (this.checked == true) $('#searchVariable').show();
+		else $('#searchVariable').hide();
+	});
+});
+
+
+function checkListsFields(ds) {
+	var variable = $('#listsVariableField').val();
+	if (ds == 0 || ds == 1) {
+		$('#listsVariableInfo').html('');
+		$('#listsCategories').show();
+		$('#listsVariable').hide();
+	}
+	else if (ds == 2 || ds == 3) {
+		$('#listsVariableInfo').html('( $_GET[\'' + variable + '\'] )');
+		$('#listsCategories').hide();
+		$('#listsVariable').show();
+	}
+}
+$(document).ready( function() {
+	checkListsFields($('#listsDSSB').val());
+
+	$('#listsVariableField').change( function() {
+		checkListsFields($('#listsDSSB').val());
+	});
+	
+	$('#listsDSSB').change( function() {
+		checkListsFields(this.value);
+	});
+});
+
+-->
+</script>
+<!-- END lists -->
+
+<!-- BEGIN details -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wTEMPCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listdetails -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_blog_detail_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listdetails -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p id="detailCategories">
+			<label>{wCOLBLOGCATSID}:</label>
+			{FULLCATEGORIES}
+		</p>
+		<p id="detailVariable">
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="detailVariableField" type="text" value="{COLVARIABLE}" />
+			<span id="detailVariableInfo"></span>
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" id="titem" class="html">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wFOUROFOURIFNO}:</label>
+			{FULLCOLUSEEDIT}
+			<span class="small">({wSENDFOUROFOURINNO})</span>
+		</p>
+		<p id="detailNoItemTemp">
+			<label>{wCOLTNOITEM}:</label>
+			<textarea cols="50" rows="9" name="tnoitem" id="tnoitem" class="html">{COLTNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="temptype" type="hidden" value="1" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+function checkDetailFields(ds) {
+	var variable = $('#detailVariableField').val();
+	if (ds == 0) {
+		$('#detailVariableInfo').html('( $_GET[\'' + variable + '\'] )');
+		$('#detailCategories').hide();
+		$('#detailVariable').show();
+	}
+	else if (ds == 1) {
+		$('#detailVariableInfo').html('( $' + variable + ' )');
+		$('#detailCategories').hide();
+		$('#detailVariable').show();
+	}
+	else if (ds == 2) {
+		$('#detailVariableInfo').html('');
+		$('#detailCategories').show();
+		$('#detailVariable').hide();
+	}
+	else if (ds == 3) {
+		$('#detailVariableInfo').html('');
+		$('#detailCategories').show();
+		$('#detailVariable').hide();
+	}
+}
+$(document).ready( function() {
+	if (!$('#useFofCb').is(':checked')) $('#detailNoItemTemp').show();
+	else $('#detailNoItemTemp').hide();
+	checkDetailFields($('#detailDSSB').val());
+
+	$('#detailVariableField').change( function() {
+		checkDetailFields($('#detailDSSB').val());
+	});
+	
+	$('#detailDSSB').change( function() {
+		checkDetailFields(this.value);
+	});
+	$('#useFofCb').click( function() {
+		if (this.checked == false) $('#detailNoItemTemp').show();
+		else $('#detailNoItemTemp').hide();
+	});
+});
+-->
+</script>
+<!-- END details -->
+
+<!-- BEGIN categories -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wTEMPCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcategories -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_blog_catlist_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcategories -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wSELECTBLOG}:</label>
+			{FULLMYBLOG}
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p id="catlistCategories">
+			<label>{wCOLBLOGCATSID}:</label>
+			{FULLCATEGORIES}
+		</p>
+		<p id="catlistVariable">
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="catlistVariableField" type="text" value="{COLVARIABLE}" />
+			<span id="catlistVariableInfo"></span>
+		</p>
+		<!--<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p>
+			<label>{wCOLLIMIT}:</label>
+			<input name="limit" id="limit" type="text" value="{COLLIMIT}" />
+		</p>-->
+		<p>
+			<label>{wCOLTBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tbegin" id="tbegin" class="html small">{COLTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" id="titem" class="html small">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEND}:</label>
+			<textarea cols="50" rows="9" name="tend" id="tend" class="html small">{COLTEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTNOITEM}:</label>
+			<textarea cols="50" rows="9" name="tnoitem" id="tnoitem" class="html">{COLTNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="temptype" type="hidden" value="2" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+function checkCategoriesFields(ds) {
+	var variable = $('#catlistVariableField').val();
+	if (ds == 0 || ds == 1) {
+		$('#catlistVariableInfo').html('');
+		$('#catlistCategories').show();
+		$('#catlistVariable').hide();
+	}
+	else if (ds == 2 || ds == 3) {
+		$('#catlistVariableInfo').html('( $_GET[\'' + variable + '\'] )');
+		$('#catlistCategories').hide();
+		$('#catlistVariable').show();
+	}
+	else if (ds == 4 || ds == 5) {
+		$('#catlistVariableInfo').html('');
+		$('#catlistCategories').hide();
+		$('#catlistVariable').hide();
+	}
+}
+$(document).ready( function() {
+	checkCategoriesFields($('#catlistDSSB').val());
+
+	$('#catlistVariableField').change( function() {
+		checkCategoriesFields($('#catlistDSSB').val());
+	});
+	
+	$('#catlistDSSB').change( function() {
+		checkCategoriesFields(this.value);
+	});
+});
+-->
+</script>
+<!-- END categories -->
+
+<!-- BEGIN catdetails -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wTEMPCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcatdetails -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_blog_catdetail_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcatdetails -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p id="catdetCategories">
+			<label>{wCOLBLOGCATSID}:</label>
+			{FULLCATEGORIES}
+		</p>
+		<p id="catdetVariable">
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="catdetVariableField" type="text" value="{COLVARIABLE}" />
+			<span id="catdetVariableInfo"></span>
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" id="titem" class="html">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wFOUROFOURIFNO}:</label>
+			{FULLCOLUSEEDIT}
+			<span class="small">({wSENDFOUROFOURINNO})</span>
+		</p>
+		<p id="cdetailNoItemTemp">
+			<label>{wCOLTNOITEM}:</label>
+			<textarea cols="50" rows="9" name="tnoitem" id="tnoitem" class="html">{COLTNOITEM}</textarea>
+		</p>
+		<!--<p>
+			<label>{wCOLTNOPERM}:</label>
+			<textarea cols="50" rows="9" name="tnoperm" id="tnoperm" class="html">{COLTNOPERM}</textarea>
+		</p>-->
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="temptype" type="hidden" value="5" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+function checkCategoriesFields(ds) {
+	var variable = $('#catdetVariableField').val();
+	if (ds == 0) {
+		$('#catdetVariableInfo').html('');
+		$('#catdetCategories').hide();
+		$('#catdetVariable').hide();
+	}
+	else if (ds == 1) {
+		$('#catdetVariableInfo').html('( $_GET[\'' + variable + '\'] )');
+		$('#catdetCategories').hide();
+		$('#catdetVariable').show();
+	}
+	else if (ds == 2) {
+		$('#catdetVariableInfo').html('');
+		$('#catdetCategories').show();
+		$('#catdetVariable').hide();
+	}
+}
+$(document).ready( function() {
+	checkCategoriesFields($('#catdetDSSB').val());
+
+	$('#catdetVariableField').change( function() {
+		checkCategoriesFields($('#catdetDSSB').val());
+	});
+	
+	$('#catdetDSSB').change( function() {
+		checkCategoriesFields(this.value);
+	});
+	if (!$('#useFofCd').is(':checked')) $('#cdetailNoItemTemp').show();
+	else $('#cdetailNoItemTemp').hide();
+	$('#useFofCd').click( function() {
+		if (this.checked == false) $('#cdetailNoItemTemp').show();
+		else $('#cdetailNoItemTemp').hide();
+	});
+});
+-->
+</script>
+<!-- END catdetails -->
+
+<!-- BEGIN files -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wTEMPCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listfiles -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_blog_files_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listfiles -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p id="filesVariable">
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id=filesVariableField type="text" value="{COLVARIABLE}" />
+			<span id="filesVariableInfo"></span>
+		</p>
+		<p>
+			<label>{wCOLTBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tbegin" id="tbegin" class="html small">{COLTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" id="titem" class="html">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEND}:</label>
+			<textarea cols="50" rows="9" name="tend" id="tend" class="html small">{COLTEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTNOITEM}:</label>
+			<textarea cols="50" rows="9" name="tnoitem" id="tnoitem" class="html small">{COLTNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="temptype" type="hidden" value="7" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+function checkFilesFields(ds) {
+	var variable = $('#filesVariableField').val();
+	if (ds == 0) {
+		$('#filesVariableInfo').html('( $_GET[\'' + variable + '\'] )');
+		$('#filesVariable').show();
+	}
+	else if (ds == 1) {
+		$('#filesVariableInfo').html('( $_GET[\'' + variable + '\'] )');
+		$('#filesVariable').show();
+	}
+	else if (ds == 2) {
+		$('#filesVariableInfo').html('');
+		$('#filesVariable').hide();
+	}
+	else if (ds == 3) {
+		$('#filesVariableInfo').html('');
+		$('#filesVariable').hide();
+	}
+}
+$(document).ready( function() {
+	
+	checkFilesFields($('#filesDSSB').val());
+	
+	$('#filesDSSB').change( function() {
+		checkFilesFields(this.value);
+	});
+
+	$('#filesVariableField').change( function() {
+		checkFilesFields($('#filesDSSB').val());
+	});
+	
+});
+-->
+</script>
+<!-- END files -->
+
+
+<!-- BEGIN archives -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wTEMPCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listarchives -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_blog_archive_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listarchives -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wSELECTBLOG}:</label>
+			{FULLMYBLOG}
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p>
+			<label>{wCOLDATEFORMAT}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+			<span class="small"><a href="http://dev.mysql.com/doc/refman/5.1/en/date-and-time-functions.html#function_date-format" target="_blank">{wTIMEDATESPEC}</a></span>
+		</p>
+		<p>
+			<label>{wCOLTBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tbegin" id="tbegin" class="html small">{COLTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" id="titem" class="html small">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEND}:</label>
+			<textarea cols="50" rows="9" name="tend" id="tend" class="html small">{COLTEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTNOITEM}:</label>
+			<textarea cols="50" rows="9" name="tnoitem" id="tnoitem" class="html small">{COLTNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="temptype" type="hidden" value="3" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END archives -->
+
+<!-- BEGIN editforms -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wTEMPCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listeditforms -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_blog_edit_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listeditforms -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p>
+			<label>{wCOLLIMIT}:</label>
+			<input name="limit" id="limit" type="text" value="{COLLIMIT}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p>
+			<label>{wCOLSEARCH}:</label>
+			{FULLCOLSEARCH}
+		</p>
+		<p>
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+		</p>
+		<p>
+			<label>{wCOLSOMEID}:</label>
+			<input name="someid" id="someid" type="text" value="{COLSOMEID}" />
+		</p>
+		<p>
+			<label>{wCOLUSEEDIT}:</label>
+			{FULLCOLUSEEDIT}
+		</p>
+		<p>
+			<label>{wCOLTBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tbegin" id="tbegin" class="html">{COLTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" id="titem" class="html">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEND}:</label>
+			<textarea cols="50" rows="9" name="tend" id="tend" class="html">{COLTEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTNOITEM}:</label>
+			<textarea cols="50" rows="9" name="tnoitem" id="tnoitem" class="html">{COLTNOITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTNOPERM}:</label>
+			<textarea cols="50" rows="9" name="tnoperm" id="tnoperm" class="html">{COLTNOPERM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLBLOGCATSID}:</label>
+			{FULLCATEGORIES}
+		</p>
+		<p>
+			<label>{wCOLSYSTEMWEBSITESID}:</label>
+			<input name="system_websites_id" id="system_websites_id" type="text" value="{COLSYSTEMWEBSITESID}" />
+		</p>
+		<p>
+			<label>{wCOLERRORA}:</label>
+			<input name="error1" id="error1" type="text" value="{COLERRORA}" />
+		</p>
+		<p>
+			<label>{wCOLERRORB}:</label>
+			<input name="error2" id="error2" type="text" value="{COLERRORB}" />
+		</p>
+		<p>
+			<label>{wCOLERRORC}:</label>
+			<input name="error3" id="error3" type="text" value="{COLERRORC}" />
+		</p>
+		<p>
+			<label>{wCOLERRORD}:</label>
+			<input name="error4" id="error4" type="text" value="{COLERRORD}" />
+		</p>
+		<p>
+			<label>{wCOLERRORE}:</label>
+			<input name="error5" id="error5" type="text" value="{COLERRORE}" />
+		</p>
+		<p>
+			<label>{wCOLERRORF}:</label>
+			<input name="error6" id="error6" type="text" value="{COLERRORF}" />
+		</p>
+		<p>
+			<label>{wCOLREDIRECTA}:</label>
+			<input name="redirect1" id="redirect1" type="text" value="{COLREDIRECTA}" />
+		</p>
+		<p>
+			<label>{wCOLREDIRECTB}:</label>
+			<input name="redirect2" id="redirect2" type="text" value="{COLREDIRECTB}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="temptype" type="hidden" value="4" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END editforms -->
+

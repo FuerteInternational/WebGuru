@@ -1,0 +1,76 @@
+<!-- BEGIN firmy -->
+<table>
+	<colgroup>
+		<col style="width: 40%;" />
+		<col style="width: 30%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIC}</th>
+			<th>{wCOLTYP}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listfirmy -->
+		<tr>
+			<td>{LNAME}</td>
+			<td>{LIC}</td>
+			<td>{LTYP}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listfirmy -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIC}:</label>
+			<input name="ic" id="ic" type="text" value="{COLIC}" />
+		</p>
+		<p>
+			<label>{wCOLDIC}:</label>
+			<input name="dic" id="dic" type="text" value="{COLDIC}" />
+		</p>
+		<p>
+			<label>{wCOLZALOZENA}:</label>
+			{FULLCOLZALOZENA}
+		</p>
+		<p>
+			<label>{wCOLKAPITAL}:</label>
+			<input name="kapital" id="kapital" type="text" value="{COLKAPITAL}" />
+		</p>
+		<p>
+			<label>{wCOLTYP}:</label>
+			{FULLCOLTYP}
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END firmy -->
+

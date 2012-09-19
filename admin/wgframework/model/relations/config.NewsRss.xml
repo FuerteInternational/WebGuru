@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="news_rss" phpName="NewsRss" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="version" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="news_categories_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="showitems" null="false" unsigned="true" size="4" type="int" />
+		<column name="link" null="false" size="255" type="varchar" />
+		<column name="folder" null="false" size="255" type="varchar" />
+		<column name="description" null="false" type="text" />
+		<column name="displaylanguage" null="false" size="30" type="varchar" />
+		<column name="copyright" null="false" type="text" />
+		<column name="ttl" null="false" unsigned="true" size="4" type="int" />
+		<column name="image" null="false" size="255" type="varchar" />
+		<column name="imagetitle" null="false" size="255" type="varchar" />	
+	</table>
+</database>

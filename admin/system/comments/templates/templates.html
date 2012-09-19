@@ -1,0 +1,195 @@
+<!-- BEGIN comments -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcomments -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_comments_list_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcomments -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p id="perpagep">
+			<label>{wCOLPERPAGE}:</label>
+			<input name="perpage" id="perpage" type="text" value="{COLPERPAGE}" />
+		</p>
+		<p>
+			<label>{wCOLCOMMENTSGROUPSID}:</label>
+			{FULLCOMMGROUPS}
+		</p>
+		<p>
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+			<span class="small">(?article=5 {wOR} $_GET['article'] => "article")</span>
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p>
+			<label>{wCOLTEMPBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tempbegin" id="tempbegin" class="html small">{COLTEMPBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPITEM}:</label>
+			<textarea cols="50" rows="9" name="tempitem" id="tempitem" class="html">{COLTEMPITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPEND}:</label>
+			<textarea cols="50" rows="9" name="tempend" id="tempend" class="html small">{COLTEMPEND}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="0" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready(
+	function() {
+		$('#pager').click(function() {
+			if (this.checked) $('#perpagep').show();
+			else $('#perpagep').hide();
+		});
+		if (!$('#pager').is(':checked')) $('#perpagep').hide();
+	}
+);
+-->
+</script>
+<!-- END comments -->
+
+<!-- BEGIN forms -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listforms -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_comments_form_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listforms -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLCOMMENTSGROUPSID}:</label>
+			{FULLCOMMGROUPS}
+		</p>
+		<p>
+			<label>{wCOLVARIABLE}:</label>
+			<input name="variable" id="variable" type="text" value="{COLVARIABLE}" />
+			<span class="small">(?article=5 {wOR} $_GET['article'] => "article")</span>
+		</p>
+		<p>
+			<label>{wCOLIDERR}:</label>
+			<input name="noidsyserror" id="noidsyserror" type="text" value="{IDERR}" />
+		</p>
+		<p>
+			<label>{wCOLNONAME}:</label>
+			<input name="emptyauthor" id="emptyauthor" type="text" value="{NONAME}" />
+		</p>
+		<p>
+			<label>{wCOLNOMAIL}:</label>
+			<input name="emptyemail" id="emptyemail" type="text" value="{NOMAIL}" />
+		</p>
+		<p>
+			<label>{wCOLNOCOMMENT}:</label>
+			<input name="emptycomment" id="emptycomment" type="text" value="{NOCOMMENT}" />
+		</p>
+		<p>
+			<label>{wCOLREGISTERED}:</label>
+			<textarea cols="50" rows="9" name="tempbegin" id="tempbegin" class="html">{COLTEMPBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOTREGISTERED}:</label>
+			<textarea cols="50" rows="9" name="tempitem" id="tempitem" class="html">{COLTEMPITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="1" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END forms -->
+

@@ -1,0 +1,8 @@
+searchnumbers;Search job numbers
+search;Search
+clearsearch;Clear search
+gopager;gopager
+colname;Job name
+coljnumber;Job number
+colshortname;Short job number
+colstatus;Status (LIVE)

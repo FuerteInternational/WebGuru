@@ -1,0 +1,5 @@
+configsaved;Configuration file has been saved
+confighome;Home
+configfiles;Configuration files
+languages;Languages
+modelgenerated;Database modelhas been generated

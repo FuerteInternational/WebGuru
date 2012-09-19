@@ -1,0 +1,68 @@
+#mytabs-tabs {
+	position:relative;
+	top:-6px;
+	margin-bottom:12px;
+}
+#mytabs-tabs p {
+	display:inline!important;
+	background-color:#ECF5FF;
+	padding-top:3px;
+	padding-left:6px;
+	padding-right:6px;
+	padding-bottom:3px;
+	height:20px;
+	line-height:20px;
+	font-weight:bold;
+	margin-right:3px;
+	border-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-color: #DDEDFF;
+}
+#mytabs-tabs p.active {
+	cursor:default;
+	background-color:#C1DFFF;
+}
+#mytabs-tabs p.passive {
+	cursor:pointer;
+}
+#mytabs-contents {
+}
+#mytabs-contents div.mytabscont {
+}
+
+#insider1-tabs {
+	position:relative;
+	top:6px;
+	margin-left:20px;
+	margin-bottom:12px;
+}
+#insider1-tabs p {
+	display:inline!important;
+	background-color:#F0F0F0;
+	padding-top:3px;
+	padding-left:6px;
+	padding-right:6px;
+	padding-bottom:3px;
+	height:20px;
+	line-height:20px;
+	font-weight:bold;
+	margin-right:3px;
+}
+#insider1-tabs p.active {
+	cursor:default;
+	background-color:#CCC;
+}
+#insider1-tabs p.passive {
+	cursor:pointer;
+}
+#insider1-contents {
+	border:solid 1px #CCC;
+	padding:10px;
+	margin-top:-6px;
+	margin-bottom:12px;
+}
+#insider1-contents div.insider1cont {
+}

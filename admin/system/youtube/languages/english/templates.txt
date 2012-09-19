@@ -1,0 +1,23 @@
+gopager;gopager
+colname;Name
+code;Code
+colidentifier;Identifier
+colpager;Pager
+colperpage;Items per page
+coldatasource;Data source
+getvariable;Url variable
+colbegincat;Template begin
+colitemcat;One category
+colendcat;Template end
+nocattemp;No item in category template
+rergiteredonly;Registered users only
+notregitem;Template for not registered users
+categories;Categories
+colbeginitem;Template begin
+colitemitem;One video template
+colenditem;Template end
+colnoitem;No item in category
+lists;Video lists
+detailtemplate;Video details
+noitemtemp;No video found template
+details;Details

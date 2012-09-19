@@ -1,0 +1,18 @@
+colisglobal;Is global definition
+youveenter;You have entered
+minch;Min
+maxch;Max
+gopager;gopager
+nodeflang;No default language
+selectpage;Select page
+changepage;Change page
+colname;Name of the key
+colminchar;Minimum characters
+colmaxchar;Maximum characters
+pagecode;Page code
+coldefaultlangid;Default language
+colenabled;Enable translation
+colallowhtml;Allow HTML in translation
+coldefaulttext;Default text for translation
+pagedefinitions;Page definitions
+globaldefinitions;Global definitions

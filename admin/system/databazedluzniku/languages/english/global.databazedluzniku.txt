@@ -1,0 +1,7 @@
+firmy;Firmy
+kontakty;Kontakty
+platby;Platby
+pohledavky;Pohledavky
+registrace;Registrace
+settings;Nastaveni
+templates;Sablony

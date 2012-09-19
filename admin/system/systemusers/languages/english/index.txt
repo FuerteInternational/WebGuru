@@ -1,0 +1,2 @@
+descteams;System users and teams administration
+descmodulespermissions;Access permissions to modules for teams

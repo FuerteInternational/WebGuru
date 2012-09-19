@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="tinyurls_urls" phpName="TinyurlsUrls" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="url" null="false" type="text" />
+		<column name="system_websites_id" null="false" unsigned="true" size="4" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="previews" null="false" size="20" type="bigint" />
+		<column name="clicks" null="false" size="20" type="bigint" />
+		<column name="lastused" null="false" type="date" />	
+	</table>
+</database>

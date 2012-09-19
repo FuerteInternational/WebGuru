@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_query_analyzer" phpName="SystemQueryAnalyzer" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="32" type="int" primary="true" />
+		<column name="query" null="false" type="text" />
+		<column name="count" null="false" size="16" type="int" />	
+	</table>
+</database>

@@ -1,0 +1,31 @@
+<fieldset id="field{RAND}"><legend>{wFORMFIELD}</legend>
+    <p>
+    	<input style="float:right;" name="delete" value="{wDELETEFIELD}" class="forms" onclick="if (confirmAction('{wDELETEFIELD}?')) $('#field{RAND}').remove();" type="button">
+        <label>{wFNAME}:</label>
+        <input name="qfields[name][{RAND}]" value="{FNAME}" class="forms" type="text">
+    </p>
+    <p>
+        <label>{wFLABEL}:</label>
+        <input name="qfields[label][{RAND}]" value="{FLABEL}" class="forms longline" type="text">
+    </p>
+    <p>
+        <label>{wFTYPE}:</label>
+        {FTYPES}
+    </p>
+    <p>
+        <label>{wVALIDATION}:</label>
+        {FVALS}
+    </p>
+    <p>
+        <label>{wERRORMESSAGE}:</label>
+        <input name="qfields[errmess][{RAND}]" value="{ERRMESAGE}" class="forms longline" type="text">
+    </p>
+    <p>
+        <label>{wTYPEERRMESSG}:</label>
+        {ERRTYPES}
+    </p>
+    <p>
+        <label>{wSORT}:</label>
+        <input name="qfields[sort][{RAND}]" value="{SORT}" class="forms shortline" type="text">
+    </p>
+</fieldset>

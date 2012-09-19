@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_modules" phpName="SystemModules" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="6" type="int" primary="true" />
+		<column name="name" null="false" size="60" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="part" null="false" size="15" type="varchar" default="modules" />	
+	</table>
+</database>

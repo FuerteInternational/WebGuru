@@ -1,0 +1,7 @@
+gopager;gopager
+colname;Feed name
+colurl;Feed url
+colidentifier;Identifier
+colnote;Note
+colglobal;Is global feed
+feeds;RSS Feeds

@@ -1,0 +1,50 @@
+<!-- BEGIN modulespermissions -->
+<form action="{ACTION}" method="post">
+	<p>
+		<label class="required">{wTEAM}:</label>
+		{FULLTEAM}
+		<button name="switch" type="submit">{wSWTCHTEAM}</button>
+	</p>
+</form>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#check_all").click(function() {
+		var checked_status = this.checked;
+		$("#permissionsform input[@type=checkbox]").each(function() {
+			this.checked = checked_status;
+		});
+	});					
+});
+</script>
+<form action="{ACTION}" method="post" id="permissionsform">
+	<table>
+		<colgroup>
+			<col style="80%" />
+			<col style="20%" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th>{wMODULENAME}</th>
+				<th>
+					{ICO}
+					<input type="checkbox" id="check_all" name="check_all" value="666"{DISABLED} />
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- BEGIN moduleslist -->
+			<tr>
+				<td>{NAME}</td>
+				<td>{FULLCHECK}</td>
+			</tr>
+			<!-- END moduleslist -->
+		</tbody>
+	</table>
+	<p>
+		<input name="teamid" id="teamid" type="hidden" value="{TEAMID}" />
+		<input name="act" id="act" type="hidden" value="modulespermissions" />
+		<input name="reset" id="reset" type="reset" value="{wRESET}" />
+		<input name="submit" id="submit" type="submit" value="{wSAVE}"{DISABLED} />
+	</p>
+</form>
+<!-- END modulespermissions -->

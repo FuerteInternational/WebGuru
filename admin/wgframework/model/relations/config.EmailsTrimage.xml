@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="emails_trimage" phpName="EmailsTrimage" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="email_templates_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="email_addresses_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="date" null="false" type="datetime" />
+		<column name="referer" null="false" size="255" type="varchar" />
+		<column name="ip" null="false" size="15" type="varchar" />
+		<column name="agent" null="false" size="255" type="varchar" />	
+	</table>
+</database>

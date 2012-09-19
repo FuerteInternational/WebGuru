@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="users_invitations" phpName="UsersInvitations" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="code" null="false" unsigned="true" size="8" type="int" />
+		<column name="users_groups_id" null="true" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

@@ -1,0 +1,8 @@
+gopager;gopager
+colname;Job name
+colperiod;Time period (seconds)
+colidentifier;Identifier
+coldatefrom;Start date
+coldateto;End date
+colphpcode;PHP code
+coltimelimit;Time limit for job (sec.)

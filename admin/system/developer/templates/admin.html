@@ -1,0 +1,199 @@
+<!-- BEGIN pagesadmin -->
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wADMINPAGE}</legend>
+		<p>
+			<label>{wGPFORMODULE}:</label>
+			<select name="modonepage" id="modonepage" onchange="getModulePagesTable(this.value, '{MODULE}');">
+				<option value="">{wSELECTMOD}</option>
+				<!-- BEGIN papartlist -->
+				<optgroup label="{LMODGROUP}">
+					<!-- BEGIN pamodulelist -->
+					<option value="{LMODNAME}"{LSELECTED}>{LMODFULLNAME}</option>
+					<!-- END pamodulelist -->
+				</optgroup>
+				<!-- END papartlist -->
+			</select>
+		</p>
+		<div id="modulepages"></div>
+		<p>&nbsp;</p>
+		<div id="pageadminform">
+			<p>
+				<label>{wNAME}:</label>
+				<input name="filename" id="filename" type="text" value="{FILENAME}" />
+			</p>
+			<h3 class="pointer" onclick="$('#htmlpart').toggle(50);">[<span id="toglehtml">+</span>] HTML</h3>
+			<p id="htmlpart">
+				<label>{wHTMLCONTENT}:</label>
+				<textarea name="htmlcontent" id="htmlcontent" class="big">{HTMLCONTENT}</textarea>
+			</p>
+			<h3 class="pointer" onclick="$('#phppart').toggle(50);">[<span id="toglephp">+</span>] PHP</h3>
+			<p id="phppart">
+				<label>{wPHPCONTENT}:</label>
+				<textarea name="phpcontent" id="phpcontent" class="big">{PHPCONTENT}</textarea>
+			</p>
+			<p>
+				<input name="act" type="hidden" value="pagesadmin" />
+				<input name="origname" id="origname" type="hidden" value="" />
+				<input name="origmod" id="origmod" type="hidden" value="" />
+				<input name="reset" type="reset" value="{wRESET}" />
+				<input name="submit" type="submit" value="{wSAVE}" />
+			</p>
+		</div>
+		<p>
+			<input name="addfile" onclick="addFileFunc();" type="button" value="{wADDFILE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$('#htmlpart').hide();
+$('#phppart').hide();
+if ({HIDEFORM}) $('#pageadminform').hide();
+getModulePagesTable($('#modonepage').value, '{MODULE}');
+-->
+</script>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wGENERATEXMLMENU}</legend>
+		<p>
+			<label>{wGPFORMODULE}:</label>
+			<select name="modxmlpage" id="modxmlpage">
+				<option value="0">{wSELECTMOD}</option>
+				<!-- BEGIN papartlistb -->
+				<optgroup label="{LMODGROUP}">
+					<!-- BEGIN pamodulelistb -->
+					<option value="{LMODNAME}"{LSELECTED}>{LMODFULLNAME}</option>
+					<!-- END pamodulelistb -->
+				</optgroup>
+				<!-- END papartlistb -->
+			</select>
+		</p>
+		<p>
+			<input name="act" type="hidden" value="pagesxmlmenu" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="submit" type="submit" value="{wGENERATEXML}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END pagesadmin -->
+<!-- BEGIN adminonetable -->
+<form action="{ACTION}" method="post">
+	<p>
+		<label>{wGPFORMODULE}:</label>
+		<select name="modoname" id="modoname" onchange="getModulePages(this.value, '{MODULE}', 'modopage'); getModulePages(this.value, '{MODULE}', 'modoparent');">
+			<option value="#">{wSELECTMOD}</option>
+			<!-- BEGIN aotpartlist -->
+			<optgroup label="{LMODGROUP}">
+				<!-- BEGIN aotmodulelist -->
+				<option value="{LMODNAME}">{LMODFULLNAME}</option>
+				<!-- END aotmodulelist -->
+			</optgroup>
+			<!-- END aotpartlist -->
+		</select>
+	</p>
+	<p>
+		<label>{wPAGE}:</label>
+		<select name="modopage" id="modopage">
+			<option value="">{wPLEASESELECT}</option>
+		</select>
+	</p>
+	<p>
+		<label>{wPARENTPAGE}:</label>
+		<select name="modoparent" id="modoparent">
+			<option value="">{wPLEASESELECT}</option>
+		</select>
+	</p>
+	<p>
+		<label>{wCREATE}:</label>
+		<select name="setcontent" id="setcontent" onchange="getTableColumnChB(this.value, 'developer', '{MODULE}', 0); setOneType(this.value);">
+			<option value="0">{wPLEASESELECTTYPE}</option>
+			<!--<option value="blank">{wBLANK}</option>-->
+			<!-- BEGIN aotgrouplist -->
+			<optgroup label="{LGROUPNAME}">
+				<!-- BEGIN aotvaluelist -->
+				<option value="{LVALUE}">{LVALUENAME}</option>
+				<!-- END aotvaluelist -->
+			</optgroup>
+			<!-- END aotgrouplist -->
+		</select>
+	</p>
+	<p>
+		<label>{wUSEEDITOR}:</label>
+		<input name="useoneeditor" id="useoneeditor" type="checkbox" value="1" />
+	</p>
+	<div id="tabonebox0"></div>
+	<p>
+		<input name="addtab" type="button" value="{wADDTAB}" onclick="getTableColumnChB($('#setcontent').val(), 'developer', '{MODULE}', 'x');" />
+	</p>
+	<p>
+		<input name="onetype" id="onetype" type="hidden" value="" />
+		<input name="act" type="hidden" value="adminonetable" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+
+<!-- END adminonetable -->
+<!-- BEGIN admin -->
+<form action="{ACTION}" method="post">
+	<p>
+		<label>{wGPFORMODULE}:</label>
+		<select name="modname" id="modname" onchange="getModulePages(this.value, '{MODULE}', 'modpage'); getModulePagesWFI(this.value, '{MODULE}', 'efields');">
+			<option value="#">{wSELECTMOD}</option>
+			<!-- BEGIN partlist -->
+			<optgroup label="{LMODGROUP}">
+				<!-- BEGIN modulelist -->
+				<option value="{LMODNAME}">{LMODFULLNAME}</option>
+				<!-- END modulelist -->
+			</optgroup>
+			<!-- END partlist -->
+		</select>
+	</p>
+	<p>
+		<label>{wPAGE}:</label>
+		<select name="modpage" id="modpage">
+			<option value="">{wPLEASESELECT}</option>
+		</select>
+	</p>
+	<p>
+		<label>{wUSEEDITOR}:</label>
+		<input name="useeditor" id="useeditor" type="checkbox" value="1" />
+	</p>
+	<div id="tabbox">
+		<fieldset><legend>{wTAB}</legend>
+			<p>
+				<label>{wTABFUNCTION}:</label>
+				<select name="createtab[]" id="createtab" onchange="checkTab(this.value, '');">
+					<option value="0">{wDONTUSE}</option>
+					<option value="blank">{wBLANK}</option>
+					<!-- BEGIN grouplist -->
+					<optgroup label="{LGROUPNAME}">
+						<!-- BEGIN valuelist -->
+						<option value="{LVALUE}">{LVALUENAME}</option>
+						<!-- END valuelist -->
+					</optgroup>
+					<!-- END grouplist -->
+				</select>
+			</p>
+			<p>
+				<label>{wTABNAME}:</label>
+				<input name="tabname[]" id="tabname" type="text" value="" />
+			</p>
+			<p>
+				<label>{wEDITFIELDS}:</label>
+				<!--<input name="efields[]" id="efields" type="checkbox" value="1" checked="checked" />-->
+				<select name="efields[]" id="efields">
+					<option value="0">{wUSEEDITFIELDS}</option>
+				</select>
+				
+			</p>
+		</fieldset>
+	</div>
+	<div id="tabbox0"></div>
+	<p>
+		<input name="addtab" type="button" value="{wADDTAB}" onclick="addTab('{wTAB}', '{wTABFUNCTION}', '{wTABNAME}', '{wEDITFIELDS}')" />
+	</p>
+	<p>
+		<input name="act" id="act" type="hidden" value="admin" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END admin -->

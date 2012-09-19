@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="users_messages" phpName="UsersMessages" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="users_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="from_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="readed" null="true" type="datetime" />
+		<column name="parentid" null="true" unsigned="true" size="11" type="int" />	
+	</table>
+</database>

@@ -1,0 +1,6 @@
+gopager;gopager
+colname;Article title
+coljoshtraypeopleid;Author
+coljoshtraygroupsid;Group
+colmessage;Article
+colshow;Show

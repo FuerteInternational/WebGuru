@@ -1,0 +1,3 @@
+
+wgModules::runModule('imessages');
+	

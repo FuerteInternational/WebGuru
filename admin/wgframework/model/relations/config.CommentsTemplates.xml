@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="comments_templates" phpName="CommentsTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="temptype" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="pager" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="comments_groups_id" null="false" unsigned="true" size="4" type="int" />
+		<column name="perpage" null="false" unsigned="true" size="4" type="int" />
+		<column name="variable" null="false" size="50" type="varchar" />
+		<column name="datasource" null="false" unsigned="true" size="3" type="int" />
+		<column name="noidsyserror" null="false" size="255" type="varchar" />
+		<column name="emptyauthor" null="false" size="255" type="varchar" />
+		<column name="emptyemail" null="false" size="255" type="varchar" />
+		<column name="emptycomment" null="false" size="255" type="varchar" />
+		<column name="tempbegin" null="false" type="text" />
+		<column name="tempitem" null="false" type="text" />
+		<column name="tempend" null="false" type="text" />
+		<column name="notemp" null="false" type="text" />	
+	</table>
+</database>

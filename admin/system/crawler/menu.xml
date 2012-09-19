@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">websites</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="crawler">
+		<a key="name">crawler</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="search">
+		<a key="name">search</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="sitemaps">
+		<a key="name">sitemaps</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="templates">
+		<a key="name">templates</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="cronjobs">
+		<a key="name">cronjobs</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="website">
+		<a key="name">website</a>
+		<a key="show">0</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+</menu>

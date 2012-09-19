@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="users_templates" phpName="UsersTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="temptype" null="false" unsigned="true" size="2" type="tinyint" />
+		<column name="pager" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="perpage" null="false" unsigned="true" size="5" type="int" default="20" />
+		<column name="datasource" null="false" unsigned="true" size="3" type="smallint" />
+		<column name="datasource2" null="false" unsigned="true" size="3" type="smallint" />
+		<column name="variable" null="false" size="80" type="varchar" />
+		<column name="useedit" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="redirect1" null="true" size="255" type="varchar" />
+		<column name="redirect2" null="true" size="255" type="varchar" />
+		<column name="tempstart" null="false" type="text" />
+		<column name="temp" null="false" type="text" />
+		<column name="tempend" null="false" type="text" />
+		<column name="noitem" null="false" type="text" />
+		<column name="mess1" null="false" size="255" type="varchar" />
+		<column name="mess2" null="false" size="255" type="varchar" />
+		<column name="mess3" null="false" size="255" type="varchar" />
+		<column name="mess4" null="false" size="255" type="varchar" />
+		<column name="mess5" null="false" size="255" type="varchar" />	
+	</table>
+</database>

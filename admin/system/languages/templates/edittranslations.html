@@ -1,0 +1,171 @@
+<!-- BEGIN translations -->
+<form action="" method="post">
+	<p>
+		<label>{wSELECTPAGE}:</label>
+		{FULLMYPAGE}
+		<button type="submit" name="changepage">{wCHANGEPAGE}</button>
+	</p>
+</form>
+<table>
+	<colgroup>
+		<col style="width: 25%;" />
+		<col style="width: 55%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wLANGKEY}</th>
+			<th>{wCOLDEFINITION}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listtranslations -->
+		<tr>
+			<td class="{CLASS}">{LLANGKEY}</td>
+			<td>{LDEFINITION}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listtranslations -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post"{HIDDEN}>
+	<fieldset><legend>{wEDIT} {LANGKEY}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{LANGKEY}:</label>
+			<textarea cols="50" rows="9" name="definition" id="definition" onkeyup="checkCaracters(this, '#translationstxt', {MIN}, {MAX});" onchange="checkCaracters(this, '#translationstxt', {MIN}, {MAX});">{COLDEFINITION}</textarea>
+		</p>
+		<p id="translationstxt" class="small"></p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="defid" type="hidden" value="{DEFID}" />
+			<input name="langkey" type="hidden" value="{LANGKEY}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+function checkCaracters(area, display, min, max) {
+	var txt = area.value;
+	var length = txt.length;
+	var ok = true;
+	if (length < min && min != 0) ok = false;
+	if (length > max && max != 0) ok = false;
+	if (ok == true) {
+		//$(area).css('background-color', '#D1E0CE');
+		$(display).addClass('green');
+		$(display).removeClass('red');
+	}
+	else {
+		//$(area).css('background-color', '#EBDEDE');
+		$(display).addClass('red');
+		$(display).removeClass('green');
+	}
+	var message = '{wYOUVEENTER}: ' + length + '; {wMINCH}: ' + min + ', {wMAXCH}: ' + max;
+	$(display).html(message);
+}
+$(document).ready(function() {
+	checkCaracters(document.getElementById('definition'), '#translationstxt', {MIN}, {MAX});
+});
+-->
+</script>
+<!-- END translations -->
+<!-- BEGIN globaltranslations -->
+<table>
+	<colgroup>
+		<col style="width: 25%;" />
+		<col style="width: 55%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wLANGKEY}</th>
+			<th>{wCOLDEFINITION}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN glisttranslations -->
+		<tr>
+			<td class="{CLASS}">{LLANGKEY}</td>
+			<td>{LDEFINITION}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END glisttranslations -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post"{HIDDEN}>
+	<fieldset><legend>{wEDIT} {LANGKEY}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{LANGKEY}:</label>
+			<textarea cols="50" rows="9" name="definition" id="definitionglobal" onkeyup="checkCaracters(this, '#globaltranslationstxt', {MIN}, {MAX});">{COLDEFINITION}</textarea>
+		</p>
+		<p id="globaltranslationstxt" class="small"></p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="defid" type="hidden" value="{DEFID}" />
+			<input name="langkey" type="hidden" value="{LANGKEY}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready(function() {
+	checkCaracters(document.getElementById('definitionglobal'), '#globaltranslationstxt', {MIN}, {MAX});
+});
+-->
+</script>
+<!-- END globaltranslations -->
+
+<!-- BEGIN exportimport -->
+<form action="{ACTIONEXPORT}" method="post">
+	<fieldset><legend>{wEXPORT}</legend>
+		<p>
+			<label>{wSELECTPAGE}:</label>
+			{FULLMYPAGE}
+			<button type="submit" name="save">{wEXPORT}</button>
+		</p>
+	</fieldset>
+</form>
+<p>&nbsp;</p>
+<form action="{ACTIONIMPORT}" method="post" enctype="multipart/form-data">
+	<fieldset><legend>{wIMPORT}</legend>
+		<p>
+			<label>{wIMPORTPAGE}:</label>
+			{FULLMYPAGE}
+		</p>
+		<p>
+			<label>{wIMPORTFILE}:</label>
+			<input type="file" name="dataimport" />
+			<button type="submit" name="save">{wIMPORT}</button>
+		</p>
+	</fieldset>
+</form>
+<!-- END exportimport -->
+

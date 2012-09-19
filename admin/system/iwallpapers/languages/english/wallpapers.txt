@@ -1,0 +1,9 @@
+gopager;gopager
+colname;Wallpaper name
+colrating;User rating
+importfolder;Import ftp folder
+colfile;Filename
+coldescription;Description
+colkeywords;Keywords
+newimage;Image upload
+images;Images

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="rating_points" phpName="RatingPoints" engine="MyISAM">
+		<column name="id" null="false" size="11" type="varchar" primary="true" />
+		<column name="total_votes" null="false" size="11" type="int" />
+		<column name="total_value" null="false" size="11" type="int" />
+		<column name="used_ips" null="true" type="longtext" />
+		<column name="rating_points_groups_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="added" null="false" type="datetime" />	
+	</table>
+</database>

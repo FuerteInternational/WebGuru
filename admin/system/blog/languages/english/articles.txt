@@ -1,0 +1,7 @@
+gopager;gopager
+selectblog;Select blog
+changeblog;Change blog
+selectcategory;Select category
+changecat;Change category
+coltitle;Title
+coladded;Created

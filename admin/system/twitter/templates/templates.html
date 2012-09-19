@@ -1,0 +1,227 @@
+<!-- BEGIN listmessages -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listlistmessages -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_twitter_list_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listlistmessages -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLLIMIT}:</label>
+			<input name="limit" id="limit" type="text" value="{COLLIMIT}" />
+			<span class="small">{wMAX} 20</span>
+		</p>
+		<p>
+			<label>{wSORTDATE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p>
+			<label>{wCOLDATEFORMAT}:</label>
+			<input name="dateformat" id="dateformat" type="text" value="{COLDATEFORMAT}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tempbegin" id="tempbegin" class="html small">{COLTEMPBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPITEM}:</label>
+			<textarea cols="50" rows="9" name="tempitem" id="tempitem" class="html">{COLTEMPITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEMPEND}:</label>
+			<textarea cols="50" rows="9" name="tempend" id="tempend" class="html small">{COLTEMPEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTWITTERACCOUNTS}:</label>
+			{FULLTWITTERACCOUNTSID}
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="0" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END listmessages -->
+
+<!-- BEGIN lastmessage -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listlastmessage -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_twitter_last_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listlastmessage -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLDATEFORMAT}:</label>
+			<input name="dateformat" id="dateformat" type="text" value="{COLDATEFORMAT}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPITEM}:</label>
+			<textarea cols="50" rows="9" name="tempitem" id="tempitem" class="html">{COLTEMPITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTWITTERACCOUNTS}:</label>
+			{FULLTWITTERACCOUNTSID}
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="1" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END lastmessage -->
+
+<!-- BEGIN sendmessage -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listsendmessage -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_twitter_send_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listsendmessage -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wFORMTEMPLATE}:</label>
+			<textarea cols="50" rows="9" name="tempbegin" id="tempbegin" class="html">{COLTEMPBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wNOPERMISSIONS}:</label>
+			<textarea cols="50" rows="9" name="tempitem" id="tempitem" class="html">{COLTEMPITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTWITTERACCOUNTS}:</label>
+			{FULLTWITTERACCOUNTSID}
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="2" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END sendmessage -->
+

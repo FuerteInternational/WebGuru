@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="tinyurls_templates" phpName="TinyurlsTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="temptype" null="false" size="1" type="tinyint" />
+		<column name="pager" null="false" size="1" type="tinyint" default="1" />
+		<column name="limit" null="false" size="5" type="int" default="20" />
+		<column name="ascending" null="false" size="1" type="tinyint" default="1" />
+		<column name="tbegin" null="false" type="text" />
+		<column name="tdetail" null="false" type="text" />
+		<column name="tend" null="false" type="text" />
+		<column name="tnoitem" null="false" type="text" />
+		<column name="system_websites_id" null="false" unsigned="true" size="4" type="int" />	
+	</table>
+</database>

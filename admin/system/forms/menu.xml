@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="forms">
+		<a key="name">forms</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="editforms">
+		<a key="name">editforms</a>
+		<a key="show">0</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="messages">
+		<a key="name">messages</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="settings">
+		<a key="name">settings</a>
+		<a key="show">0</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="templates">
+		<a key="name">templates</a>
+		<a key="show">0</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+</menu>

@@ -1,0 +1,70 @@
+<!-- BEGIN messages -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLFORMSITEMSID}</th>
+			<th>{wCOLFORMSMESSAGESGROUPSID}</th>
+			<th>{wCOLDATA}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listmessages -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LFORMSITEMSID}</td>
+			<td>{LFORMSMESSAGESGROUPSID}</td>
+			<td>{LDATA}</td>
+			<td>{LADDED}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listmessages -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLFORMSITEMSID}:</label>
+			<input name="forms_items_id" id="forms_items_id" type="text" value="{COLFORMSITEMSID}" />
+		</p>
+		<p>
+			<label>{wCOLFORMSMESSAGESGROUPSID}:</label>
+			<input name="forms_messages_groups_id" id="forms_messages_groups_id" type="text" value="{COLFORMSMESSAGESGROUPSID}" />
+		</p>
+		<p>
+			<label>{wCOLDATA}:</label>
+			<textarea cols="50" rows="9" name="data" id="data">{COLDATA}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END messages -->
+

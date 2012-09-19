@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="htaccess_rows" phpName="HtaccessRows" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="rule" null="false" type="text" />
+		<column name="type" null="false" unsigned="true" size="2" type="int" />
+		<column name="system_users_id" null="true" unsigned="true" size="8" type="int" />
+		<column name="system_modules_id" null="true" unsigned="true" size="6" type="int" />
+		<column name="system_websites_id" null="false" size="4" type="int" />
+		<column name="sort" null="false" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

@@ -1,0 +1,2 @@
+descpromotions;Administrate your promotions here
+desctemplates;Front-end template administration

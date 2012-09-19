@@ -1,0 +1,397 @@
+#page {
+	clear:both;
+	background-image: url(../img/bcg-page-top.png);
+	background-repeat: repeat-x;
+	background-position: top;
+	padding-bottom:25px;
+}
+#navigation {
+	background-color:#FFFFFF;
+	height:20px;
+	text-align:center;
+	padding-left:15px;
+	margin-bottom:5px;
+	border-bottom:solid 1px #FFFFFF;
+}
+#navigation li {
+	display:inline;
+	font-size:11px;
+	line-height:20px;
+}
+#navigation li a {
+	display:block;
+	text-decoration:none;
+	color:#666666;
+	float:left;
+	padding-left:8px;
+	padding-right:8px;
+	height:20px;
+	line-height:18px;
+	border:solid 1px #C2DCFF;
+	border-left-color:#DFEDFF;
+	border-right-color:#C2DCFF;
+	border-bottom:none;
+	color:#6081D3;
+	background-color:#E2EFFF;
+	background-image: url(../img/bcg-navigation.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+}
+#navigation li a:hover, #navigation li a.active {
+	background-image: url(../img/bcg-navigation-dark.gif);
+	color:#003399;
+}
+#navigation li a.active {
+	font-weight:bold;
+}
+#menu {
+	margin-top:10px;
+	margin-left:15px;
+	margin-right:30px;
+	margin-bottom:20px;
+	width:200px;
+	float:left;
+	font-size:12px;
+}
+#menu .box, #menu .advert {
+	background-color:#F2F8FF;
+	padding:6px;
+	border:solid 1px #6F9DD9;
+	margin-bottom:3px;
+}
+#menu .box {
+	border-top:none;
+	padding-top:0;
+	background-image: url(../img/bcg-menu-h4.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	border-top:solid 1px #6F9DD9;
+	color:#5974CA;
+}
+#menu .box h4 {
+	color:#003399;
+	height:20px;
+	line-height:20px;
+	margin-bottom:3px;
+}
+#menu .box h4 span {
+	float:left;
+}
+#menu .box h4 img {
+	float:right;
+	padding-top:2px;
+}
+#menu .box ul {
+}
+#menu .box ul li {
+	list-style:inside;
+	list-style-image:url(../img/bullet-menu.gif);
+	height:18px;
+	padding:3px;
+}
+#menu .box ul li a {
+	text-decoration:none;
+	color:#003399;
+}
+#menu .box ul li:hover, #menu .box ul li a.active {
+	/*border:solid 1px #D2B47A;
+	height:16px;
+	line-height:16px;*/
+}
+#menu .box ul li:hover {
+}
+#menu .box ul li a.active {
+}
+#switchlang {
+	width:100%;
+}
+#switchwebsite {
+	width:100%;
+}
+#generateInfo {
+	font-weight:bold;
+}
+#menu .advert {
+}
+#breadcrumbs {
+	margin-top:10px;
+	margin-left:245px;
+	margin-right:15px;
+	margin-bottom:6px;
+	font-size:10px;
+}
+#breadcrumbs a {
+	color:#5D66BF;
+	font-weight:bold;
+	text-decoration:none;
+	margin-right:4px;
+	margin-left:4px;
+}
+#breadcrumbs a:hover {
+	text-decoration:underline;
+}
+#page h1 {
+	font-size:22px;
+	font-weight:normal;
+	margin-left:245px;
+	margin-right:15px;
+	margin-bottom:10px;
+}
+#content {
+	margin-left:245px;
+	margin-right:15px;
+}
+#content h1 {
+	margin-left:0px;
+}
+#content h2, #content h3 {
+	font-size:12px;
+	height:20px;
+	line-height:20px;
+	background-repeat: repeat-x;
+	background-position: top;
+	padding-left:10px;
+	border-left:solid 1px #6F9DD9;
+	border-right:solid 1px #6F9DD9;
+}
+#content h2 {
+	background-image: url(../img/bcg-page-h2.gif);
+	font-weight:bold;
+	border-top:solid 1px #6F9DD9;
+}
+#content h3 {
+	background-image: url(../img/bcg-page-h3.gif);
+	font-weight:normal;
+}
+#content .box {
+	background-color:#FFFFFF;
+	padding:6px;
+	padding-bottom:10px;
+	border:solid 1px #6F9DD9;
+	margin-bottom:0;
+	background-repeat: repeat-x;
+	background-position: top;
+	border-top:none;
+	color:#333333;
+	font-size:12px;
+}
+#content .box p {
+	display:table;
+	width:100%;
+}
+#content .box p.breadcrumbs {
+	font-size:90%;
+	color:#666666;
+	font-weight:bold;
+	margin-bottom:8px;
+}
+#content .box p.breadcrumbs a {
+	color:#333333;
+	text-decoration:none;
+}
+#content .box p.breadcrumbs a:hover {
+	text-decoration:underline;
+}
+#content .box img {
+	float:left;
+	margin-right:5px;
+	margin-bottom:2px;
+}
+#content .box img.right {
+	float:right;
+	margin-left:5px;
+	margin-right:0px;
+	margin-bottom:2px;
+}
+#content .box form {
+	margin-bottom:6px;
+}
+#content .topbuttons {
+	margin-bottom:5px;
+}
+#content .bottombuttons {
+	margin-top:7px;
+	margin-bottom:5px;
+}
+#content .box form fieldset {
+	padding:8px;
+	border:solid 1px #666666;
+	margin-bottom:6px;
+}
+#content .box form fieldset legend {
+	font-size:12px;
+	font-weight:bold;
+	margin-left:4px;
+	padding-left:10px;
+	padding-right:55px;
+	background-color:#DFDFDF;
+	border:solid 1px #666666;
+}
+#content .box form p {
+	display:table;
+	width:100%;
+	margin-bottom:3px;
+}
+#content .box form p label {
+	width:200px;
+	float:left;
+	font-weight:bold;
+}
+#content .box form p input.active, #content .box form p textarea.active {
+	background-color: #FFFDF2;
+}
+#content .box form p input {
+	float:left;
+}
+#content .box form p input[type="text"] {
+	width:300px;
+	border:solid 1px #CCCCCC;
+	margin-right:3px;
+}
+#content .box form p input[type="password"] {
+	width:300px;
+	border:solid 1px #CCCCCC;
+	margin-right:3px;
+}
+#content .box form p input[type="checkbox"] {
+	border:solid 1px #CCCCCC;
+	margin-right:3px;
+}
+#content .box form p select {
+	width:300px;
+	margin-right:3px;
+}
+#content .box form p textarea {
+	width:100%;
+	background-color:#FFFFFF!important;
+	background-image: none;
+	border:solid 1px #CCCCCC;
+}
+#content .box form p textarea.tiny {
+	height:30px;
+}
+#content .box form p textarea.small {
+	height:60px;
+}
+#content .box form p textarea.big {
+	height:450px;
+}
+#content .box form p textarea.large {
+	height:650px;
+}
+#content .box form p input[type="radio"] {
+}
+#content .box form p input[type="button"] {
+}
+#content .box form p input[type="submit"] {
+	float:right;
+	font-weight:bold;
+}
+#content .box form p input[type="reset"] {
+	float:left;
+}
+#content .box table {
+	width:100%;
+	margin-bottom:6px;
+}
+#content .box table thead tr {
+	background-color:#ECF5FF;
+}
+#content .box table thead tr th {
+	height:20px;
+	line-height:20px;
+}
+#content .box table td.wgcode input {
+	width:98%;
+}
+#content .box table .odd {
+	background-color: #FFFFFF;
+}
+#content .box table .even {
+	background-color: #F9FCFF;
+} 
+#content .box table .out {
+}
+#content .box table .over {
+	background-color: #F2F8FF;
+	text-decoration: underline;
+}
+#content div.pager {
+	display:table;
+	margin-bottom:12px;
+}
+#content div.pager a {
+	width:25px;
+	padding:4px;
+	font-weight:bold;
+}
+#content div.pager a:hover {
+}
+#content div.pager a.active {
+	cursor:default;
+	text-decoration:none;
+	color:#FF0000;
+}
+#content div.pager form {
+}
+#wgindextiles {
+}
+#wgindextiles ul {
+}
+#wgindextiles ul li {
+	display:block;
+	float:none;
+	border:1px solid #B7CDEC;
+	margin:0.5em 1em 1em 0.5em;
+	height: auto !important;
+	height:100px;
+	min-height:100px;
+}
+#wgindextiles ul li h3 {
+	border:0px;
+	background-image: url(../img/bcg-home-h3.gif);
+}
+#wgindextiles ul li h3 a {
+	font-weight:bold;
+	text-decoration:none;
+}
+#wgindextiles ul li h3 a:hover {
+	text-decoration:underline;
+}
+#wgindextiles ul li p {
+	padding:10px 5px 0 5px;
+	width:45em !important;
+}
+#wgindextiles ul li img {
+	padding:10px 5px 0 5px;
+	float:left;
+}
+#wgindextiles div.clear {
+	height:0px;
+}
+#wgindextiles {
+	height:auto !important;
+}
+#wgindextiles div {
+	height:100px;
+	margin-right:6px;
+	margin-bottom:6px;
+}
+#wgtiles div {
+	height:100px;
+	margin-right:6px;
+	margin-bottom:6px;
+}
+#wgtiles div div {
+}
+#wgtiles div p {
+}
+#wgtiles div p a {
+}
+#wgtiles div p a:hover {
+}
+#wgtiles div p a img {
+}
+#wgtiles div p h3 {
+}
+

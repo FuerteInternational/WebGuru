@@ -1,0 +1,5 @@
+descdashboard;Translation summaries
+descdefinitions;Definition keys for translations
+descedittranslations;Translation texts administration
+desclanguages;Languages administration
+descoutputtemplates;Output templates for translations

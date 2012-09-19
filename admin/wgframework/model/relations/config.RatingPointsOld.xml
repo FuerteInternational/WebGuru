@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="rating_points_old" phpName="RatingPointsOld" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="added" null="false" type="datetime" />
+		<column name="ip" null="false" size="20" type="varchar" />
+		<column name="var_id" null="false" size="20" type="bigint" />
+		<column name="value" null="false" size="1" type="tinyint" />	
+	</table>
+</database>

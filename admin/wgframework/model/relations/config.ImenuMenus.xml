@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="imenu_menus" phpName="ImenuMenus" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar">
+			<constraint refTable="" refColumn="" />
+		</column>
+		<column name="rewriteurl" null="false" size="255" type="varchar" />	
+	</table>
+</database>

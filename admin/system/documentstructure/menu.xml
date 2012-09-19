@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="projects">
+		<a key="name">projects</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="structures">
+		<a key="name">structures</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="settings">
+		<a key="name">settings</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+</menu>

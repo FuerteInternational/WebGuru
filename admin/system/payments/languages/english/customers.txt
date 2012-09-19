@@ -1,0 +1,9 @@
+gopager;gopager
+coluser;User
+colservice;Service
+colpaiduntil;Paid until
+colcredit;Credit
+colusersid;User
+colpaymentsservicesid;Service
+colreminders;Send reminders
+custlist;Customers list

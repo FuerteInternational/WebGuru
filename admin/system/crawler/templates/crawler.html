@@ -1,0 +1,51 @@
+<!-- BEGIN crawler -->
+<form action="{CHGROUPACTION}" method="post">
+	<p>
+		{SWITCHCAT}
+		<button type="submit" name="chgroup">{wCHCAT}</button>
+	</p>
+</form>
+<form action="{CRAWLACTION}" method="post">
+	<table>
+		<colgroup>
+			<col style="width: 5%;" />
+			<col style="width: 5%;" />
+			<col style="width: 35%;" />
+			<col style="width: 40%;" />
+			<col style="width: 10%;" />
+			<col style="width: 10%;" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>{wCOLID}</th>
+				<th>{wCOLNAME}</th>
+				<th>{wCOLURL}</th>
+				<th>{wCRAWL}</th>
+				<th>{wEDIT}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- BEGIN listcrawler -->
+			<tr>
+				<td>{CHECKBOX}</td>
+				<td>{LID}</td>
+				<td>{LNAME}</td>
+				<td><a href="{FULLURL}" class="ext">{LURL}</a></td>
+				<td>{CRAWLROW}</td>
+				<td>{EDITROW}</td>
+			</tr>
+			<!-- END listcrawler -->
+		</tbody>
+	</table>
+	{DATAPAGER}
+	<p>
+		<label for="levels">{wCRAWLTOLEVEL}:</label>
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="levels" type="text" value="3" />
+		<button type="submit" name="chgroup">{wCRAWLSELECTED}</button>
+	</p>
+</form>
+
+<!-- END crawler -->
+

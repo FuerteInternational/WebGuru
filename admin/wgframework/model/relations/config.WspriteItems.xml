@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="wsprite_items" phpName="WspriteItems" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="wsprite_widgets_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="sort" null="false" size="11" type="int" />
+		<column name="w1" null="false" type="text" />
+		<column name="w2" null="false" type="text" />
+		<column name="w3" null="false" type="text" />
+		<column name="w4" null="false" type="text" />
+		<column name="w5" null="false" type="text" />
+		<column name="w6" null="false" type="text" />
+		<column name="w7" null="false" type="text" />
+		<column name="w8" null="false" type="text" />
+		<column name="w9" null="false" type="text" />
+		<column name="w10" null="false" type="text" />	
+	</table>
+</database>

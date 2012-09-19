@@ -1,0 +1,86 @@
+
+<!-- BEGIN pagetabscontainer -->
+<form action="{ACTION}" method="post">
+	{PAGETABSCONTENT}
+	<p class="bottombuttons">
+		<input name="edit" type="hidden" value="{EDIT}" />
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END pagetabscontainer -->	
+
+<!-- BEGIN crawlerwebsitesb -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 45%;" />
+		<col style="width: 45%;" />
+		<!--<col style="width: 10%;" />-->
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wPAGETITLE}</th>
+			<th>{wCOLURL}</th>
+			<!--<th>{wEDIT}</th>-->
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listwebsites -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LTITLE}</td>
+			<td><a href="{FULLURL}" class="ext">{LURL}</a></td>
+			<!--<td>{EDITROW}</td>-->
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listwebsites -->
+	</tbody>
+</table>
+{DATAPAGER}
+<!-- END crawlerwebsitesb -->
+
+
+<!-- BEGIN crawlerwebsitesc -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<!-- END crawlerwebsitesc -->
+
+
+<!-- BEGIN crawlerwebsitesa -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLNAME}:</label>
+	<input name="name" id="name" type="text" value="{COLNAME}" />
+</p>
+<p>
+	<label>{wCOLCATEGORY}:</label>
+	{FULLCATEGORY}
+</p>
+<p>
+	<label>{wCOLURL}:</label>
+	<textarea cols="50" rows="9" name="url" id="url" class="small">{COLURL}</textarea>
+</p>
+<p>
+	<label>{wCOLDESCRIPTION}:</label>
+	<textarea cols="50" rows="9" name="description" id="description">{COLDESCRIPTION}</textarea>
+</p>
+<!-- END crawlerwebsitesa -->
+

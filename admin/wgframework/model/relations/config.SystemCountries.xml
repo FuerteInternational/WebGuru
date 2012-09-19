@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_countries" phpName="SystemCountries" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="5" type="int" primary="true" />
+		<column name="name" null="false" size="64" type="varchar" />
+		<column name="iso1" null="false" size="2" type="char" />
+		<column name="iso2" null="false" size="3" type="char" />	
+	</table>
+</database>

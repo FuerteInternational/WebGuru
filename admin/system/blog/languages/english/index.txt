@@ -1,0 +1,6 @@
+desceditarticle;Add a new article
+descarticles;Manage articles here
+desccategories;Blog categories administration
+descgroups;Article groups administration
+descsettings;Blog settings
+desctemplates;Frontend templates administration

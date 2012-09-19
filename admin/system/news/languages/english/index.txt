@@ -1,0 +1,3 @@
+desctemplates;Front-end templates for module News
+descnews;Adinistration of articles and categories
+descrss;RSS feeds generator

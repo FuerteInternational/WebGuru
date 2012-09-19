@@ -1,0 +1,5 @@
+templates;Basic templates
+desctemplates;Administration for basic system front-end tempates
+descconfigfiles;Configuration files
+desclanguages;Configure languages for currently selected website
+descwebsites;Setup more websites with WebGuru

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="forms_subscriptions" phpName="FormsSubscriptions" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="emails_groups_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="forms_items_id" null="false" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

@@ -1,0 +1,176 @@
+<!-- BEGIN codeblocks -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLCODE}</th>
+			<th>{wCOLENABLED}</th>
+			<th>{wCOLSYSTEMUSERSID}</th>
+			<th>{wCOLSYSTEMWEBSITESID}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcodeblocks -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>{LCODE}</td>
+			<td>{LENABLED}</td>
+			<td>{LSYSTEMUSERSID}</td>
+			<td>{LSYSTEMWEBSITESID}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcodeblocks -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLCODE}:</label>
+			<textarea cols="50" rows="9" name="code" id="code">{COLCODE}</textarea>
+		</p>
+		<p>
+			<label>{wCOLENABLED}:</label>
+			{FULLCOLENABLED}
+		</p>
+		<p>
+			<label>{wCOLSYSTEMUSERSID}:</label>
+			{FULLCOLSYSTEMUSERSID}
+		</p>
+		<p>
+			<label>{wCOLSYSTEMWEBSITESID}:</label>
+			{FULLCOLSYSTEMWEBSITESID}
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END codeblocks -->
+
+<!-- BEGIN previews -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLRULE}</th>
+			<th>{wCOLTYPE}</th>
+			<th>{wCOLSYSTEMUSERSID}</th>
+			<th>{wCOLSYSTEMMODULESID}</th>
+			<th>{wCOLSYSTEMWEBSITESID}</th>
+			<th>{wCOLSORT}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listpreviews -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>{LRULE}</td>
+			<td>{LTYPE}</td>
+			<td>{LSYSTEMUSERSID}</td>
+			<td>{LSYSTEMMODULESID}</td>
+			<td>{LSYSTEMWEBSITESID}</td>
+			<td>{LSORT}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listpreviews -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLRULE}:</label>
+			<textarea cols="50" rows="9" name="rule" id="rule">{COLRULE}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTYPE}:</label>
+			<input name="type" id="type" type="text" value="{COLTYPE}" />
+		</p>
+		<p>
+			<label>{wCOLSYSTEMUSERSID}:</label>
+			{FULLCOLSYSTEMUSERSID}
+		</p>
+		<p>
+			<label>{wCOLSYSTEMMODULESID}:</label>
+			{FULLCOLSYSTEMMODULESID}
+		</p>
+		<p>
+			<label>{wCOLSYSTEMWEBSITESID}:</label>
+			{FULLCOLSYSTEMWEBSITESID}
+		</p>
+		<p>
+			<label>{wCOLSORT}:</label>
+			<input name="sort" id="sort" type="text" value="{COLSORT}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END previews -->
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="blog_templates" phpName="BlogTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="temptype" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="dateformat" null="false" size="255" type="varchar" />
+		<column name="datasource" null="false" size="200" type="varchar" />
+		<column name="limit" null="false" unsigned="true" size="4" type="int" />
+		<column name="pager" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="search" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="variable" null="false" size="50" type="varchar" />
+		<column name="someid" null="false" size="255" type="varchar" />
+		<column name="useedit" null="false" size="1" type="tinyint" />
+		<column name="tbegin" null="false" type="text" />
+		<column name="titem" null="false" type="text" />
+		<column name="tend" null="false" type="text" />
+		<column name="tnoitem" null="false" type="text" />
+		<column name="tnoperm" null="false" type="text" />
+		<column name="blog_cats_id" null="true" size="11" type="int" />
+		<column name="blog_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="system_websites_id" null="false" unsigned="true" size="4" type="int" />
+		<column name="error1" null="false" size="255" type="varchar" />
+		<column name="error2" null="false" size="255" type="varchar" />
+		<column name="error3" null="false" size="255" type="varchar" />
+		<column name="error4" null="false" size="255" type="varchar" />
+		<column name="error5" null="false" size="255" type="varchar" />
+		<column name="error6" null="false" size="255" type="varchar" />
+		<column name="redirect1" null="false" size="255" type="varchar" />
+		<column name="redirect2" null="false" size="255" type="varchar" />	
+	</table>
+</database>

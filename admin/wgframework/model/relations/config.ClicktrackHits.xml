@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="clicktrack_hits" phpName="ClicktrackHits" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="16" type="int" primary="true" />
+		<column name="campaign_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="top" null="false" unsigned="true" size="4" type="int" />
+		<column name="left" null="false" unsigned="true" size="4" type="int" />
+		<column name="usrx" null="false" unsigned="true" size="4" type="int" />
+		<column name="usry" null="false" unsigned="true" size="4" type="int" />
+		<column name="url" null="false" size="255" type="varchar" />	
+	</table>
+</database>

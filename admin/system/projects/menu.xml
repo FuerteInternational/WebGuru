@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="categories">
+		<a key="name">categories</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="projects">
+		<a key="name">projects</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="settings">
+		<a key="name">settings</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="templates">
+		<a key="name">templates</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="editimage">
+		<a key="name">editimage</a>
+		<a key="show">0</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="editproject">
+		<a key="name">editproject</a>
+		<a key="show">0</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+</menu>

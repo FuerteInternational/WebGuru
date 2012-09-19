@@ -1,0 +1,132 @@
+
+<!-- BEGIN pagetabscontainer -->
+<form action="{ACTION}" method="post">
+	{PAGETABSCONTENT}
+	<p class="bottombuttons">
+		<input name="edit" type="hidden" value="{EDIT}" />
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END pagetabscontainer -->	
+
+<!-- BEGIN campaignpagesc -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLCAMPAIGNID}:</label>
+	<input name="campaign_id" id="campaign_id" type="text" value="{COLCAMPAIGNID}" />
+</p>
+<p>
+	<label>{wCOLIDENTIFIER}:</label>
+	<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+</p>
+<p>
+	<label>{wCOLADDTEXT1}:</label>
+	<input name="addtext1" id="addtext1" type="text" value="{COLADDTEXT1}" />
+</p>
+<p>
+	<label>{wCOLADDTEXT2}:</label>
+	<input name="addtext2" id="addtext2" type="text" value="{COLADDTEXT2}" />
+</p>
+<p>
+	<label>{wCOLSORT}:</label>
+	<input name="sort" id="sort" type="text" value="{COLSORT}" />
+</p>
+<p>
+	<label>{wCOLHEAD}:</label>
+	<textarea cols="50" rows="9" name="head" id="head" class="editor">{COLHEAD}</textarea>
+</p>
+<p>
+	<label>{wCOLNOTE}:</label>
+	<textarea cols="50" rows="9" name="note" id="note" class="editor">{COLNOTE}</textarea>
+</p>
+<p>
+	<label>{wCOLREDIRECT1}:</label>
+	<input name="redirect1" id="redirect1" type="text" value="{COLREDIRECT1}" />
+</p>
+<p>
+	<label>{wCOLREDIRECT2}:</label>
+	<input name="redirect2" id="redirect2" type="text" value="{COLREDIRECT2}" />
+</p>
+<p>
+	<label>{wCOLREDIRECT3}:</label>
+	<input name="redirect3" id="redirect3" type="text" value="{COLREDIRECT3}" />
+</p>
+<p>
+	<label>{wCOLREDIRECT4}:</label>
+	<input name="redirect4" id="redirect4" type="text" value="{COLREDIRECT4}" />
+</p>
+<!-- END campaignpagesc -->
+
+
+<!-- BEGIN campaignpagesa -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLNAME}:</label>
+	<input name="name" id="name" type="text" value="{COLNAME}" />
+</p>
+<p>
+	<label>{wCOLTITLE}:</label>
+	<input name="title" id="title" type="text" value="{COLTITLE}" />
+</p>
+<p>
+	<label>{wCOLHEADING1}:</label>
+	<input name="heading1" id="heading1" type="text" value="{COLHEADING1}" />
+</p>
+<p>
+	<label>{wCOLENABLED}:</label>
+	{FULLCOLENABLED}
+</p>
+<p>
+	<label>{wCOLPARENTID}:</label>
+	<input name="parentid" id="parentid" type="text" value="{COLPARENTID}" />
+</p>
+<p>
+	<label>{wCOLHOME}:</label>
+	{FULLCOLHOME}
+</p>
+<p>
+	<label>{wCOLPAGE}:</label>
+	<textarea cols="50" rows="9" name="page" id="page" class="editor">{COLPAGE}</textarea>
+</p>
+<!-- END campaignpagesa -->
+
+
+<!-- BEGIN campaignpagesb -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLHEADING2}:</label>
+	<input name="heading2" id="heading2" type="text" value="{COLHEADING2}" />
+</p>
+<p>
+	<label>{wCOLHEADING3}:</label>
+	<input name="heading3" id="heading3" type="text" value="{COLHEADING3}" />
+</p>
+<p>
+	<label>{wCOLREWRITE}:</label>
+	<input name="rewrite" id="rewrite" type="text" value="{COLREWRITE}" />
+</p>
+<p>
+	<label>{wCOLKEYWORDS}:</label>
+	<textarea cols="50" rows="9" name="keywords" id="keywords" class="editor">{COLKEYWORDS}</textarea>
+</p>
+<p>
+	<label>{wCOLDESCRIPTION}:</label>
+	<textarea cols="50" rows="9" name="description" id="description" class="editor">{COLDESCRIPTION}</textarea>
+</p>
+<!-- END campaignpagesb -->
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+	<a key="types">
+		<a key="web">web</a>
+		<a key="rss">rss</a>
+		<a key="map">map</a>
+	</a>
+</response>

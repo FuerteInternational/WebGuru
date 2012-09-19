@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="crawler_queries_categories" phpName="CrawlerQueriesCategories" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="par" null="false" size="255" type="varchar" />
+		<column name="description" null="false" type="text" />	
+	</table>
+</database>

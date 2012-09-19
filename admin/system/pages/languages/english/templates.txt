@@ -1,0 +1,11 @@
+allgroups;All groups
+gopager;gopager
+chgroup;Change group
+colname;Name
+colcode;Code
+colid;Id
+colfolder;Folder
+colidentifier;Identifier
+groups;Groups
+exportimport;Export / Import
+cssadmin;CSS admin

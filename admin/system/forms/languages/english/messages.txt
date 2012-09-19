@@ -1,0 +1,7 @@
+gopager;gopager
+from;From
+formname;Name of the form
+coladded;Sent date
+colid;Id
+colname;Name
+mgroups;Messages groups

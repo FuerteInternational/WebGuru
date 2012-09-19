@@ -1,0 +1,20 @@
+sysusers;System users
+systeams;System teams
+colid;Id
+colfirstname;First name
+collastname;Last name
+colmail;EMail
+colnickname;Username
+colpass;New password
+genpass;Generate password
+passgen;Generated password
+confirmnewpass;Password confirmation
+colsystemteamid;Team
+colactive;Active
+colname;Name
+colipfilter;IP filter (comma separated)
+colnote;Note
+modulesperm;Modules permissions
+pagesperm;Pages permissions
+permissions;Permissions
+

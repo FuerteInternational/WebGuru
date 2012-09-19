@@ -1,0 +1,78 @@
+<!-- BEGIN snippets -->
+<table>
+	<colgroup>
+		<col style="width: 60%;" />
+		<col style="width: 20%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listsnippets -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="{LCLASS}">{LADDED}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listsnippets -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wAPPROVED}:</label>
+			{FULLCOLAPPROVED}
+		</p>
+		<p>
+			<label>{wCOLCSNIPPETSCATEGORIESID}:</label>
+			{COLCSNIPPETSCATEGORIESID}
+		</p>
+		<p>
+			<label>{wCOLSNIPPET}:</label>
+			<textarea cols="50" rows="9" name="snippet" id="snippet" class="big html">{COLSNIPPET}</textarea>
+		</p>
+		<p>
+			<label>{wCOLEXCERPT}:</label>
+			<textarea cols="50" rows="9" name="excerpt" id="excerpt" class="editor small">{COLEXCERPT}</textarea>
+		</p>
+		<p>
+			<label>{wCOLDESCRIPTION}:</label>
+			<textarea cols="50" rows="9" name="description" id="description" class="editor">{COLDESCRIPTION}</textarea>
+		</p>
+		<p>
+			<label>{wCOLKEYWORDS}:</label>
+			<textarea cols="50" rows="9" name="keywords" id="keywords" class="small">{COLKEYWORDS}</textarea>
+			<span class="small">{wCOMMASEP}</span>
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END snippets -->
+

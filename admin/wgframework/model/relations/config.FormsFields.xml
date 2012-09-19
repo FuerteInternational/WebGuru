@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="forms_fields" phpName="FormsFields" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="forms_items_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="name" null="false" size="150" type="varchar" />
+		<column name="label" null="false" size="255" type="varchar" />
+		<column name="type" null="false" size="115" type="varchar" default="text" />
+		<column name="system_validation_id" null="true" unsigned="true" size="4" type="int" />
+		<column name="errmessage" null="false" size="255" type="varchar" />
+		<column name="errorgroup" null="false" unsigned="true" size="4" type="int" />
+		<column name="sort" null="false" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

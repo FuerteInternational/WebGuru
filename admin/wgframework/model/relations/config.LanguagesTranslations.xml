@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="languages_translations" phpName="LanguagesTranslations" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="languages_definitions_id" null="false" unsigned="true" size="20" type="bigint" />
+		<column name="system_languages_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="definition" null="false" type="text" />
+		<column name="key" null="false" size="255" type="varchar" />	
+	</table>
+</database>

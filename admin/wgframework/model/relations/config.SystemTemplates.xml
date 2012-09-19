@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_templates" phpName="SystemTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="module" null="false" size="60" type="varchar" />
+		<column name="pager" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="limit" null="false" unsigned="true" size="4" type="int" default="20" />
+		<column name="temptype" null="false" unsigned="true" size="2" type="int" />
+		<column name="datasource" null="false" unsigned="true" size="6" type="int" />
+		<column name="group1" null="false" unsigned="true" size="11" type="int" />
+		<column name="group2" null="false" unsigned="true" size="11" type="int" />
+		<column name="group3" null="false" unsigned="true" size="11" type="int" />
+		<column name="var1" null="false" size="45" type="varchar" />
+		<column name="var2" null="false" size="45" type="varchar" />
+		<column name="var3" null="false" size="45" type="varchar" />
+		<column name="begin1" null="false" type="text" />
+		<column name="item1" null="false" type="text" />
+		<column name="end1" null="false" type="text" />
+		<column name="notemp1" null="false" type="text" />
+		<column name="begin2" null="false" type="text" />
+		<column name="item2" null="false" type="text" />
+		<column name="end2" null="false" type="text" />
+		<column name="notemp2" null="false" type="text" />
+		<column name="int1" null="false" unsigned="true" size="11" type="int" />
+		<column name="int2" null="false" unsigned="true" size="11" type="int" />
+		<column name="int3" null="false" unsigned="true" size="11" type="int" />
+		<column name="tint1" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="tint2" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="tint3" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />	
+	</table>
+</database>

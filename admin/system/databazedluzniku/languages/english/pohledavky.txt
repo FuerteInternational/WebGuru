@@ -1,0 +1,7 @@
+gopager;gopager
+colddafirmy;Nazev firmy
+colcastka;Dluzna castka
+coladded;Pridno
+colusersid;Zadavatel
+colddafirmydluznikid;Dluznik
+colstatus;Uhrazeno

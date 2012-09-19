@@ -1,0 +1,6 @@
+gopager;gopager
+colname;Module name
+colidentifier;Indentifier
+colcategories;Use categories
+colitems;Use items
+coltemplates;Use templates

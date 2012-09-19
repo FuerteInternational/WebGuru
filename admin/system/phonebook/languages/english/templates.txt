@@ -1,0 +1,17 @@
+latest;Latest contact in the list
+random;Random contact
+datasource;Datasource
+maintemp;Main template
+nodettemp;No detail template
+details;Details
+gopager;gopager
+colname;Name
+colcode;Code
+colidentifier;Identifier
+colissearch;Allow search
+colpager;Use pager
+colperpage;Limit (per-page)
+coltempbegin;Template begin
+coltempitem;Main template
+coltempend;Template end
+people;People

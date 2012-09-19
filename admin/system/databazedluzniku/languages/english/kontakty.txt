@@ -1,0 +1,10 @@
+gopager;gopager
+changefirmu;Zmenit firmu
+change;Zmenit
+colprijmeni;Prijmeni
+colname;Jmeno
+coltelefon;Telefon
+colmobil;Mobilni telefon
+colfunkce;Funkce
+colmail;Emailova adresa
+colddafirmyid;Firma

@@ -1,0 +1,11 @@
+gopager;gopager
+nocat;Not assigned to any category
+colname;Name
+coladded;Added
+approved;Approved
+colcsnippetscategoriesid;Category
+colsnippet;Snippet code
+colexcerpt;Pretext for desc.
+coldescription;Description
+colkeywords;Keywords, Tags
+commasep;Comma separated

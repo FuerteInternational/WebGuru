@@ -1,0 +1,75 @@
+<!-- BEGIN custlist -->
+<table>
+	<colgroup>
+		<col style="width: 25%;" />
+		<col style="width: 20%;" />
+		<col style="width: 20%;" />
+		<col style="width: 15%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLUSER}</th>
+			<th>{wCOLSERVICE}</th>
+			<th>{wCOLPAIDUNTIL}</th>
+			<th>{wCOLCREDIT}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcustlist -->
+		<tr>
+			<td>{LUSERSID}</td>
+			<td>{LSERVICE} {LPRICE}</td>
+			<td class="{COLOR}">{LPAIDUNTIL}</td>
+			<td>{LCREDIT}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcustlist -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLUSERSID}:</label>
+			{FULLCOLUSERSID}
+		</p>
+		<p>
+			<label>{wCOLPAYMENTSSERVICESID}:</label>
+			{FULLCOLPAYMENTSSERVICESID}
+		</p>
+		<p>
+			<label>{wCOLPAIDUNTIL}:</label>
+			{FULLCOLPAIDUNTIL}
+		</p>
+		<p>
+			<label>{wCOLCREDIT}:</label>
+			<input name="credit" id="credit" type="text" value="{COLCREDIT}" />
+		</p>
+		<p>
+			<label>{wCOLREMINDERS}:</label>
+			{FULLREMINDERS}
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END custlist -->
+

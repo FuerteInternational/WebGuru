@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="wsprite_widgets" phpName="WspriteWidgets" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="allowed_urls" null="false" type="text" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="views" null="false" unsigned="true" size="20" type="bigint" />
+		<column name="wsprite_frontend_template" null="false" unsigned="true" size="11" type="int" />
+		<column name="users_id" null="false" unsigned="true" size="11" type="int" />	
+	</table>
+</database>

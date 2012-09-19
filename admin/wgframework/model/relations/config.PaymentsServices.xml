@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="payments_services" phpName="PaymentsServices" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="payments_categories_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="price" null="false" size="6" type="varchar" />
+		<column name="head" null="false" type="text" />
+		<column name="description" null="false" type="text" />
+		<column name="period" null="false" size="3" type="int" default="2" />
+		<column name="minperiods" null="false" unsigned="true" size="6" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="system_users_id" null="false" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

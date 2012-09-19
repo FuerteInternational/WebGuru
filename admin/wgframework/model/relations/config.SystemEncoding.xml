@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_encoding" phpName="SystemEncoding" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="code" null="false" size="40" type="varchar" />
+		<column name="num" null="false" size="8" type="int" />
+		<column name="show" null="false" size="1" type="tinyint" default="1" />
+		<column name="default" null="false" unsigned="true" size="1" type="tinyint" />	
+	</table>
+</database>

@@ -1,0 +1,75 @@
+<?php
+/**
+ * Page messages for module Forms
+ * 
+ * @package      WebGuru3
+ * @subpackage   modules/forms/pages/
+ * @author       Ondrej Rafaj
+ * @author       WebGuruCMS3 Framework CMS admin generator (http://www.webgurucms.com)
+ * @version      1.0.0.0
+ * @wgversion    3.0.0.0
+ * @wgdeveloper  1.0.0.0
+ * @since        7. April 2009
+ */
+
+$system['parse']['head'] = '
+<link href="./thirdparty/calendar/calendar-blue.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="./thirdparty/calendar/calendar.js"></script>
+<script type="text/javascript" src="./thirdparty/calendar/lang/calendar-en.js"></script>
+<script type="text/javascript" src="./thirdparty/calendar/calendar-setup.js"></script>
+';
+$system['parse']['editor'] = false;
+$tab = new myTabs('myTabs');
+
+// ----------- messages (Block: messages) start -----------
+$block = 'messages';
+$tpl = new wgParse($temp, $path);
+$tpl->setCurrentBlock($block);
+
+$var['ACTIONNAME'] = 'messagesmessages';
+
+
+wgSystem::defPostValue(FormsMessagesModel::COL_ID, '');
+wgSystem::defPostValue(FormsMessagesModel::COL_FORMS_ITEMS_ID, '');
+wgSystem::defPostValue(FormsMessagesModel::COL_FORMS_MESSAGES_GROUPS_ID, '');
+wgSystem::defPostValue(FormsMessagesModel::COL_DATA, '');
+wgSystem::defPostValue(FormsMessagesModel::COL_ADDED, time());
+$lv = array();
+$item = new FormsMessagesModel();
+$item->setDefaultResults(wgSystem::getPost());
+
+$arr = FormsMessagesModel::getMessagesPagerForGroup(1, pager::getPage($block));
+if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
+	$tpl->setCurrentBlock('listmessages');
+	$lv['LID'] = $val->getId();
+	$lv['LFORMSITEMSID'] = $val->getFormsItemsId();
+	$lv['LFORMSMESSAGESGROUPSID'] = $val->getFormsMessagesGroupsId();
+	$lv['LDATA'] = $val->getData();
+	$lv['LADDED'] = $val->getAdded();
+	$lv['EDITROW'] = wgIcons::getButton('edit', '?name?', wgPaths::makeTableEditLink($val->getId(), 'show='.$var['ACTIONNAME']));
+	$lv['DELETEROW'] = wgIcons::getButton('delete', '?name?', wgPaths::makeTableDeleteLink($val->getId(), 'act='.$var['ACTIONNAME']), true);
+	$tpl->setVariable($lv);
+	$tpl->parseBlock('listmessages');
+	if (wgSystem::getRequestValue('edit') == $val->getId() && wgSystem::getRequestValue('show') == 'messagesmessages') $item = $val;
+}
+$var['DATAPAGER'] = pager::makeAdminPager($arr['pager']);
+$lv = array();
+
+$var['COLID'] = $item->getId();
+$var['COLFORMSITEMSID'] = $item->getFormsItemsId();
+$var['COLFORMSMESSAGESGROUPSID'] = $item->getFormsMessagesGroupsId();
+$var['COLDATA'] = $item->getData();
+$var['FULLCOLADDED'] = formsHelper::getDateTimeBox('added', $item->getAdded());
+
+$var = wgSystem::getFormCallback($var);
+
+$tpl->setVariable($var);
+$tpl->parseBlock($block);
+$tab->addTab('messages', wgLang::get('messages'), true, $tpl->getBlock($block));
+// ----------- messages end -----------
+
+
+
+$var = array();
+$system['parse']['content'] = $tab->getAll();
+?>

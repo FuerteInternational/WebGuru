@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="emails_addresses" phpName="EmailsAddresses" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="emails_groups_id" null="true" unsigned="true" size="8" type="int" />
+		<column name="mail" null="false" size="255" type="varchar" />
+		<column name="enabled" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="added" null="false" type="datetime" />
+		<column name="unsubscribed" null="false" type="datetime" />
+		<column name="firstname" null="false" size="255" type="varchar" />
+		<column name="lastname" null="false" size="255" type="varchar" />
+		<column name="company" null="false" size="255" type="varchar" />	
+	</table>
+</database>

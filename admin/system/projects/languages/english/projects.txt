@@ -1,0 +1,7 @@
+homecat;Home category
+selectcat;Select category
+changecat;Change category
+gopager;gopager
+colname;Project name
+coldate;Project date
+colviews;Views

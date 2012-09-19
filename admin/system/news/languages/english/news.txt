@@ -1,0 +1,16 @@
+coltitle;Title
+gopager;gopager
+Home category;Home category
+Change category;Change category
+Name;Name
+Sort date;Sort date
+Articles;Articles
+Parent category;Parent category
+Categories;Categories
+homecat;Home category
+chcat;Change category
+colname;Name
+coldatefor;Sort date
+articles;Articles
+colparent;Parent category
+categories;Categories

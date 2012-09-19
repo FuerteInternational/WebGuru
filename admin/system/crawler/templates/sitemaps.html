@@ -1,0 +1,129 @@
+<!-- BEGIN results -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLADDR}</th>
+			<th>{wCOLROOT}</th>
+			<th>{wCOLCRAWLERWEBSITESID}</th>
+			<th>{wCOLARANK}</th>
+			<th>{wCOLLEVEL}</th>
+			<th>{wCOLTEXT}</th>
+			<th>{wCOLTITLE}</th>
+			<th>{wCOLHA}</th>
+			<th>{wCOLKEYWORDS}</th>
+			<th>{wCOLDESCRIPTION}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wCOLCHANGED}</th>
+			<th>{wCOLIMAGE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listresults -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LADDR}</td>
+			<td>{LROOT}</td>
+			<td>{LCRAWLERWEBSITESID}</td>
+			<td>{LARANK}</td>
+			<td>{LLEVEL}</td>
+			<td>{LTEXT}</td>
+			<td>{LTITLE}</td>
+			<td>{LHA}</td>
+			<td>{LKEYWORDS}</td>
+			<td>{LDESCRIPTION}</td>
+			<td>{LADDED}</td>
+			<td>{LCHANGED}</td>
+			<td>{LIMAGE}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listresults -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLADDR}:</label>
+			<textarea cols="50" rows="9" name="addr" id="addr">{COLADDR}</textarea>
+		</p>
+		<p>
+			<label>{wCOLROOT}:</label>
+			<input name="root" id="root" type="text" value="{COLROOT}" />
+		</p>
+		<p>
+			<label>{wCOLCRAWLERWEBSITESID}:</label>
+			<input name="crawler_websites_id" id="crawler_websites_id" type="text" value="{COLCRAWLERWEBSITESID}" />
+		</p>
+		<p>
+			<label>{wCOLARANK}:</label>
+			<input name="arank" id="arank" type="text" value="{COLARANK}" />
+		</p>
+		<p>
+			<label>{wCOLLEVEL}:</label>
+			<input name="level" id="level" type="text" value="{COLLEVEL}" />
+		</p>
+		<p>
+			<label>{wCOLTEXT}:</label>
+			<textarea cols="50" rows="9" name="text" id="text">{COLTEXT}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTITLE}:</label>
+			<textarea cols="50" rows="9" name="title" id="title">{COLTITLE}</textarea>
+		</p>
+		<p>
+			<label>{wCOLHA}:</label>
+			<textarea cols="50" rows="9" name="h1" id="h1">{COLHA}</textarea>
+		</p>
+		<p>
+			<label>{wCOLKEYWORDS}:</label>
+			<textarea cols="50" rows="9" name="keywords" id="keywords">{COLKEYWORDS}</textarea>
+		</p>
+		<p>
+			<label>{wCOLDESCRIPTION}:</label>
+			<textarea cols="50" rows="9" name="description" id="description">{COLDESCRIPTION}</textarea>
+		</p>
+		<p>
+			<label>{wCOLIMAGE}:</label>
+			{FULLCOLIMAGE}
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END results -->
+

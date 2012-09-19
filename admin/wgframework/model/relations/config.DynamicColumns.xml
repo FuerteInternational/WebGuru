@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="dynamic_columns" phpName="DynamicColumns" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="type" null="false" unsigned="true" size="3" type="int" default="1" />
+		<column name="validation" null="false" unsigned="true" size="3" type="int" />
+		<column name="mandatory" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="note" null="false" type="text" />
+		<column name="dynamic_modules_id" null="true" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

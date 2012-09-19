@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="nato3mcat_items" phpName="Nato3mcatItems" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="bigb" null="false" size="255" type="varchar" />
+		<column name="smallb" null="false" size="255" type="varchar" />
+		<column name="niin" null="false" unsigned="true" size="11" type="int">
+			<constraint refTable="" refColumn="" />
+		</column>
+		<column name="market" null="false" size="255" type="varchar" />
+		<column name="clasification" null="false" size="255" type="varchar" />
+		<column name="item_type" null="false" size="255" type="varchar" />
+		<column name="description" null="false" size="255" type="varchar" />
+		<column name="common_ref_name" null="false" size="255" type="varchar" />
+		<column name="common_description" null="false" type="text" />
+		<column name="nato_item_name" null="false" size="255" type="varchar" />
+		<column name="nato_description" null="false" type="text" />
+		<column name="length" null="false" size="11" type="varchar" />
+		<column name="length_unit" null="false" size="20" type="varchar" />
+		<column name="width" null="false" size="11" type="varchar" />
+		<column name="width_unit" null="false" size="20" type="varchar" />
+		<column name="height" null="false" size="11" type="varchar" />
+		<column name="height_unit" null="false" size="20" type="varchar" />
+		<column name="volume_weight" null="false" size="11" type="varchar" />
+		<column name="volume_weight_unit" null="false" size="20" type="varchar" />
+		<column name="diameter" null="false" size="11" type="varchar" />
+		<column name="diameter_unit" null="false" size="20" type="varchar" />	
+	</table>
+</database>

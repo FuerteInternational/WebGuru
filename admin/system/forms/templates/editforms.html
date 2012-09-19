@@ -1,0 +1,174 @@
+<!-- BEGIN formsitemsa -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLNAME}:</label>
+	<input name="name" id="name" type="text" value="{COLNAME}" />
+</p>
+<p>
+	<label>{wCOLIDENTIFIER}:</label>
+	<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+</p>
+<p>
+	<label>{wCOLMAILFIELD}:</label>
+	<input name="mailfield" id="mailfield" type="text" value="{COLMAILFIELD}" />
+</p>
+<p>
+	<label>{wCOLFORMSMESSAGESGROUPID}:</label>
+	{FULLCOLFORMSMESSAGESGROUPID}
+</p>
+<p>
+	<label>{wCOLADMINMAIL}:</label>
+	<input name="adminmail" id="adminmail" type="text" value="{COLADMINMAIL}" />
+</p>
+<p>
+	<label>{wCOLOKMESSAGE}:</label>
+	<input name="okmessage" id="okmessage" type="text" value="{COLOKMESSAGE}" />
+</p>
+<p>
+	<label>{wCOLERRORMESSAGE}:</label>
+	<input name="errormessage" id="errormessage" type="text" value="{COLERRORMESSAGE}" />
+</p>
+<p>
+	<label>{wCOLWARNINGMESSAGE}:</label>
+	<input name="warningmessage" id="warningmessage" type="text" value="{COLWARNINGMESSAGE}" />
+</p>
+<p>
+	<label>{wCOLREDIRECT}:</label>
+	<input name="redirect" id="redirect" type="text" value="{COLREDIRECT}" />
+</p>
+<!-- END formsitemsa -->
+
+<!-- BEGIN formsitemsc -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLTEMPLATE}:</label>
+	<textarea cols="50" rows="9" name="template" id="template" class="html">{COLTEMPLATE}</textarea>
+</p>
+<!-- END formsitemsc -->
+
+<!-- BEGIN pagetabscontainer -->
+<form action="{ACTION}" method="post">
+	{PAGETABSCONTENT}
+	<p class="bottombuttons">
+		<input name="edit" type="hidden" value="{EDIT}" />
+		<input name="act" type="hidden" value="editformsformsitems" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END pagetabscontainer -->	
+
+<!-- BEGIN recipients -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<div>
+	<!-- BEGIN recipientslist -->
+	<p>
+		<label>{wRECIPIENTSEMAIL}:</label>
+		<input name="recipient[]" type="text" value="{RECIPIENT}" />
+		<a href="#" class="delRow">{DELROW}</a>
+	</p>
+	<!-- END recipientslist -->
+</div>
+<div id="emailsource">
+	<p>
+		<label>{wRECIPIENTSEMAIL}:</label>
+		<input name="recipient[]" type="text" value="" />
+		<a href="#" class="delRow">{DELROW}</a>
+	</p>
+</div>
+<div id="moreFields"></div>
+<button type="button" name="addField" id="addField">{wADDFIELD}</button>
+<p>&nbsp;</p>
+<fieldset><legend>{wMAILTEMPLATES}</legend>
+	<p>
+		<label>{wUSEHTMLTEMPLATE}:</label>
+		{FULLUSEHTML}
+	</p>
+	<p id="htmltemp">
+		<label>{wCOLHTMLTEMPLATE}:</label>
+		<textarea cols="50" rows="9" name="mailhtml" id="mailhtml" class="html">{COLMAILHTML}</textarea>
+	</p>
+	<p>
+		<label>{wUSETXTTEMPLATE}:</label>
+		{FULLUSETXT}
+	</p>
+	<p id="txttemp">
+		<label>{wCOLTXTTEMPLATE}:</label>
+		<textarea cols="50" rows="9" name="mailtxt" id="mailtxt">{COLMAILTXT}</textarea>
+	</p>
+</fieldset>
+<script type="text/javascript">
+<!--
+var num = 1;
+//$('#emailsource a').hide();
+var html = $('#emailsource').html();
+$('#addField').click(function () {
+	$('#moreFields').append(html);
+	$('.delRow').click(function () {
+		if (confirmAction('{wDELETERECIPIENT}')) $(this).parent().remove();
+	});
+});
+$('.delRow').click(function () {
+	if (confirmAction('{wDELETERECIPIENT}')) $(this).parent().remove();
+});
+$('#usehtml').click(function() {
+	if (this.checked) $('#htmltemp').show();
+	else $('#htmltemp').hide();
+});
+$('#usetxt').click(function() {
+	if (this.checked) $('#txttemp').show();
+	else $('#txttemp').hide();
+});
+$(document).ready(function() {	
+	if (!$('#usehtml').is(':checked')) $('#htmltemp').hide();
+	if (!$('#usetxt').is(':checked')) $('#txttemp').hide();
+});
+-->
+</script>
+<!-- END recipients -->
+
+<!-- BEGIN formsitemsd -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<div id="formfieldsbox">{FIELDS}</div>
+<div id="moreFormFields"></div>
+<div id="tempFormFields"></div>
+<button type="button" name="addFormField" id="addFormField">{wADDFIELD}</button>
+<script type="text/javascript">
+<!--
+var FFnum = 1;
+$('#addFormField').click(function () {
+	FFnum++;
+	//var ffhtml = 
+	$('#tempFormFields').load(wgConfig.define.webroot + wgConfig.define.adminfolder + 'system/forms/ajax/getFField.php')
+	$('#moreFormFields').append($('#tempFormFields').html());
+	$('#tempFormFields').html('');
+	//$('#moreFormFields').append(ffhtml);
+	//$('.delRow').click(function () {
+		//if (confirmAction('{wDELETERECIPIENT}')) $(this).parent().remove();
+	//});
+	
+});
+//$('.delRow').click(function () {
+	//if (confirmAction('{wDELETERECIPIENT}')) $(this).parent().remove();
+//});
+-->
+</script>
+<!-- END formsitemsd -->
+

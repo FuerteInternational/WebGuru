@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="dda_platby" phpName="DdaPlatby" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="users_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="ammount" null="true" unsigned="true" size="11" type="int" />
+		<column name="dda_payment_types_id" null="false" unsigned="true" size="4" type="int" />	
+	</table>
+</database>

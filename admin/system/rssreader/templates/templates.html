@@ -1,0 +1,156 @@
+<!-- BEGIN listurls -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listlisturls -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{LIDENTIFIER}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listlisturls -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLDATASET}:</label>
+			{FULLCOLASCENDING}
+		</p>
+		<p>
+			<label>{wCOLRSSREADERURLSID}:</label>
+			<input name="rssreader_urls_id" id="rssreader_urls_id" type="text" value="{COLRSSREADERURLSID}" />
+		</p>
+		<p>
+			<label>{wCOLLIMIT}:</label>
+			<input name="limit" id="limit" type="text" value="{COLLIMIT}" />
+		</p>
+		<p>
+			<label>{wCOLCACHE}:</label>
+			{FULLCOLCACHE}
+		</p>
+		<p>
+			<label>{wCOLTBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tbegin" id="tbegin" class="html small">{COLTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTDETAIL}:</label>
+			<textarea cols="50" rows="9" name="tdetail" id="tdetail" class="html">{COLTDETAIL}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEND}:</label>
+			<textarea cols="50" rows="9" name="tend" id="tend" class="html small">{COLTEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTNOITEM}:</label>
+			<textarea cols="50" rows="9" name="tnoitem" id="tnoitem" class="html">{COLTNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="0" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END listurls -->
+
+<!-- BEGIN listfeeds -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wCOLTEMPTYPE}</th>
+			<th>{wCOLRSSREADERURLSID}</th>
+			<th>{wCOLLIMIT}</th>
+			<th>{wCOLASCENDING}</th>
+			<th>{wCOLCACHE}</th>
+			<th>{wCOLTBEGIN}</th>
+			<th>{wCOLTDETAIL}</th>
+			<th>{wCOLTEND}</th>
+			<th>{wCOLTNOITEM}</th>
+			<th>{wCOLSYSTEMWEBSITESID}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listlistfeeds -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>{LIDENTIFIER}</td>
+			<td>{LTEMPTYPE}</td>
+			<td>{LRSSREADERURLSID}</td>
+			<td>{LLIMIT}</td>
+			<td>{LASCENDING}</td>
+			<td>{LCACHE}</td>
+			<td>{LTBEGIN}</td>
+			<td>{LTDETAIL}</td>
+			<td>{LTEND}</td>
+			<td>{LTNOITEM}</td>
+			<td>{LSYSTEMWEBSITESID}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listlistfeeds -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<!-- END listfeeds -->
+

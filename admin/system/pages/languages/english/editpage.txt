@@ -1,0 +1,34 @@
+inherit;Inherit template
+generatingpage;Generating Page
+genonepage;Generate
+generror;Error: Try to generate again?
+noredirection;No redirection
+notloggedrediect;Redirect not logged users
+nlredirectmessage;Error message after red.
+loggedrediect;Redirect logged users to
+lredirectmessage;Error message after red.
+homecat;Main category
+colishomepage;Is home page
+page;Page
+seosettings;SEO settings
+preferences;Preferences
+colpagestemplatesid;Template
+colname;Page name
+colidentifier;Page identifier
+coltitle;Title
+colheadinga;Heading 1 (H1)
+colenabled;Page is enabled
+colparentid;Parent page
+colpage;Page content
+colheadingb;Heading 2 (H2)
+colheadingc;Heading 3 (H3)
+colrewrite;Rewrite (mod_rewrite)
+colkeywords;Meta keywords
+coldescription;Meta description
+coladdtexta;Additional text 1
+coladdtextb;Additional text 2
+colsystemwebsitesid;Website
+colsystemlanguageid;Language
+colsort;Sort
+colhead;Additional head content
+colnote;Note

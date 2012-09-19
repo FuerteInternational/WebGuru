@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="forms_items" phpName="FormsItems" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="system_language_id" null="true" size="3" type="int" />
+		<column name="system_websites_id" null="true" size="4" type="int" />
+		<column name="mailfield" null="false" size="80" type="varchar" />
+		<column name="forms_messages_group_id" null="true" unsigned="true" size="8" type="int" />
+		<column name="adminmail" null="false" size="255" type="varchar" />
+		<column name="template" null="false" type="text" />
+		<column name="usehtml" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="mailhtml" null="false" type="text" />
+		<column name="usetxt" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="mailtxt" null="false" type="text" />
+		<column name="okmessage" null="false" size="255" type="varchar" />
+		<column name="errormessage" null="false" size="255" type="varchar" />
+		<column name="warningmessage" null="false" size="255" type="varchar" />
+		<column name="redirect" null="false" size="255" type="varchar" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />	
+	</table>
+</database>

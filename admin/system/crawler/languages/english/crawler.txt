@@ -1,0 +1,11 @@
+gopager;gopager
+Id;Id
+Name;Name
+Url address;Url address
+Crawl;Crawl
+homecat;Home category
+chcat;Change category
+colid;Id
+colname;Name
+colurl;Url address
+crawl;Crawl

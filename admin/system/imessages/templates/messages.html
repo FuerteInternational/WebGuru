@@ -1,0 +1,84 @@
+<!-- BEGIN messages -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLIMESSAGESFORMSID}</th>
+			<th>{wCOLDATA}</th>
+			<th>{wCOLFROM}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wCOLDEVICE}</th>
+			<th>{wCOLCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listMessages -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LIMESSAGESFORMSID}</td>
+			<td>{LDATA}</td>
+			<td>{LFROM}</td>
+			<td>{LADDED}</td>
+			<td>{LDEVICE}</td>
+			<td>{LCODE}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listMessages -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLIMESSAGESFORMSID}:</label>
+			<input name="imessages_forms_id" id="imessages_forms_id" type="text" value="{COLIMESSAGESFORMSID}" />
+		</p>
+		<p>
+			<label>{wCOLDATA}:</label>
+			<textarea cols="50" rows="9" name="data" id="data">{COLDATA}</textarea>
+		</p>
+		<p>
+			<label>{wCOLFROM}:</label>
+			<input name="from" id="from" type="text" value="{COLFROM}" />
+		</p>
+		<p>
+			<label>{wCOLDEVICE}:</label>
+			<input name="device" id="device" type="text" value="{COLDEVICE}" />
+		</p>
+		<p>
+			<label>{wCOLCODE}:</label>
+			<input name="code" id="code" type="text" value="{COLCODE}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END messages -->
+

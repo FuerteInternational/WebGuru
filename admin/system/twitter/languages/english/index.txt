@@ -1,0 +1,2 @@
+descsettings;Manage system settings and accounts here
+desctemplates;Set your frontend templates here

@@ -1,0 +1,6 @@
+gopager;gopager
+brand;Vyrobce
+coldescription;Popis
+brands;Vyrobci
+categoryname;Nazev kategorie
+types;Typy

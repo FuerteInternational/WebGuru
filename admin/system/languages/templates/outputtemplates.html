@@ -1,0 +1,234 @@
+<!-- BEGIN admin1 -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLSYSTEMLANGUAGEID}</th>
+			<th>{wCOLSYSTEMWEBSITESID}</th>
+			<th>{wCOLMAILFIELD}</th>
+			<th>{wCOLFORMSMESSAGESGROUPID}</th>
+			<th>{wCOLADMINMAIL}</th>
+			<th>{wCOLTEMPLATE}</th>
+			<th>{wCOLUSEHTML}</th>
+			<th>{wCOLMAILHTML}</th>
+			<th>{wCOLUSETXT}</th>
+			<th>{wCOLMAILTXT}</th>
+			<th>{wCOLOKMESSAGE}</th>
+			<th>{wCOLERRORMESSAGE}</th>
+			<th>{wCOLWARNINGMESSAGE}</th>
+			<th>{wCOLREDIRECT}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wCOLCHANGED}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listadmin1 -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LSYSTEMLANGUAGEID}</td>
+			<td>{LSYSTEMWEBSITESID}</td>
+			<td>{LMAILFIELD}</td>
+			<td>{LFORMSMESSAGESGROUPID}</td>
+			<td>{LADMINMAIL}</td>
+			<td>{LTEMPLATE}</td>
+			<td>{LUSEHTML}</td>
+			<td>{LMAILHTML}</td>
+			<td>{LUSETXT}</td>
+			<td>{LMAILTXT}</td>
+			<td>{LOKMESSAGE}</td>
+			<td>{LERRORMESSAGE}</td>
+			<td>{LWARNINGMESSAGE}</td>
+			<td>{LREDIRECT}</td>
+			<td>{LNAME}</td>
+			<td>{LIDENTIFIER}</td>
+			<td>{LADDED}</td>
+			<td>{LCHANGED}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listadmin1 -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLSYSTEMLANGUAGEID}:</label>
+			{FULLCOLSYSTEMLANGUAGEID}
+		</p>
+		<p>
+			<label>{wCOLSYSTEMWEBSITESID}:</label>
+			{FULLCOLSYSTEMWEBSITESID}
+		</p>
+		<p>
+			<label>{wCOLMAILFIELD}:</label>
+			<input name="mailfield" id="mailfield" type="text" value="{COLMAILFIELD}" />
+		</p>
+		<p>
+			<label>{wCOLFORMSMESSAGESGROUPID}:</label>
+			{FULLCOLFORMSMESSAGESGROUPID}
+		</p>
+		<p>
+			<label>{wCOLADMINMAIL}:</label>
+			<input name="adminmail" id="adminmail" type="text" value="{COLADMINMAIL}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPLATE}:</label>
+			<textarea cols="50" rows="9" name="template" id="template">{COLTEMPLATE}</textarea>
+		</p>
+		<p>
+			<label>{wCOLUSEHTML}:</label>
+			{FULLCOLUSEHTML}
+		</p>
+		<p>
+			<label>{wCOLMAILHTML}:</label>
+			<textarea cols="50" rows="9" name="mailhtml" id="mailhtml">{COLMAILHTML}</textarea>
+		</p>
+		<p>
+			<label>{wCOLUSETXT}:</label>
+			{FULLCOLUSETXT}
+		</p>
+		<p>
+			<label>{wCOLMAILTXT}:</label>
+			<textarea cols="50" rows="9" name="mailtxt" id="mailtxt">{COLMAILTXT}</textarea>
+		</p>
+		<p>
+			<label>{wCOLOKMESSAGE}:</label>
+			<input name="okmessage" id="okmessage" type="text" value="{COLOKMESSAGE}" />
+		</p>
+		<p>
+			<label>{wCOLERRORMESSAGE}:</label>
+			<input name="errormessage" id="errormessage" type="text" value="{COLERRORMESSAGE}" />
+		</p>
+		<p>
+			<label>{wCOLWARNINGMESSAGE}:</label>
+			<input name="warningmessage" id="warningmessage" type="text" value="{COLWARNINGMESSAGE}" />
+		</p>
+		<p>
+			<label>{wCOLREDIRECT}:</label>
+			<input name="redirect" id="redirect" type="text" value="{COLREDIRECT}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END admin1 -->
+
+<!-- BEGIN table2 -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLCQCID}</th>
+			<th>{wCOLQUERY}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wCOLUSERSID}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listtable2 -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LCQCID}</td>
+			<td>{LQUERY}</td>
+			<td>{LADDED}</td>
+			<td>{LUSERSID}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listtable2 -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLCQCID}:</label>
+			<input name="cqc_id" id="cqc_id" type="text" value="{COLCQCID}" />
+		</p>
+		<p>
+			<label>{wCOLQUERY}:</label>
+			<input name="query" id="query" type="text" value="{COLQUERY}" />
+		</p>
+		<p>
+			<label>{wCOLUSERSID}:</label>
+			<input name="users_id" id="users_id" type="text" value="{COLUSERSID}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END table2 -->
+

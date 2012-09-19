@@ -1,0 +1,10 @@
+regenerateimgs;Regenerate images
+defaultimgs;Default images
+newdefaultpicture;New default picture
+picturesset;Picture set
+gopager;gopager
+colid;Id
+colname;Blog name
+colusersgroupsid;Users group
+blogs;Blogs
+settings;Settings

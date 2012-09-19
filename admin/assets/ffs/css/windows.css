@@ -1,0 +1,102 @@
+.smallwindow, .window, .simple_popup_div, .small_popup_div {
+	position:fixed;
+	border:solid 1px;
+	padding:10px;
+	background-color:#EBF3FF;
+}
+.simple_popup_div {
+	overflow:scroll;
+}
+.smallwindow iframe, .window iframe {
+	background-color:#FFFFFF;
+	border:solid 1px #666666;
+	width:100%;
+	height:100%;
+}
+.smallwindow {
+	width:350px;
+	top:50px;
+	left:300px;
+	z-index:100;
+}
+.smallwindow h4 {
+	font-weight:bold;
+	font-size:120%;
+	margin-bottom:6px;
+}
+.smallwindow h4 span {
+}
+.simple_popup_div p, .smallwindow p, .window p {
+	display:table;
+	width:100%;
+	margin-bottom:3px;
+}
+.simple_popup_div p label, .smallwindow p label, .window p label {
+	display:block;
+	width:160px;
+	float:left;
+}
+.simple_popup_div p input, .smallwindow p input {
+}
+.simple_popup_div p input input[type="text"], .smallwindow p input[type="text"] {
+	width:180px;
+}
+.simple_popup_div p input input[type="password"], .smallwindow p input[type="password"] {
+	width:180px;
+}
+.simple_popup_div p input input[type="submit"], .smallwindow p input[type="submit"] {
+	float:right;
+}
+.smallwindow ul {
+	text-align:center;
+}
+.smallwindow ul li {
+	display:inline;
+	margin-left:10px;
+	margin-right:10px;
+}
+.smallwindow ul li a {
+	font-weight:bold;
+}
+.smallwindow ul li a:hover {
+}
+.smallwindow ul li a:visited {
+}
+.smallwindow ul li a:active {
+}
+.window {
+	top:60px;
+	left:50px;
+	z-index:50;
+}
+.window a.close, .smallwindow a.close, .simple_close {
+	float:right;
+	margin-left:10px;
+	margin-bottom:5px;
+	cursor:pointer;
+	width:22px!important;
+	height:22px;
+	background-image: url(../img/close.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.window a.close span, .smallwindow a.close span, .simple_close span {
+	display:none;
+}
+#wgInsert.shadow {
+	background-color:#000000;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:2;
+	filter:alpha(opacity=50);
+	opacity:.50;
+}
+.window form textarea.mini {
+	height:45px;
+}
+.window iframe {
+	height:500px;
+}

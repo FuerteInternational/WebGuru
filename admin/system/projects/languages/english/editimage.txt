@@ -1,0 +1,18 @@
+colname;Item name
+colidentifier;Identifier
+coltexta;Text 1
+coltextb;Text 2
+coltextc;Text 3
+colsort;Sort order No.
+colviews;Views
+coldownloads;Downloads
+colfilename;Filename
+colsize;File size
+colha;Heading 1
+coltitle;Page title
+colmdescription;Meta description
+colmkeywords;Meta keywords
+colhb;Heading 2
+colhc;Heading 3
+coltextd;Text 4
+seo;SEO

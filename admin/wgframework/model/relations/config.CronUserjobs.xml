@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="cron_userjobs" phpName="CronUserjobs" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="datefrom" null="false" type="datetime" />
+		<column name="dateto" null="false" type="datetime" />
+		<column name="period" null="false" unsigned="true" size="11" type="int" default="3600" />
+		<column name="lastrun" null="false" type="datetime" />
+		<column name="counter" null="false" unsigned="true" size="11" type="int" />
+		<column name="user_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="url" null="false" size="255" type="varchar" />
+		<column name="reportmail" null="false" size="255" type="varchar" />	
+	</table>
+</database>

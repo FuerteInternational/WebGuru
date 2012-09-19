@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="emails_frontend_templates" phpName="EmailsFrontendTemplates" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="temptype" null="false" unsigned="true" size="1" type="tinyint" />
+		<column name="mess1" null="false" size="255" type="varchar" />
+		<column name="mess2" null="false" size="255" type="varchar" />
+		<column name="mess3" null="false" size="255" type="varchar" />
+		<column name="mess4" null="false" size="255" type="varchar" />
+		<column name="mess5" null="false" size="255" type="varchar" />
+		<column name="mess6" null="false" size="255" type="varchar" />
+		<column name="mess7" null="false" size="255" type="varchar" />
+		<column name="template" null="false" type="text" />
+		<column name="template2" null="false" type="text" />
+		<column name="template3" null="false" type="text" />
+		<column name="dateformat" null="false" size="255" type="varchar" />
+		<column name="redirection1" null="false" size="255" type="varchar" />
+		<column name="redirection2" null="false" size="255" type="varchar" />	
+	</table>
+</database>

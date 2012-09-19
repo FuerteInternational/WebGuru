@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="htaccess_code" phpName="HtaccessCode" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="6" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="code" null="false" type="text" />
+		<column name="enabled" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="system_users_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="system_websites_id" null="false" size="4" type="int" />	
+	</table>
+</database>

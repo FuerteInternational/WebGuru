@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="cronjobs">
+		<a key="name">cronjobs</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="userjobs">
+		<a key="name">userjobs</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="logs">
+		<a key="name">logs</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="templates">
+		<a key="name">templates</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="settings">
+		<a key="name">settings</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+</menu>

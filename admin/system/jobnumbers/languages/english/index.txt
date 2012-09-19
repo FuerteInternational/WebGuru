@@ -1,0 +1,2 @@
+desclist;List of all jobnumbers
+descexportimport;Import / export utility for jobnumbers

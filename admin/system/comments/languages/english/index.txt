@@ -1,0 +1,2 @@
+desccomments;Comments groups management tool
+desctemplates;Templates for comments lists and forms

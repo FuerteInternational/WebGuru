@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="admin">
+		<a key="name">admin</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="dbinstaller">
+		<a key="name">dbinstaller</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="dbmodel">
+		<a key="name">dbmodel</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="installer">
+		<a key="name">installer</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="module">
+		<a key="name">module</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="services">
+		<a key="name">services</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="selects">
+		<a key="name">selects</a>
+		<a key="show">0</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+</menu>

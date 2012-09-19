@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="system_actualizations" phpName="SystemActualizations" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="16" type="int" primary="true" />
+		<column name="string" null="false" type="text" />
+		<column name="added" null="false" type="datetime" />	
+	</table>
+</database>

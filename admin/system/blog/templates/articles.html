@@ -1,0 +1,47 @@
+<!-- BEGIN articles -->
+<form action="" method="post">
+	<p>
+		<label>{wSELECTBLOG}:</label>
+		{FULLMYBLOG}
+		<button type="submit" name="changepage">{wCHANGEBLOG}</button>
+	</p>
+</form>
+<form action="" method="post">
+	<p>
+		<label>{wSELECTCATEGORY}:</label>
+		{FULLMYCAT}
+		<button type="submit" name="changepage">{wCHANGECAT}</button>
+	</p>
+</form>
+<table>
+	<colgroup>
+		<col style="width: 65%;" />
+		<col style="width: 15%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLTITLE}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listarticles -->
+		<tr>
+			<td>{LTITLE}</td>
+			<td>{LADDED}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listarticles -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<!-- END articles -->
+

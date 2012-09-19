@@ -1,0 +1,9 @@
+twreg;Please register your account first on Twitter
+gopager;gopager
+colname;Twitter user name
+coladded;Added
+colpassword;Password
+accounts;Twitter accounts
+colid;Id
+colusersid;User id
+colsystemusersid;System user id

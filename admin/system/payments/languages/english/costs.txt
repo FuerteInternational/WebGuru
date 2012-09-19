@@ -1,0 +1,18 @@
+gopager;gopager
+colid;Id
+coldate;Date
+colammount;Ammount
+coluser;User
+service;Service
+colusersid;User
+colpaymentsservicesid;Service
+colname;Name
+colcosts;Costs
+total;Total
+monthlycosts;Monthly costs
+coldescription;Description
+colpaymentsservice;Service
+copercent;Percent
+colincome;Income
+colpercent;Percent
+funding;Funding

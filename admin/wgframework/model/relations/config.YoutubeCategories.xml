@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="youtube_categories" phpName="YoutubeCategories" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="parent" null="false" unsigned="true" size="8" type="int" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="description" null="false" type="text" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />	
+	</table>
+</database>

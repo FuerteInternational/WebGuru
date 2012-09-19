@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="events" phpName="Events" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="datestart" null="false" type="datetime" />
+		<column name="dateend" null="false" type="datetime" />
+		<column name="country" null="false" size="150" type="varchar" />
+		<column name="activity" null="false" size="255" type="varchar" />
+		<column name="activity_other" null="false" size="255" type="varchar" />
+		<column name="activity_note" null="false" type="text" />
+		<column name="action" null="false" size="255" type="varchar" />
+		<column name="action_note" null="false" type="text" />
+		<column name="status" null="false" size="255" type="varchar" />
+		<column name="status_note" null="false" type="text" />
+		<column name="action_next" null="false" size="255" type="varchar" />
+		<column name="action_next_date" null="false" type="date" />
+		<column name="general_note" null="false" type="text" />
+		<column name="users_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />	
+	</table>
+</database>

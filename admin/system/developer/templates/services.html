@@ -1,0 +1,21 @@
+<!-- BEGIN generate -->
+<form action="{ACTION}" method="post">
+	<p>
+		<label>{wCREATESERVFORTABLE}:</label>
+		<select name="table" id="table">
+			<!-- BEGIN grouplist -->
+			<optgroup label="{LGROUPNAME}">
+				<!-- BEGIN valuelist -->
+				<option value="{LVALUE}">{LVALUENAME}</option>
+				<!-- END valuelist -->
+			</optgroup>
+			<!-- END grouplist -->
+		</select>
+	</p>
+	<p>
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<button name="new" type="submit">{wGENERATESERVICE}</button>
+	</p>
+</form>
+<!-- END generate -->
+

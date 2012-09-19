@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="payments_permissions" phpName="PaymentsPermissions" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="system_users_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="payments_services_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="permission" null="false" unsigned="true" size="1" type="tinyint" default="1" />	
+	</table>
+</database>

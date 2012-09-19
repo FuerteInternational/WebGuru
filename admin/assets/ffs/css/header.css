@@ -1,0 +1,52 @@
+#header {
+	height:80px;
+	background-color:#FFFFFF;
+}
+#header ul {
+	background-color:#EBF3FF;
+	height:20px;
+	text-align:right;
+	padding-right:15px;
+	padding-left:15px;
+	margin-bottom:5px;
+	border-bottom:solid 1px #006699;
+}
+#header ul li {
+	display:inline;
+	font-size:11px;
+	line-height:20px;
+	margin-left:15px;
+}
+#header ul li a {
+	text-decoration:none;
+	color:#666666;
+}
+#header ul li a:hover {
+	text-decoration:underline;
+}
+#logo {
+	float:left;
+	margin-left:15px;
+	padding-left:65px;
+	height:45px;
+	background-image: url(../img/G2_logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+#logo h1 {
+	font-size:12px;
+}
+#logo h2 {
+	font-size:22px;
+}
+#logo h2 a {
+	color:#333333;
+	text-decoration:none;
+}
+#logo h2 a:hover {
+	color:#666666;
+}
+#header form {
+	float:right;
+	margin-right:15px;
+}

@@ -1,0 +1,36 @@
+#errors {
+	margin:0;
+	margin-top:50px;
+	text-align:center;
+}
+#container {
+	text-align:center;
+	width:300px;
+	margin-top:60px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#container form {
+	text-align:left;
+}
+form p {
+	display:table;
+	width:300px;
+	margin-bottom:6px;
+}
+form p label {
+	display:block;
+	float:left;
+	width:100px;
+}
+form p input[type="text"], form p input[type="password"] {
+	width:300px;
+}
+form p input[type="checkbox"] {
+	float:left;
+}
+form p button {
+	float:right;
+}
+form p button span {
+}

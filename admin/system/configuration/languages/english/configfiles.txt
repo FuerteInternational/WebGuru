@@ -1,0 +1,58 @@
+infofor;Info for
+cantdelete;cantdelete
+infdbpass;infdbpass
+infdbdtbs;infdbdtbs
+infdbpref;infdbpref
+addrow;addrow
+infdefinedevelop;infdefinedevelop
+infdefinefilemode;infdefinefilemode
+infdefinewebroot;infdefinewebroot
+infdefineadminfolder;infdefineadminfolder
+infdefinetempfolder;infdefinetempfolder
+infdefineusrffolder;infdefineusrffolder
+infadminlogintype;infadminlogintype
+infadmintemplate;infadmintemplate
+cnfadmindeflang;cnfadmindeflang
+infadmindeflang;infadmindeflang
+cnfadmineditor;cnfadmineditor
+infadmineditor;infadmineditor
+cnfadminadministrator;cnfadminadministrator
+infadminadministrator;infadminadministrator
+infsystemssl;infsystemssl
+infsystemsestime;infsystemsestime
+infajaxcontent;infajaxcontent
+inflogsaccess;inflogsaccess
+inflogserrors;inflogserrors
+inflogsqueries;inflogsqueries
+infdbhost;Database host computer (default: localhost)
+
+infdbuser;User name (default: root)
+
+cnfdb;Database connection
+cnfdbhost;Host computer
+cnfdbuser;Username
+cnfdbpass;Password
+cnfdbdtbs;Database name
+cnfdbpref;Table prefix
+cnfdefine;System definitions
+cnfdefinedevelop;Development mode
+cnfdefinefilemode;File permissions mode
+cnfdefinewebroot;Main website root
+cnfdefineadminfolder;Admin folder
+cnfdefinetempfolder;temporary folder
+cnfdefineusrffolder;Userfiles folder
+cnfadmin;Administration
+cnfadminlogintype;Login type
+cnfadmintemplate;Main template
+cnfsystem;System
+cnfsystemssl;SSL port
+cnfsystemsestime;Max. session time
+cnfajax;Ajax
+cnfajaxcontent;Frontend content id
+cnflogs;Logs
+cnflogsaccess;Log access
+cnflogserrors;Log errors
+cnflogsqueries;Log queries
+name;Name
+value;Value
+info;Info

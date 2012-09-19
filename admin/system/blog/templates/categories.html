@@ -1,0 +1,84 @@
+<!-- BEGIN categories -->
+<form action="" method="post">
+	<p>
+		<label>{wSELECTBLOG}:</label>
+		{FULLMYBLOG}
+		<button type="submit" name="changepage">{wCHANGEBLOG}</button>
+	</p>
+</form>
+<table>
+	<colgroup>
+		<col style="width: 50%;" />
+		<col style="width: 15%;" />
+		<col style="width: 15%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wARTICLES}</th>
+			<th>{wGROUPS}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcategories -->
+		<tr>
+			<td>{LNAME}</td>
+			<td>{ARTICLES}</td>
+			<td>{GROUPS}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcategories -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post" enctype="multipart/form-data">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wIMAGE}:</label>
+			<input name="image" type="file" />
+		</p>
+		<p{HIDDEN}>
+			<label>{wDELETEIMAGE}:</label>
+			{FULLDELETEIMG} {THUMB}
+		</p>
+		<p>
+			<label>{wCOLHEAD}:</label>
+			<textarea cols="50" rows="9" name="head" id="head" class="small editor">{COLHEAD}</textarea>
+		</p>
+		<p>
+			<label>{wCOLDESCRIPTION}:</label>
+			<textarea cols="50" rows="9" name="description" id="description" class="editor">{COLDESCRIPTION}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="blog_id" type="hidden" value="{COLBLOGID}" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END categories -->
+

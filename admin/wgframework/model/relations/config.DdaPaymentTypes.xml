@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="dda_payment_types" phpName="DdaPaymentTypes" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="4" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="cost" null="true" unsigned="true" size="6" type="int" />
+		<column name="sort" null="false" unsigned="true" size="6" type="int" />
+		<column name="default" null="false" unsigned="true" size="1" type="tinyint" />	
+	</table>
+</database>

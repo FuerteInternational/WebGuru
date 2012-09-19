@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tree id="0">
+
+			<item child="0" id="1" text="Domovská stránka &lt;a href=&quot;javascript:showPrew(1);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=1&quot; onclick=&quot;return editPage(1);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="59" text="googlemaps &lt;a href=&quot;javascript:showPrew(59);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=59&quot; onclick=&quot;return editPage(59);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="58" text="Kontakt &lt;a href=&quot;javascript:showPrew(58);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=58&quot; onclick=&quot;return editPage(58);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="57" text="Služby &lt;a href=&quot;javascript:showPrew(57);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=57&quot; onclick=&quot;return editPage(57);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="56" text="Portfolio &lt;a href=&quot;javascript:showPrew(56);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=56&quot; onclick=&quot;return editPage(56);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="55" text="Old Home &lt;a href=&quot;javascript:showPrew(55);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=55&quot; onclick=&quot;return editPage(55);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="54" text="Registrace &lt;a href=&quot;javascript:showPrew(54);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=54&quot; onclick=&quot;return editPage(54);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+
+			
+			<item child="0" id="49" text="Vyhledávání &lt;a href=&quot;javascript:showPrew(49);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=49&quot; onclick=&quot;return editPage(49);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="46" text="Přihlášení &lt;a href=&quot;javascript:showPrew(46);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=46&quot; onclick=&quot;return editPage(46);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="1" id="21" text="Diskuzní fórum &lt;a href=&quot;javascript:showPrew(21);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=21&quot; onclick=&quot;return editPage(21);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;">
+			<item child="0" id="53" text="Příspěvky &lt;a href=&quot;javascript:showPrew(53);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=53&quot; onclick=&quot;return editPage(53);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="52" text="Editovat téma &lt;a href=&quot;javascript:showPrew(52);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=52&quot; onclick=&quot;return editPage(52);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="51" text="Témata &lt;a href=&quot;javascript:showPrew(51);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=51&quot; onclick=&quot;return editPage(51);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			</item>
+			
+			<item child="0" id="16" text="Downloads &lt;a href=&quot;javascript:showPrew(16);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=16&quot; onclick=&quot;return editPage(16);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="15" text="Kontakt &lt;a href=&quot;javascript:showPrew(15);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=15&quot; onclick=&quot;return editPage(15);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+
+			
+			<item child="0" id="20" text="Mapa stránek &lt;a href=&quot;javascript:showPrew(20);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=20&quot; onclick=&quot;return editPage(20);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="1" id="23" text="Novinky &lt;a href=&quot;javascript:showPrew(23);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=23&quot; onclick=&quot;return editPage(23);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;">
+			<item child="0" id="34" text="Speciální nabídka &lt;a href=&quot;javascript:showPrew(34);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=34&quot; onclick=&quot;return editPage(34);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="24" text="Systémové novinky &lt;a href=&quot;javascript:showPrew(24);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=24&quot; onclick=&quot;return editPage(24);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			</item>
+			
+			<item child="0" id="30" text="Odkazy &lt;a href=&quot;javascript:showPrew(30);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=30&quot; onclick=&quot;return editPage(30);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="31" text="Optimalizace SEO &lt;a href=&quot;javascript:showPrew(31);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=31&quot; onclick=&quot;return editPage(31);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="1" id="18" text="Produkty a služby &lt;a href=&quot;javascript:showPrew(18);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=18&quot; onclick=&quot;return editPage(18);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;">
+			<item child="0" id="44" text="#NET &lt;a href=&quot;javascript:showPrew(44);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=44&quot; onclick=&quot;return editPage(44);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+
+			
+			<item child="0" id="39" text="Flashové stránky (projekty) &lt;a href=&quot;javascript:showPrew(39);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=39&quot; onclick=&quot;return editPage(39);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="38" text="internetový obchod &lt;a href=&quot;javascript:showPrew(38);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=38&quot; onclick=&quot;return editPage(38);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="37" text="katalog produktů &lt;a href=&quot;javascript:showPrew(37);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=37&quot; onclick=&quot;return editPage(37);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="43" text="MySQL Guru &lt;a href=&quot;javascript:showPrew(43);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=43&quot; onclick=&quot;return editPage(43);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="42" text="sem &lt;a href=&quot;javascript:showPrew(42);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=42&quot; onclick=&quot;return editPage(42);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="41" text="SEO &lt;a href=&quot;javascript:showPrew(41);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=41&quot; onclick=&quot;return editPage(41);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="1" id="19" text="WebGuru Publisher CMS &lt;a href=&quot;javascript:showPrew(19);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=19&quot; onclick=&quot;return editPage(19);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;">
+			<item child="0" id="50" text="Staňte se vývojářem &lt;a href=&quot;javascript:showPrew(50);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=50&quot; onclick=&quot;return editPage(50);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="33" text="Dokumentace WebGuru &lt;a href=&quot;javascript:showPrew(33);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=33&quot; onclick=&quot;return editPage(33);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+
+			
+			<item child="0" id="22" text="Instalace WebGuru CMS &lt;a href=&quot;javascript:showPrew(22);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=22&quot; onclick=&quot;return editPage(22);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="1" id="17" text="Licence &lt;a href=&quot;javascript:showPrew(17);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=17&quot; onclick=&quot;return editPage(17);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;">
+			<item child="0" id="48" text="GPL - EN &lt;a href=&quot;javascript:showPrew(48);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=48&quot; onclick=&quot;return editPage(48);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="47" text="GPL - CZ &lt;a href=&quot;javascript:showPrew(47);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=47&quot; onclick=&quot;return editPage(47);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			</item>
+			</item>
+			
+			<item child="0" id="40" text="webhosting &lt;a href=&quot;javascript:showPrew(40);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=40&quot; onclick=&quot;return editPage(40);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="36" text="www stránky &lt;a href=&quot;javascript:showPrew(36);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=36&quot; onclick=&quot;return editPage(36);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			</item>
+
+			
+			<item child="1" id="25" text="Projekty &lt;a href=&quot;javascript:showPrew(25);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=25&quot; onclick=&quot;return editPage(25);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;">
+			<item child="0" id="29" text="C sharp .NET projekty &lt;a href=&quot;javascript:showPrew(29);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=29&quot; onclick=&quot;return editPage(29);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="35" text="Detail projektu &lt;a href=&quot;javascript:showPrew(35);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=35&quot; onclick=&quot;return editPage(35);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="27" text="Flashové projekty &lt;a href=&quot;javascript:showPrew(27);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=27&quot; onclick=&quot;return editPage(27);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="28" text="Použití webguru &lt;a href=&quot;javascript:showPrew(28);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=28&quot; onclick=&quot;return editPage(28);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			
+			<item child="0" id="26" text="Webové stránky &lt;a href=&quot;javascript:showPrew(26);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=26&quot; onclick=&quot;return editPage(26);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			</item>
+			
+			<item child="0" id="32" text="Webhosting &lt;a href=&quot;javascript:showPrew(32);&quot;&gt;&lt;img src=&quot;./icons/eye.png&quot; alt=&quot;preview&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;./index.php?mod=pages&amp;amp;idp=4&amp;amp;edit=32&quot; onclick=&quot;return editPage(32);&quot;&gt;&lt;img src=&quot;./icons/edit.png&quot; alt=&quot;Editovat&quot; /&gt;&lt;/a&gt;"></item>
+			</tree>
+

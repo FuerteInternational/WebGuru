@@ -1,0 +1,3 @@
+desctemplates;Administrate frontend templates here
+descitems;Administrate items in the 3M NATO database
+desceximport;Import data from the XLS spreadsheet

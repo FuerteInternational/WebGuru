@@ -1,0 +1,6 @@
+categories;Kategorie
+desccategories;Administrace kategorii
+items;Vozidla
+descitems;Administrace vozidel
+templates;Sablony
+desctemplates;Administrace systemovych sablon

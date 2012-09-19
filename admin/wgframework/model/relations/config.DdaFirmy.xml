@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="dda_firmy" phpName="DdaFirmy" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="ic" null="false" size="50" type="varchar" />
+		<column name="dic" null="false" size="50" type="varchar" />
+		<column name="zalozena" null="false" type="datetime" />
+		<column name="kapital" null="false" size="11" type="int" />
+		<column name="typ" null="false" size="50" type="varchar" />	
+	</table>
+</database>

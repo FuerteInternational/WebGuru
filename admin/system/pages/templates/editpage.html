@@ -1,0 +1,167 @@
+
+<!-- BEGIN pagetabscontainer -->
+<form action="{ACTION}" method="post">
+	{PAGETABSCONTENT}
+	<p class="bottombuttons">
+		<input name="parentpage" type="hidden" value="index" />
+		<input name="edit" type="hidden" value="{EDIT}" />
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<button name="regenerate" type="button" class="regenerate"{HIDDEN}>{wGENONEPAGE}</button>
+		
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready( function() {
+	$('.regenerate').click( function() {
+		$(this).html('<span style="color:red;>{wGENERATINGPAGE}</span>');
+		$.get('./system/pages/ajax/generatePage.php?pid={EDIT}', {page: '{EDIT}'}, function(data){
+			if (data == '1') $('.regenerate').html('{wGENONEPAGE}');
+			else $('.regenerate').html('{wGENERROR}');
+		});
+	});
+});
+//-->
+</script>
+<!-- END pagetabscontainer -->	
+
+<!-- BEGIN pagesa -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<button name="regenerate" type="button" class="regenerate"{HIDDEN}>{wGENONEPAGE}</button>
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLPAGESTEMPLATESID}:</label>
+	{FULLCOLPAGESTEMPLATESID}
+</p>
+<p>
+	<label>{wCOLNAME}:</label>
+	<input name="name" id="name" type="text" value="{COLNAME}" />
+</p>
+<p>
+	<label>{wCOLIDENTIFIER}:</label>
+	<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+</p>
+<p>
+	<label>{wCOLTITLE}:</label>
+	<input name="title" id="title" type="text" value="{COLTITLE}" />
+</p>
+<p>
+	<label>{wCOLHEADINGA}:</label>
+	<input name="heading1" id="heading1" type="text" value="{COLHEADING1}" />
+</p>
+<p>
+	<label>{wCOLENABLED}:</label>
+	{FULLCOLENABLED}
+</p>
+<p>
+	<label>{wCOLPARENTID}:</label>
+	<!--<input name="parentid" id="parentid" type="text" value="{COLPARENTID}" />-->
+	{FULLPARENTID}
+</p>
+<p>
+	<label>{wCOLISHOMEPAGE}:</label>
+	{FULLHOME}
+</p>
+<p>
+	<label>{wCOLPAGE}:</label><br />
+	<textarea rows="9" cols="50" name="page" class="editor large">{COLPAGE}</textarea>
+</p>
+<!-- END pagesa -->
+
+
+<!-- BEGIN pagesb -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<button name="regenerate" type="button" class="regenerate"{HIDDEN}>{wGENONEPAGE}</button>
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wCOLHEADINGB}:</label>
+	<input name="heading2" id="heading2" type="text" value="{COLHEADING2}" />
+</p>
+<p>
+	<label>{wCOLHEADINGC}:</label>
+	<input name="heading3" id="heading3" type="text" value="{COLHEADING3}" />
+</p>
+<p>
+	<label>{wCOLREWRITE}:</label>
+	<input name="rewrite" id="rewrite" type="text" value="{COLREWRITE}" />
+</p>
+<p>
+	<label>{wCOLKEYWORDS}:</label>
+	<textarea rows="9" cols="50"name="keywords" id="keywords" class="small">{COLKEYWORDS}</textarea>
+</p>
+<p>
+	<label>{wCOLDESCRIPTION}:</label>
+	<textarea rows="9" cols="50"name="description" id="description" class="small">{COLDESCRIPTION}</textarea>
+</p>
+<p>
+	<label>{wCOLADDTEXTA}:</label>
+	<input name="addtext1" id="addtext1" type="text" value="{COLADDTEXT1}" />
+</p>
+<p>
+	<label>{wCOLADDTEXTB}:</label>
+	<input name="addtext2" id="addtext2" type="text" value="{COLADDTEXT2}" />
+</p>
+<!-- END pagesb -->
+
+<!-- BEGIN pagesc -->
+<p class="topbuttons">
+	<input name="reset" type="reset" value="{wRESET}" />
+	<button name="regenerate" type="button" class="regenerate"{HIDDEN}>{wGENONEPAGE}</button>
+	<input name="apply" type="submit" value="{wAPPLY}" />
+	<input name="submit" type="submit" value="{wSAVE}" />
+</p>
+<p>
+	<label>{wNOTLOGGEDREDIECT}:</label>
+	{NOTLOGGEDREDIECT}
+</p>
+<p id="red3">
+	<label>{wNLREDIRECTMESSAGE}:</label>
+	<input name="redirect3" id="redirect3" type="text" value="{COLREDIRECT3}" />
+</p>
+<p>
+	<label>{wLOGGEDREDIECT}:</label>
+	{LOGGEDREDIECT}
+</p>
+<p id="red4">
+	<label>{wLREDIRECTMESSAGE}:</label>
+	<input name="redirect4" id="redirect4" type="text" value="{COLREDIRECT4}" />
+</p>
+<p>
+	<label>{wCOLSORT}:</label>
+	<input name="sort" id="sort" type="text" value="{COLSORT}" />
+</p>
+<p>
+	<label>{wCOLHEAD}:</label>
+	<textarea rows="9" cols="50" name="head" id="head">{COLHEAD}</textarea>
+</p>
+<p>
+	<label>{wCOLNOTE}:</label>
+	<textarea rows="9" cols="50" name="note" id="note" class="editor">{COLNOTE}</textarea>
+</p>
+<script type="text/javascript">
+<!--
+function checkRedirects() {
+	var red1 = $('#redirect1').val();
+	if (red1 != 0) $('#red3').show();
+	else $('#red3').hide();
+	var red2 = $('#redirect2').val();
+	if (red2 != 0) $('#red4').show();
+	else $('#red4').hide();
+}
+$(document).ready(function() { 
+	checkRedirects();
+	$('#redirect1').change(function() { checkRedirects(); });
+	$('#redirect2').change(function() { checkRedirects(); });
+});
+-->
+</script>
+<!-- END pagesc -->

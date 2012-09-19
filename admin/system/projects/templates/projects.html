@@ -1,0 +1,44 @@
+<!-- BEGIN projects -->
+<form action="" method="post">
+	<p>
+		<label>{wSELECTCAT}:</label>
+		{FULLMYCAT}
+		<button type="submit" name="changepage">{wCHANGECAT}</button>
+	</p>
+</form>
+<p class="breadcrumbs">{BREADCRUMBS}</p>
+<table>
+	<colgroup>
+		<col style="width: 40%;" />
+		<col style="width: 30%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLDATE}</th>
+			<th>{wCOLVIEWS}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listprojects -->
+		<tr>
+			<td>{LNAME}</td>
+			<td>{LDATE}</td>
+			<td>{LVIEWS}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listprojects -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<!-- END projects -->
+

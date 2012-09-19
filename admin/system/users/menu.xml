@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="users">
+		<a key="name">usersmanagement</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="stats">
+		<a key="name">stats</a>
+		<a key="show">0</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="templates">
+		<a key="name">templates</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="settings">
+		<a key="name">settings</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+</menu>

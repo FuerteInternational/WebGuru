@@ -1,0 +1,25 @@
+<!-- BEGIN module -->
+<form action="{ACTION}" method="post">
+	<p>
+		<label>{wMODNAME}:</label>
+		<input name="modname" id="modname" type="text" value="{MODNAME}" onchange="safeText(this.value, '#modid');" onkeyup="safeText(this.value, '#modid');" />
+	</p>
+	<p>
+		<label>{wMODIDENTIFIER}:</label>
+		<input name="modid" id="modid" type="text" value="{MODID}" />
+	</p>
+	<p>
+		<label>{wMODPAGES}:</label>
+		<input name="modpages" id="modpages" type="text" value="{MODPAGES}" />
+		<span class="small">(<strong>index</strong>,overview,report,details,anypage)</span>
+	</p>
+	<p>
+		<label>{wAUTHOR}:</label>
+		<input name="modauthor" id="modauthor" type="text" value="{MODAUTHOR}" />
+	</p>
+	<p>
+		<input name="act" id="act" type="hidden" value="createmod" />
+		<input name="submit" id="submit" type="submit" value="{wCREATE}" />
+	</p>
+</form>
+<!-- END module -->

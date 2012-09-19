@@ -1,0 +1,23 @@
+homecat;Home category
+chcat;Change category
+Home category;Home category
+gopager;gopager
+Id;Id
+Name;Name
+URL;URL
+Websites;Websites
+Parent;Parent
+Description;Description
+User;User
+System user;System user
+Categories;Categories
+maincat;Home category
+colid;Id
+colname;Name
+colurl;URL
+websites;Websites
+colparent;Parent
+colcatdescription;Description
+colusersid;User
+colsystemusersid;System user
+categories;Categories

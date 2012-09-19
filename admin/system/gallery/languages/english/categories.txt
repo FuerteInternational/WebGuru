@@ -1,0 +1,14 @@
+homecat;Home category
+gopager;gopager
+defaultpic;Default picture
+selectcat;Select category
+changecat;Change category
+colname;Category name
+colidentifier;Identifier
+colparent;Parent category
+colmainthumbid;Default picture for cat.
+coldate;Date
+colhead;Head
+coldescription;Description
+colnote;Note
+categories;Categories

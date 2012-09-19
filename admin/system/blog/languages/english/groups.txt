@@ -1,0 +1,9 @@
+selectblog;Select blog
+changeblog;Change blog
+colblogid;Blog
+gopager;gopager
+colname;Group name
+colidentifier;Identifier
+colblogcategoriesid;Blog category
+colhead;Short description
+coldescription;Long description

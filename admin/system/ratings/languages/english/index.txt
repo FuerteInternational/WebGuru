@@ -1,0 +1,2 @@
+descgroups;Ratings groups settings
+desctemplates;Frontend templates and settings

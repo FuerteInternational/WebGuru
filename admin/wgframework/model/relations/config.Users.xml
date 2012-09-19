@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="users" phpName="Users" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="users_groups_id" null="false" unsigned="true" size="8" type="int" />
+		<column name="nickname" null="false" size="20" type="varchar" />
+		<column name="mail" null="false" size="255" type="varchar" />
+		<column name="password" null="false" size="40" type="varchar" />
+		<column name="question" null="false" size="255" type="varchar" />
+		<column name="ansver" null="false" size="150" type="varchar" />
+		<column name="added" null="false" type="datetime" />
+		<column name="online" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="timever" null="false" size="15" type="varchar" />
+		<column name="codever" null="false" size="5" type="varchar" />
+		<column name="active" null="false" unsigned="true" size="1" type="tinyint" default="1" />
+		<column name="lastlogin" null="false" type="datetime" />
+		<column name="gender" null="false" size="'m','f'" type="set" />
+		<column name="lastip" null="false" size="17" type="varchar" />
+		<column name="firstname" null="false" size="255" type="varchar" />
+		<column name="lastname" null="false" size="255" type="varchar" />
+		<column name="system_countries_id" null="false" unsigned="true" size="5" type="int" />
+		<column name="visits" null="false" size="11" type="int" />
+		<column name="downloads" null="false" size="11" type="int" />	
+	</table>
+</database>

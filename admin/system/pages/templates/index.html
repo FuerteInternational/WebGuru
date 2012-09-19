@@ -1,0 +1,201 @@
+<!-- BEGIN pages -->
+<p class="breadcrumbs">{BREADCRUMBS}</p>
+<table>
+	<colgroup>
+		<col style="width:4%;" />
+		<col style="width:3%;" />
+		<col style="width:3%;" />
+		<col style="width:50%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th class="bold">{wID}</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLENABLED}</th>
+			<th>{wPREVIEW}</th>
+			<th>{wSHORTSETT}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="10">
+				{PARENTLINK}
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<!-- BEGIN listpages -->
+		<tr>
+			<td>{LID}</td>
+			<td>{PLUS}</td>
+			<td>{MINUS}</td>
+			<td{CLASS}>{SUBFOLDER}<a href="{NAMELINK}" title="{wIDENTIFIER}: {LIDENTIFIER}">{LNAME}</a></td>
+			<td>{LENABLED}</td>
+			<td>{PREVIEW}</td>
+			<td>{SETTINGS}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listpages -->
+	</tbody>
+</table>
+<!--<p class="tablemessage">{TABLEMESSAGE}</p>-->
+<form action="{ACTIONNEW}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+{DATAPAGER}
+<!-- END pages -->
+
+<!-- BEGIN treeview -->
+<p style="float: right; margin-right:30px;">
+	<a href="#" onclick="tree.closeAllItems(0);">{FOLDERCOLLAPSE}</a> | 
+	<a href="#" onclick="tree.openAllItems(0);">{FOLDEREXPAND}</a>
+</p>
+<div id="pagestree"></div>
+<script type="text/javascript">
+<!--
+function setCheck(e) {
+	alert(e);
+	//alert(tree.getAllChecked());
+}
+function myDragHandler(idFrom, idTo){
+	//alert(idFrom + " - " + idTo);
+	return true;
+}
+function showMessage(type, desc, data) {
+	//alert("" + data[0].status);
+}
+var tree = null;
+//tree.setXMLAutoLoading("./system/pages/ajax/treeTest.xml"); 
+function loadDTXML() {
+	$('#pagestree').html('');
+	tree = dhtmlXTreeFromHTML("pagestree", "100%", "100%", 0);
+	tree.setImagePath("./thirdparty/dhtmlxtree/codebase/imgs/");
+	tree.loadXML("./system/pages/ajax/treeTest.xml");
+	tree.enableDragAndDrop(true);
+	tree.setOnCheckHandler(setCheck);
+	tree.setDragHandler(myDragHandler);
+	dhtmlxError.catchError("ALL", showMessage);
+	tree.openItem(21);
+	
+}
+loadDTXML();
+//tree.loadXML("./ajax/scripts/xmlPagesTree.php?par=pages&sort=1");
+//tree.assignKeys([["up",104],["down",98],["open",102],["close",100],["call",101]]); 
+-->
+</script>
+<form action="{ACTION}" method="post">
+	<p class="bottombuttons">
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" onclick="loadDTXML()" />
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END treeview -->
+
+<!-- BEGIN seotools -->
+<table>
+	<colgroup>
+		<col style="width:4%;" />
+		<col style="width:36%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:10%;" />
+		<col style="width:10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wTITLE}</th>
+			<th>{wDESCR}</th>
+			<th>{wHEADA}</th>
+			<th>{wHEADB}</th>
+			<th>{wURL}</th>
+			<th>{wML}</th>
+			<th>{wPR}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listseotools -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>TITLE</td>
+			<td>DESCR</td>
+			<td>HEADA</td>
+			<td>HEADB</td>
+			<td>LINK</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<!-- END listseotools -->
+	</tbody>
+</table>
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+{DATAPAGER}
+<!-- END seotools -->
+
+<!-- BEGIN pagestools -->
+<table>
+	<colgroup>
+		<col style="width:4%;" />
+		<col style="width:38%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:8%;" />
+		<col style="width:10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wXXX}</th>
+			<th>{wXXX}</th>
+			<th>{wXXX}</th>
+			<th>{wXXX}</th>
+			<th>{wHTML}</th>
+			<th>{wCSS}</th>
+			<th>{wXXX}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listpagestools -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td>xxx</td>
+			<td>xxx</td>
+			<td>xxx</td>
+			<td>xxx</td>
+			<td>HTML</td>
+			<td>CSS</td>
+			<td>xxx</td>
+		</tr>
+		<!-- END listpagestools -->
+	</tbody>
+</table>
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+{DATAPAGER}
+<!-- END pagestools -->
+

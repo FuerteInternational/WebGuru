@@ -1,0 +1,6 @@
+products;Products
+outstanding;Outstanding payments
+customers;Customers
+costs;Costs
+permissions;Permissions
+settings;Settings

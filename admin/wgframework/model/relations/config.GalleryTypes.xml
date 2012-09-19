@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="gallery_types" phpName="GalleryTypes" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="8" type="int" primary="true" />
+		<column name="name" null="false" size="150" type="varchar" />
+		<column name="mime" null="false" size="150" type="varchar" />
+		<column name="maxsize" null="false" size="11" type="int" />	
+	</table>
+</database>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="dashboard">
+		<a key="name">dashboard</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="definitions">
+		<a key="name">definitions</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="edittranslations">
+		<a key="name">edittranslations</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="languages">
+		<a key="name">languages</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+	<a key="outputtemplates">
+		<a key="name">outputtemplates</a>
+		<a key="show">1</a>
+		<a key="type">php</a>
+		<a key="su">0</a>
+	</a>
+</menu>

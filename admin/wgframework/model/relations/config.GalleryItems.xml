@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="gallery_items" phpName="GalleryItems" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="h1" null="false" size="255" type="varchar" />
+		<column name="title" null="false" size="255" type="varchar" />
+		<column name="metakeywords" null="false" type="text" />
+		<column name="metadescription" null="false" type="text" />
+		<column name="note" null="false" type="text" />
+		<column name="added" null="false" type="datetime" />
+		<column name="captured" null="true" type="datetime" />
+		<column name="users_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="system_users_id" null="true" unsigned="true" size="11" type="int" />
+		<column name="head" null="false" type="text" />
+		<column name="description" null="false" type="longtext" />
+		<column name="exif" null="false" type="longtext" />
+		<column name="sort" null="false" size="11" type="int" />	
+	</table>
+</database>

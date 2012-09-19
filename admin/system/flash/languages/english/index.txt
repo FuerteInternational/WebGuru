@@ -1,0 +1,3 @@
+descflash;Flash animations and categories management
+desctemplates;Templates for categories, lists and details
+descsettings;Settings of the module

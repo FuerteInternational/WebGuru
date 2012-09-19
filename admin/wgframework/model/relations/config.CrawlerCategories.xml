@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="crawler_categories" phpName="CrawlerCategories" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="parent" null="false" size="11" type="int" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="catdescription" null="false" type="text" />
+		<column name="added" null="false" type="datetime" />
+		<column name="changed" null="false" type="datetime" />
+		<column name="users_id" null="false" size="11" type="int" />
+		<column name="system_users_id" null="false" unsigned="true" size="8" type="int" />	
+	</table>
+</database>

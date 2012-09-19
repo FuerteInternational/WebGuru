@@ -1,0 +1,313 @@
+<!-- BEGIN categories -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcategories -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_youtube_cat_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcategories -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p id="perpagecat">
+			<label>{wCOLPERPAGE}:</label>
+			<input name="limit" id="limit" type="text" value="{COLLIMIT}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			<input name="datasource" id="datasource" type="text" value="{COLDATASOURCE}" />
+		</p>
+		<p>
+			<label>{wGETVARIABLE}:</label>
+			<input name="var1" id="var1" type="text" value="{COLVARA}" />
+		</p>
+		<p>
+			<label>{wCOLBEGINCAT}:</label>
+			<textarea cols="50" rows="9" name="begin1" id="begin1" class="html small">{COLBEGINA}</textarea>
+		</p>
+		<p>
+			<label>{wCOLITEMCAT}:</label>
+			<textarea cols="50" rows="9" name="item1" id="item1" class="html">{COLITEMA}</textarea>
+		</p>
+		<p>
+			<label>{wCOLENDCAT}:</label>
+			<textarea cols="50" rows="9" name="end1" id="end1" class="html small">{COLENDA}</textarea>
+		</p>
+		<p>
+			<label>{wNOCATTEMP}:</label>
+			<textarea cols="50" rows="9" name="notemp1" id="notemp1" class="html">{COLNOTEMPA}</textarea>
+		</p>
+		<p class="regonly">
+			<label>{wRERGITEREDONLY}:</label>
+			{FULLCOLTINTA}
+		</p>
+		<p class="regonlytemp">
+			<label>{wNOTREGITEM}:</label>
+			<textarea cols="50" rows="9" name="notemp2" id="notemp2" class="html">{COLNOTEMPB}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="0" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready(
+	function() {
+		$('#pagercat').click(function() {
+			if (this.checked) $('#perpagecat').show();
+			else $('#perpagecat').hide();
+		});
+		if (!$('#pagercat').is(':checked')) $('#perpagecat').hide();
+	}
+);
+-->
+</script>
+<!-- END categories -->
+
+<!-- BEGIN lists -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listlists -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_youtube_list_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listlists -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p id="perpagelist">
+			<label>{wCOLPERPAGE}:</label>
+			<input name="limit" id="limit" type="text" value="{COLLIMIT}" />
+		</p>
+		<p>
+			<label>{wCOLDATASOURCE}:</label>
+			<input name="datasource" id="datasource" type="text" value="{COLDATASOURCE}" />
+		</p>
+		<p>
+			<label>{wGETVARIABLE}:</label>
+			<input name="var1" id="var1" type="text" value="{COLVARA}" />
+		</p>
+		<p>
+			<label>{wCOLBEGINITEM}:</label>
+			<textarea cols="50" rows="9" name="begin1" id="begin1" class="html small">{COLBEGINA}</textarea>
+		</p>
+		<p>
+			<label>{wCOLITEMITEM}:</label>
+			<textarea cols="50" rows="9" name="item1" id="item1" class="html">{COLITEMA}</textarea>
+		</p>
+		<p>
+			<label>{wCOLENDITEM}:</label>
+			<textarea cols="50" rows="9" name="end1" id="end1" class="html small">{COLENDA}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="notemp1" id="notemp1" class="html">{COLNOTEMPA}</textarea>
+		</p>
+		<p class="regonly">
+			<label>{wRERGITEREDONLY}:</label>
+			{FULLCOLTINTA}
+		</p>
+		<p class="regonlytemp">
+			<label>{wNOTREGITEM}:</label>
+			<textarea cols="50" rows="9" name="notemp2" id="notemp2" class="html">{COLNOTEMPB}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="1" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready(
+	function() {
+		$('#pagerlist').click(function() {
+			if (this.checked) $('#perpagelist').show();
+			else $('#perpagelist').hide();
+		});
+		if (!$('#pagerlist').is(':checked')) $('#perpagelist').hide();
+	}
+);
+-->
+</script>
+<!-- END lists -->
+
+<!-- BEGIN details -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listdetails -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_youtube_detail_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listdetails -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wGETVARIABLE}:</label>
+			<input name="var1" id="var1" type="text" value="{COLVARA}" />
+		</p>
+		<p>
+			<label>{wDETAILTEMPLATE}:</label>
+			<textarea cols="50" rows="9" name="begin1" id="begin1" class="html">{COLBEGINA}</textarea>
+		</p>
+		<p>
+			<label>{wNOITEMTEMP}:</label>
+			<textarea cols="50" rows="9" name="item1" id="item1" class="html">{COLITEMA}</textarea>
+		</p>
+		<p class="regonly">
+			<label>{wRERGITEREDONLY}:</label>
+			{FULLCOLTINTA}
+		</p>
+		<p class="regonlytemp">
+			<label>{wNOTREGITEM}:</label>
+			<textarea cols="50" rows="9" name="end1" id="end1" class="html">{COLENDA}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="2" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready(
+	function() {
+		$('.regonly input').click(function() {
+			if (this.checked) $(this).parent().next().show();
+			else $(this).parent().next().hide();
+		});
+		//$('#pagercat :checked') $('#perpagecat').hide();
+	}
+);
+-->
+</script>
+<!-- END details -->
+

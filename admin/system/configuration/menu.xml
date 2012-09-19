@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<a key="index">
+		<a key="name">index</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="configfiles">
+		<a key="name">configfiles</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="customization">
+		<a key="name">customization</a>
+		<a key="show">0</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="languages">
+		<a key="name">languages</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="updates">
+		<a key="name">updates</a>
+		<a key="show">0</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="websites">
+		<a key="name">websites</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+	<a key="templates">
+		<a key="name">templates</a>
+		<a key="show">1</a>
+		<a key="ajax">1</a>
+		<a key="type">php</a>
+	</a>
+</menu>

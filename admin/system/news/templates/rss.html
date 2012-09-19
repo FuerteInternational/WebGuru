@@ -1,0 +1,135 @@
+<!-- BEGIN rss -->
+<table>
+	<colgroup>
+		<col style="width: 27%;" />
+		<col style="width: 16%;" />
+		<col style="width: 37%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLVERSION}</th>
+			<th>{wCOLNEWSCATEGORIES}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listrss -->
+		<tr>
+			<td>{LNAME}</td>
+			<td>{LVERSION}</td>
+			<td>{LNEWSCATEGORY}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listrss -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	{TABS}
+	<p class="bottombuttons">
+		<input name="edit" type="hidden" value="{COLID}" />
+		<input name="act" type="hidden" value="{ACTIONNAME}" />
+		<input name="reset" type="reset" value="{wRESET}" />
+		<input name="apply" type="submit" value="{wAPPLY}" />
+		<input name="submit" type="submit" value="{wSAVE}" />
+	</p>
+</form>
+<!-- END rss -->
+
+<!-- BEGIN main -->
+<p>
+	<label>{wCOLNAME}:</label>
+	<input name="name" id="name" type="text" value="{COLNAME}" />
+</p>
+<p>
+	<label>{wCOLIDENTIFIER}:</label>
+	<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+</p>
+<p>
+	<label>{wCOLVERSION}:</label>
+	{FULLCOLVERSION}
+</p>
+<p>
+	<label>{wCOLNEWSCATEGORIESID}:</label>
+	{FULLCOLNEWSCATEGORIESID}
+</p>
+<p>
+	<label>{wCOLDESCRIPTION}:</label>
+	<textarea cols="50" rows="9" name="description" id="description" class="small">{COLDESCRIPTION}</textarea>
+</p>
+<table id="hiddeninfo">
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 65%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>&nbsp;</th>
+			<th>{wEXAMPLELINKS}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{wCODE}</td>
+			<td class="wgcode">index.php?pageid=1&amp;amp;cat={%CAT}&article={%ID}</td>
+		</tr>
+		<tr>
+			<td>{wCODE} (mod_rewrite)</td>
+			<td class="wgcode">rss-feeds/cat-{%CAT}/{%ID}-{%IDENTIFIER}/</td>
+		</tr>
+		<tr>
+			<td>{wCODE}</td>
+			<td class="wgcode">index.php?pageid=1&amp;amp;cat={%CAT}</td>
+		</tr>
+		<tr>
+			<td>{wCODE}</td>
+			<td class="wgcode">index.php?pageid=2&amp;amp;article={%ID}</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	<label>{wCOLLINK}:</label>
+	<span>{ADDR}</span>
+	<input name="link" id="link" type="text" value="{COLLINK}" />{INFOBUTT}
+</p>
+<!-- END main -->
+
+<!-- BEGIN settings -->
+	<p>
+		<label>{wCOLSHOWITEMS}:</label>
+		<input name="showitems" id="showitems" type="text" value="{COLSHOWITEMS}" />
+	</p>
+	<p>
+		<label>{wCOLFOLDER}:</label>
+		<input name="folder" id="folder" type="text" value="{COLFOLDER}" />
+	</p>
+	<p>
+		<label>{wCOLDISPLAYLANGUAGE}:</label>
+		<input name="displaylanguage" id="displaylanguage" type="text" value="{COLDISPLAYLANGUAGE}" />
+	</p>
+	<p>
+		<label>{wCOLCOPYRIGHT}:</label>
+		<textarea cols="50" rows="9" name="copyright" id="copyright" class="small">{COLCOPYRIGHT}</textarea>
+	</p>
+	<p>
+		<label>{wCOLTTL}:</label>
+		<input name="ttl" id="ttl" type="text" value="{COLTTL}" />
+	</p>
+	<!--<p>
+		<label>{wCOLIMAGE}:</label>
+		<input name="image" id="image" type="text" value="{COLIMAGE}" />
+	</p>
+	<p>
+		<label>{wCOLIMAGETITLE}:</label>
+		<input name="imagetitle" id="imagetitle" type="text" value="{COLIMAGETITLE}" />
+	</p>-->
+<!-- END settings -->
+

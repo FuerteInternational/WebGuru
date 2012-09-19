@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="joshtray_messages" phpName="JoshtrayMessages" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="11" type="int" primary="true" />
+		<column name="joshtray_people_id" null="false" unsigned="true" size="11" type="int" />
+		<column name="from_id" null="true" unsigned="true" size="10" type="int" />
+		<column name="message" null="false" type="text" />
+		<column name="added" null="false" type="datetime" />
+		<column name="received" null="true" type="datetime" />	
+	</table>
+</database>

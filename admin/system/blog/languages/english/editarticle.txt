@@ -1,0 +1,26 @@
+colfeatured;Featured article
+views;Views
+filename;Filename
+nogroup;nogroup
+coltitle;Title
+colcategory;Category
+colstatus;Published
+colbloggroupsid;Article group
+colexcerpt;Article excerpt
+colcontent;Article content
+post;Post
+colblogid;Blog
+colaccessname;Security name
+colaccesspassword;Security password
+colcontentfiltered;Filtered content
+colparent;Parent
+colmenuorder;Menu order
+colposttype;Post type
+postsettings;Post settings
+file;File
+addfield;Add file field
+thumb;Icon
+name;Name
+downloads;Downloads
+download;Download
+files;Files

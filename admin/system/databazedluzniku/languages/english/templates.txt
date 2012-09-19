@@ -1,0 +1,5 @@
+includename;Jmeno sablony
+insertcode;Code do stranky
+filesize;Velikost souboru
+filename;Jmeno sablony
+code;Kod

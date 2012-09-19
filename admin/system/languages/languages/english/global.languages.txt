@@ -1,0 +1,4 @@
+dashboard;Summary
+definitions;Language keys
+edittranslations;Translations
+outputtemplates;Output templates

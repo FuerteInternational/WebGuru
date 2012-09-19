@@ -1,0 +1,127 @@
+<?php
+/**
+ * 
+ * 
+ * @package      WebGuru3
+ * @subpackage   modules/users/actions
+ * @author       Ondrej Rafaj
+ * @author       WebGuruCMS3 Framework CMS admin generator (http://www.webgurucms.com)
+ * @version      1.0.0.0
+ * @wgversion    3.0.0.0
+ * @wgdeveloper  1.0.0.0
+ * @since        1. April 2009
+ */
+final class templatesloginActionsUsers extends BaseActions {
+	/**
+	 * All variables neccessary for module should be here
+	 *
+	 * @var array
+	 */
+	private static $_par = array();
+	
+	/**
+	 * Object constructor, assigning variables to the class from post, init the class
+	 *
+	 */
+	public function __construct() {
+		parent::__construct();
+		self::$_par['edit'] = 0;
+		// filling parameters with data
+		self::$_par = array();
+		//Array
+		
+		// init the process
+		parent::$_ok = (bool) $this->_init();
+	}
+	
+	/**
+	 * Initialisation of the module creation
+	 *
+	 * @return bool Success
+	 */
+	private function _init() {
+		$ok = false;
+		if (wgSystem::isSave() || wgSystem::isApply()) {
+			$mand = true;
+			if (!(bool) wgSystem::getPostValue('name')) {
+				error::add('noname');
+				$mand = false;
+			}
+		if (!(bool) wgSystem::getPostValue('identifier')) {
+				wgSystem::setPostValue('identifier', wgSystem::getPostValue('name'));
+			}
+		
+			if ($mand) {
+				$ok = (bool) self::doSaveUsersTemplates();
+				if ($ok) error::add('saved', 2);
+				else error::add('cantsave');
+			}
+		}
+		if ((bool) wgSystem::getValue('delete')) {
+			$ok = (bool) self::doDeleteUsersTemplates(wgSystem::getValue('delete'));
+			if ($ok) error::add('deleted', 2);
+			else error::add('cantdelete');
+		}
+		// setup callback parameters after redirection
+		parent::$_onSaveParam = NULL;       // After save
+		parent::$_onApplyParam = 'edit='.self::$_par['edit'];      // After apply
+		parent::$_onDeleteParam = NULL;     // After delete
+		return $ok;
+	}
+	
+	// functions ---------------------------------------------------------------------------
+	
+	/**
+	 * Save/Update function for table "users_templates"
+	 *
+	 * @return bool Success
+	 */
+	private static function doSaveUsersTemplates() {
+		$save = array();
+		$save['name'] = wgSystem::getPostValue('name');
+		$save['identifier'] = valid::safeText(wgSystem::getPostValue('identifier'));
+		$save['temptype'] = wgSystem::getPostValue('temptype');
+		$save['pager'] = wgSystem::getPostValue('pager');
+		$save['perpage'] = wgSystem::getPostValue('perpage');
+		$save['datasource'] = wgSystem::getPostValue('datasource');
+		$save['datasource2'] = wgSystem::getPostValue('datasource2');
+		$save['variable'] = wgSystem::getPostValue('variable');
+		$save['useedit'] = wgSystem::getPostValue('useedit');
+		$save['tempstart'] = wgSystem::getPostValue('tempstart');
+		$save['temp'] = wgSystem::getPostValue('temp');
+		$save['tempend'] = wgSystem::getPostValue('tempend');
+		$save['noitem'] = wgSystem::getPostValue('noitem');
+		$save['mess1'] = wgSystem::getPostValue('mess1');
+		$save['mess2'] = wgSystem::getPostValue('mess2');
+		$save['mess3'] = wgSystem::getPostValue('mess3');
+		$save['mess4'] = wgSystem::getPostValue('mess4');
+		$save['mess5'] = wgSystem::getPostValue('mess5');
+		
+		if ((bool) wgSystem::getPostValue('edit')) {
+			$save['where'] = wgSystem::getPostValue('edit');
+			$id = (int) $save['where'];
+			self::$_par['edit'] = $id;
+			return (bool) UsersTemplatesModel::doUpdate($save);
+		}
+		else {
+			$id = (int) UsersTemplatesModel::doInsert($save);
+			self::$_par['edit'] = $id;
+			return (bool) $id;
+		}
+	}
+
+	/**
+	 * Delete function for table "users_templates"
+	 *
+	 * @param int Id of the item (primary key)
+	 * @return bool Success
+	 */
+	private static function doDeleteUsersTemplates($id) {
+		$id = (int) $id;
+		if (!(bool) $id) return false;
+		return (bool) UsersTemplatesModel::doDelete($id);
+	}
+	
+}
+
+?>

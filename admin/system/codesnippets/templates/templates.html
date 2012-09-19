@@ -1,0 +1,571 @@
+<!-- BEGIN templates -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listtemplates -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_codesnippets_list_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listtemplates -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLISSEARCH}:</label>
+			{FULLCOLISSEARCH}
+		</p>
+		<p id="listDatasource">
+			<label>{wDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p id="listCategory">
+			<label>{wCATEGORY}:</label>
+			{FULLCATEGORY}
+		</p>
+		<p id="listVariable">
+			<label id="listVariableLabel">{wVARIABLE}:</label>
+			<input name="variable" type="text" value="{VARIABLE}" />
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p id="listPerpage">
+			<label>{wCOLPERPAGE}:</label>
+			<input name="perpage" id="perpage" type="text" value="{COLPERPAGE}" />
+		</p>
+		<p>
+			<label>{wDELETEDOKMESS}:</label>
+			<input name="errmess1" type="text" value="{ERR1}" />
+		</p>
+		<p>
+			<label>{wCANTDELETE}:</label>
+			<input name="errmess2" type="text" value="{ERR2}" />
+		</p>
+		<p>
+			<label>{wNOPERMSMESS}:</label>
+			<input name="errmess3" type="text" value="{ERR3}" />
+		</p>
+		<p>
+			<label>{wAFTERDELETEREDIR}:</label>
+			{ERR4}
+		</p>
+		<p>
+			<label>{wCOLTBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tbegin" class="html small">{COLTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" class="html">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEND}:</label>
+			<textarea cols="50" rows="9" name="tend" id="tend" class="html small">{COLTEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" id="noitem" class="html">{COLNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="{COLTEMPTYPE}" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready(function() {
+	$('#listSearch').click(function() { toggleListSearch($(this).is(':checked')); });
+	toggleListSearch($('#listSearch').is(':checked'));
+
+	$('#listPager').click(function() { toggleListPager($(this).is(':checked')); });
+	toggleListPager($('#listPager').is(':checked'));
+
+	$('#listDS').click(function() { checkListDatasource(); });
+	checkListDatasource();
+});
+function toggleListSearch(enabled) {
+	if (enabled) {
+		$('#listVariable').show();
+		$('#listVariableLabel').html('{wSEARCHVAR}');
+		$('#listDatasource').hide();
+		$('#listCategory').hide();
+	}
+	else {
+		checkListDatasource();
+		$('#listVariableLabel').html('{wVARIABLE}');
+		$('#listDatasource').show();
+	}
+}
+
+function toggleListPager(enabled) {
+	if (enabled) $('#listPerpage').show();
+	else $('#listPerpage').hide();
+}
+
+function checkListDatasource() {
+	val = $('#listDS').val();
+	if (val == 0) {
+		// selected cat
+		$('#listVariable').hide();
+		$('#listCategory').show();
+	}
+	else if (val == 1) {
+		// variable
+		$('#listVariable').show();
+		$('#listCategory').hide();
+		$('#listVariableLabel').html('{wSNIPPETVAR}');
+	}
+	else if (val == 2) {
+		// all
+		$('#listVariable').hide();
+		$('#listCategory').hide();
+	}
+	else if (val == 3) {
+		// users all var
+		$('#listVariable').show();
+		$('#listCategory').hide();
+		$('#listVariableLabel').html('{wUSERVAR}');
+	}
+	else if (val == 4) {
+		// users all var in cat
+		$('#listVariable').show();
+		$('#listCategory').show();
+		$('#listVariableLabel').html('{wUSERVAR}');
+	}
+	else if (val == 5) {
+		// users own all snippets
+		$('#listVariable').hide();
+		$('#listCategory').hide();
+	}
+	else if (val == 6) {
+		// users own published snippets
+		$('#listVariable').hide();
+		$('#listCategory').hide();
+	}
+}
+//-->
+</script>
+<!-- END templates -->
+
+<!-- BEGIN snipdetails -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listsnipdetails -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_codesnippets_detail_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listsnipdetails -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLUSESEO}:</label>
+			{COLUSESEO}
+			<span class="small">{wUSESEOINFO}</span>
+		</p>
+		<p id="detailDatasource">
+			<label>{wDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p id="detailCategory">
+			<label>{wCATEGORY}:</label>
+			{FULLCATEGORY}
+		</p>
+		<p id="detailVariable">
+			<label id="detailVariableLabel">{wVARIABLE}:</label>
+			<input name="variable" type="text" value="{VARIABLE}" />
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" class="html">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLFOFRED}:</label>
+			{FULLCOLFOFRED}
+		</p>
+		<p id="detailNOTEMP">
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" class="html">{COLNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="{COLTEMPTYPE}" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready(function() {
+	$('#detailDS').click(function() { checkDetailDatasource(); });
+	checkDetailDatasource();
+
+	if ($('#detailFOF').is(':checked')) $('#detailNOTEMP').hide();
+	else $('#detailNOTEMP').show();
+
+	$('#detailFOF').click(function() {
+		if ($(this).is(':checked')) $('#detailNOTEMP').hide();
+		else $('#detailNOTEMP').show();
+	});
+});
+
+function checkDetailDatasource() {
+	val = $('#detailDS').val();
+	if (val == 0) {
+		// variable
+		$('#detailVariable').show();
+		$('#detailCategory').hide();
+	}
+	else if (val == 1) {
+		// latest
+		$('#detailVariable').hide();
+		$('#detailCategory').hide();
+	}
+	else if (val == 2) {
+		// latest cat
+		$('#detailVariable').hide();
+		$('#detailCategory').show();
+	}
+	else if (val == 3) {
+		// random
+		$('#detailVariable').hide();
+		$('#detailCategory').hide();
+	}
+	else if (val == 4) {
+		// random cat
+		$('#detailVariable').hide();
+		$('#detailCategory').show();
+	}
+}
+//-->
+</script>
+<!-- END snipdetails -->
+
+<!-- BEGIN catlist -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listcatlist -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_codesnippets_cats_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listcatlist -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<!--<p>
+			<label>{wDATASOURCE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p>
+			<label>{wCOLPAGER}:</label>
+			{FULLCOLPAGER}
+		</p>
+		<p>
+			<label>{wCOLPERPAGE}:</label>
+			{FULLCOLPERPAGE}
+		</p>-->
+		<p>
+			<label>{wCOLTBEGIN}:</label>
+			<textarea cols="50" rows="9" name="tbegin" class="html small">{COLTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" class="html">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLTEND}:</label>
+			<textarea cols="50" rows="9" name="tend" class="html small">{COLTEND}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNOITEM}:</label>
+			<textarea cols="50" rows="9" name="noitem" class="html">{COLNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="{COLTEMPTYPE}" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END catlist -->
+
+<!-- BEGIN sendsnippet -->
+<table>
+	<colgroup>
+		<col style="width: 35%;" />
+		<col style="width: 45%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCODE}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listsendsnippet -->
+		<tr>
+			<td>{LNAME}</td>
+			<td class="wgcode">{#MOD_codesnippets_form_{LIDENTIFIER}}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listsendsnippet -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wADMINMUSTAPPROVE}:</label>
+			{FULLCOLISSEARCH}
+			<span class="small">{wOTHERWREGUSR}</span>
+		</p>
+		<p id="formDatasource">
+			<label>{wSENDTYPE}:</label>
+			{FULLDATASOURCE}
+		</p>
+		<p id="formCategory">
+			<label>{wCATEGORY}:</label>
+			{FULLCATEGORY}
+		</p>
+		<p id="formVariable">
+			<label id="formVariableLabel">{wVARIABLE}:</label>
+			<input name="variable" type="text" value="{VARIABLE}" />
+		</p>
+		<p>
+			<label>{wNONAMEMESS}:</label>
+			<input name="errmess1" type="text" value="{ERR1}" />
+		</p>
+		<p>
+			<label>{wNOCODEMESS}:</label>
+			<input name="errmess2" type="text" value="{ERR2}" />
+		</p>
+		<p>
+			<label>{wNOPERMSMESS}:</label>
+			<input name="errmess3" type="text" value="{ERR3}" />
+		</p>
+		<p>
+			<label>{wOKSENTMESS}:</label>
+			<input name="errmess4" type="text" value="{ERR4}" />
+		</p>
+		<p>
+			<label>{wCOLEDITTITEM}:</label>
+			<textarea cols="50" rows="9" name="titem" class="html">{COLTITEM}</textarea>
+		</p>
+		<p>
+			<label>{wCOLNEWTITEM}:</label>
+			<textarea cols="50" rows="9" name="tbegin" class="html">{COLTBEGIN}</textarea>
+		</p>
+		<p>
+			<label>{wNOTREGWHATTODO}:</label>
+			{FULLCOLFOFRED}
+		</p>
+		<!--<p id="formFOFCheck">
+			<label>{wUSEFOF}:</label>
+			{FULLCOLFOFRED}
+		</p>-->
+		<p id="formFOFRed">
+			<label>{wNOTREGREDIR}:</label>
+			<input name="tend" type="text" value="{COLTEND}" />
+		</p>
+		<p id="formFOFTmp">
+			<label>{wNOTREGTEMP}:</label>
+			<textarea cols="50" rows="9" name="noitem" class="html">{COLNOITEM}</textarea>
+		</p>
+		<p class="bottombuttons">
+			<input name="temptype" type="hidden" value="{COLTEMPTYPE}" />
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<script type="text/javascript">
+<!--
+$(document).ready(function() {
+	$('#formDS').click(function() { checkFormDatasource(); });
+	checkFormDatasource();
+	checkFormWTD($('#formWTD').val());
+});
+
+function checkFormWTD(val) {
+	if (val == 0) {
+		// for all 
+		$('#formFOFRed').hide();
+		$('#formFOFTmp').hide();
+	}
+	else if (val == 1) {
+		// redirection
+		$('#formFOFRed').show();
+		$('#formFOFTmp').hide();
+	}
+	else if (val == 2) {
+		// template
+		$('#formFOFRed').hide();
+		$('#formFOFTmp').show();
+	}
+	else if (val == 3) {
+		// four o' four
+		$('#formFOFRed').hide();
+		$('#formFOFTmp').hide();
+	}
+}
+
+function checkFormDatasource() {
+	val = $('#formDS').val();
+	if (val == 0) {
+		// variable
+		$('#formVariable').show();
+		$('#formCategory').hide();
+	}
+	else if (val == 1) {
+		// just new
+		$('#formVariable').hide();
+		$('#formCategory').hide();
+	}
+	else if (val == 2) {
+		// only one cat
+		$('#formVariable').hide();
+		$('#formCategory').show();
+	}
+}
+//-->
+</script><!-- END sendsnippet -->
+

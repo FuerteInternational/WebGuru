@@ -1,0 +1,81 @@
+<!-- BEGIN apps -->
+<table>
+	<colgroup>
+		<col style="width: 60%;" />
+		<col style="width: 20%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLADDED}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listapps -->
+		<tr>
+			<td>{ICON} {LNAME}</td>
+			<td>{LADDED}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listapps -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post" enctype="multipart/form-data">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLLINK}:</label>
+			<input name="link" id="link" type="text" value="{COLLINK}" />
+		</p>
+		<p>
+			<label>{wSMALLICON}:</label>
+			{SMALLICO}
+			<input type="file" name="smallico" />
+			<span{HIDDENSMALL}>( {wDELETE} <input type="checkbox" name="delsmall" value="1"/>)</span>
+		</p>
+		<p>
+			<label>{wBIGICON}:</label>
+			{BIGICO}
+			<input type="file" name="bigico" />
+			<span{HIDDENBIG}>( {wDELETE} <input type="checkbox" name="delbig" value="1"/>)</span>
+		</p>
+		<p>
+			<label>{wCOLHEAD}:</label>
+			<textarea cols="50" rows="9" name="head" id="head" class="small">{COLHEAD}</textarea>
+		</p>
+		<p>
+			<label>{wCOLDESCRIPTION}:</label>
+			<textarea cols="50" rows="9" name="description" id="description">{COLDESCRIPTION}</textarea>
+		</p>
+		<p>
+			<label>{wCOLSORT}:</label>
+			<input name="sort" id="sort" type="text" value="{COLSORT}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END apps -->
+

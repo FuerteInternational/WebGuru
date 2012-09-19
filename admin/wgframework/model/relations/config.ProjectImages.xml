@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<table name="project_images" phpName="ProjectImages" engine="MyISAM">
+		<column name="id" null="false" unsigned="true" size="20" type="bigint" primary="true" />
+		<column name="name" null="false" size="255" type="varchar" />
+		<column name="identifier" null="false" size="255" type="varchar" />
+		<column name="filename" null="false" size="255" type="varchar" />
+		<column name="type" null="false" size="20" type="varchar" />
+		<column name="h1" null="false" size="255" type="varchar" />
+		<column name="title" null="false" size="255" type="varchar" />
+		<column name="mdescription" null="false" type="text" />
+		<column name="mkeywords" null="false" type="text" />
+		<column name="h2" null="false" size="255" type="varchar" />
+		<column name="h3" null="false" size="255" type="varchar" />
+		<column name="text1" null="false" type="text" />
+		<column name="text2" null="false" type="text" />
+		<column name="text3" null="false" type="text" />
+		<column name="text4" null="false" type="text" />
+		<column name="views" null="false" size="20" type="bigint" />
+		<column name="downloads" null="false" size="20" type="bigint" />
+		<column name="size" null="false" size="11" type="int" />	
+	</table>
+</database>
