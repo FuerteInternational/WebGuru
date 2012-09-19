@@ -1,22 +1,48 @@
+<!-- HEAD TEMPLATE -->
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>{%TITLE} - Mobile Application Store - Fuerte International</title>
-<link href="assets/basic/css/styles.css" rel="stylesheet" type="text/css" />
+<title>{#TITLE} - Mobile Application Store - Fuerte International</title>
+<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />
+{#HEAD}
 </head>
+
+
+<!-- HEADER TEMPLATE -->
+
+
+<div id="header">
+    {#MOD_users_login_login-line}
+    <h1><span>Mobile Application Store - </span><strong>{#H1}</strong></h1>
+</div>
+
+
+<!-- PAGE TEMPLATE -->
+
+
+<div id="page">
+    {#MOD_configuration_errors_errors}
+    {#CONTENT}
+</div>
+
+
+<!-- FOOTER TEMPLATE -->
+
+
+<div id="footer">
+
+</div>
+
+
+<!-- MAIN TEMPLATE -->
+
 
 <body>
 <div id="container">
-	<div id="header">
-    
-    </div>
-	<div id="page">
-    	{#CONTENT}
-    </div>
-	<div id="footer">
-    
-    </div>
+	
 </div>
 </body>
 </html>
