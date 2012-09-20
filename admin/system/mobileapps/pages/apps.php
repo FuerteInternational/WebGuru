@@ -1,6 +1,6 @@
 <?php
 /**
- * Page Apps in the Mobile Apps module
+ * Page apps for module Mobileapps
  * 
  * @package      WebGuru3
  * @subpackage   modules/mobileapps/pages/
@@ -13,28 +13,127 @@
  */
 
 $system['parse']['head'] = '
-<script type="text/javascript" src="./'.wgPaths::getAdminPath('url').'mobileappsjs/functions.js"></script>
-'; // any code you want to include to the head section of the WebGuru administration
-$system['parse']['editor'] = true; // enable or disable wysiwyg for user on the page (leave false if you are not using this one)
-// --------------------------------- start content ---------------------------------
+<link href="./thirdparty/calendar/calendar-blue.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="./thirdparty/calendar/calendar.js"></script>
+<script type="text/javascript" src="./thirdparty/calendar/lang/calendar-en.js"></script>
+<script type="text/javascript" src="./thirdparty/calendar/calendar-setup.js"></script>
+';
+$system['parse']['editor'] = false;
+$tab = new myTabs('myTabs');
+
+// ----------- mobileapps (Block: mobileapps) start -----------
+$block = 'mobileapps';
 $tpl = new wgParse($temp, $path);
 $tpl->setCurrentBlock($block);
 
-// setting plain variable
-$var['TEXT'] = 'Hello World :-)';
+$var['ACTIONNAME'] = 'appsmobileapps';
 
-// setting default _POST variable
-wgSystem::defPostValue('myvalue', 'My value with postback');
+wgSystem::clearDefPostValue();
 
-// setting postback for _POST variables
+wgSystem::defPostValue(MobileappsModel::COL_ID, '');
+wgSystem::defPostValue(MobileappsModel::COL_NAME, '');
+wgSystem::defPostValue(MobileappsModel::COL_IDENTIFIER, '');
+wgSystem::defPostValue(MobileappsModel::COL_COMPANIES_ID, '');
+wgSystem::defPostValue(MobileappsModel::COL_APPTYPE, '');
+wgSystem::defPostValue(MobileappsModel::COL_ICON, '');
+wgSystem::defPostValue(MobileappsModel::COL_SORT, '0');
+wgSystem::defPostValue(MobileappsModel::COL_ADDED, time());
+wgSystem::defPostValue(MobileappsModel::COL_CHANGED, time());
+wgSystem::defPostValue(MobileappsModel::COL_VERSION, '');
+$lv = array();
+$item = new MobileappsModel();
+$item->setDefaultResults(wgSystem::getPost());
+
+//$arr = MobileappsModel::getSelfPagerData(pager::getPage($block), 20);
+$arr = MobileappsModel::doPager(array(), pager::getPage($block));
+// MobileappsModel::getPagerData(pager::getPage($block), 0, 20);
+if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
+	$tpl->setCurrentBlock('listmobileapps');
+	$lv['LID'] = $val->getId();
+	$lv['LNAME'] = $val->getName();
+	$lv['LIDENTIFIER'] = $val->getIdentifier();
+	$lv['LCOMPANIESID'] = $val->getCompaniesId();
+	$lv['LAPPTYPE'] = $val->getApptype();
+	$lv['LICON'] = $val->getIcon();
+	$lv['LSORT'] = $val->getSort();
+	$lv['LADDED'] = $val->getAdded();
+	$lv['LCHANGED'] = $val->getChanged();
+	$lv['LVERSION'] = $val->getVersion();
+	$lv['EDITROW'] = wgIcons::getButton('edit', $val->getName(), wgPaths::makeTableEditLink($val->getId(), 'show='.$var['ACTIONNAME']));
+	$lv['DELETEROW'] = wgIcons::getButton('delete', $val->getName(), wgPaths::makeTableDeleteLink($val->getId(), 'act='.$var['ACTIONNAME']), true);
+	$tpl->setVariable($lv);
+	$tpl->parseBlock('listmobileapps');
+	if (wgSystem::getRequestValue('edit') == $val->getId() && wgSystem::getRequestValue('show') == $var['ACTIONNAME']) $item = $val;
+}
+$var['DATAPAGER'] = pager::makeAdminPager($arr['pager']);
+$lv = array();
+
+$var['COLID'] = $item->getId();
+$var['COLNAME'] = $item->getName();
+$var['COLIDENTIFIER'] = $item->getIdentifier();
+$var['COLCOMPANIESID'] = $item->getCompaniesId();
+$var['COLAPPTYPE'] = $item->getApptype();
+$var['COLICON'] = $item->getIcon();
+$var['COLSORT'] = $item->getSort();
+$var['COLAPPTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getApptype(), array(), array(), wgLang::get('iPhone'));
+$var['FULLCOLADDED'] = formsHelper::getDateTimeBox('added', $item->getAdded());
+$var['FULLCOLCHANGED'] = formsHelper::getDateTimeBox('changed', $item->getChanged());
+$var['COLVERSION'] = $item->getVersion();
+
 $var = wgSystem::getFormCallback($var);
 
-// adding variables to the template
 $tpl->setVariable($var);
-
-// parsing block from template
 $tpl->parseBlock($block);
-// --------------------------------- end content ---------------------------------
+$tab->addTab('mobileapps', wgLang::get('mobileapps'), true, $tpl->getBlock($block));
+// ----------- mobileapps end -----------
+
+// ----------- installstats (Block: installstats) start -----------
+$block = 'installstats';
+$tpl = new wgParse($temp, $path);
+$tpl->setCurrentBlock($block);
+
+$var['ACTIONNAME'] = 'appsinstallstats';
+
+wgSystem::clearDefPostValue();
+
+$lv = array();
+$item = new MobileappsModel();
+$item->setDefaultResults(wgSystem::getPost());
+
+//$arr = MobileappsModel::getSelfPagerData(pager::getPage($block), 20);
+$arr = MobileappsModel::doPager(array(), pager::getPage($block));
+// MobileappsModel::getPagerData(pager::getPage($block), 0, 20);
+if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
+	$tpl->setCurrentBlock('listinstallstats');
+	$lv['LID'] = $val->getId();
+	$lv['LNAME'] = $val->getName();
+	$lv['LIDENTIFIER'] = $val->getIdentifier();
+	$lv['LCOMPANIESID'] = $val->getCompaniesId();
+	$lv['LAPPTYPE'] = $val->getApptype();
+	$lv['LICON'] = $val->getIcon();
+	$lv['LSORT'] = $val->getSort();
+	$lv['LADDED'] = $val->getAdded();
+	$lv['LCHANGED'] = $val->getChanged();
+	$lv['LVERSION'] = $val->getVersion();
+	$lv['EDITROW'] = wgIcons::getButton('edit', $val->getName(), wgPaths::makeTableEditLink($val->getId(), 'show='.$var['ACTIONNAME'], 'index'));
+	$lv['DELETEROW'] = wgIcons::getButton('delete', $val->getName(), wgPaths::makeTableDeleteLink($val->getId(), 'act='.$var['ACTIONNAME']), true);
+	$tpl->setVariable($lv);
+	$tpl->parseBlock('listinstallstats');
+	if (wgSystem::getRequestValue('edit') == $val->getId() && wgSystem::getRequestValue('show') == $var['ACTIONNAME']) $item = $val;
+}
+$var['DATAPAGER'] = pager::makeAdminPager($arr['pager']);
+$lv = array();
+
+
+$var = wgSystem::getFormCallback($var);
+
+$tpl->setVariable($var);
+$tpl->parseBlock($block);
+$tab->addTab('installstats', wgLang::get('installstats'), false, $tpl->getBlock($block));
+// ----------- installstats end -----------
+
+
+
 $var = array();
-$system['parse']['content'] = $tpl->getBlock($block);
+$system['parse']['content'] = $tab->getAll();
 ?>

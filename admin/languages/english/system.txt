@@ -52,3 +52,4 @@ remember;Remember
 login;Login
 delrealy;Do you really want to delete
 deleted;Item has been successfully deleted
+dirnotexist;Directory doesn't exist

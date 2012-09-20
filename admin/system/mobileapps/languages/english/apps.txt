@@ -1,0 +1,14 @@
+installstats;Download / Install stats
+colname;App name
+colidentifier;App identifier
+colcompaniesid;Company
+colapptype;App type
+colicon;Icon
+colsort;Sorting
+coladded;Added
+colchanged;Changed
+colversion;Version
+downloads;Downloads
+nofileattached;No file has been attached!
+file;.ipa file
+novalidpng;Icon is not a valid PNG image

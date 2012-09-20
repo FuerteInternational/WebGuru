@@ -2,3 +2,4 @@ apps;Applications
 descapps;Manage your applications here
 descusers;Manage users and their companies here
 desccompanies;Manage your companies here
+colid;Id

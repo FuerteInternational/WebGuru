@@ -41,9 +41,6 @@ class moduleMobileapps {
 	
 	// ------------------------- class functions -------------------------
 	
-	public function myFirstFunction() {
-		wgError::add('Hello world :-)');
-	}
 }
 		
 ?>
