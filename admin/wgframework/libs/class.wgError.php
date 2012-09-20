@@ -114,7 +114,7 @@ class wgError {
 	public static function getArrayText($array, $preformated=false) {
 		ob_start();
 		if ((bool) $preformated) echo '<pre>';
-		print_r($array);
+		//print_r($array);
 		if ((bool) $preformated) echo '</pre>';
 		return ob_get_flush();
 	}
