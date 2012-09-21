@@ -12,3 +12,12 @@ downloads;Downloads
 nofileattached;No file has been attached!
 file;.ipa file
 novalidpng;Icon is not a valid PNG image
+iconwrongratio;Icon needs to be a square PNG
+icontoosmall;Icon is too small, minimum size is 57px
+unabletosaveicon;Unable to save icon
+iconcorrect;Icon is in a correct format and will be uploaded
+iconfor;Icon for
+icon;Icon
+
+
+

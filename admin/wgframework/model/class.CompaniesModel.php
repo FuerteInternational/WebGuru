@@ -16,14 +16,22 @@ class CompaniesModel extends BaseCompaniesModel {
 	
 	// --------------------- Predefined functions for Companies ---------------------
 
-	/*
 	public static function getSelfData() {
 		$conn = new wgConnector();
-		//$conn->where(parent::COL_ID, $id);
-		//$conn->order(parent::COL_NAME, 'ASC');
+		$conn->order(parent::COL_NAME, 'ASC');
 		return parent::doSelect($conn);
 	}
-	//*/
+	
+	public static function getSelfDataForUser($userId=0) {
+		return self::getSelfData();
+		
+		$conn = new wgConnector();
+		$conn->rightJoin(parent::TABLE_NAME, MobileappsUsersModel::TABLE_NAME);
+		$conn->onJoin(parent::COL_ID, MobileappsUsersModel::COL_COMPANIES_ID);
+		$conn->where(MobileappsUsersModel::COL_USERS_ID, $userId);
+		$conn->order(parent::COL_NAME, 'ASC');
+		return parent::doSelect($conn);
+	}
 	
 	/*
 	public static function getSelfPagerData($page, $limit=20) {

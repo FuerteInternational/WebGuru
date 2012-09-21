@@ -1,15 +1,93 @@
-<!-- BEGIN users -->
+<!-- BEGIN userssettings -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 30%;" />
+		<col style="width: 35%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLFIRSTNAME}</th>
+			<th>{wCOLLASTNAME}</th>
+			<th>{wCOLVISITS}</th>
+			<th>{wCOLAPPS}</th>
+			<th>{wEDIT}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listuserssettings -->
+		<tr>
+			<td align="center">{LID}</td>
+			<td>{LFIRSTNAME}</td>
+			<td>{LLASTNAME}</td>
+			<td align="center">{LVISITS}</td>
+			<td align="center">{LVISITS}</td>
+			<td>{EDITROW}</td>
+		</tr>
+		<!-- END listuserssettings -->
+	</tbody>
+</table>
+{DATAPAGER}
 <form action="{ACTION}" method="post">
-	<h1>{TEXT}</h1>
-	<p>
-		<label>{wMYVALUELABEL}:</label>
-		<input name="myvalue" id="myvalue" type="text" value="{MYVALUE}" />
-	</p>
-	<p>
-		<!-- hidden "act" field is mandatory if you want to use action class system -->
-		<input name="act" id="act" type="hidden" value="dousersjob" />
-		<input name="submit" id="submit" type="submit" value="{wSUBMIT}" />
-	</p>
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
 </form>
-<!-- END users -->			
-		
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wCOLFIRSTNAME}:</label>
+			<span>{COLFIRSTNAME}</span>
+		</p>
+		<p>
+			<label>{wCOLLASTNAME}:</label>
+			<span>{COLLASTNAME}</span>
+		</p>
+		<p>
+			<label>{wCOLNICKNAME}:</label>
+			<span>{COLNICKNAME}</span>
+		</p>
+		<p>
+			<label>{wCOLMAIL}:</label>
+			<span>{COLMAIL}</span>
+		</p>
+		<p>
+			<label>{wCOLLASTLOGIN}:</label>
+			<span>{FULLCOLLASTLOGIN}</span>
+		</p>
+		<p>
+			<label>{wCOLLASTIP}:</label>
+			<span>{COLLASTIP}</span>
+		</p>
+		<p>&nbsp;</p>
+		<!--<h4>{wCOMPANIESMEMBERSHIP}</h4>-->
+		<fieldset><legend>{wCOMPANIESMEMBERSHIP}</legend>
+			<p>
+				<label>{wBASICUSERGROUP}:</label>
+				<input type="checkbox" name="checkbox-always-selected" readonly="readonly" value="1" />
+			</p>
+			<!-- BEGIN listusercompanies -->
+			<p>
+				<label>{COMPANYNAME}:</label>
+				<input type="checkbox" name="checkbox-{COMPANYIDENTIFIER}" value="1" />
+			</p>
+			<!-- END listusercompanies -->
+		</fieldset>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END userssettings -->
+

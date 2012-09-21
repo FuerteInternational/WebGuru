@@ -17,4 +17,5 @@ colnote;Note
 modulesperm;Modules permissions
 pagesperm;Pages permissions
 permissions;Permissions
-
+modulespermissions;Modules permissions
+modulename;Module name

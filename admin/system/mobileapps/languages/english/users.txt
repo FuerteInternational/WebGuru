@@ -1,0 +1,13 @@
+colcompany;Company name
+colfirstname;Fist name
+collastname;Last name
+colvisits;Visits
+colapps;Apps
+userssettings;User settings
+colnickname;Nick name
+colmail;Email
+collastlogin;Last login
+collastip;Last used IP
+companiesmembership;Companies membership
+basicusergroup;Basic user group
+

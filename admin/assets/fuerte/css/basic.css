@@ -110,3 +110,6 @@ li {
 #maxplacement span.wgmaximize {
 	float:right;
 }
+input[readonly] {
+	background-color:#FFECE7;
+}

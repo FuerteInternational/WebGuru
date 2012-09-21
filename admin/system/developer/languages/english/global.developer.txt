@@ -8,3 +8,12 @@ dbmodel;Database model
 installer;Installer
 module;Module
 modelgenerated;Database model has been generated
+services;API services
+descservices;Generate services for a table in your database
+generateservices;Generate services
+createservfortable;Create service for table
+generateservice;Generate
+selectmod;Select module;
+tablename;Table name
+data;Include data
+rows;Entries

@@ -53,11 +53,13 @@ if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $va
 	$lv['LNAME'] = $val->getName();
 	$lv['LIDENTIFIER'] = $val->getIdentifier();
 	$lv['LCOMPANIESID'] = $val->getCompaniesId();
-	$lv['LAPPTYPE'] = $val->getApptype();
-	$lv['LICON'] = $val->getIcon();
+	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
+	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
+	if ($val->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$val->getId().'.png';
+	$lv['LICON'] = $icon;
 	$lv['LSORT'] = $val->getSort();
 	$lv['LADDED'] = $val->getAdded();
-	$lv['LCHANGED'] = $val->getChanged();
+	$lv['LCHANGED'] = wgSystem::formatDate($val->getChanged());
 	$lv['LVERSION'] = $val->getVersion();
 	$lv['EDITROW'] = wgIcons::getButton('edit', $val->getName(), wgPaths::makeTableEditLink($val->getId(), 'show='.$var['ACTIONNAME']));
 	$lv['DELETEROW'] = wgIcons::getButton('delete', $val->getName(), wgPaths::makeTableDeleteLink($val->getId(), 'act='.$var['ACTIONNAME']), true);
@@ -73,7 +75,11 @@ $var['COLNAME'] = $item->getName();
 $var['COLIDENTIFIER'] = $item->getIdentifier();
 $var['COLCOMPANIESID'] = $item->getCompaniesId();
 $var['COLAPPTYPE'] = $item->getApptype();
-$var['COLICON'] = $item->getIcon();
+if ($item->getIcon()) {
+	$icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$item->getId().'@2x.png';
+	$var['ICONFILEIFEXISTS'] = '</p><p><label>Delete icon</label><input name="deleteicon" id="deleteicon" type="checkbox" value="0" /></p>';
+	$var['ICONPREVIEW'] = '<img src="'.$icon.'" alt="" style="float:right; margin-top:16px; margin-left:200px; border:solid 1px; padding:6px;" />';
+}
 $var['COLSORT'] = $item->getSort();
 $var['COLAPPTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getApptype(), array(), array(), wgLang::get('iPhone'));
 $var['FULLCOLADDED'] = formsHelper::getDateTimeBox('added', $item->getAdded());
@@ -112,8 +118,8 @@ if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $va
 	$lv['LAPPTYPE'] = $val->getApptype();
 	$lv['LICON'] = $val->getIcon();
 	$lv['LSORT'] = $val->getSort();
-	$lv['LADDED'] = $val->getAdded();
-	$lv['LCHANGED'] = $val->getChanged();
+	$lv['LADDED'] = wgSystem::formatDate($val->getAdded());
+	$lv['LCHANGED'] = wgSystem::formatDate($val->getChanged());
 	$lv['LVERSION'] = $val->getVersion();
 	$lv['EDITROW'] = wgIcons::getButton('edit', $val->getName(), wgPaths::makeTableEditLink($val->getId(), 'show='.$var['ACTIONNAME'], 'index'));
 	$lv['DELETEROW'] = wgIcons::getButton('delete', $val->getName(), wgPaths::makeTableDeleteLink($val->getId(), 'act='.$var['ACTIONNAME']), true);
@@ -129,7 +135,7 @@ $var = wgSystem::getFormCallback($var);
 
 $tpl->setVariable($var);
 $tpl->parseBlock($block);
-$tab->addTab('installstats', wgLang::get('installstats'), false, $tpl->getBlock($block));
+//$tab->addTab('installstats', wgLang::get('installstats'), false, $tpl->getBlock($block));
 // ----------- installstats end -----------
 
 

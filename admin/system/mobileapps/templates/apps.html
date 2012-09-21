@@ -23,11 +23,11 @@
 	<tbody>
 		<!-- BEGIN listmobileapps -->
 		<tr>
-			<td>{LNAME}</td>
-			<td>{LAPPTYPE}</td>
-			<td>{LICON}</td>
-			<td>{LCHANGED}</td>
-			<td>{LVERSION}</td>
+			<td style="padding-left:6px;"><strong>{LNAME}</strong></td>
+			<td><img src="{LAPPTYPE}" alt="{wICONFOR} {LNAME}" /></td>
+			<td align="center"><span><img src="{LICON}" alt="{wICONFOR} {LNAME}" /></span></td>
+			<td align="center">{LCHANGED}</td>
+			<td align="center">{LVERSION}</td>
 			<td>{EDITROW}</td>
 			<td>{DELETEROW}</td>
 		</tr>
@@ -45,35 +45,39 @@
 			<input name="apply" type="submit" value="{wAPPLY}" />
 			<input name="submit" type="submit" value="{wSAVE}" />
 		</p>
-	<p>
-			<label>{wCOLNAME}:</label>
-			<input name="name" id="name" type="text" readonly="readonly" value="{COLNAME}" />
-		</p>
-		<p>
-			<label>{wCOLIDENTIFIER}:</label>
-			<input name="identifier" id="identifier" readonly="readonly" type="text" value="{COLIDENTIFIER}" />
-		</p>
-		<p>
-			<label>{wCOLAPPTYPE}:</label>
-			<!--<input name="apptype" id="apptype" type="text" value="{COLAPPTYPE}" />-->
-            {COLAPPTYPEFULL}
-		</p>
-		<p>
-			<label>{wCOLSORT}:</label>
-			<input name="sort" id="sort" type="text" value="{COLSORT}" />
-		</p>
-		<p>
-			<label>{wCOLVERSION}:</label>
-			<input name="version" id="version" type="text" readonly="readonly" value="{COLVERSION}" />
-		</p>
-		<p>
-			<label>{wFILE}:</label>
-			<input name="file" id="file" type="file" />
-		</p>
-		<p>
-			<label>{wICON}:</label>
-			<input name="icon" id="icon" type="file" />
-		</p>
+		<div style="float:left; width:550px;">
+			<p>
+				<label>{wCOLNAME}:</label>
+				<input name="name" id="name" type="text" readonly="readonly" class="readonly" value="{COLNAME}" />
+			</p>
+			<p>
+				<label>{wCOLIDENTIFIER}:</label>
+				<input name="identifier" id="identifier" readonly="readonly" type="text" value="{COLIDENTIFIER}" />
+			</p>
+			<p>
+				<label>{wCOLAPPTYPE}:</label>
+				<!--<input name="apptype" id="apptype" type="text" value="{COLAPPTYPE}" />-->
+	            {COLAPPTYPEFULL}
+			</p>
+			<p>
+				<label>{wCOLSORT}:</label>
+				<input name="sort" id="sort" type="text" value="{COLSORT}" />
+			</p>
+			<p>
+				<label>{wCOLVERSION}:</label>
+				<input name="version" id="version" type="text" readonly="readonly" value="{COLVERSION}" />
+			</p>
+			<p>
+				<label>{wFILE}:</label>
+				<input name="file" id="file" type="file" />
+			</p>
+			<p>
+				<label>{wICON}:</label>
+				<input name="icon" id="icon" type="file" />
+				{ICONFILEIFEXISTS}
+			</p>
+		</div>
+		{ICONPREVIEW}
 		<p class="bottombuttons">
 			<input name="edit" type="hidden" value="{COLID}" />
 			<input name="act" type="hidden" value="{ACTIONNAME}" />

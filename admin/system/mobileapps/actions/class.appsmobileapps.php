@@ -83,21 +83,36 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		$dest = wgPaths::getTempPath().valid::safeText(microtime()).'-'.wgUsers::getId().'/';
 		wgIo::mkdir($dest);
 		
-		$arr = array('destination'=>$dest, 'filename'=>$filename);
-		
+		$arr = array('destination'=>$dest, 'filename'=>$filename, 'icon'=>0);
 		$icon = $_FILES['icon']['name'];
 		if ($icon) {
 			$iconTmp = $_FILES['icon']['tmp_name'];
 			$iconname = valid::safeText($name).'.png';
 			wgIo::uploadFile($iconname, $iconTmp, $dest);
-			if (!imagecreatefrompng($dest.$iconname)) {
-				$arr['iconname'] = $iconname;
+			$size = getimagesize($dest.$iconname);
+			$ok = true;
+			if ($size[0] != $size[1]) {
+				$ok = false;
+				wgError::add('iconwrongratio');
 			}
-			else {
+			elseif ($size < 57) {
+				$ok = false;
+				wgError::add('icontoosmall');
+			}
+			if ($size['mime'] != 'image/png') {
+				$ok = false;
 				wgError::add('novalidpng');
 			}
+			
+			if ($ok) {
+				$arr['icon'] = 1;
+				$arr['iconname'] = $iconname;
+				wgError::add('iconcorrect', 2);
+			}
+			else {
+				wgError::add('unabletosaveicon', 1);
+			}
 		}
-		
 		wgIo::uploadFile($filename, $fileTmp, $dest);
 		
 		$currentPath = getcwd();
@@ -129,17 +144,10 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 //				foreach ($icons as $k=>$v) {
 //					$iconPath = $appPath.$v;
 //					$size = getimagesize($iconPath);
-//					echo '<pre>';
-//					print_r($size);
-//					echo '</pre>';
 //				}
 //				$arr['icons'] = $icons;
 //			}
 		}
-//		echo '<pre>';
-//		print_r($arr);
-//		print_r($data);
-//		echo '</pre>';
 		return $arr;
 	}
 	
@@ -147,13 +155,20 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		$mobileAppsFolder = wgPaths::getUserfilesPath().'mobileapps/';
 		wgIo::mkdir($mobileAppsFolder.'ipa/');
 		wgIo::mkdir($mobileAppsFolder.'img/');
-		print $mobileAppsFolder.'<br />';
-		//wgIo::move($data['destination'].$data['filename'], $mobileAppsFolder.$id.'-'.$data['filename']);
-		wgIo::move($data['destination'].$data['filename'], $mobileAppsFolder.'ipa/'.$id.'.ipa');
-		if (isset($data['iconname'])) {
-			wgIo::move($data['destination'].$data['iconname'], $mobileAppsFolder.'img/'.$id.'.png');
+		if (file_exists($data['destination'].$data['filename'])) {
+			wgIo::move($data['destination'].$data['filename'], $mobileAppsFolder.'ipa/'.$id.'.ipa');
 		}
-		print_r($data);
+		if (isset($data['iconname'])) {
+			wgIo::copy($data['destination'].$data['iconname'], $mobileAppsFolder.'img/'.$id.'.png');
+			$img = new wgImages($mobileAppsFolder.'img/'.$id.'.png');
+			$img->resize(57, 57);
+			$img->save($mobileAppsFolder.'img/'.$id.'.png', 'png');
+			
+			wgIo::move($data['destination'].$data['iconname'], $mobileAppsFolder.'img/'.$id.'@2x.png');
+			$img = new wgImages($mobileAppsFolder.'img/'.$id.'@2x.png');
+			$img->resize(114, 114);
+			$img->save($mobileAppsFolder.'img/'.$id.'.png', '@2xpng');
+		}
 	}
 
 	/**
@@ -167,7 +182,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		$data = array();
 		$save = array();
 		$save['companies_id'] = (int)wgPost::getValue('companies_id');
-		$save['apptype'] = 1;
+		$save['apptype'] = 0; // 0 - iPhone; 1 - Android
 		$save['icon'] = 0;
 		$save['sort'] = (int)wgPost::getValue('sort');
 		if (!(bool) wgPost::getValue('edit')) $save['added'] = 'NOW()';
@@ -177,13 +192,20 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		if ((bool) wgPost::getValue('edit')) {
 			$save['where'] = wgPost::getValue('edit');
 			$id = (int) $save['where'];
+			$mobileAppsFolder = wgPaths::getUserfilesPath().'mobileapps/';
+			if (isset($_POST['deleteicon'])) {
+				if (file_exists($mobileAppsFolder.'img/'.$id.'.png')) wgIo::delete($mobileAppsFolder.'img/'.$id.'.png');
+				if (file_exists($mobileAppsFolder.'img/'.$id.'@2x.png')) wgIo::delete($mobileAppsFolder.'img/'.$id.'@2x.png');
+				wgError::add('icondeleted', 2);
+			}
 			self::$_par['edit'] = $id;
+			$data = self::saveTempFile();
 			if ($file) {
-				$data = self::saveTempFile();
 				$save['name'] = $data['name'];
 				$save['identifier'] = valid::safeText($data['name']);
 				$save['version'] = $data['version'];
 			}
+			$save['icon'] = (int)file_exists($mobileAppsFolder.'img/'.$id.'.png');
 			$ok = (bool) MobileappsModel::doUpdate($save);
 		}
 		else {
@@ -196,6 +218,8 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 					$save['name'] = $data['name'];
 					$save['identifier'] = valid::safeText($data['name']);
 					$save['version'] = $data['version'];
+					$mobileAppsFolder = wgPaths::getUserfilesPath().'mobileapps/';
+					$save['icon'] = (int)file_exists($mobileAppsFolder.'img/'.$id.'.png');
 					$id = (int) MobileappsModel::doInsert($save);
 					self::$_par['edit'] = $id;
 					$ok = (bool) $id;
@@ -206,8 +230,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 			}
 		}
 		if ($id && !empty($data)) self::saveFile($id, $data);
-		//if (isset($data['destination'])) wgIo::delete($data['destination']);
-		print $ok;
+		if (isset($data['destination'])) wgIo::delete($data['destination']);
 		return $ok;
 	}
 

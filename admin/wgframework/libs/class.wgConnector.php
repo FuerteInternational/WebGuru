@@ -135,6 +135,54 @@ class wgConnector {
 	}
 	
 	/**
+	 * Initiate INNER JOIN SELECT from defined tables
+	 * 
+	 * @name innerJoin
+	 * @param string $table name of the table
+	 * @param string $table2 name of the second table
+	 * @param string $what additioonal parameters to select
+	 * @return bool true / false
+	 */ 
+	public function innerJoin($table, $table2, $what = '*') {
+		if ($this->_doInit) $this->_init('join');
+		if (!(bool) $table || !(bool) $table2 || !(bool) $what) return false;
+		$this->_q['basic'] = 'SELECT '.$what.' FROM '.$this->getTableName($table).' a INNER JOIN '.$this->getTableName($table2).' b ';
+		return true;
+	}
+	
+	/**
+	 * Initiate LEFT JOIN SELECT from defined tables
+	 * 
+	 * @name leftJoin
+	 * @param string $table name of the table
+	 * @param string $table2 name of the second table
+	 * @param string $what additioonal parameters to select
+	 * @return bool true / false
+	 */ 
+	public function leftJoin($table, $table2, $what = '*') {
+		if ($this->_doInit) $this->_init('join');
+		if (!(bool) $table || !(bool) $table2 || !(bool) $what) return false;
+		$this->_q['basic'] = 'SELECT '.$what.' FROM '.$this->getTableName($table).' a LEFT JOIN '.$this->getTableName($table2).' b ';
+		return true;
+	}
+	
+	/**
+	 * Initiate RIGHT JOIN SELECT from defined tables
+	 * 
+	 * @name rightJoin
+	 * @param string $table name of the table
+	 * @param string $table2 name of the second table
+	 * @param string $what additioonal parameters to select
+	 * @return bool true / false
+	 */ 
+	public function rightJoin($table, $table2, $what = '*') {
+		if ($this->_doInit) $this->_init('join');
+		if (!(bool) $table || !(bool) $table2 || !(bool) $what) return false;
+		$this->_q['basic'] = 'SELECT '.$what.' FROM '.$this->getTableName($table).' a RIGHT JOIN '.$this->getTableName($table2).' b ';
+		return true;
+	}
+	
+	/**
 	 * Initiate UPDATE of the defined table 
 	 * 
 	 * @name update
@@ -202,10 +250,28 @@ class wgConnector {
 		if (empty($tables)) return false;
 		if (is_array($tables)) foreach ($tables as $v) {
 			$table = ''.PREFIX.$v;
-			//TODO: dodelat drop vice tabulek
+			//TODO: Add support to drop multiple tables
 		}
 		$this->_q['basic'] = 'DROP TABLE '.$this->getTableName($table).'; ';
 		return true;
+	}
+	
+	/**
+	 * Adding join conditions 
+	 * 
+	 * @name onJoin
+	 * @param $condition column name
+	 * @param $value tables column name
+	 * @return bool true / false
+	 */
+	public function onJoin($condition, $value) {
+		if ($this->_type == 'join') {
+			if (empty($this->_q['onjoin'])) $amp = 'ON ';
+			else $amp = 'AND ';
+			$this->_q['onjoin'] .= $amp.' a.'.$condition.' = '.' b.'.$value.' ';
+			return true;
+		}
+		else return false;
 	}
 	
 	/**

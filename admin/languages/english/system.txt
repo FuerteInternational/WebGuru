@@ -50,6 +50,7 @@ help;Online help
 definitionssaved;Language definitions have been saved
 remember;Remember
 login;Login
-delrealy;Do you really want to delete
+delrealy;Do you really want to delete;
 deleted;Item has been successfully deleted
 dirnotexist;Directory doesn't exist
+cantdelete;Attempt to delete selected item had failed!

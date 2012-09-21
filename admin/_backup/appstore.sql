@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 19, 2012 at 02:56 PM
+-- Generation Time: Sep 21, 2012 at 11:43 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -1028,6 +1028,32 @@ INSERT INTO `comments_templates` (`id`, `name`, `identifier`, `temptype`, `pager
 (2, 'Snippet comments', 'snippet', 1, 0, 2, 1, 'snippet', 0, 'System error: There is no system id', 'Please fill your name', 'Please check your email address', 'Please put some comment', '<a name="comment"><span class="noscreen">Comment</span></a>\r\n<form action="#commentsForm" method="post" class="commentForm">\r\n    <h3>Leave a Reply</h3>\r\n    <p>\r\n        <label for="author" class="mandatory">Name / Nickname</label>\r\n        <input name="author" id="author" value="{%UserName}" tabindex="1" type="text" title="Please type in your name or nickname" />\r\n    </p>\r\n    <p>\r\n        <label for="email" class="mandatory">Mail (will not be published)</label>\r\n        <input name="email" id="email" value="{%UserMail}" tabindex="2" type="text" title="Please type in your email address" />\r\n    </p>\r\n    <p>\r\n        <label for="url">Website</label>\r\n        <input name="url" id="url" value="{%Website}" tabindex="3" type="text" title="Fill your website URL in if you have any :)" />\r\n    </p>\r\n    <p>\r\n        <label for="email" class="mandatory">Comment</label>\r\n        <textarea name="comment" id="comment" cols="50" rows="10" tabindex="4">{%Message}</textarea>\r\n    </p>\r\n    <p>\r\n        <input name="for_id" type="hidden" id="for_id" value="{%For}" />\r\n        <input name="comment_parent" type="hidden" id="comment_parent" value="{%Parent}" />\r\n        <button name="submit" type="submit" id="submit" tabindex="5">Submit Comment</button>\r\n    </p>\r\n</form>\r\n', '<a name="comment"><span class="noscreen">Comment</span></a>\r\n<form action="#commentsForm" method="post" class="commentForm">\r\n    <h3>Leave a Reply</h3>\r\n    <p>\r\n        <label for="author" class="mandatory">Name / Nickname</label>\r\n        <input name="author" id="author" value="{%Name}" tabindex="1" type="text" title="Please type in your name or nickname" />\r\n    </p>\r\n    <p>\r\n        <label for="email" class="mandatory">Mail (will not be published)</label>\r\n        <input name="email" id="email" value="{%Mail}" tabindex="2" type="text" title="Please type in your email address" />\r\n    </p>\r\n    <p>\r\n        <label for="url">Website</label>\r\n        <input name="url" id="url" value="{%Website}" tabindex="3" type="text" title="Fill your website URL in if you have any :)" />\r\n    </p>\r\n    <p>\r\n        <label for="email" class="mandatory">Comment</label>\r\n        <textarea name="comment" id="comment" cols="50" rows="10" tabindex="4">{%Message}</textarea>\r\n    </p>\r\n    <p class="captcha">\r\n        <label class="mandatory" for="captcha">Enter verification code</label>\r\n        <span>\r\n            <?php echo ''<img src="''.wgPaths::getAdminPath(''url'').''data/captcha/captcha.php" alt="" />'';?><br />\r\n            <input name="captcha" id="captcha" value="" type="text" />\r\n        </span>\r\n    </p>\r\n    <p>\r\n        <input name="for_id" type="hidden" id="for_id" value="{%For}" />\r\n        <input name="comment_parent" type="hidden" id="comment_parent" value="{%Parent}" />\r\n        <button name="submit" type="submit" id="submit" tabindex="5">Submit Comment</button>\r\n    </p>\r\n</form>\r\n', '', ''),
 (6, 'Little helper', 'little-helper', 1, 0, 4, 1, 'lh', 0, 'System error: There is no system id', 'Please fill your name', 'Please check your email address', 'Please put some comment', '<a name="comment"><span class="noscreen">Comment</span></a>\r\n<form action="#commentsForm" method="post" class="commentForm">\r\n    <h3>Leave a Reply</h3>\r\n    <p>\r\n        <label for="author" class="mandatory">Name / Nickname</label>\r\n        <input name="author" id="author" value="{%Name}" tabindex="1" type="text" />\r\n    </p>\r\n    <p>\r\n        <label for="email" class="mandatory">Mail (will not be published)</label>\r\n        <input name="email" id="email" value="{%Mail}" tabindex="2" type="text" />\r\n    </p>\r\n    <p>\r\n        <label for="url">Website</label>\r\n        <input name="url" id="url" value="{%Website}" tabindex="3" type="text" />\r\n    </p>\r\n    <p>\r\n        <label for="email" class="mandatory">Comment</label>\r\n        <textarea name="comment" id="comment" cols="50" rows="10" tabindex="4">{%Message}</textarea>\r\n    </p>\r\n    <p>\r\n        <input name="for_id" type="hidden" id="for_id" value="{%For}" />\r\n        <input name="comment_parent" type="hidden" id="comment_parent" value="{%Parent}" />\r\n        <button name="submit" type="submit" id="submit" tabindex="5">Submit Comment</button>\r\n    </p>\r\n</form>', '<a name="comment"><span class="noscreen">Comment</span></a>\r\n<form action="#commentsForm" method="post" class="commentForm">\r\n    <h3>Leave a Reply</h3>\r\n    <p>\r\n        <label for="author" class="mandatory">Name / Nickname</label>\r\n        <input name="author" id="author" value="{%Name}" tabindex="1" type="text" />\r\n    </p>\r\n    <p>\r\n        <label for="email" class="mandatory">Mail (will not be published)</label>\r\n        <input name="email" id="email" value="{%Mail}" tabindex="2" type="text" />\r\n    </p>\r\n    <p>\r\n        <label for="url">Website</label>\r\n        <input name="url" id="url" value="{%Website}" tabindex="3" type="text" />\r\n    </p>\r\n    <p>\r\n        <label for="email" class="mandatory">Comment</label>\r\n        <textarea name="comment" id="comment" cols="50" rows="10" tabindex="4">{%Message}</textarea>\r\n    </p>\r\n    <p class="captcha">\r\n        <label class="mandatory" for="captcha">Enter verification code</label>\r\n        <span>\r\n            <?php echo ''<img src="''.wgPaths::getAdminPath(''url'').''data/captcha/captcha.php" alt="" />'';?><br />\r\n            <input name="captcha" id="captcha" value="" type="text" />\r\n        </span>\r\n    </p>\r\n    <p>\r\n        <input name="for_id" type="hidden" id="for_id" value="{%For}" />\r\n        <input name="comment_parent" type="hidden" id="comment_parent" value="{%Parent}" />\r\n        <button name="submit" type="submit" id="submit" tabindex="5">Submit Comment</button>\r\n    </p>\r\n</form>\r\n', '', ''),
 (7, 'Little helper', 'little-helper', 0, 1, 4, 200, 'lh', 1, '', '', '', '', '<ul class="comments">', '<li class="{%OddEven}">\r\n    <div class="signature">\r\n        <p class="avatar"><img src="{%Gravatar}" alt="{%Author}" width="50" height="50" /></p>\r\n        <p class="name"><strong>{%Author}</strong></p>\r\n        <small>from {%Ip} @ &nbsp;&nbsp; {%FullDate}</small>\r\n        <p class="info">{%Content}</p>\r\n    </div>\r\n</li>', '</ul>', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `companies`
+--
+
+CREATE TABLE IF NOT EXISTS `companies` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `identifier` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `identifier` (`identifier`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `companies`
+--
+
+INSERT INTO `companies` (`id`, `name`, `identifier`) VALUES
+(1, 'Fuerte International', 'fuerte-international'),
+(2, 'SOMO Global', 'somo-global'),
+(3, 'Wunderman London', 'wunderman-london'),
+(4, 'Icon Mobile', 'icon-mobile'),
+(5, 'JWT London', 'jwt-london'),
+(6, 'Being London', 'being-london');
 
 -- --------------------------------------------------------
 
@@ -6487,6 +6513,51 @@ CREATE TABLE IF NOT EXISTS `links_urls` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mobileapps`
+--
+
+CREATE TABLE IF NOT EXISTS `mobileapps` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `identifier` varchar(150) NOT NULL,
+  `companies_id` bigint(20) unsigned NOT NULL,
+  `apptype` smallint(1) unsigned NOT NULL DEFAULT '0',
+  `icon` smallint(1) unsigned NOT NULL DEFAULT '0',
+  `sort` int(11) NOT NULL DEFAULT '0',
+  `added` datetime NOT NULL,
+  `changed` datetime NOT NULL,
+  `version` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `identifier` (`identifier`,`companies_id`,`apptype`,`icon`,`sort`,`added`,`changed`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `mobileapps`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mobileapps_users`
+--
+
+CREATE TABLE IF NOT EXISTS `mobileapps_users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `users_id` int(11) unsigned NOT NULL,
+  `companies_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `users_id` (`users_id`,`companies_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `mobileapps_users`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `motocatalogue_brands`
 --
 
@@ -8195,7 +8266,7 @@ CREATE TABLE IF NOT EXISTS `system_modules` (
   `added` datetime NOT NULL,
   `part` varchar(15) NOT NULL DEFAULT 'modules',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
 
 --
 -- Dumping data for table `system_modules`
@@ -8250,7 +8321,9 @@ INSERT INTO `system_modules` (`id`, `name`, `added`, `part`) VALUES
 (46, 'iBlog', '2009-11-10 10:49:20', 'system'),
 (47, 'iblog', '2009-11-10 11:15:00', 'system'),
 (48, 'iwallpapers', '2010-01-26 11:21:44', 'system'),
-(49, 'imessages', '2010-02-04 13:41:00', 'system');
+(49, 'imessages', '2010-02-04 13:41:00', 'system'),
+(50, 'companies', '2012-09-21 12:36:59', 'system'),
+(51, 'mobileapps', '2012-09-21 12:36:59', 'system');
 
 -- --------------------------------------------------------
 
@@ -8267,7 +8340,7 @@ CREATE TABLE IF NOT EXISTS `system_modules_permissions` (
   KEY `system_modules_id` (`system_modules_id`),
   KEY `system_teams_id` (`system_teams_id`),
   KEY `perm` (`perm`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=582 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=593 ;
 
 --
 -- Dumping data for table `system_modules_permissions`
@@ -8277,33 +8350,18 @@ INSERT INTO `system_modules_permissions` (`id`, `system_modules_id`, `system_tea
 (482, 42, 2, 1),
 (481, 40, 2, 1),
 (480, 36, 2, 1),
-(580, 13, 1, 1),
-(579, 32, 1, 1),
-(578, 38, 1, 1),
-(577, 12, 1, 1),
-(576, 37, 1, 1),
-(575, 27, 1, 1),
-(574, 35, 1, 1),
-(573, 11, 1, 1),
-(572, 10, 1, 1),
-(571, 9, 1, 1),
-(570, 48, 1, 1),
-(569, 42, 1, 1),
-(568, 49, 1, 1),
-(567, 41, 1, 1),
-(566, 43, 1, 1),
-(565, 47, 1, 1),
-(564, 8, 1, 1),
-(563, 29, 1, 1),
-(562, 6, 1, 1),
-(561, 5, 1, 1),
-(560, 4, 1, 1),
-(559, 2, 1, 1),
+(592, 13, 1, 1),
+(591, 32, 1, 1),
+(590, 12, 1, 1),
+(589, 35, 1, 1),
+(588, 11, 1, 1),
+(587, 9, 1, 1),
+(586, 8, 1, 1),
 (483, 10, 2, 1),
-(558, 1, 1, 1),
-(557, 40, 1, 1),
-(556, 36, 1, 1),
-(581, 26, 1, 1);
+(585, 6, 1, 1),
+(584, 4, 1, 1),
+(583, 2, 1, 1),
+(582, 50, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -8469,7 +8527,7 @@ CREATE TABLE IF NOT EXISTS `system_users` (
 --
 
 INSERT INTO `system_users` (`id`, `nickname`, `mail`, `pass`, `firstname`, `lastname`, `lastlogin`, `lastip`, `system_team_id`, `timever`, `codever`, `active`, `xdata`) VALUES
-(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-09-19 14:20:13', '127.0.0.1', 1, '1348066579', '90412', 1, ''),
+(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-09-21 11:36:59', '127.0.0.1', 1, '1348227779', '48411', 1, ''),
 (2, 'ninjabiscuit', 'andreww@fiftyfootsquid.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', 'Andrew', 'Walker', '2009-08-10 16:23:02', '87.194.126.191', 1, '1249914182', '31432', 1, ''),
 (3, 'editor', 'editor@xprogress.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'test', 'test', '2009-08-23 17:20:49', '78.86.171.36', 2, '1251041359', '2044', 1, ''),
 (4, 'ash', 'ashleymills@mac.com', '7ab515d12bd2cf431745511ac4ee13fed15ab578', 'Ashley', 'Mills', '2009-08-23 22:35:41', '78.86.171.36', 2, '1251059786', '17947', 1, ''),
