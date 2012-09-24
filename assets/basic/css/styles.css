@@ -1,3 +1,4 @@
+/* General section */
 * {
 	margin:0;
 	padding:0;
@@ -19,11 +20,93 @@ p {
 }
 #container {
 }
+
+#topLine {
+	height:12px;
+	background-color:#DA0971;
+}
+
+/* Header section */
+
 #header {
 }
+
+/* Page section */
+
 #page {
 }
+
+/* Login section */
+
 #login {
+	width:600px;
+	height:460px;
+	margin-top:50px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#FFF;
 }
+#login h1 {
+	text-align:center;
+	color:#666;
+	font-weight:normal;
+	font-size:22px;
+	padding-top:130px;
+	margin-bottom:50px;
+}
+#login h1 strong {
+	display:block;
+	color:#000;
+	font-weight:bold;
+}
+#login p {
+	margin-bottom:14px;
+	text-align:center;
+}
+#login p input {
+	width:321px;
+	height:50px;
+	background-color:#F9F9F9;
+	border-color:#B7B7B7;
+	border-width:1px;
+	border-style:solid;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:15px;
+}
+#login p input:-webkit-autofill {
+    color:#F9F9F9!important;
+}
+#login p input[type="password"] {
+	width:286px;
+	padding-left:50px;
+}
+#login p a {
+	display:block;
+	width:336px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-left:132px;
+	text-align:right;
+	color:#DA0971;
+	font-size:12px;
+	padding-top:3px;
+}
+#login p a:hover {
+	text-decoration:none;
+}
+#login p button {
+	border-style:none;
+	background-color:#DA0971;
+	color:#FFF;
+	width:164px;
+	height:34px;
+	line-height:34px;
+	font-weight:bold;
+	margin-top:18px;
+}
+
+/* Footer section */
+
 #footer {
 }
