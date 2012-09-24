@@ -33,12 +33,9 @@ set_include_path(implode(PATH_SEPARATOR, $conf['inclusion']));
 
 require('class.DbModel.php');
 require('class.exceptions.php');
-/*function __autoload($class_name) {
-	if ($class_name == 'id' || eregi('_id', $class_name)) return;
-	include('class.'.$class_name.'.php');
-}*/
+
 function __autoload($class_name) {
-    if ($class_name != 'fileio' || $class_name != 'mail') include('class.'.$class_name.'.php');
+	if ($class_name != 'fileio' || $class_name != 'mail') include('class.'.$class_name.'.php');
 }
 
 require('class.wgParse.php');

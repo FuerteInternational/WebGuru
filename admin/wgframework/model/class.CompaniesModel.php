@@ -23,13 +23,43 @@ class CompaniesModel extends BaseCompaniesModel {
 	}
 	
 	public static function getSelfDataForUser($userId=0) {
-		return self::getSelfData();
+		//return self::getSelfData();
+		
+		
+		/*
+		Fatal error: Uncaught exception 'WgException' with message 
+		' [wrapped: WGMySQLError 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near
+				 'ON a.id = b.companies_id WHERE users_id = 1 ORDER BY `name` ASC' at line 1 in query: 
+				 		
+			SELECT * FROM `appstore`.`companies` ON a.id = b.companies_id WHERE users_id = 1 ORDER BY `name` ASC ;]
+				 		
+				 		
+			' in /Users/maxi/Projects/WWW/appstore.fuerteint.com/admin/wgframework/libs/class.wgConnector.php:660 Stack trace: 
+			
+		
+		#0 /Users/maxi/Projects/WWW/appstore.fuerteint.com/admin/wgframework/libs/class.wgConnector.php(463): wgConnector->_executeQuery('SELECT * FROM `...', false) 
+		
+		#1 /Users/maxi/Projects/WWW/appstore.fuerteint.com/admin/wgframework/libs/class.DbModel.php(93): wgConnector->executeQuery() 
+		
+		#2 /Users/maxi/Projects/WWW/appstore.fuerteint.com/admin/wgframework/model/base/class.BaseCompaniesModel.php(287): 
+			DbModel::doSelect(Object(wgConnector), Object(CompaniesModel)) #3 /Users/maxi/Projects/WWW/appstore.fuertei in 
+			/Users/maxi/Projects/WWW/appstore.fuerteint.com/admin/wgframework/libs/class.wgConnector.php on line 660
+		
+		
+		*/
 		
 		$conn = new wgConnector();
-		$conn->rightJoin(parent::TABLE_NAME, MobileappsUsersModel::TABLE_NAME);
-		$conn->onJoin(parent::COL_ID, MobileappsUsersModel::COL_COMPANIES_ID);
-		$conn->where(MobileappsUsersModel::COL_USERS_ID, $userId);
+		if ($userId) {
+			$conn->rightJoin(parent::TABLE_NAME, MobileappsUsersModel::TABLE_NAME);
+			$conn->onJoin(parent::COL_ID, MobileappsUsersModel::COL_COMPANIES_ID);
+			$conn->where(MobileappsUsersModel::COL_USERS_ID, $userId);
+		}
+		else {
+			$conn->select(parent::TABLE_NAME);
+		}
 		$conn->order(parent::COL_NAME, 'ASC');
+		//$arr = $conn->getAll(true);
+		//$this->setDefaultResults($arr)
 		return parent::doSelect($conn);
 	}
 	

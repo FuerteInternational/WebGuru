@@ -1,5 +1,5 @@
 <?php
-	$id = 58;
+	$id = 1;
 	$home = 1;
 	if (is_dir('./wgwebdata/')) {
 		if (!file_exists('./wgwebdata/'.$id.'.php')) {

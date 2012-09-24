@@ -16,14 +16,11 @@ class MobileappsModel extends BaseMobileappsModel {
 	
 	// --------------------- Predefined functions for Mobileapps ---------------------
 
-	/*
 	public static function getSelfData() {
 		$conn = new wgConnector();
-		//$conn->where(parent::COL_ID, $id);
-		//$conn->order(parent::COL_NAME, 'ASC');
+		$conn->order(parent::COL_NAME, 'ASC');
 		return parent::doSelect($conn);
 	}
-	//*/
 	
 	/*
 	public static function getSelfPagerData($page, $limit=20) {

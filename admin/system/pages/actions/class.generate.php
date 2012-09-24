@@ -704,7 +704,6 @@ else echo \'passive\';
 		require_once('class.wgConfig.php');
 		$var['CONFIG']                         = wgConfig::getConfigAsPhpCode();
 		$var['WEBROOT']                        = WEBROOT;
-		//if (self::$_actpath) $var['ROOTPATH']  = self::$_actpath;
 		$var['ROOTPATH']                       = $rootpath;
 		$var['PAGEID']                         = $page->getPrimaryKey();
 		$var['LANGCODE']   					   = '';
@@ -722,11 +721,8 @@ else echo \'passive\';
 		$var['PRETEXT'] 	 				   = self::_getPretext($page);
 		$baseTemp = self::_getSystemTemplate();
 		$temp = wgParse::parseVarTemplate($baseTemp, $var);
-		
 		$temp = str_replace('{*HEAD}', self::_getHead($page->getHead(), $page), $temp);
-		
-		return $temp;
-		//return phpCompressor::compress($temp);
+		return phpCompressor::compress($temp);
 	}
 	
 	private static function _getSystemTemplate() {
