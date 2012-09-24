@@ -29,11 +29,37 @@ p {
 /* Header section */
 
 #header {
+	margin-top:20px;
+	height:52px;
+	width:970px;
+	background-color:#FFF;
+	margin-left:auto;
+	margin-right:auto;
+}
+#header h1 {
+}
+#header ul {
+}
+#header ul li {
+}
+#header ul li a {
+}
+#header ul li a:hover {
+}
+#header p {
+}
+#header p a {
 }
 
 /* Page section */
 
 #page {
+	width:970px;
+	background-color:#FFF;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	height:500px;
 }
 
 /* Login section */
