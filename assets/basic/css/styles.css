@@ -4,6 +4,7 @@
 	padding:0;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:1em;
+	color:#000;
 }
 html {
 	background-color:#ECECEC;
@@ -117,23 +118,22 @@ button, .button {
 	margin-right:auto;
 }
 #page div.actionButtons {
-	padding-top: 20px;
-	margin-left: 16px;
-	margin-right: 16px;
-	padding-bottom: 32px;
+	padding-top: 32px;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 #page div.actionButtons button, #page div.actionButtons a.button {
 	margin-right: 16px;
 }
 #page div.content {
 	clear: both;
-	margin-left: 16px;
+	margin-left: 30px;
 	margin-right: 16px;
+	padding-top:32px;
 }
 #page div.content ul.menu {
 	margin-bottom: 50px;
-	width: 344px;
-	margin-right: 32px;
+	width: 330px;
 	float: left;
 }
 #page div.content ul.menu li {
@@ -157,14 +157,19 @@ button, .button {
 	background-color:#F9F9F9;
 }
 #page div.content ul.menu a:hover {
-	border-left: solid 4px #DA0971;
 	padding-left: 28px;
+	border-left-width: 4px;
+	border-left-style: solid;
+	border-left-color: #FEEFEC;
+	background-color: #FEFEFE;
 }
 #page div.content ul.menu a img {
 	width: 57px;
 	height: 57px;
 	margin-top: 6px;
 	float: left;
+	-moz-border-radius:8px;
+	border-radius:8px;
 }
 #page div.content ul.menu a strong {
 	display: block;
@@ -185,8 +190,78 @@ button, .button {
 }
 #page div.content div.appDetail {
 	float: left;
-	width: 562px;
-	height: 500px;
+	width: 580px;
+	background-color:#F9F9F9;
+	padding-top:24px;
+}
+#page div.content div.appDetail .appName {
+	font-size:18px;
+	margin-bottom:6px!important;
+}
+#page div.content div.appDetail .appBundleId {
+	font-size:12px;
+	color:#999;
+	margin-bottom:32px;
+}
+#page div.content div.appDetail .rightButton {
+	float:right;
+	margin-top:-70px;
+}
+#page div.content div.appDetail .box {
+	border: solid 1px #CDCDCD;
+	clear: both;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	margin-left: 30px;
+	padding-top: 22px;
+	padding-right: 22px;
+	padding-left: 22px;
+}
+#page div.content div.appDetail .noBorder {
+	padding-right: 23px;
+	padding-left: 23px;
+	border:none;
+}
+#page div.content div.appDetail .box h3 {
+	margin-bottom:16px;
+}
+#page div.content div.appDetail .box ul.values {
+	margin-bottom:16px;
+}
+#page div.content div.appDetail .box ul.values li {
+	color:#666;
+	font-size:12px;
+	margin-bottom:6px;
+	width:408px;
+}
+#page div.content div.appDetail .box ul.values li span {
+	display:block;
+	float:right;
+	color:#666;
+	width:234px;
+}
+#page div.content div.appDetail .box .controls {
+	height:32px;
+	margin-bottom:32px;
+}
+#page div.content div.appDetail .box .controls {
+	height:32px;
+	margin-bottom:32px;
+}
+#page div.content div.appDetail p.peopleInfo {
+	margin-bottom: 32px;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 38px;
+	background-image: url(../img/F1_logo_who.png);
+	background-repeat: no-repeat;
+	background-position: 6px center;
+}
+#page div.content div.appDetail button, #page div.content div.appDetail .button {
+	background-color:#656565;
+	margin-right:16px;
+	width:118px;
+	height:32px;
 }
 
 /* Login section */
