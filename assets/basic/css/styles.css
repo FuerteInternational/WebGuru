@@ -149,10 +149,12 @@ button, .button {
 	margin-bottom: 8px;
 	padding-top: 8px;
 	padding-bottom: 8px;
+	background-color:#FFF;
 }
 #page div.content ul.menu li.active a {
 	border-left: solid 4px #DA0971;
 	padding-left: 28px;
+	background-color:#F9F9F9;
 }
 #page div.content ul.menu a:hover {
 	border-left: solid 4px #DA0971;
@@ -187,7 +189,7 @@ button, .button {
 	height: 500px;
 }
 
-/* Login section 970-16-344=610 */
+/* Login section */
 
 #login {
 	width:600px;
@@ -196,7 +198,7 @@ button, .button {
 	margin-left:auto;
 	margin-right:auto;
 	background-color:#FFF;
-	background-image: url("../img/F1_logo_content.png");
+	background-image: url("../img/F1_logo_login.png");
 	background-repeat: no-repeat;
 	background-position: center 30px;
 }
@@ -220,23 +222,30 @@ button, .button {
 #login p input {
 	width:321px;
 	height:50px;
-	background-color:#F9F9F9;
+	background-color:#F9F9F9!important;
 	border-color:#B7B7B7;
 	border-width:1px;
 	border-style:solid;
 	margin-left:auto;
 	margin-right:auto;
 	padding-left:15px;
+	-webkit-appearance: none;
 }
-#login p input:-webkit-autofill {
-    color:#F9F9F9!important;
+input:focus {
+	background: transparent;
+}
+input:-webkit-autofill {
+	background-color:#F00;	
 }
 #login p input[type="password"] {
 	width:286px;
 	padding-left:50px;
-	background-image: url("../img/F1_logo_who.png");
+	background-image: url("../img/F1_ico_lock.png")!important;
 	background-repeat: no-repeat;
 	background-position: 18px center;
+}
+#login p input[type="password"]:focus {
+	outline: none;
 }
 #login p a {
 	display:block;
@@ -253,7 +262,9 @@ button, .button {
 	text-decoration:none;
 }
 #login p button {
+	width:164px;
 	margin-top:18px;
+	margin-left:218px;
 }
 
 /* Footer section */
