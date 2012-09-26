@@ -8,7 +8,7 @@ include("init/init.basic.php");
         <link><![CDATA[http://localhost/appstore.fuerteint.com/]]></link>
         <description><![CDATA[]]></description>
         <language>en</language>
-        <lastBuildDate>Mon, 24 Sep 2012 17:22:16 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 26 Sep 2012 14:09:22 +0000</lastBuildDate>
         <copyright><![CDATA[]]></copyright>
         <docs></docs>
         <ttl>15</ttl>

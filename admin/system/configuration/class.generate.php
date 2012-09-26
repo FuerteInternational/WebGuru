@@ -20,9 +20,8 @@ class generateConfiguration {
 	
 	public function generateErrors($p) {
 		$temp = SystemErrorsTemplatesModel::getTemplate($p[3]);
-		//$temp = new SystemErrorsTemplatesModel();
+		if (empty($temp)) return false;
 		if (!(bool) $temp->getId()) return false;
-		
 		$start = NULL;
 		$end = NULL;
 		if ((bool) $temp->getGroupmessages()) $foreach = 'if ($grid == 0) {

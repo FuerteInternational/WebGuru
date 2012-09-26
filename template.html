@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>{#TITLE} - Mobile Application Store - Fuerte International</title>
 <link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />
-{#HEAD}
+<meta name="keywords" content="{#KEYWORDS}" />
+<meta name="description" content="{#KEYWORDS}" />
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -21,7 +22,30 @@
   })();
 
 </script>
+{#HEAD}
 </head>
+
+
+<!-- LOGIN FORM TEMPLATE -->
+
+
+<body>
+<div id="container">
+	<div id="topLine"></div>
+    <form id="login" action="page.html" method="post">
+    	<h1><strong>Fuerte International</strong> Enterprise store </h1>
+    	<p><input type="text" name="login" placeholder="Email" value="{%AutoName}" /></p>
+    	<p>
+        	<input type="password" name="password" placeholder="Password" value="" />
+            <a href="#">Forgotten Password?</a>
+        </p>
+        <p>
+        	<button name="go" type="submit">Login</button>
+        </p>
+    </form>
+</div>
+</body>
+</html>
 
 
 <!-- LOGIN LINE TEMPLATE -->
@@ -49,19 +73,21 @@
 
 
 <div id="header">
-    {#MOD_users_login_login-line}
-    <h1><span>Mobile Application Store - </span><strong>{#H1}</strong></h1>
+    <h1><span>Fuerte International - {#H1}</span></h1>
+    <ul>
+        <li><a href="#" title="Dashboard">Dashboard</a></li>
+        <li class="active"><a href="#" title="Apps">Apps</a></li>
+        <!--<li><a href="#" title="Users">Users</a></li>
+        <li><a href="#" title="Groups">Groups</a></li>-->
+    </ul>
+    <p>Ondrej Rafaj&nbsp;&nbsp;|&nbsp;&nbsp;<a href="login.html" title="Logout from AppStore">Logout</a></p>
 </div>
 
 
 <!-- PAGE TEMPLATE -->
 
 
-<div id="page">
-	{#BREADCRUMBS}
-    {#MOD_configuration_errors_errors}
-    {#CONTENT}
-</div>
+
 
 
 <!-- FOOTER TEMPLATE -->
@@ -78,9 +104,15 @@
 {#TEMP_head}
 <body>
 <div id="container">
-	{#TEMP_header}
-    {#TEMP_page}
+	<div id="topLine"></div>
+    {#TEMP_header}
+    <div id="page">
+    	{#MOD_configuration_errors_errors}
+        {#CONTENT}
+        <div class="clear"></div>
+    </div>
     {#TEMP_footer}
 </div>
 </body>
 </html>
+
