@@ -33,7 +33,6 @@ class MobileappsModel extends BaseMobileappsModel {
 	}
 	//*/
 	
-	/*
 	public static function getOneSelfData($idMobileapps) {
 		$id = (int) $idMobileapps;
 		if ((bool) $id) {
@@ -45,7 +44,34 @@ class MobileappsModel extends BaseMobileappsModel {
 		if (isset($arr[0]) && !empty($arr[0])) return $arr[0];
 		else return new MobileappsModel();
 	}
-	//*/
+	
+	public function getFormattedDateChanged() {
+		return wgSystem::formatDate($this->getChanged());
+	}
+	
+	public function getFormattedDateAdded() {
+		return wgSystem::formatDate($this->getAdded());
+	}
+	
+	public function getIconUrl() {
+		$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
+		if ($this->getIcon()) {
+			if ($this->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$this->getId().'.png';
+		}
+		return $icon;
+	}
+	
+	public function getLargeIconUrl() {
+		$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon@2x.png';
+		if ($this->getIcon()) {
+			if ($this->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$this->getId().'@2x.png';
+		}
+		return $icon;
+	}
+	
+	public function getAppIpaUrl() {
+		return wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$this->getId().'.ipa';
+	}
 	
 }
 ?>

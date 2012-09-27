@@ -112,7 +112,7 @@ div.errors ul li {
     <h1><span>Fuerte International - {#H1}</span></h1>
     <ul>
         <!--<li><a href="#" title="Dashboard">Dashboard</a></li>-->
-        <li class="active"><a href="#" title="Apps">Apps</a></li>
+        <li class="active"><a href="{#LINK_2}" title="Apps">Apps</a></li>
         <!--<li><a href="#" title="Users">Users</a></li>
         <li><a href="#" title="Groups">Groups</a></li>-->
     </ul>
@@ -152,3 +152,14 @@ div.errors ul li {
 </body>
 </html>
 
+
+<!-- APP PAGE TEMPLATE -->
+
+
+<div class="actionButtons">
+    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button">Add new app</a>
+</div>
+<div class="content">
+		{#FRONTEND_mobileapps_appslist}
+        {#FRONTEND_mobileapps_appdetail}
+</div>

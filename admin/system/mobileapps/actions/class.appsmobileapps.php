@@ -202,7 +202,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 			$data = self::saveTempFile();
 			if ($file) {
 				$save['name'] = $data['name'];
-				$save['identifier'] = valid::safeText($data['name']);
+				$save['identifier'] = $data['bundleIdentifier'];
 				$save['version'] = $data['version'];
 			}
 			$save['icon'] = (int)file_exists($mobileAppsFolder.'img/'.$id.'.png');
@@ -216,7 +216,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 				$data = self::saveTempFile();
 				if (isset($data['name'])) {
 					$save['name'] = $data['name'];
-					$save['identifier'] = valid::safeText($data['name']);
+					$save['identifier'] = $data['bundleIdentifier'];
 					$save['version'] = $data['version'];
 					$mobileAppsFolder = wgPaths::getUserfilesPath().'mobileapps/';
 					$save['icon'] = (int)file_exists($mobileAppsFolder.'img/'.$id.'.png');
