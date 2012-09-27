@@ -722,7 +722,8 @@ else echo \'passive\';
 		$baseTemp = self::_getSystemTemplate();
 		$temp = wgParse::parseVarTemplate($baseTemp, $var);
 		$temp = str_replace('{*HEAD}', self::_getHead($page->getHead(), $page), $temp);
-		return phpCompressor::compress($temp);
+		//return phpCompressor::compress($temp);
+		return $temp;
 	}
 	
 	private static function _getSystemTemplate() {
