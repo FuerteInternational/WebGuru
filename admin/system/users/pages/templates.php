@@ -436,7 +436,7 @@ wgSystem::defPostValue(UsersTemplatesModel::COL_MESS1, wgLang::get('wrongloginme
 wgSystem::defPostValue(UsersTemplatesModel::COL_MESS2, wgLang::get('loggeginmess'));
 wgSystem::defPostValue(UsersTemplatesModel::COL_MESS3, wgLang::get('logoutmess'));
 wgSystem::defPostValue(UsersTemplatesModel::COL_MESS4, wgLang::get('wrongpermsmess'));
-wgSystem::defPostValue(UsersTemplatesModel::COL_MESS5, wgLang::get('logoutmess'));
+wgSystem::defPostValue(UsersTemplatesModel::COL_MESS5, wgLang::get('logoutmessdef'));
 wgSystem::defPostValue(UsersTemplatesModel::COL_TEMP, '<form action="" method="post">
 	<p>
 		<label>Username / Email</label>

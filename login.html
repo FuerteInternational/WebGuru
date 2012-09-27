@@ -4,5 +4,58 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Fuerte International - AppStore</title>
 <link href="assets/basic/css/styles.css" rel="stylesheet" type="text/css" />
+<style>
+div.errors {
+	width:600px;
+	margin-top:50px;
+	margin-bottom:-30px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	font-size:12px;
+}
+div.errors ul {
+}
+div.errors ul.red li {
+	color:#900;
+}
+div.errors ul.green li {
+	color:#090;
+}
+div.errors ul.orange li {
+	color:#C60;
+}
+div.errors ul li {
+	margin-bottom:12px;
+}
+</style>
 </head>
 
+<body>
+<div id="container">
+	<div id="topLine"></div>
+    <div class="errors">
+    	<ul class="red">
+        	<li>Sorry, unrecognized username or password.</li>
+        </ul>
+    	<ul class="green">
+        	<li>Sorry, unrecognized username or password.</li>
+        </ul>
+    	<ul class="orange">
+        	<li>Sorry, unrecognized username or password.</li>
+        </ul>
+    </div>
+    <form id="login" action="page.html" method="post">
+    	<h1><strong>Fuerte International</strong> Enterprise store </h1>
+    	<p><input type="text" name="login" placeholder="Email" /></p>
+    	<p>
+        	<input type="password" name="password" placeholder="Password" />
+            <a href="#">Forgotten Password?</a>
+        </p>
+        <p>
+        	<button name="go" type="submit">Login</button>
+        </p>
+    </form>
+</div>
+</body>
+</html>

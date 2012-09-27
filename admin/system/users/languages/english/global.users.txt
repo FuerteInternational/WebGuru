@@ -4,3 +4,6 @@ templates;Templates
 desctemplates;Frontend templates management
 settings;Settings
 descsettings;Module settings
+
+
+

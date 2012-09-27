@@ -46,6 +46,49 @@ button, .button {
 	background-color:#DA0971;
 }
 
+/* Errors section */
+
+div.errors {
+	padding-top:16px;
+	text-align:center;
+	font-size:12px;
+	margin-bottom:-16px;
+}
+div.errors ul {
+	border:solid 1px;
+	padding:3px;
+	margin-left:16px;
+	margin-right:16px;
+	margin-bottom:6px;
+}
+div.errors ul li {
+}
+div.errors ul.red {
+	color:#900;
+	background-color:#FFF2F2;
+}
+div.errors ul.green {
+	color:#090;
+	background-color:#F5FFF6;
+}
+div.errors ul.orange {
+	color:#C60;
+	background-color:#FFFAEB;
+}
+div.errors ul.red li {
+	color:#900;
+}
+div.errors ul.green li {
+	color:#090;
+}
+div.errors ul.orange li {
+	color:#C60;
+}
+div.errors ul li {
+	margin-top:3px;
+	margin-bottom:3px;
+}
+
 /* Header section */
 
 #header {

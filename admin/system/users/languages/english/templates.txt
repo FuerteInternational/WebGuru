@@ -1,0 +1,43 @@
+userdetails;User details
+registration;Registration
+colname;Template name
+code;Template code
+colidentifier;Identifier
+usergroup;User group
+nogroup;No group
+messcheckname;Wrong name mess.
+checkname;Please check your name
+messchecknickname;Wrong nick mess.
+checknickname;Please check your nick name
+messnickexists;Nick exists mess.
+messcheckpass;Check passwd mess.
+checkpass;Please fill in a valid password
+messnomatchpass;Pass not match mess.
+messcheckmail;Wrong mail message
+checkmail;Please fill in a valid email address
+messregisteredok;Registration OK mess.
+registeredok;You registration has been successful
+registeredredirect;Redirect after reg.
+noredirection;No redirection
+messregistrtionfailed;Registration failed mess.
+registrationtemp;Registration template
+coldatasource;Data source
+currentuser;Logged in user
+variableuser;Variable defined user
+detailtemp;User detail template
+colnoitem;User doesn't exist template
+logintype;Login type
+maillogin;Email address used as username
+nicknamelogin;Nickname used as username
+justinfo;Just info
+wronglogin;Wrong login message
+loggedin;Logged in message
+loggeginmess;You have been logged in successfully
+loggedinredirect;Login redirect
+logoutmess;Logout message
+logoutmessdef;You have been successfully logged out
+logoutredirect;Logout redirect
+noperms;No permissions message
+wrongpermsmess;Insufficient privileges
+logintemp;Login template
+loggedintemp;Logged in template
