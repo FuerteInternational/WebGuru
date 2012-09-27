@@ -31,7 +31,7 @@ if ($mobileAppId) {
             <?php
             if (strstr($_SERVER['HTTP_USER_AGENT'],"iPad") || strstr($_SERVER['HTTP_USER_AGENT'],"iPhone")) {
             ?>
-            <a href="itms-services://?action=download-manifest&url=itms-services://?action=download-manifest&url=<?php echo wgPaths::getPath('url').'app-plist/?mobileAppId='.$mobileAppId;?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
+            <a href="itms-services://?action=download-manifest&url=itms-services://?action=download-manifest&url=<?php echo htmlspecialchars(wgPaths::getPath('url').'app-plist/?mobileAppId='.$mobileAppId);?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
             <?php
             }
             else {
