@@ -283,7 +283,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 	</array>
 </dict>
 </plist>';
-		wgIo::writeFile(wgPaths::getUserfilesPath('ftp').'mobileapps/ipa/'.$id.'.plist');
+		wgIo::writeFile(wgPaths::getUserfilesPath('ftp').'mobileapps/ipa/'.$id.'.plist', $temp);
 				
 	}
 	
