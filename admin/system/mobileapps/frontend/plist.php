@@ -1,5 +1,5 @@
 <?php
-header('Content-type: application/x-plist');
+header('Content-type: text/plain');
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 $mobileAppId = (int) $_GET['mobileAppId'];
 $app = MobileappsModel::getOneSelfData($mobileAppId);
