@@ -265,19 +265,19 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://appstore.fuerteint.com/userfiles/mobileapps/ipa/1.ipa</string>
+					<string>'.wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$id.'.ipa</string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.fuerteint.polligraf</string>
+				<string>'.$data['bundleIdentifier'].'</string>
 				<key>bundle-version</key>
-				<string>1.0</string>
+				<string>'.$data['version'].'</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>polligraf</string>
+				<string>'.$data['name'].'</string>
 			</dict>
 		</dict>
 	</array>
