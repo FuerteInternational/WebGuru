@@ -28,7 +28,7 @@ $app = MobileappsModel::getOneSelfData($mobileAppId);
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string><?php echo $app->getName(); ?></string>
+				<string><?php echo htmlspecialchars($app->getName()); ?></string>
 			</dict>
 		</dict>
 	</array>
