@@ -64,7 +64,7 @@ $db->characterSet('utf8');
 $mod = new wgModules();
 {PRETEXT}
 //if ((bool) DEVELOP) if (!empty(counter::$debug)) wgError::add(counter::$debug);
-?>{TEMPLATE}<!-- huhuhu :-) --><?php
+?>{TEMPLATE}<?php
 //if (false) {
 	$title = '{TITLE}';
 	if (isset($system['seo']['title']) && !empty($system['seo']['title'])) $title = $system['seo']['title'];
