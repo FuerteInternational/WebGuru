@@ -231,6 +231,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		}
 		if ($id && !empty($data)) self::saveFile($id, $data);
 		if (isset($data['destination'])) wgIo::delete($data['destination']);
+		self::generatePlistFor($data, $id);
 		return $ok;
 	}
 
@@ -248,6 +249,42 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		$mobileAppsFolder = wgPaths::getUserfilesPath().'mobileapps/img/'.$id.'.png';
 		if (file_exists($mobileAppsFolder)) wgIo::delete($mobileAppsFolder);
 		return (bool) MobileappsModel::doDelete($id);
+	}
+	
+	private static function generatePlistFor($data, $id) {
+		$temp = '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>assets</key>
+			<array>
+				<dict>
+					<key>kind</key>
+					<string>software-package</string>
+					<key>url</key>
+					<string>http://appstore.fuerteint.com/userfiles/mobileapps/ipa/1.ipa</string>
+				</dict>
+			</array>
+			<key>metadata</key>
+			<dict>
+				<key>bundle-identifier</key>
+				<string>com.fuerteint.polligraf</string>
+				<key>bundle-version</key>
+				<string>1.0</string>
+				<key>kind</key>
+				<string>software</string>
+				<key>title</key>
+				<string>polligraf</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>';
+		wgIo::writeFile(wgPaths::getUserfilesPath('ftp').'mobileapps/ipa/'.$id.'.plist');
+				
 	}
 	
 }
