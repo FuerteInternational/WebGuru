@@ -33,7 +33,6 @@ wgSystem::clearDefPostValue();
 wgSystem::defPostValue(MobileappsModel::COL_ID, '');
 wgSystem::defPostValue(MobileappsModel::COL_NAME, '');
 wgSystem::defPostValue(MobileappsModel::COL_IDENTIFIER, '');
-wgSystem::defPostValue(MobileappsModel::COL_COMPANIES_ID, '');
 wgSystem::defPostValue(MobileappsModel::COL_APPTYPE, '');
 wgSystem::defPostValue(MobileappsModel::COL_ICON, '');
 wgSystem::defPostValue(MobileappsModel::COL_SORT, '0');
@@ -50,9 +49,8 @@ $arr = MobileappsModel::doPager(array(), pager::getPage($block));
 if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
 	$tpl->setCurrentBlock('listmobileapps');
 	$lv['LID'] = $val->getId();
-	$lv['LNAME'] = $val->getName();
+	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize($val->getSize(), true).')</small>';
 	$lv['LIDENTIFIER'] = $val->getIdentifier();
-	$lv['LCOMPANIESID'] = $val->getCompaniesId();
 	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
 	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
 	if ($val->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$val->getId().'.png';
@@ -73,8 +71,8 @@ $lv = array();
 $var['COLID'] = $item->getId();
 $var['COLNAME'] = $item->getName();
 $var['COLIDENTIFIER'] = $item->getIdentifier();
-$var['COLCOMPANIESID'] = $item->getCompaniesId();
 $var['COLAPPTYPE'] = $item->getApptype();
+$var['COLDEVTYPE'] = $item->getDevtype();
 if ($item->getIcon()) {
 	$icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$item->getId().'@2x.png';
 	$var['ICONFILEIFEXISTS'] = '</p><p><label>Delete icon</label><input name="deleteicon" id="deleteicon" type="checkbox" value="0" /></p>';
@@ -82,6 +80,7 @@ if ($item->getIcon()) {
 }
 $var['COLSORT'] = $item->getSort();
 $var['COLAPPTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getApptype(), array(), array(), wgLang::get('iPhone'));
+$var['COLDEVTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getDevtype(), array(wgLang::get('productionversion'), wgLang::get('betaversion')), array(), wgLang::get('developmentversion'));
 $var['FULLCOLADDED'] = formsHelper::getDateTimeBox('added', $item->getAdded());
 $var['FULLCOLCHANGED'] = formsHelper::getDateTimeBox('changed', $item->getChanged());
 $var['COLVERSION'] = $item->getVersion();
@@ -114,7 +113,6 @@ if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $va
 	$lv['LID'] = $val->getId();
 	$lv['LNAME'] = $val->getName();
 	$lv['LIDENTIFIER'] = $val->getIdentifier();
-	$lv['LCOMPANIESID'] = $val->getCompaniesId();
 	$lv['LAPPTYPE'] = $val->getApptype();
 	$lv['LICON'] = $val->getIcon();
 	$lv['LSORT'] = $val->getSort();

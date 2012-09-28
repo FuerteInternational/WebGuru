@@ -23,7 +23,21 @@ class installMobileapps {
 	 */
 	function __construct() {
 		
-		$this->tables[] = 'CREATE TABLE `mobileapps` (`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `identifier` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `companies_id` BIGINT(20) UNSIGNED NOT NULL, `apptype` SMALLINT(1) UNSIGNED NOT NULL DEFAULT \'0\', `icon` SMALLINT(1) UNSIGNED NOT NULL DEFAULT \'0\', `sort` INT(11) NOT NULL DEFAULT \'0\', `added` DATETIME NOT NULL, `changed` DATETIME NOT NULL, `version` VARCHAR(20) NOT NULL, INDEX (`identifier`, `companies_id`, `apptype`, `icon`, `sort`, `added`, `changed`)) ENGINE = MyISAM;';
+		$this->tables[] = "CREATE TABLE IF NOT EXISTS `mobileapps` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `identifier` varchar(150) NOT NULL,
+  `devtype` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `apptype` smallint(1) unsigned NOT NULL DEFAULT '0',
+  `icon` smallint(1) unsigned NOT NULL DEFAULT '0',
+  `sort` int(11) NOT NULL DEFAULT '0',
+  `added` datetime NOT NULL,
+  `changed` datetime NOT NULL,
+  `version` varchar(20) NOT NULL,
+  `size` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `identifier` (`identifier`,`devtype`,`apptype`,`icon`,`sort`,`added`,`changed`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8";
 		
 		$this->tables[] = 'CREATE TABLE `mobileapps_users` (`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, `users_id` INT(11) UNSIGNED NOT NULL, `companies_id` BIGINT(20) UNSIGNED NOT NULL, INDEX (`users_id`, `companies_id`)) ENGINE = MyISAM;';
 		

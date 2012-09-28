@@ -5,5 +5,35 @@ desctemplates;Frontend templates management
 settings;Settings
 descsettings;Module settings
 
+groups;Groups
+colid;Id
+colname;Name
+colsystemwebsitesid;System website
+colsystemlanguageid;System language
+colemailstemplatesid;Email template
+
+collastname;Last name
+colfirstname;First name
+colnickname;Nick name
+colusersgroupsid;User group
+colmail;Email
+colpassword;Password
+colquestion;Security question
+colansver;Answer
+colonline;Last online
+coltimever;Time verification
+colcodever;Code verification
+colactive;Is active
+collastlogin;Last login
+colgender;Gender
+collastip;Last IP address
+colsystemcountriesid;Country
+
+
+
+
+
+
+
 
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 27, 2012 at 12:57 PM
+-- Generation Time: Sep 28, 2012 at 05:28 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -3966,25 +3966,26 @@ CREATE TABLE IF NOT EXISTS `mobileapps` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   `identifier` varchar(150) NOT NULL,
-  `companies_id` bigint(20) unsigned NOT NULL,
+  `devtype` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `apptype` smallint(1) unsigned NOT NULL DEFAULT '0',
   `icon` smallint(1) unsigned NOT NULL DEFAULT '0',
   `sort` int(11) NOT NULL DEFAULT '0',
   `added` datetime NOT NULL,
   `changed` datetime NOT NULL,
   `version` varchar(20) NOT NULL,
+  `size` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  KEY `identifier` (`identifier`,`companies_id`,`apptype`,`icon`,`sort`,`added`,`changed`)
+  KEY `identifier` (`identifier`,`devtype`,`apptype`,`icon`,`sort`,`added`,`changed`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `mobileapps`
 --
 
-INSERT INTO `mobileapps` (`id`, `name`, `identifier`, `companies_id`, `apptype`, `icon`, `sort`, `added`, `changed`, `version`) VALUES
-(1, 'polligraf', 'polligraf', 0, 0, 1, 0, '2012-09-24 16:15:19', '2012-09-27 13:55:37', '1.0'),
-(2, 'Motorsport', 'motorsport', 0, 0, 1, 0, '2012-09-24 16:43:33', '2012-09-27 13:54:24', '1.0'),
-(3, 'MP & Silva', 'com.fuerteint.MPSilva', 0, 0, 0, 0, '2012-09-27 13:25:07', '2012-09-27 13:56:16', '1.0');
+INSERT INTO `mobileapps` (`id`, `name`, `identifier`, `devtype`, `apptype`, `icon`, `sort`, `added`, `changed`, `version`, `size`) VALUES
+(1, 'polligraf', 'polligraf', 0, 0, 1, 0, '2012-09-24 16:15:19', '2012-09-27 13:55:37', '1.0', 0),
+(2, 'Motorsport', 'motorsport', 0, 0, 1, 0, '2012-09-24 16:43:33', '2012-09-27 13:54:24', '1.0', 0),
+(3, 'MP & Silva', 'com.fuerteint.MPSilva', 0, 0, 0, 0, '2012-09-27 13:25:07', '2012-09-27 13:56:16', '1.0', 0);
 
 -- --------------------------------------------------------
 
@@ -5949,7 +5950,7 @@ CREATE TABLE IF NOT EXISTS `system_users` (
 --
 
 INSERT INTO `system_users` (`id`, `nickname`, `mail`, `pass`, `firstname`, `lastname`, `lastlogin`, `lastip`, `system_team_id`, `timever`, `codever`, `active`, `xdata`) VALUES
-(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-09-27 11:28:29', '127.0.0.1', 1, '1348750576', '81230', 1, ''),
+(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-09-28 16:10:59', '127.0.0.1', 1, '1348853219', '76724', 1, ''),
 (2, 'ninjabiscuit', 'andreww@fiftyfootsquid.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', 'Andrew', 'Walker', '2009-08-10 16:23:02', '87.194.126.191', 1, '1249914182', '31432', 1, ''),
 (3, 'editor', 'editor@xprogress.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'test', 'test', '2009-08-23 17:20:49', '78.86.171.36', 2, '1251041359', '2044', 1, ''),
 (4, 'ash', 'ashleymills@mac.com', '7ab515d12bd2cf431745511ac4ee13fed15ab578', 'Ashley', 'Mills', '2009-08-23 22:35:41', '78.86.171.36', 2, '1251059786', '17947', 1, ''),
@@ -6167,14 +6168,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   KEY `keys` (`users_groups_id`,`nickname`,`mail`,`password`,`online`,`active`,`lastlogin`,`gender`,`system_countries_id`),
   KEY `FK_users_country` (`system_countries_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `users_groups_id`, `nickname`, `mail`, `password`, `question`, `ansver`, `added`, `online`, `changed`, `timever`, `codever`, `active`, `lastlogin`, `gender`, `lastip`, `firstname`, `lastname`, `system_countries_id`, `visits`, `downloads`, `xdata`) VALUES
-(1, 2, 'ondrej', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'que?', 'pasa', '2009-03-02 13:18:27', '2009-03-02 13:17:00', '2010-02-04 10:51:44', '', '', 1, '2012-09-27 13:53:17', 'm', '127.0.0.1', 'Ondrej', 'Rafaj', 56, 0, 0, '');
+(1, 2, 'ondrej', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'que?', 'pasa', '2009-03-02 13:18:27', '2009-03-02 13:17:00', '2010-02-04 10:51:44', '', '', 1, '2012-09-27 16:31:16', 'm', '127.0.0.1', 'Ondrej', 'Rafaj', 56, 0, 0, ''),
+(2, 1, 'jakub.rafaj', 'jakub.rafaj@fuerteint.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', '', '', '2012-09-28 18:25:13', '2012-09-28 17:24:00', '2012-09-28 18:25:13', '', '', 0, '2012-09-28 17:24:00', 'm', '', 'Jakub', 'Rafaj', 56, 0, 0, ''),
+(3, 1, 'david.hancock', 'david.hancock@fuerteint.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', '', '', '2012-09-28 18:26:07', '2012-09-28 17:25:00', '2012-09-28 18:26:07', '', '', 0, '2012-09-28 17:25:00', 'm', '', 'David', 'Hancock', 222, 0, 0, ''),
+(4, 1, 'alex.siddall', 'alex@fuerteint.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', '', '', '2012-09-28 18:26:48', '2012-09-28 17:26:00', '2012-09-28 18:26:48', '', '', 1, '2012-09-28 17:26:00', 'm', '', 'Alex', 'Siddall', 222, 0, 0, '');
 
 -- --------------------------------------------------------
 

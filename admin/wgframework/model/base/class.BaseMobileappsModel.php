@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        19. September 2012 18:38:56
+ * @since        28. September 2012 16:42:12
  */
 
 class BaseMobileappsModel extends DbModel {
@@ -70,11 +70,11 @@ class BaseMobileappsModel extends DbModel {
 	const COL_IDENTIFIER = 'identifier';
 	
 	/**
-	 * companies_id -> bigint(20) unsigned
+	 * devtype -> tinyint(1) unsigned
 	 */
-	const FULL_COMPANIES_ID = '`mobileapps`.`companies_id`';
+	const FULL_DEVTYPE = '`mobileapps`.`devtype`';
 	
-	const COL_COMPANIES_ID = 'companies_id';
+	const COL_DEVTYPE = 'devtype';
 	
 	/**
 	 * apptype -> smallint(1) unsigned
@@ -118,6 +118,13 @@ class BaseMobileappsModel extends DbModel {
 	
 	const COL_VERSION = 'version';
 	
+	/**
+	 * size -> int(11) unsigned
+	 */
+	const FULL_SIZE = '`mobileapps`.`size`';
+	
+	const COL_SIZE = 'size';
+	
 	
 	/**
 	 * Count (on primary key)
@@ -133,27 +140,27 @@ class BaseMobileappsModel extends DbModel {
 	/**
 	 * @var array $_tableNames Array with column names translated to php
 	 */
-	private static $_tableNames = array('Id'=>0, 'Name'=>1, 'Identifier'=>2, 'CompaniesId'=>3, 'Apptype'=>4, 'Icon'=>5, 'Sort'=>6, 'Added'=>7, 'Changed'=>8, 'Version'=>9);
+	private static $_tableNames = array('Id'=>0, 'Name'=>1, 'Identifier'=>2, 'Devtype'=>3, 'Apptype'=>4, 'Icon'=>5, 'Sort'=>6, 'Added'=>7, 'Changed'=>8, 'Version'=>9, 'Size'=>10);
 	
 	/**
 	 * @var array $_tableValues Array with key values of the columns
 	 */
-	private static $_tableValues = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+	private static $_tableValues = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 	
 	/**
 	 * @var array $_fullTblFields Array with real column names in table
 	 */
-	private static $_fullTblFields = array('`mobileapps`.`Id`'=>0, '`mobileapps`.`Name`'=>1, '`mobileapps`.`Identifier`'=>2, '`mobileapps`.`CompaniesId`'=>3, '`mobileapps`.`Apptype`'=>4, '`mobileapps`.`Icon`'=>5, '`mobileapps`.`Sort`'=>6, '`mobileapps`.`Added`'=>7, '`mobileapps`.`Changed`'=>8, '`mobileapps`.`Version`'=>9);
+	private static $_fullTblFields = array('`mobileapps`.`Id`'=>0, '`mobileapps`.`Name`'=>1, '`mobileapps`.`Identifier`'=>2, '`mobileapps`.`Devtype`'=>3, '`mobileapps`.`Apptype`'=>4, '`mobileapps`.`Icon`'=>5, '`mobileapps`.`Sort`'=>6, '`mobileapps`.`Added`'=>7, '`mobileapps`.`Changed`'=>8, '`mobileapps`.`Version`'=>9, '`mobileapps`.`Size`'=>10);
 	
 	/**
 	 * @var array $_tableFields Array with real column names
 	 */
-	private static $_tableFields = array('id'=>0, 'name'=>1, 'identifier'=>2, 'companies_id'=>3, 'apptype'=>4, 'icon'=>5, 'sort'=>6, 'added'=>7, 'changed'=>8, 'version'=>9);
+	private static $_tableFields = array('id'=>0, 'name'=>1, 'identifier'=>2, 'devtype'=>3, 'apptype'=>4, 'icon'=>5, 'sort'=>6, 'added'=>7, 'changed'=>8, 'version'=>9, 'size'=>10);
 	
 	/**
 	 * @var array $_tableFieldsByKey Array with real column names
 	 */
-	private static $_tableFieldsByKey = array('id', 'name', 'identifier', 'companies_id', 'apptype', 'icon', 'sort', 'added', 'changed', 'version');
+	private static $_tableFieldsByKey = array('id', 'name', 'identifier', 'devtype', 'apptype', 'icon', 'sort', 'added', 'changed', 'version', 'size');
 	
 	
 	protected $_result = array();
@@ -307,17 +314,17 @@ class BaseMobileappsModel extends DbModel {
 	}
 	
 	/**
-	 * Get value of companies_id -> bigint(20) unsigned
+	 * Get value of devtype -> tinyint(1) unsigned
 	 * 
-	 * @name getCompaniesId
-	 * @return bigint
+	 * @name getDevtype
+	 * @return tinyint
 	 */
-	public function getCompaniesId() {
+	public function getDevtype() {
 		if ((bool) $this->_result) {
 			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
-			else parent::throwGetColException('Not set MobileappsModel::getCompaniesId', __LINE__, __FILE__);
+			else parent::throwGetColException('Not set MobileappsModel::getDevtype', __LINE__, __FILE__);
 		}
-		else return parent::throwNoResException('No result From MobileappsModel::getCompaniesId', __LINE__, __FILE__);
+		else return parent::throwNoResException('No result From MobileappsModel::getDevtype', __LINE__, __FILE__);
 	}
 	
 	/**
@@ -402,6 +409,20 @@ class BaseMobileappsModel extends DbModel {
 			else parent::throwGetColException('Not set MobileappsModel::getVersion', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MobileappsModel::getVersion', __LINE__, __FILE__);
+	}
+	
+	/**
+	 * Get value of size -> int(11) unsigned
+	 * 
+	 * @name getSize
+	 * @return int
+	 */
+	public function getSize() {
+		if ((bool) $this->_result) {
+			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			else parent::throwGetColException('Not set MobileappsModel::getSize', __LINE__, __FILE__);
+		}
+		else return parent::throwNoResException('No result From MobileappsModel::getSize', __LINE__, __FILE__);
 	}
 	
 	/**

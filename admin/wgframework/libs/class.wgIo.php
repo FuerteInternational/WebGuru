@@ -391,27 +391,33 @@ class wgIo extends wgCookies {
 	 * @param bool $format Format output (Mb, Kb, bytes)
 	 * @return mixed filesize (int or string if $format == true)
 	 */
-	public static function getSize($path, $format=false) {
+	public static function getSize($pathOrSize, $format=false) {
 		$size = 0;
-		if (is_dir($path)) {
-			if (substr($path, -1) == '/')  $path = substr($path, 0, -1);
-			if (!file_exists($path) || !is_dir($path) || !is_readable($path)) return -1;
-			if ($handle = opendir($path)) {
-				while(($file = readdir($handle)) !== false) {
-					$fpath = $path.'/'.$file;
-					if($file != '.' && $file != '..') {
-						if(is_file($fpath))  $size += filesize($fpath);
-						elseif(is_dir($fpath)) {
-							$handlesize = self::getSize($fpath);
-							if($handlesize >= 0) $size += $handlesize;
-							else return -1;
+		if (!is_int($pathOrSize)) {
+			$path = $pathOrSize;
+			if (is_dir($path)) {
+				if (substr($path, -1) == '/')  $path = substr($path, 0, -1);
+				if (!file_exists($path) || !is_dir($path) || !is_readable($path)) return -1;
+				if ($handle = opendir($path)) {
+					while(($file = readdir($handle)) !== false) {
+						$fpath = $path.'/'.$file;
+						if($file != '.' && $file != '..') {
+							if(is_file($fpath))  $size += filesize($fpath);
+							elseif(is_dir($fpath)) {
+								$handlesize = self::getSize($fpath);
+								if($handlesize >= 0) $size += $handlesize;
+								else return -1;
+							}
 						}
 					}
+					closedir($handle);
 				}
-				closedir($handle);
 			}
+			else if (is_file($path)) $size = filesize($path);
 		}
-		else if (is_file($path)) $size = filesize($path);
+		else {
+			$size = $pathOrSize;
+		}
 		if ((bool) $format) {
 			if($size / 1048576 > 1) return round($size / 1048576, 1).' Mb';
 			elseif($size / 1024 > 1) return round($size / 1024, 1).' Kb';

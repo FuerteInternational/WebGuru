@@ -18,6 +18,9 @@ unabletosaveicon;Unable to save icon
 iconcorrect;Icon is in a correct format and will be uploaded
 iconfor;Icon for
 icon;Icon
-
+coldevtype;Build type
+developmentversion;Development version
+productionversion;Production version
+betaversion;Beta version
 
 

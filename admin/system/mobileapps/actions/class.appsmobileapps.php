@@ -115,6 +115,8 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		}
 		wgIo::uploadFile($filename, $fileTmp, $dest);
 		
+		$arr['size'] = filesize($dest.$filename);
+		
 		$currentPath = getcwd();
 		chdir($dest);
 		$zip = new Archive_Zip('./'.$filename);
@@ -181,7 +183,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		$id = 0;
 		$data = array();
 		$save = array();
-		$save['companies_id'] = (int)wgPost::getValue('companies_id');
+		$save['devtype'] = (int)wgPost::getValue('devtype');
 		$save['apptype'] = 0; // 0 - iPhone; 1 - Android
 		$save['icon'] = 0;
 		$save['sort'] = (int)wgPost::getValue('sort');
@@ -204,6 +206,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 				$save['name'] = $data['name'];
 				$save['identifier'] = $data['bundleIdentifier'];
 				$save['version'] = $data['version'];
+				$save['size'] = $data['size'];
 			}
 			$save['icon'] = (int)file_exists($mobileAppsFolder.'img/'.$id.'.png');
 			$ok = (bool) MobileappsModel::doUpdate($save);
@@ -218,6 +221,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 					$save['name'] = $data['name'];
 					$save['identifier'] = $data['bundleIdentifier'];
 					$save['version'] = $data['version'];
+					$save['size'] = $data['size'];
 					$mobileAppsFolder = wgPaths::getUserfilesPath().'mobileapps/';
 					$save['icon'] = (int)file_exists($mobileAppsFolder.'img/'.$id.'.png');
 					$id = (int) MobileappsModel::doInsert($save);
