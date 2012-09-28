@@ -26,6 +26,7 @@ if ($mobileAppId) {
         <ul class="values">
             <li>Version: <span>v<?php echo $app->getVersion(); ?></span></li>
             <li>Build date: <span><?php echo $app->getFormattedDateChanged(); ?></span></li>
+        	<li>Size: <span><?php echo wgIo::getSize($app->getSize(), true); ?></span></li>
         </ul>
         <div class="controls">
             <?php
