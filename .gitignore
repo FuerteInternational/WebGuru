@@ -1,3 +1,7 @@
 /admin/logs/access.log
 *.bak
 .DS_Store
+/rss
+/userfiles
+/wgwebdata
+/temp
