@@ -74,7 +74,6 @@ class CompaniesModel extends BaseCompaniesModel {
 	}
 	//*/
 	
-	/*
 	public static function getOneSelfData($idCompanies) {
 		$id = (int) $idCompanies;
 		if ((bool) $id) {
@@ -86,7 +85,6 @@ class CompaniesModel extends BaseCompaniesModel {
 		if (isset($arr[0]) && !empty($arr[0])) return $arr[0];
 		else return new CompaniesModel();
 	}
-	//*/
 	
 }
 ?>
