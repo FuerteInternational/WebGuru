@@ -10,8 +10,9 @@ if (!$companyId) $companyId = (!empty($arr)) ? $arr[0]->getId() : 0;
 	?>
     <li<?php echo $active; ?>>
         <a href="?companyId=<?php echo $company->getId(); ?>" title="<?php echo $company->getName(); ?>">
+        	<img src="<?php echo $company->getIconUrl(); ?>" alt="<?php echo $company->getName(); ?>" />
             <strong><?php echo $company->getName(); ?></strong>
-            <small>Version <span><?php echo ':)'; ?></span></small>
+            <small>Number of users: <span><?php echo '11'; ?></span></small>
         </a>
     </li>
     <?php

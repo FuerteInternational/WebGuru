@@ -86,5 +86,15 @@ class CompaniesModel extends BaseCompaniesModel {
 		else return new CompaniesModel();
 	}
 	
+	public function getIconUrl() {
+		$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
+		return $icon;
+	}
+	
+	public function getLargeIconUrl() {
+		$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon@2x.png';
+		return $icon;
+	}
+	
 }
 ?>
