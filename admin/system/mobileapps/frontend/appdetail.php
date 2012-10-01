@@ -19,16 +19,23 @@ if ($mobileAppId) {
     	<img src="<?php echo $app->getLargeIconUrl(); ?>" alt="<?php echo $app->getName(); ?>" style="float: right" class="bigAppDetailIcon" />
         <h3><?php echo $devVersion; ?></h3>
         <ul class="values">
-            <li>Version: <span>v<?php echo $app->getVersion(); ?></span></li>
+            <li>Version: <span><?php echo $app->getVersion(); ?></span></li>
             <li>Build date: <span><?php echo $app->getFormattedDateChanged(); ?></span></li>
-        	<li>Size: <span><?php echo wgIo::getSize($app->getSize(), true); ?></span></li>
-        	<li>Size: <span><?php echo $app->getSize(); ?></span></li>
+        	<li>Size: <span><?php echo wgIo::getSize((int)$app->getSize(), true); ?></span></li>
         </ul>
         <div class="controls">
             <?php
-            if ((strstr($_SERVER['HTTP_USER_AGENT'],"iPad") || strstr($_SERVER['HTTP_USER_AGENT'],"iPhone")) || true) {
+            if ((strstr($_SERVER['HTTP_USER_AGENT'],"iPad") || strstr($_SERVER['HTTP_USER_AGENT'],"iPhone"))) {
             ?>
+            <a href="<?php echo wgPaths::getAdminPath('url'); ?>?part=system&mod=mobileapps&page=apps&show=appsmobileapps&edit=<?php echo $app->getId(); ?>" title="Edit <?php echo $app->getName(); ?>" class="button edit">Edit</a>
             <a href="itms-services://?action=download-manifest&url=itms-services://?action=download-manifest&url=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$app->getId().'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
+            <?php
+            }
+            elseif (strstr($_SERVER['HTTP_USER_AGENT'],"Android")) {
+            ?>
+            <a href="<?php echo wgPaths::getAdminPath('url'); ?>?part=system&mod=mobileapps&page=apps&show=appsmobileapps&edit=<?php echo $app->getId(); ?>" title="Edit <?php echo $app->getName(); ?>" class="button edit">Edit</a>
+            <a href="?app=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$app->getId().'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
+            <a href="<?php echo $app->getAppIpaUrl(); ?>" title="Download <?php echo $app->getName(); ?>" class="button download">Download</a>
             <?php
             }
             else {
@@ -41,7 +48,13 @@ if ($mobileAppId) {
             ?>
         </div>
         <p class="peopleInfo">
-            All, Developers, Management, SOMO
+            All
+            <?php
+            $companies = CompaniesModel::getSelfData();
+            foreach ($companies as $company) {
+				//echo ', '.$company->getName();
+			}
+            ?>
         </p>
     </div>
     <?php
