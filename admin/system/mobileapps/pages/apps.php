@@ -21,7 +21,7 @@ $system['parse']['head'] = '
 $system['parse']['editor'] = false;
 $tab = new myTabs('myTabs');
 
-// ----------- mobileapps (Block: mobileapps) start -----------
+// ----------- Development version (Block: mobileapps) start -----------
 $block = 'mobileapps';
 $tpl = new wgParse($temp, $path);
 $tpl->setCurrentBlock($block);
@@ -89,8 +89,151 @@ $var = wgSystem::getFormCallback($var);
 
 $tpl->setVariable($var);
 $tpl->parseBlock($block);
-$tab->addTab('mobileapps', wgLang::get('mobileapps'), true, $tpl->getBlock($block));
-// ----------- mobileapps end -----------
+$tab->addTab('devversion', wgLang::get('devversion'), true, $tpl->getBlock($block));
+// ----------- Development version end -----------
+
+// ----------- Beta version (Block: mobileapps) start -----------
+$block = 'mobileapps';
+$tpl = new wgParse($temp, $path);
+$tpl->setCurrentBlock($block);
+
+$var['ACTIONNAME'] = 'appsmobileapps';
+
+wgSystem::clearDefPostValue();
+
+wgSystem::defPostValue(MobileappsModel::COL_ID, '');
+wgSystem::defPostValue(MobileappsModel::COL_NAME, '');
+wgSystem::defPostValue(MobileappsModel::COL_IDENTIFIER, '');
+wgSystem::defPostValue(MobileappsModel::COL_APPTYPE, '');
+wgSystem::defPostValue(MobileappsModel::COL_ICON, '');
+wgSystem::defPostValue(MobileappsModel::COL_SORT, '0');
+wgSystem::defPostValue(MobileappsModel::COL_ADDED, time());
+wgSystem::defPostValue(MobileappsModel::COL_CHANGED, time());
+wgSystem::defPostValue(MobileappsModel::COL_VERSION, '');
+$lv = array();
+$item = new MobileappsModel();
+$item->setDefaultResults(wgSystem::getPost());
+
+//$arr = MobileappsModel::getSelfPagerData(pager::getPage($block), 20);
+$arr = MobileappsModel::doPager(array(), pager::getPage($block));
+// MobileappsModel::getPagerData(pager::getPage($block), 0, 20);
+if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
+	$tpl->setCurrentBlock('listmobileapps');
+	$lv['LID'] = $val->getId();
+	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize($val->getSize(), true).')</small>';
+	$lv['LIDENTIFIER'] = $val->getIdentifier();
+	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
+	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
+	if ($val->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$val->getId().'.png';
+	$lv['LICON'] = $icon;
+	$lv['LSORT'] = $val->getSort();
+	$lv['LADDED'] = $val->getAdded();
+	$lv['LCHANGED'] = wgSystem::formatDate($val->getChanged());
+	$lv['LVERSION'] = $val->getVersion();
+	$lv['EDITROW'] = wgIcons::getButton('edit', $val->getName(), wgPaths::makeTableEditLink($val->getId(), 'show='.$var['ACTIONNAME']));
+	$lv['DELETEROW'] = wgIcons::getButton('delete', $val->getName(), wgPaths::makeTableDeleteLink($val->getId(), 'act='.$var['ACTIONNAME']), true);
+	$tpl->setVariable($lv);
+	$tpl->parseBlock('listmobileapps');
+	if (wgSystem::getRequestValue('edit') == $val->getId() && wgSystem::getRequestValue('show') == $var['ACTIONNAME']) $item = $val;
+}
+$var['DATAPAGER'] = pager::makeAdminPager($arr['pager']);
+$lv = array();
+
+$var['COLID'] = $item->getId();
+$var['COLNAME'] = $item->getName();
+$var['COLIDENTIFIER'] = $item->getIdentifier();
+$var['COLAPPTYPE'] = $item->getApptype();
+$var['COLDEVTYPE'] = $item->getDevtype();
+if ($item->getIcon()) {
+	$icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$item->getId().'@2x.png';
+	$var['ICONFILEIFEXISTS'] = '</p><p><label>Delete icon</label><input name="deleteicon" id="deleteicon" type="checkbox" value="0" /></p>';
+	$var['ICONPREVIEW'] = '<img src="'.$icon.'" alt="" style="float:right; margin-top:16px; margin-left:200px; border:solid 1px; padding:6px;" />';
+}
+$var['COLSORT'] = $item->getSort();
+$var['COLAPPTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getApptype(), array(), array(), wgLang::get('iPhone'));
+$var['COLDEVTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getDevtype(), array(wgLang::get('productionversion'), wgLang::get('betaversion')), array(), wgLang::get('developmentversion'));
+$var['FULLCOLADDED'] = formsHelper::getDateTimeBox('added', $item->getAdded());
+$var['FULLCOLCHANGED'] = formsHelper::getDateTimeBox('changed', $item->getChanged());
+$var['COLVERSION'] = $item->getVersion();
+
+$var = wgSystem::getFormCallback($var);
+
+$tpl->setVariable($var);
+$tpl->parseBlock($block);
+$tab->addTab('betaversion', wgLang::get('betaversion'), true, $tpl->getBlock($block));
+// ----------- Beta version end -----------
+
+
+// ----------- Production version (Block: mobileapps) start -----------
+$block = 'mobileapps';
+$tpl = new wgParse($temp, $path);
+$tpl->setCurrentBlock($block);
+
+$var['ACTIONNAME'] = 'appsmobileapps';
+
+wgSystem::clearDefPostValue();
+
+wgSystem::defPostValue(MobileappsModel::COL_ID, '');
+wgSystem::defPostValue(MobileappsModel::COL_NAME, '');
+wgSystem::defPostValue(MobileappsModel::COL_IDENTIFIER, '');
+wgSystem::defPostValue(MobileappsModel::COL_APPTYPE, '');
+wgSystem::defPostValue(MobileappsModel::COL_ICON, '');
+wgSystem::defPostValue(MobileappsModel::COL_SORT, '0');
+wgSystem::defPostValue(MobileappsModel::COL_ADDED, time());
+wgSystem::defPostValue(MobileappsModel::COL_CHANGED, time());
+wgSystem::defPostValue(MobileappsModel::COL_VERSION, '');
+$lv = array();
+$item = new MobileappsModel();
+$item->setDefaultResults(wgSystem::getPost());
+
+//$arr = MobileappsModel::getSelfPagerData(pager::getPage($block), 20);
+$arr = MobileappsModel::doPager(array(), pager::getPage($block));
+// MobileappsModel::getPagerData(pager::getPage($block), 0, 20);
+if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
+	$tpl->setCurrentBlock('listmobileapps');
+	$lv['LID'] = $val->getId();
+	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize($val->getSize(), true).')</small>';
+	$lv['LIDENTIFIER'] = $val->getIdentifier();
+	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
+	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
+	if ($val->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$val->getId().'.png';
+	$lv['LICON'] = $icon;
+	$lv['LSORT'] = $val->getSort();
+	$lv['LADDED'] = $val->getAdded();
+	$lv['LCHANGED'] = wgSystem::formatDate($val->getChanged());
+	$lv['LVERSION'] = $val->getVersion();
+	$lv['EDITROW'] = wgIcons::getButton('edit', $val->getName(), wgPaths::makeTableEditLink($val->getId(), 'show='.$var['ACTIONNAME']));
+	$lv['DELETEROW'] = wgIcons::getButton('delete', $val->getName(), wgPaths::makeTableDeleteLink($val->getId(), 'act='.$var['ACTIONNAME']), true);
+	$tpl->setVariable($lv);
+	$tpl->parseBlock('listmobileapps');
+	if (wgSystem::getRequestValue('edit') == $val->getId() && wgSystem::getRequestValue('show') == $var['ACTIONNAME']) $item = $val;
+}
+$var['DATAPAGER'] = pager::makeAdminPager($arr['pager']);
+$lv = array();
+
+$var['COLID'] = $item->getId();
+$var['COLNAME'] = $item->getName();
+$var['COLIDENTIFIER'] = $item->getIdentifier();
+$var['COLAPPTYPE'] = $item->getApptype();
+$var['COLDEVTYPE'] = $item->getDevtype();
+if ($item->getIcon()) {
+	$icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$item->getId().'@2x.png';
+	$var['ICONFILEIFEXISTS'] = '</p><p><label>Delete icon</label><input name="deleteicon" id="deleteicon" type="checkbox" value="0" /></p>';
+	$var['ICONPREVIEW'] = '<img src="'.$icon.'" alt="" style="float:right; margin-top:16px; margin-left:200px; border:solid 1px; padding:6px;" />';
+}
+$var['COLSORT'] = $item->getSort();
+$var['COLAPPTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getApptype(), array(), array(), wgLang::get('iPhone'));
+$var['COLDEVTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getDevtype(), array(wgLang::get('productionversion'), wgLang::get('betaversion')), array(), wgLang::get('developmentversion'));
+$var['FULLCOLADDED'] = formsHelper::getDateTimeBox('added', $item->getAdded());
+$var['FULLCOLCHANGED'] = formsHelper::getDateTimeBox('changed', $item->getChanged());
+$var['COLVERSION'] = $item->getVersion();
+
+$var = wgSystem::getFormCallback($var);
+
+$tpl->setVariable($var);
+$tpl->parseBlock($block);
+$tab->addTab('productionversion', wgLang::get('productionversion'), true, $tpl->getBlock($block));
+// ----------- Production version end -----------
 
 // ----------- installstats (Block: installstats) start -----------
 $block = 'installstats';

@@ -7,7 +7,7 @@ if ($mobileAppId) {
     <div class="box noBorder">
         <h3 class="appName"><?php echo $app->getName(); ?></h3>
         <p class="appBundleId"><?php echo $app->getIdentifier(); ?></p>
-        <a href="<?php echo wgPaths::getAdminPath('url') ?>?part=system&mod=mobileapps&page=apps" class="button rightButton">Delete</a>
+        <a href="<?php echo wgPaths::getAdminPath('url'); ?>?part=system&mod=mobileapps&page=apps" class="button rightButton">Delete</a>
     </div>
     <!--<div class="box">
         <h3>Production version</h3>

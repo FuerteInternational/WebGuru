@@ -6,24 +6,52 @@
 <meta name="author" content="All: Ondrej Rafaj" />
 <meta name="copyright" content="webgurucms.com" />
 <link rel="shortcut icon" href="{TEMPLATE}favicon.ico" type="image/x-icon" />
-<link href="{TEMPLATE}css/basic.css" rel="stylesheet" type="text/css" />
+<!--<link href="{TEMPLATE}css/basic.css" rel="stylesheet" type="text/css" />-->
 <link href="{TEMPLATE}css/login.css" rel="stylesheet" type="text/css" />
 {EDITOR}
 <title>WebGuru CMS 3 - {TITLE}</title>
-{HEAD}
+<style>
+#errors {
+	width:600px;
+	margin-top:50px;
+	margin-bottom:-30px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	font-size:12px;
+}
+#errors ul {
+}
+#errors ul.red li {
+	color:#900;
+}
+#errors ul.green li {
+	color: #090;
+}
+#errors ul.orange li {
+	color:#C60;
+}
+#errors ul li {
+	margin-bottom:12px;
+}
+</style>
+
 </head>
 <body>
-<div id="errors">{ERRORS}</div>
 <div id="container">
-	<form action="index.php{FROM}" method="post" id="loginform">
-		<!--<h1><a href="{ADMINROOT}"><span>WebGuru3</span> CMS</a></h1>-->
-		<p><input name="name" id="name" type="text" value="{USERNAME}" /></p>
-		<p><input name="pass" id="pass" type="password" value="{PASSWORD}" /></p>
+	<div id="topLine"></div>
+		<div id="errors">{ERRORS}</div>
+    	<form action="index.php{FROM}" method="post" id="login">
+		<h1><strong>Fuerte International</strong> WebGuru CMS 3 </h1>
+    	<p><input type="text" name="name" placeholder="Email" value="" /></p>
 		<p>
-			<label for="remember">{wREMEMBER}</label>
-			<input name="remember" id="remember" type="checkbox" value="1"{CHECKED} />
-			<button name="submit" id="submit" type="submit"><span>{wLOGIN}</span></button>
+		    <input type="password" name="pass" placeholder="Password" value="" />
+		    <!--<a href="#">Forgotten Password?</a>-->
 		</p>
+		<p>
+		    <button name="submit" type="submit">Login</button>
+		</p>
+
 	</form>
 </div>
 </body>
