@@ -22,6 +22,8 @@ $system['parse']['editor'] = false;
 $tab = new myTabs('myTabs');
 
 // ----------- Development version (Block: mobileapps) start -----------
+$devVersion = 0;
+
 $block = 'mobileapps';
 $tpl = new wgParse($temp, $path);
 $tpl->setCurrentBlock($block);
@@ -43,9 +45,7 @@ $lv = array();
 $item = new MobileappsModel();
 $item->setDefaultResults(wgSystem::getPost());
 
-//$arr = MobileappsModel::getSelfPagerData(pager::getPage($block), 20);
-$arr = MobileappsModel::doPager(array(), pager::getPage($block));
-// MobileappsModel::getPagerData(pager::getPage($block), 0, 20);
+$arr = MobileappsModel::getPagerDataForDevVersion($devVersion ,pager::getPage($block), 20);
 if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
 	$tpl->setCurrentBlock('listmobileapps');
 	$lv['LID'] = $val->getId();
@@ -79,6 +79,7 @@ if ($item->getIcon()) {
 	$var['ICONPREVIEW'] = '<img src="'.$icon.'" alt="" style="float:right; margin-top:16px; margin-left:200px; border:solid 1px; padding:6px;" />';
 }
 $var['COLSORT'] = $item->getSort();
+$var['COLDEVTYPE'] = $item->getDevtype();
 $var['COLAPPTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getApptype(), array(), array(), wgLang::get('iPhone'));
 $var['COLDEVTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getDevtype(), array(wgLang::get('productionversion'), wgLang::get('betaversion')), array(), wgLang::get('developmentversion'));
 $var['FULLCOLADDED'] = formsHelper::getDateTimeBox('added', $item->getAdded());
@@ -89,10 +90,12 @@ $var = wgSystem::getFormCallback($var);
 
 $tpl->setVariable($var);
 $tpl->parseBlock($block);
-$tab->addTab('devversion', wgLang::get('devversion'), true, $tpl->getBlock($block));
+$tab->addTab('developmentversion', wgLang::get('developmentversion'), true, $tpl->getBlock($block));
 // ----------- Development version end -----------
 
 // ----------- Beta version (Block: mobileapps) start -----------
+$devVersion = 1;
+
 $block = 'mobileapps';
 $tpl = new wgParse($temp, $path);
 $tpl->setCurrentBlock($block);
@@ -114,9 +117,7 @@ $lv = array();
 $item = new MobileappsModel();
 $item->setDefaultResults(wgSystem::getPost());
 
-//$arr = MobileappsModel::getSelfPagerData(pager::getPage($block), 20);
-$arr = MobileappsModel::doPager(array(), pager::getPage($block));
-// MobileappsModel::getPagerData(pager::getPage($block), 0, 20);
+$arr = MobileappsModel::getPagerDataForDevVersion($devVersion ,pager::getPage($block), 20);
 if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
 	$tpl->setCurrentBlock('listmobileapps');
 	$lv['LID'] = $val->getId();
@@ -150,6 +151,7 @@ if ($item->getIcon()) {
 	$var['ICONPREVIEW'] = '<img src="'.$icon.'" alt="" style="float:right; margin-top:16px; margin-left:200px; border:solid 1px; padding:6px;" />';
 }
 $var['COLSORT'] = $item->getSort();
+$var['COLDEVTYPE'] = $devVersion;
 $var['COLAPPTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getApptype(), array(), array(), wgLang::get('iPhone'));
 $var['COLDEVTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getDevtype(), array(wgLang::get('productionversion'), wgLang::get('betaversion')), array(), wgLang::get('developmentversion'));
 $var['FULLCOLADDED'] = formsHelper::getDateTimeBox('added', $item->getAdded());
@@ -165,6 +167,8 @@ $tab->addTab('betaversion', wgLang::get('betaversion'), true, $tpl->getBlock($bl
 
 
 // ----------- Production version (Block: mobileapps) start -----------
+$devVersion = 2;
+
 $block = 'mobileapps';
 $tpl = new wgParse($temp, $path);
 $tpl->setCurrentBlock($block);
@@ -186,9 +190,7 @@ $lv = array();
 $item = new MobileappsModel();
 $item->setDefaultResults(wgSystem::getPost());
 
-//$arr = MobileappsModel::getSelfPagerData(pager::getPage($block), 20);
-$arr = MobileappsModel::doPager(array(), pager::getPage($block));
-// MobileappsModel::getPagerData(pager::getPage($block), 0, 20);
+$arr = MobileappsModel::getPagerDataForDevVersion($devVersion ,pager::getPage($block), 20);
 if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
 	$tpl->setCurrentBlock('listmobileapps');
 	$lv['LID'] = $val->getId();
@@ -222,6 +224,7 @@ if ($item->getIcon()) {
 	$var['ICONPREVIEW'] = '<img src="'.$icon.'" alt="" style="float:right; margin-top:16px; margin-left:200px; border:solid 1px; padding:6px;" />';
 }
 $var['COLSORT'] = $item->getSort();
+$var['COLDEVTYPE'] = $devVersion;
 $var['COLAPPTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getApptype(), array(), array(), wgLang::get('iPhone'));
 $var['COLDEVTYPEFULL'] = formsHelper::getSelectBox('apptype', $item->getDevtype(), array(wgLang::get('productionversion'), wgLang::get('betaversion')), array(), wgLang::get('developmentversion'));
 $var['FULLCOLADDED'] = formsHelper::getDateTimeBox('added', $item->getAdded());

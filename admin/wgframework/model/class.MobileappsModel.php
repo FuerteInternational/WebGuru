@@ -22,6 +22,29 @@ class MobileappsModel extends BaseMobileappsModel {
 		return parent::doSelect($conn);
 	}
 	
+	public static function getGroupedSelfData() {
+		$conn = new wgConnector();
+		$conn->order(parent::COL_NAME, 'ASC');
+		$conn->group(parent::COL_IDENTIFIER);
+		return parent::doSelect($conn, true);
+	}
+	
+	public static function getSelfDataForIdentifier($identifier) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_IDENTIFIER, $identifier);
+		$conn->order(parent::COL_DEVTYPE, 'DESC');
+		return parent::doSelect($conn);
+	}
+	
+	public static function getPagerDataForDevVersion($devVersion, $page, $limit=20) {
+		$limit = (int) $limit;
+		if (!(bool) $limit) $limit = 20;
+		$conn = new wgConnector();
+		$conn->where(parent::COL_DEVTYPE, (int)$devVersion);
+		$conn->order(parent::COL_NAME, 'ASC');
+		return parent::doPager($conn, $page, $limit);
+	}
+	
 	/*
 	public static function getSelfPagerData($page, $limit=20) {
 		$limit = (int) $limit;

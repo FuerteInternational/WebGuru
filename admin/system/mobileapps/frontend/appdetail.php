@@ -1,7 +1,7 @@
 <?php
 
 if ($mobileAppId) {
-	$app = MobileappsModel::getOneSelfData($mobileAppId);
+	$arr = MobileappsModel::getSelfDataForIdentifier($mobileAppId);
 ?>
 <div class="appDetail">
     <div class="box noBorder">
@@ -9,30 +9,26 @@ if ($mobileAppId) {
         <p class="appBundleId"><?php echo $app->getIdentifier(); ?></p>
         <a href="<?php echo wgPaths::getAdminPath('url'); ?>?part=system&mod=mobileapps&page=apps" class="button rightButton">Delete</a>
     </div>
-    <!--<div class="box">
-        <h3>Production version</h3>
-        <ul class="values">
-            <li>Version: <span>v1.1</span></li>
-            <li>Build date: <span>24. Aug 1991 12:15 PM</span></li>
-        </ul>
-        <div class="controls">
-            <a href="#" title="Edit #########" class="button edit">Edit</a>
-            <a href="#" title="Download #########" class="button download">Download</a>
-            <a href="#" title="Replace #########" class="button replace">Replace</a>
-        </div>
-    </div>-->
+    <?php
+    foreach ($arr as $app) {
+		if ($app->getDevtype() == 0) $devVersion = 'Development version';
+		elseif ($app->getDevtype() == 1) $devVersion = 'Beta version';
+		if ($app->getDevtype() == 2) $devVersion = 'Production version';
+	?>
     <div class="box">
-        <h3>Development version</h3>
+    	<img src="<?php echo $app->getLargeIconUrl(); ?>" alt="<?php echo $app->getName(); ?>" style="float: right" class="bigAppDetailIcon" />
+        <h3><?php echo $devVersion; ?></h3>
         <ul class="values">
             <li>Version: <span>v<?php echo $app->getVersion(); ?></span></li>
             <li>Build date: <span><?php echo $app->getFormattedDateChanged(); ?></span></li>
         	<li>Size: <span><?php echo wgIo::getSize($app->getSize(), true); ?></span></li>
+        	<li>Size: <span><?php echo $app->getSize(); ?></span></li>
         </ul>
         <div class="controls">
             <?php
             if ((strstr($_SERVER['HTTP_USER_AGENT'],"iPad") || strstr($_SERVER['HTTP_USER_AGENT'],"iPhone")) || true) {
             ?>
-            <a href="itms-services://?action=download-manifest&url=itms-services://?action=download-manifest&url=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$mobileAppId.'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
+            <a href="itms-services://?action=download-manifest&url=itms-services://?action=download-manifest&url=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$app->getId().'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
             <?php
             }
             else {
@@ -43,12 +39,14 @@ if ($mobileAppId) {
             <?php
             }
             ?>
-            
         </div>
-        <!--<p class="peopleInfo">
+        <p class="peopleInfo">
             All, Developers, Management, SOMO
-        </p>-->
+        </p>
     </div>
+    <?php
+    }
+    ?>
     <!--<div class="box">
         <h3>Development version</h3>
         <div class="controls">
