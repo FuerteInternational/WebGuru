@@ -28,7 +28,6 @@ function toggleEdit(element) {
     <?php
     $x = 0;
     foreach ($arr as $app) {
-		error_reporting(E_ALL ^E_DEPRECATED);
 		$x++;
 		if ($app->getDevtype() == 0) $devVersion = 'Development version';
 		elseif ($app->getDevtype() == 1) $devVersion = 'Beta version';
