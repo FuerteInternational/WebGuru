@@ -43,7 +43,6 @@ class MobileappsCompaniesModel extends BaseMobileappsCompaniesModel {
 	}
 	
 	public static function getCompaniesForApp($appId) {
-		error_reporting(E_ALL ^ E_DEPRECATED);
 		$conn = new wgConnector();
 		$conn->where(parent::COL_MOBILEAPPS_ID, $appId);
 		$conn->onJoin(parent::COL_COMPANIES_ID, CompaniesModel::COL_ID);
