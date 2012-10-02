@@ -23,7 +23,7 @@ class installMobileapps {
 	 */
 	function __construct() {
 		
-		$this->tables[] = "CREATE TABLE IF NOT EXISTS `mobileapps` (
+		$this->tables[] = "CREATE TABLE `mobileapps` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   `identifier` varchar(150) NOT NULL,
@@ -39,9 +39,17 @@ class installMobileapps {
   KEY `identifier` (`identifier`,`devtype`,`apptype`,`icon`,`sort`,`added`,`changed`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8";
 		
-		$this->tables[] = 'CREATE TABLE `mobileapps_users` (`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, `users_id` INT(11) UNSIGNED NOT NULL, `companies_id` BIGINT(20) UNSIGNED NOT NULL, INDEX (`users_id`, `companies_id`)) ENGINE = MyISAM;';
+		$this->tables[] = 'CREATE TABLE `mobileapps_users` (
+  `users_id` int(11) unsigned NOT NULL,
+  `companies_id` bigint(20) unsigned NOT NULL,
+  KEY `users_id` (`users_id`,`companies_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;';
 		
-		//$this->queries[] = '';
+		$this->tables[] = 'CREATE TABLE  `mobileapps_companies` (
+`companies_id` BIGINT( 20 ) UNSIGNED NOT NULL ,
+`mobileapps_id` BIGINT( 20 ) UNSIGNED NOT NULL ,
+INDEX (`companies_id`, `mobileapps_id`)
+) ENGINE = MYISAM;';
 		
 	}
 }
