@@ -281,14 +281,14 @@ class wgConnector {
 	 * @param string $operator operator for where (used only if value is not empty)
 	 * @return bool true / false
 	 */ 
-	public function where($condition, $value=false, $operator='=') {
+	public function where($condition, $value=false, $operator='=', $orAnd='AND') {
 		if (!(bool) $condition) return false;
 		$value = $this->_addSlashes($value);
 		if (!(bool) $operator) $operator = '=';
 		if (!is_numeric($value)) $value = "'".$value."'";
 		if (is_a($condition, 'wgConnector')) print_r($condition);
 		$condition .= ' '.$operator.' '.$value;
-		if ((bool) $this->_q['where']) $this->_q['where'] .= 'AND '.$condition.' ';
+		if ((bool) $this->_q['where']) $this->_q['where'] .= $orAnd.' '.$condition.' ';
 		else $this->_q['where'] = 'WHERE '.$condition.' ';
 		return true;
 	}

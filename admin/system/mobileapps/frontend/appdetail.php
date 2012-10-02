@@ -28,10 +28,13 @@ function toggleEdit(element) {
     <?php
     $x = 0;
     foreach ($arr as $app) {
+		error_reporting(E_ALL ^E_DEPRECATED);
 		$x++;
 		if ($app->getDevtype() == 0) $devVersion = 'Development version';
 		elseif ($app->getDevtype() == 1) $devVersion = 'Beta version';
 		if ($app->getDevtype() == 2) $devVersion = 'Production version';
+		if (moduleMobileapps::canUserAccessApp(moduleUsers::getId(), $app->getId()) || moduleUsers::isAdmin()) {
+		//if (true) {
 	?>
     <div class="box">
     	<img src="<?php echo $app->getLargeIconUrl(); ?>" alt="<?php echo $app->getName(); ?>" style="float: right" class="bigAppDetailIcon" />
@@ -104,6 +107,7 @@ function toggleEdit(element) {
 		</form>
     </div>
     <?php
+    	}
     }
     ?>
     <!--<div class="box">

@@ -65,9 +65,17 @@ class moduleUsers extends dbModelUsers {
 		return (bool) self::getVar('idu');
 	}
 	
+	public static function isAdmin() {
+		$group = self::getVar('groupId');
+		return (bool) ($group == 1);
+	}
+	
 	public static function getVar($var) {
 		$ses = &self::_initSession();
-		if (isset($ses[$var]) && (bool) $ses[$var]) return (string) $ses[$var];
+		if (isset($ses[$var]) && (bool) $ses[$var]) {
+			if (is_a($ses[$var], 'UsersGroupsModel')) return $ses[$var];
+			else return (string) $ses[$var];
+		}
 		else return false;
 	}
 	
@@ -98,6 +106,7 @@ class moduleUsers extends dbModelUsers {
 		$ses['lastip']        = $usrObject->getLastip();
 		$ses['firstname']     = $usrObject->getFirstname();
 		$ses['lastname']      = $usrObject->getLastname();
+		$ses['groupId']       = $usrObject->getUsersGroupsId();
 		$ses['group']         = UsersGroupsModel::doSelectPKey($usrObject->getUsersGroupsId());
 		$ses['country']       = SystemCountriesModel::doSelectPKey($usrObject->getSystemCountriesId());
 		$ses['data']          = $usrObject;

@@ -26,7 +26,18 @@ class MobileappsModel extends BaseMobileappsModel {
 		$conn = new wgConnector();
 		$conn->order(parent::COL_NAME, 'ASC');
 		$conn->group(parent::COL_IDENTIFIER);
-		return parent::doSelect($conn, true);
+		return parent::doSelect($conn);
+	}
+	
+	public static function getGroupedSelfDataForCompanyIds($companyIds) {
+		$conn = new wgConnector();
+		$conn->onJoin(parent::COL_ID, MobileappsCompaniesModel::COL_MOBILEAPPS_ID);
+		foreach ($companyIds as $companyId) {
+			//$conn->where(MobileappsCompaniesModel::COL_MOBILEAPPS_ID, $companyId, '=', 'OR');
+		}
+		$conn->order(parent::COL_NAME, 'ASC');
+		$conn->group(parent::COL_IDENTIFIER);
+		return parent::doRightJoin(MobileappsCompaniesModel::TABLE_NAME, $conn);
 	}
 	
 	public static function getSelfDataForIdentifier($identifier) {

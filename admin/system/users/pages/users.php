@@ -111,7 +111,9 @@ if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $va
 	$lv['LSYSTEMLANGUAGEID'] = $val->getSystemLanguageId();
 	$lv['LEMAILSTEMPLATESID'] = $val->getEmailsTemplatesId();
 	$lv['EDITROW'] = wgIcons::getButton('edit', $val->getName(), wgPaths::makeTableEditLink($val->getId(), 'show=indexgroups'));
-	$lv['DELETEROW'] = wgIcons::getButton('delete', $val->getName(), wgPaths::makeTableDeleteLink($val->getId(), 'act=indexgroups'), true);
+	if ($val->getId() != 1) {
+		$lv['DELETEROW'] = wgIcons::getButton('delete', $val->getName(), wgPaths::makeTableDeleteLink($val->getId(), 'act=indexgroups'), true);
+	}
 	$tpl->setVariable($lv);
 	$tpl->parseBlock('listgroups');
 	if (wgSystem::getRequestValue('edit') == $val->getId() && wgSystem::getRequestValue('show') == 'indexgroups') $item = $val;

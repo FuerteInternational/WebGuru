@@ -1,5 +1,11 @@
 <?php
-$arr = MobileappsModel::getGroupedSelfData();
+$mod->runModule('mobileapps');
+$mod->runModule('users');
+if (moduleUsers::isAdmin()) $arr = MobileappsModel::getGroupedSelfData();
+else {
+	$ids = MobileappsUsersModel::getCompaniesIdsForUser(2);
+	$arr = MobileappsModel::getGroupedSelfDataForCompanyIds($ids);
+}
 $mobileAppId = $_GET['mobileAppId'];
 if (!$mobileAppId) $mobileAppId = (!empty($arr)) ? $arr[0]->getIdentifier() : 0;
 ?>

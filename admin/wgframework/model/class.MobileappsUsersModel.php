@@ -16,14 +16,18 @@ class MobileappsUsersModel extends BaseMobileappsUsersModel {
 	
 	// --------------------- Predefined functions for MobileappsUsers ---------------------
 
-	/*
-	public static function getSelfData() {
+	public static function getCompaniesForUser($userId) {
 		$conn = new wgConnector();
-		//$conn->where(parent::COL_ID, $id);
-		//$conn->order(parent::COL_NAME, 'ASC');
+		$conn->where(parent::COL_USERS_ID, $userId);
 		return parent::doSelect($conn);
 	}
-	//*/
+	
+	public static function getCompaniesIdsForUser($userId) {
+		$res = self::getCompaniesForUser($userId);
+		$arr = array();
+		foreach ($res as $r) $arr[] = $r->getCompaniesId();
+		return $arr;
+	}
 	
 	public static function getUsersCountForCompany($companyId) {
 		$conn = new wgConnector();

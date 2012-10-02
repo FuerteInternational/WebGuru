@@ -41,6 +41,14 @@ class moduleMobileapps {
 	
 	// ------------------------- class functions -------------------------
 	
+	public static function canUserAccessApp($userId, $appId) {
+		$companies = MobileappsCompaniesModel::getCompaniesForApp($appId);
+		foreach ($companies as $company) {
+			if (MobileappsUsersModel::isUserInCompany($userId, $company->getCompaniesId())) return true;
+		}
+		return false;
+	}
+	
 	public static function doSaveUsersForCompany() {
 		$save = array();
 		$save['companies_id'] = (int)wgPost::getValue('companyId');
