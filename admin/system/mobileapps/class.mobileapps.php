@@ -41,6 +41,18 @@ class moduleMobileapps {
 	
 	// ------------------------- class functions -------------------------
 	
+	public static function doSaveUsersForCompany() {
+		$save = array();
+		$save['companies_id'] = (int)wgPost::getValue('companyId');
+		if (!$save['companies_id']) return false;
+		MobileappsUsersModel::deleteAllEntriesForCompany($save['companies_id']);
+		foreach (wgPost::getValue('user') as $companyId) {
+			$save['users_id'] = $companyId;
+			MobileappsUsersModel::doInsert($save);
+		}
+		return true;
+	}
+	
 }
 		
 ?>

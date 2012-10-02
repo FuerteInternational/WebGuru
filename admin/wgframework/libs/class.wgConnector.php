@@ -644,6 +644,7 @@ class wgConnector {
 		try {
 			self::$_lastquery = $this->_q['query'] = $query;
 			if ((bool) wgSystem::isDevelopment()) $start = microtime();
+			//print $query;
 			$result = mysql_query($query);
 			
 			if ((bool) wgSystem::isDevelopment()) $this->_info['time'] = timer::getTime($start);

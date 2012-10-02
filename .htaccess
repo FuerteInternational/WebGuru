@@ -7,22 +7,8 @@
 
 RewriteEngine on
 
-# Rule: Xprogress Rewrite
-RewriteRule ^archive-for-(.*)/$ archive/?date=$1 [QSA]
-RewriteRule ^category-(.*)-(.*)/$ categories/?cat=$1&identifier=$2 [QSA]
-RewriteRule ^post-(.*)-(.*)/$ article-detail/?id=$1 [QSA]
-RewriteRule ^snippet-(.*)-(.*)/$ code-snippets/detail/?snippet=$1 [QSA]
-RewriteRule ^news-(.*)-(.*)/$ latest-news/news-detail/?article=$1 [QSA]
-RewriteRule ^main-rss-2.0.xml$ rss/blog-v2-0.php [QSA]
-RewriteRule ^ipromote-(.*)-(.*).xml$ ipromote.php?id=$1 [QSA]
-RewriteRule ^ipromote-(.*)-(.*).json$ ipromote-json.php?id=$1 [QSA]
-RewriteRule ^ipromote-(.*)-(.*).html$ ipromote-html/index.php?id=$1 [QSA]
-RewriteRule ^ipromote-(.*)-(.*).apple$ ipromote-html/index.php?apple=1&id=$1 [QSA]
-RewriteRule ^igallery/(.*)/$ wgwebdata/igallery-json.php?code=$1 [QSA]
-
-
-
-
+# Rule: Main Rewrite
+RewriteRule ^app-plist-(.*).plist$ app-plist/?mobileAppId=$1 [QSA]
 
 # Protected area: ondrej
 # ./temp/

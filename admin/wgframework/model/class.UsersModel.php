@@ -129,6 +129,12 @@ class UsersModel extends BaseUsersModel {
 		return parent::doSelect($conn);
 	}
 	
+	/*public static function getUsersByLastnameAndUserGroup() {
+		$conn = new wgConnector();
+		$conn->order(parent::COL_LASTNAME.'ASC, '.parent::COL_USERS_GROUPS_ID.' DESC ', false);
+		return parent::doSelect($conn);
+	}*/
+	
 	public static function getUsersPager($page, $group=0, $limit=20) {
 		$conn = new wgConnector();
 		$conn->order(parent::COL_LASTNAME);

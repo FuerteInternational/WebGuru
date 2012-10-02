@@ -25,6 +25,31 @@ class MobileappsUsersModel extends BaseMobileappsUsersModel {
 	}
 	//*/
 	
+	public static function getUsersCountForCompany($companyId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_COMPANIES_ID, $companyId);
+		return parent::doCount($conn);
+	}
+	
+	public static function isUserInCompany($userId, $companyId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_COMPANIES_ID, $companyId);
+		$conn->where(parent::COL_USERS_ID, $userId);
+		return parent::doCount($conn);
+	}
+	
+	public static function deleteAllEntriesForUser($userId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_USERS_ID, (int)$userId);
+		return parent::doDelete($conn);
+	}
+	
+	public static function deleteAllEntriesForCompany($companyId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_COMPANIES_ID, (int)$companyId);
+		return parent::doDelete($conn);
+	}
+	
 	/*
 	public static function getSelfPagerData($page, $limit=20) {
 		$limit = (int) $limit;

@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        28. September 2012 16:42:13
+ * @since        2. October 2012 11:51:24
  */
 
 class BaseUsersFriendsModel extends DbModel {
@@ -42,6 +42,14 @@ class BaseUsersFriendsModel extends DbModel {
 	
 	
 	/**
+		}
+	 * confirmed -> tinyint(1) unsigned
+	 */
+	const PRIMARY_KEY = 'confirmed';
+			
+	const FULL_PRIMARY_KEY = '`users_friends`.`confirmed`';
+			
+	/**
 	 * users_id -> int(11) unsigned
 	 */
 	const FULL_USERS_ID = '`users_friends`.`users_id`';
@@ -71,15 +79,16 @@ class BaseUsersFriendsModel extends DbModel {
 	
 	
 	/**
+		}
 	 * Count (on primary key)
 	 */
-	const COUNT_TABLE = 'COUNT(*)';
-	
+	const COUNT_TABLE = 'COUNT(`users_friends`.`confirmed`)';
+			
 	/**
 	 * Count (on primary key) with Distinct
 	 */
-	const COUNT_DISTINCT_TABLE = 'COUNT(DISTINCT *)';
-	
+	const COUNT_DISTINCT_TABLE = 'COUNT(DISTINCT `users_friends`.`confirmed`)';
+			
 	
 	/**
 	 * @var array $_tableNames Array with column names translated to php

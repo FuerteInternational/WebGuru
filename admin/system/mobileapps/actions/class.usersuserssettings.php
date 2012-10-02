@@ -70,39 +70,15 @@ final class usersuserssettingsActionsMobileapps extends BaseActions {
 	 */
 	private static function doSaveUsers() {
 		$save = array();
-		$save['users_groups_id'] = wgPost::getValue('users_groups_id');
-		$save['nickname'] = wgPost::getValue('nickname');
-		$save['mail'] = wgPost::getValue('mail');
-		$save['password'] = wgPost::getValue('password');
-		$save['question'] = wgPost::getValue('question');
-		$save['ansver'] = wgPost::getValue('ansver');
-		if (!(bool) wgPost::getValue('edit')) $save['added'] = 'NOW()';
-		$save['online'] = wgPost::getValue('online');
-		$save['changed'] = 'NOW()';
-		$save['timever'] = wgPost::getValue('timever');
-		$save['codever'] = wgPost::getValue('codever');
-		$save['active'] = wgPost::getValue('active');
-		$save['lastlogin'] = wgPost::getValue('lastlogin');
-		$save['gender'] = wgPost::getValue('gender');
-		$save['lastip'] = wgPost::getValue('lastip');
-		$save['firstname'] = wgPost::getValue('firstname');
-		$save['lastname'] = wgPost::getValue('lastname');
-		$save['system_countries_id'] = wgPost::getValue('system_countries_id');
-		$save['visits'] = wgPost::getValue('visits');
-		$save['downloads'] = wgPost::getValue('downloads');
-		$save['xdata'] = wgPost::getValue('xdata');
-		
-		if ((bool) wgPost::getValue('edit')) {
-			$save['where'] = wgPost::getValue('edit');
-			$id = (int) $save['where'];
-			self::$_par['edit'] = $id;
-			return (bool) UsersModel::doUpdate($save);
+		$save['users_id'] = (int)wgPost::getValue('edit');
+		self::$_par['edit'] = $save['users_id'];
+		if (!$save['users_id']) return false;
+		MobileappsUsersModel::deleteAllEntriesForUser($save['users_id']);
+		foreach (wgPost::getValue('checkbox') as $companyId) {
+			$save['companies_id'] = $companyId;
+			MobileappsUsersModel::doInsert($save);
 		}
-		else {
-			$id = (int) UsersModel::doInsert($save);
-			self::$_par['edit'] = $id;
-			return (bool) $id;
-		}
+		return true;
 	}
 
 	/**

@@ -1,1 +1,0 @@
-wgModules::runModule('mobileapps');

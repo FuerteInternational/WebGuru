@@ -49,7 +49,7 @@ $arr = MobileappsModel::getPagerDataForDevVersion($devVersion ,pager::getPage($b
 if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
 	$tpl->setCurrentBlock('listmobileapps');
 	$lv['LID'] = $val->getId();
-	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize($val->getSize(), true).')</small>';
+	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize((int)$val->getSize(), true).')</small>';
 	$lv['LIDENTIFIER'] = $val->getIdentifier();
 	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
 	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
@@ -121,7 +121,7 @@ $arr = MobileappsModel::getPagerDataForDevVersion($devVersion ,pager::getPage($b
 if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
 	$tpl->setCurrentBlock('listmobileapps');
 	$lv['LID'] = $val->getId();
-	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize($val->getSize(), true).')</small>';
+	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize((int)$val->getSize(), true).')</small>';
 	$lv['LIDENTIFIER'] = $val->getIdentifier();
 	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
 	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
@@ -194,7 +194,7 @@ $arr = MobileappsModel::getPagerDataForDevVersion($devVersion ,pager::getPage($b
 if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $val) {
 	$tpl->setCurrentBlock('listmobileapps');
 	$lv['LID'] = $val->getId();
-	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize($val->getSize(), true).')</small>';
+	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize((int)$val->getSize(), true).')</small>';
 	$lv['LIDENTIFIER'] = $val->getIdentifier();
 	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
 	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';

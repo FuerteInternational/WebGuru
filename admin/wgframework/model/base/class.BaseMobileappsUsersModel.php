@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        28. September 2012 16:42:12
+ * @since        2. October 2012 11:51:24
  */
 
 class BaseMobileappsUsersModel extends DbModel {
@@ -42,19 +42,13 @@ class BaseMobileappsUsersModel extends DbModel {
 	
 	
 	/**
-	 * id -> bigint(20) unsigned
+		}
+	 * companies_id -> bigint(20) unsigned
 	 */
-	const PRIMARY_KEY = 'id';
-	
-	const FULL_PRIMARY_KEY = '`mobileapps_users`.`id`';
-	
-	/**
-	 * id -> bigint(20) unsigned
-	 */
-	const FULL_ID = '`mobileapps_users`.`id`';
-	
-	const COL_ID = 'id';
-	
+	const PRIMARY_KEY = 'companies_id';
+			
+	const FULL_PRIMARY_KEY = '`mobileapps_users`.`companies_id`';
+			
 	/**
 	 * users_id -> int(11) unsigned
 	 */
@@ -71,40 +65,41 @@ class BaseMobileappsUsersModel extends DbModel {
 	
 	
 	/**
+		}
 	 * Count (on primary key)
 	 */
-	const COUNT_TABLE = 'COUNT(`mobileapps_users`.`id`)';
-	
+	const COUNT_TABLE = 'COUNT(`mobileapps_users`.`companies_id`)';
+			
 	/**
 	 * Count (on primary key) with Distinct
 	 */
-	const COUNT_DISTINCT_TABLE = 'COUNT(DISTINCT `mobileapps_users`.`id`)';
-	
+	const COUNT_DISTINCT_TABLE = 'COUNT(DISTINCT `mobileapps_users`.`companies_id`)';
+			
 	
 	/**
 	 * @var array $_tableNames Array with column names translated to php
 	 */
-	private static $_tableNames = array('Id'=>0, 'UsersId'=>1, 'CompaniesId'=>2);
+	private static $_tableNames = array('UsersId'=>0, 'CompaniesId'=>1);
 	
 	/**
 	 * @var array $_tableValues Array with key values of the columns
 	 */
-	private static $_tableValues = array(0, 1, 2);
+	private static $_tableValues = array(0, 1);
 	
 	/**
 	 * @var array $_fullTblFields Array with real column names in table
 	 */
-	private static $_fullTblFields = array('`mobileapps_users`.`Id`'=>0, '`mobileapps_users`.`UsersId`'=>1, '`mobileapps_users`.`CompaniesId`'=>2);
+	private static $_fullTblFields = array('`mobileapps_users`.`UsersId`'=>0, '`mobileapps_users`.`CompaniesId`'=>1);
 	
 	/**
 	 * @var array $_tableFields Array with real column names
 	 */
-	private static $_tableFields = array('id'=>0, 'users_id'=>1, 'companies_id'=>2);
+	private static $_tableFields = array('users_id'=>0, 'companies_id'=>1);
 	
 	/**
 	 * @var array $_tableFieldsByKey Array with real column names
 	 */
-	private static $_tableFieldsByKey = array('id', 'users_id', 'companies_id');
+	private static $_tableFieldsByKey = array('users_id', 'companies_id');
 	
 	
 	protected $_result = array();
@@ -174,62 +169,6 @@ class BaseMobileappsUsersModel extends DbModel {
 	}
 	
 	/**
-	 * Get value of the primary key
-	 * 
-	 * @name getPrimaryKey
-	 * @return int
-	 */
-	public function getPrimaryKey() {
-		if ((bool) $this->_result) {
-			if (isset($this->_result[0])) return (int) $this->_result[0];
-			else parent::throwGetColException('MobileappsUsersModel::getPrimaryKey', __LINE__, __FILE__);
-		}
-		else return parent::throwNoResException('MobileappsUsersModel::getPrimaryKey', __LINE__, __FILE__);
-	}
-	
-	/**
-	 * Get value of the field by Key
-	 * 
-	 * @name getFieldByKey
-	 * @return mixed
-	 */
-	public function getFieldByKey($fieldKey) {
-		if ((bool) $this->_result) {
-			if (isset($this->_result[$fieldKey])) return $this->_result[$fieldKey];
-			else parent::throwGetColException('MobileappsUsersModel::getFieldByName', __LINE__, __FILE__);
-		}
-		else return parent::throwNoResException('MobileappsUsersModel::getFieldByName', __LINE__, __FILE__);
-	}
-	
-	/**
-	 * Get value of the field by column name
-	 * 
-	 * @name getFieldByName
-	 * @return mixed
-	 */
-	public function getFieldByName($field) {
-		if ((bool) $this->_result) {
-			if (isset($this->_resultFields[$field]) && isset($this->_result[$this->_resultFields[$field]])) return $this->_result[$this->_resultFields[$field]];
-			else parent::throwGetColException('trying to get non existing data ('.$field.') in MobileappsUsersModel::getFieldByName', __LINE__, __FILE__);
-		}
-		else return parent::throwNoResException('trying to get non existing data ('.$field.') in MobileappsUsersModel::getFieldByName', __LINE__, __FILE__);
-	}
-	
-	/**
-	 * Get value of id -> bigint(20) unsigned
-	 * 
-	 * @name getId
-	 * @return bigint
-	 */
-	public function getId() {
-		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
-			else parent::throwGetColException('Not set MobileappsUsersModel::getId', __LINE__, __FILE__);
-		}
-		else return parent::throwNoResException('No result From MobileappsUsersModel::getId', __LINE__, __FILE__);
-	}
-	
-	/**
 	 * Get value of users_id -> int(11) unsigned
 	 * 
 	 * @name getUsersId
@@ -237,7 +176,7 @@ class BaseMobileappsUsersModel extends DbModel {
 	 */
 	public function getUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
 			else parent::throwGetColException('Not set MobileappsUsersModel::getUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MobileappsUsersModel::getUsersId', __LINE__, __FILE__);
@@ -251,7 +190,7 @@ class BaseMobileappsUsersModel extends DbModel {
 	 */
 	public function getCompaniesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
 			else parent::throwGetColException('Not set MobileappsUsersModel::getCompaniesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MobileappsUsersModel::getCompaniesId', __LINE__, __FILE__);

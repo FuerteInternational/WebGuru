@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        28. September 2012 16:42:13
+ * @since        2. October 2012 11:51:24
  */
 
 class BaseUsersFieldsModel extends DbModel {
@@ -42,6 +42,7 @@ class BaseUsersFieldsModel extends DbModel {
 	
 	
 	/**
+		}
 	 * id -> int(11) unsigned
 	 */
 	const PRIMARY_KEY = 'id';
@@ -106,6 +107,7 @@ class BaseUsersFieldsModel extends DbModel {
 	
 	
 	/**
+		}
 	 * Count (on primary key)
 	 */
 	const COUNT_TABLE = 'COUNT(`users_fields`.`id`)';

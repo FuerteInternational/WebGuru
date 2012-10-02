@@ -267,7 +267,7 @@ div.errors ul li {
 }
 #page div.content div.appDetail .noBorder {
 	padding-right: 23px;
-	padding-left: 23px;
+	999padding-left: 23px;
 	border:none;
 }
 #page div.content div.appDetail .box h3 {
@@ -287,6 +287,28 @@ div.errors ul li {
 	float:right;
 	color:#666;
 	width:234px;
+}
+#page div.content div.appDetail .box ul.checkboxList {
+	margin-bottom:16px;
+}
+#page div.content div.appDetail .box ul.checkboxList li {
+	display:block;
+	height:36px;
+	line-height:36px;
+	padding-left:16px;
+	color:#666;
+	font-size:12px;
+	margin-bottom:2px;
+}
+#page div.content div.appDetail .box ul.checkboxList li:hover {
+	background-color: #FFF;
+}
+#page div.content div.appDetail .box ul.checkboxList li span {
+}
+#page div.content div.appDetail .box ul.checkboxList li input {
+	float:right;
+	margin-top:12px;
+	margin-right:16px;
 }
 #page div.content div.appDetail .box .controls {
 	height:32px;

@@ -93,6 +93,7 @@ $var['DATAPAGER'] = pager::makeAdminPager($arr['pager']);
 $lv = array();
 
 $var['COLID'] = $item->getId();
+$var['ENABLEEDIT'] = ((bool)$item->getId() ? '' : ' style="display:none;"');
 $var['COLUSERSGROUPSID'] = $item->getUsersGroupsId();
 $var['COLNICKNAME'] = $item->getNickname();
 $var['COLMAIL'] = $item->getMail();
@@ -115,11 +116,12 @@ $var['COLVISITS'] = $item->getVisits();
 $var['COLDOWNLOADS'] = $item->getDownloads();
 $var['COLXDATA'] = $item->getXdata();
 
-$companies = CompaniesModel::getSelfDataForUser($item->getId());
+$companies = CompaniesModel::getSelfData();
 if (!empty($companies) && is_array($companies)) foreach ($companies as $val) {
 	$tpl->setCurrentBlock('listusercompanies');
 	$lv['COMPANYNAME'] = $val->getName();
-	$lv['COMPANYIDENTIFIER'] = $val->getIdentifier();
+	$lv['COMPANYIDENTIFIER'] = $val->getId();
+	$lv['CHECKEDUSERCOMP'] = MobileappsUsersModel::isUserInCompany($item->getId(), $val->getId()) ? ' checked="checked"' : '';
 	$tpl->setVariable($lv);
 	$tpl->parseBlock('listusercompanies');
 }

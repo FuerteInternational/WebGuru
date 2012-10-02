@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        28. September 2012 16:42:12
+ * @since        2. October 2012 11:51:23
  */
 
 class BaseIgalleryGalleriesModel extends DbModel {
@@ -42,6 +42,7 @@ class BaseIgalleryGalleriesModel extends DbModel {
 	
 	
 	/**
+		}
 	 * id -> bigint(20) unsigned
 	 */
 	const PRIMARY_KEY = 'id';
@@ -92,6 +93,7 @@ class BaseIgalleryGalleriesModel extends DbModel {
 	
 	
 	/**
+		}
 	 * Count (on primary key)
 	 */
 	const COUNT_TABLE = 'COUNT(`igallery_galleries`.`id`)';

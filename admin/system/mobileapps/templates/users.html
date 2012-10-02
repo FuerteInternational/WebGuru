@@ -32,10 +32,7 @@
 	</tbody>
 </table>
 {DATAPAGER}
-<form action="{ACTION}" method="post">
-	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
-</form>
-<form action="{ACTION}" method="post">
+<form action="{ACTION}" method="post"{ENABLEEDIT}>
 	<fieldset><legend>{wEDIT}</legend>
 		<p class="topbuttons">
 			<input name="reset" type="reset" value="{wRESET}" />
@@ -71,12 +68,12 @@
 		<fieldset><legend>{wCOMPANIESMEMBERSHIP}</legend>
 			<p>
 				<label>{wBASICUSERGROUP}:</label>
-				<input type="checkbox" name="checkbox-always-selected" readonly="readonly" value="1" />
+				<input type="checkbox" name="checkbox-always-selected" readonly="readonly" value="1" checked="checked" />
 			</p>
 			<!-- BEGIN listusercompanies -->
 			<p>
 				<label>{COMPANYNAME}:</label>
-				<input type="checkbox" name="checkbox-{COMPANYIDENTIFIER}" value="1" />
+				<input type="checkbox" name="checkbox[]" value="{COMPANYIDENTIFIER}"{CHECKEDUSERCOMP} />
 			</p>
 			<!-- END listusercompanies -->
 		</fieldset>

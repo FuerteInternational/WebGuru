@@ -589,7 +589,10 @@ require(\'model/extended/extended.'.$name.'.php\');
 	
 	private static function _getColumnCountConstants($table, $columns) {
 		$data = NULL;
-		foreach ($columns as $col) if ($col[3] == 'PRI') $data = '/**
+		$isPrimary = false;
+		foreach ($columns as $col) if ($col[3] == 'PRI') {
+			$data = '/**
+		}
 	 * Count (on primary key)
 	 */
 	const COUNT_TABLE = \'COUNT(`'.$table.'`.`'.$col[0].'`)\';
@@ -600,6 +603,22 @@ require(\'model/extended/extended.'.$name.'.php\');
 	const COUNT_DISTINCT_TABLE = \'COUNT(DISTINCT `'.$table.'`.`'.$col[0].'`)\';
 	
 	';
+			$isPrimary = true;
+		}
+		if (!$isPrimary) {
+			$data = '/**
+		}
+	 * Count (on primary key)
+	 */
+	const COUNT_TABLE = \'COUNT(`'.$table.'`.`'.$col[0].'`)\';
+			
+	/**
+	 * Count (on primary key) with Distinct
+	 */
+	const COUNT_DISTINCT_TABLE = \'COUNT(DISTINCT `'.$table.'`.`'.$col[0].'`)\';
+			
+	';
+		}
 		if (!(bool) $data) $data = '/**
 	 * Count (on primary key)
 	 */
@@ -616,7 +635,10 @@ require(\'model/extended/extended.'.$name.'.php\');
 
 	private static function _getColumnConstants($table, $columns) {
 		$data = NULL;
-		foreach ($columns as $col) if ($col[3] == 'PRI') $data = '/**
+		$isPrimary = false;
+		foreach ($columns as $col) if ($col[3] == 'PRI') {
+			$data = '/**
+		}
 	 * '.$col[0].' -> '.$col[1].'
 	 */
 	const PRIMARY_KEY = \''.$col[0].'\';
@@ -624,6 +646,19 @@ require(\'model/extended/extended.'.$name.'.php\');
 	const FULL_PRIMARY_KEY = \'`'.$table.'`.`'.$col[0].'`\';
 	
 	';
+			$isPrimary = true;
+		}
+		if (!$isPrimary) {
+			$data = '/**
+		}
+	 * '.$col[0].' -> '.$col[1].'
+	 */
+	const PRIMARY_KEY = \''.$col[0].'\';
+			
+	const FULL_PRIMARY_KEY = \'`'.$table.'`.`'.$col[0].'`\';
+			
+	';
+		}
 		foreach ($columns as $col) {
 			$data .= '/**
 	 * '.$col[0].' -> '.$col[1].'
