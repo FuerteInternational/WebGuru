@@ -291,6 +291,12 @@ div.errors ul li {
 #page div.content div.appDetail .box ul.checkboxList {
 	margin-bottom:16px;
 }
+#page div.content div.appDetail .box ul.checkboxList img {
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-right:16px;
+	float:left;
+}
 #page div.content div.appDetail .box ul.checkboxList li {
 	display:block;
 	height:36px;

@@ -431,6 +431,45 @@ require(\'model/extended/extended.'.$name.'.php\');
 		return DbModel::doSelect($conn, new '.$thisClass.'());
 	}
 	
+	/** Left join select function from table '.$table.'
+	 * 
+	 * @name doLeftJoin
+	 * @param array $params
+	 * @return array Array of the items from database
+	 */
+	public static function doLeftJoin($table2, $params=NULL, $fields=array()) {
+		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
+		$what = parent::_getSelectFields($fields);
+		$conn->leftJoin(self::TABLE_NAME, $table2, $what);
+		return DbModel::doSelect($conn, new '.$thisClass.'());
+	}
+	
+	/** Right join select function from table '.$table.'
+	 * 
+	 * @name doRightJoin
+	 * @param array $params
+	 * @return array Array of the items from database
+	 */
+	public static function doRightJoin($table2, $params=NULL, $fields=array()) {
+		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
+		$what = parent::_getSelectFields($fields);
+		$conn->rightJoin(self::TABLE_NAME, $table2, $what);
+		return DbModel::doSelect($conn, new '.$thisClass.'());
+	}
+	
+	/** Inner join select function from table '.$table.'
+	 * 
+	 * @name doInnerJoin
+	 * @param array $params
+	 * @return array Array of the items from database
+	 */
+	public static function doInnerJoin($table2, $params=NULL, $fields=array()) {
+		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
+		$what = parent::_getSelectFields($fields);
+		$conn->innerJoin(self::TABLE_NAME, $table2, $what);
+		return DbModel::doSelect($conn, new '.$thisClass.'());
+	}
+	
 	/**
 	 * Select one item function from table '.$table.'
 	 * 

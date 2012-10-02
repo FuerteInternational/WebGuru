@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        2. October 2012 13:06:15
+ * @since        2. October 2012 14:58:36
  */
 
 class BaseRatingPointsGroupsModel extends DbModel {
@@ -328,6 +328,45 @@ class BaseRatingPointsGroupsModel extends DbModel {
 		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
 		$what = parent::_getSelectFields($fields);
 		$conn->select(self::TABLE_NAME, $what);
+		return DbModel::doSelect($conn, new RatingPointsGroupsModel());
+	}
+	
+	/** Left join select function from table rating_points_groups
+	 * 
+	 * @name doLeftJoin
+	 * @param array $params
+	 * @return array Array of the items from database
+	 */
+	public static function doLeftJoin($table2, $params=NULL, $fields=array()) {
+		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
+		$what = parent::_getSelectFields($fields);
+		$conn->leftJoin(self::TABLE_NAME, $table2, $what);
+		return DbModel::doSelect($conn, new RatingPointsGroupsModel());
+	}
+	
+	/** Right join select function from table rating_points_groups
+	 * 
+	 * @name doRightJoin
+	 * @param array $params
+	 * @return array Array of the items from database
+	 */
+	public static function doRightJoin($table2, $params=NULL, $fields=array()) {
+		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
+		$what = parent::_getSelectFields($fields);
+		$conn->rightJoin(self::TABLE_NAME, $table2, $what);
+		return DbModel::doSelect($conn, new RatingPointsGroupsModel());
+	}
+	
+	/** Inner join select function from table rating_points_groups
+	 * 
+	 * @name doInnerJoin
+	 * @param array $params
+	 * @return array Array of the items from database
+	 */
+	public static function doInnerJoin($table2, $params=NULL, $fields=array()) {
+		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
+		$what = parent::_getSelectFields($fields);
+		$conn->innerJoin(self::TABLE_NAME, $table2, $what);
 		return DbModel::doSelect($conn, new RatingPointsGroupsModel());
 	}
 	

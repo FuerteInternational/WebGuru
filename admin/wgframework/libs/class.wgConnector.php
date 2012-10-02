@@ -265,13 +265,11 @@ class wgConnector {
 	 * @return bool true / false
 	 */
 	public function onJoin($condition, $value) {
-		if ($this->_type == 'join') {
-			if (empty($this->_q['onjoin'])) $amp = 'ON ';
-			else $amp = 'AND ';
-			$this->_q['onjoin'] .= $amp.' a.'.$condition.' = '.' b.'.$value.' ';
-			return true;
-		}
-		else return false;
+		if ($this->_type == 'upd' || $this->_type == 'del' || $this->_type == 'ins') return false;
+		if (empty($this->_q['onjoin'])) $amp = 'ON ';
+		else $amp = 'AND ';
+		$this->_q['onjoin'] .= $amp.' a.'.$condition.' = '.' b.'.$value.' ';
+		return true;
 	}
 	
 	/**
@@ -687,8 +685,13 @@ class wgConnector {
 	public function getQuery() {
 		$q = &$this->_q;
 		if ($this->_type == 'ins') $this->_makeInsert();
-		if ((bool) $q['query']) return (string) $q['query'];
-		else return (string) $q['basic'].$q['join'].$q['set'].$q['onjoin'].$q['where'].$q['group'].$q['order'].$q['limit'].';';
+		if ((bool) $q['query']) {
+			$q = (string) $q['query'];
+		}
+		else {
+			$q = (string) $q['basic'].$q['join'].$q['set'].$q['onjoin'].$q['where'].$q['group'].$q['order'].$q['limit'].';';
+		}
+		return $q;
 	}
 	
 	/**

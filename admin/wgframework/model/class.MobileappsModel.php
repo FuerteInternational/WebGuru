@@ -68,6 +68,16 @@ class MobileappsModel extends BaseMobileappsModel {
 		else return new MobileappsModel();
 	}
 	
+	public static function getItemGeneralItemInfo($identifierMobileapps) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_IDENTIFIER, $identifierMobileapps);
+		$conn->group(parent::COL_IDENTIFIER);
+		$conn->limit(1);
+		$arr = parent::doSelect($conn);
+		if (isset($arr[0]) && !empty($arr[0])) return $arr[0];
+		else return new MobileappsModel();
+	}
+	
 	public function getFormattedDateChanged() {
 		return wgSystem::formatDate($this->getChanged());
 	}

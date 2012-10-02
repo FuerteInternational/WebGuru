@@ -16,6 +16,44 @@ class MobileappsCompaniesModel extends BaseMobileappsCompaniesModel {
 	
 	// --------------------- Predefined functions for MobileappsCompanies ---------------------
 
+	
+	public static function numberOfAppsInCompany($companyId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_COMPANIES_ID, $companyId);
+		return parent::doCount($conn);
+	}
+	
+	public static function numberOfCompaniesForApp($appId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_MOBILEAPPS_ID, $appId);
+		return parent::doCount($conn);
+	}
+	
+	public static function isAppInCompany($appId, $companyId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_COMPANIES_ID, $companyId);
+		$conn->where(parent::COL_MOBILEAPPS_ID, $appId);
+		return parent::doCount($conn);
+	}
+	
+	public static function deleteAllEntriesForApp($appId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_MOBILEAPPS_ID, (int)$appId);
+		return parent::doDelete($conn);
+	}
+	
+	public static function getCompaniesForApp($appId) {
+		error_reporting(E_ALL ^ E_DEPRECATED);
+		$conn = new wgConnector();
+		$conn->where(parent::COL_MOBILEAPPS_ID, $appId);
+		$conn->onJoin(parent::COL_COMPANIES_ID, CompaniesModel::COL_ID);
+		return parent::doRightJoin(CompaniesModel::TABLE_NAME, $conn);
+	}
+	
+	public function getCompanyNameWhenRightJoin() {
+		return $this->_result[3];
+	}
+	
 	/*
 	public static function getSelfData() {
 		$conn = new wgConnector();

@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        2. October 2012 13:06:14
+ * @since        2. October 2012 14:58:36
  */
 
 class BaseIspeedCamerasModel extends DbModel {
@@ -328,6 +328,45 @@ class BaseIspeedCamerasModel extends DbModel {
 		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
 		$what = parent::_getSelectFields($fields);
 		$conn->select(self::TABLE_NAME, $what);
+		return DbModel::doSelect($conn, new IspeedCamerasModel());
+	}
+	
+	/** Left join select function from table ispeed_cameras
+	 * 
+	 * @name doLeftJoin
+	 * @param array $params
+	 * @return array Array of the items from database
+	 */
+	public static function doLeftJoin($table2, $params=NULL, $fields=array()) {
+		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
+		$what = parent::_getSelectFields($fields);
+		$conn->leftJoin(self::TABLE_NAME, $table2, $what);
+		return DbModel::doSelect($conn, new IspeedCamerasModel());
+	}
+	
+	/** Right join select function from table ispeed_cameras
+	 * 
+	 * @name doRightJoin
+	 * @param array $params
+	 * @return array Array of the items from database
+	 */
+	public static function doRightJoin($table2, $params=NULL, $fields=array()) {
+		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
+		$what = parent::_getSelectFields($fields);
+		$conn->rightJoin(self::TABLE_NAME, $table2, $what);
+		return DbModel::doSelect($conn, new IspeedCamerasModel());
+	}
+	
+	/** Inner join select function from table ispeed_cameras
+	 * 
+	 * @name doInnerJoin
+	 * @param array $params
+	 * @return array Array of the items from database
+	 */
+	public static function doInnerJoin($table2, $params=NULL, $fields=array()) {
+		$conn = parent::_initwgConnector($params, self::PRIMARY_KEY);
+		$what = parent::_getSelectFields($fields);
+		$conn->innerJoin(self::TABLE_NAME, $table2, $what);
 		return DbModel::doSelect($conn, new IspeedCamerasModel());
 	}
 	

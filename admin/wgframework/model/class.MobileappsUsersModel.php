@@ -35,7 +35,7 @@ class MobileappsUsersModel extends BaseMobileappsUsersModel {
 		$conn = new wgConnector();
 		$conn->where(parent::COL_COMPANIES_ID, $companyId);
 		$conn->where(parent::COL_USERS_ID, $userId);
-		return parent::doCount($conn);
+		return (bool)parent::doCount($conn);
 	}
 	
 	public static function deleteAllEntriesForUser($userId) {

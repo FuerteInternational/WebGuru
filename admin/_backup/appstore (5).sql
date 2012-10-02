@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 28, 2012 at 05:28 PM
+-- Generation Time: Oct 02, 2012 at 03:44 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -1827,7 +1827,7 @@ CREATE TABLE IF NOT EXISTS `htaccess_rows` (
 --
 
 INSERT INTO `htaccess_rows` (`id`, `name`, `rule`, `type`, `system_users_id`, `system_modules_id`, `system_websites_id`, `sort`) VALUES
-(5, 'Xprogress Rewrite', 'RewriteRule ^archive-for-(.*)/$ archive/?date=%%1 [QSA]\r\nRewriteRule ^category-(.*)-(.*)/$ categories/?cat=%%1&identifier=%%2 [QSA]\r\nRewriteRule ^post-(.*)-(.*)/$ article-detail/?id=%%1 [QSA]\r\nRewriteRule ^snippet-(.*)-(.*)/$ code-snippets/detail/?snippet=%%1 [QSA]\r\nRewriteRule ^news-(.*)-(.*)/$ latest-news/news-detail/?article=%%1 [QSA]\r\nRewriteRule ^main-rss-2.0.xml$ rss/blog-v2-0.php [QSA]\r\nRewriteRule ^ipromote-(.*)-(.*).xml$ ipromote.php?id=%%1 [QSA]\r\nRewriteRule ^ipromote-(.*)-(.*).json$ ipromote-json.php?id=%%1 [QSA]\r\nRewriteRule ^ipromote-(.*)-(.*).html$ ipromote-html/index.php?id=%%1 [QSA]\r\nRewriteRule ^ipromote-(.*)-(.*).apple$ ipromote-html/index.php?apple=1&id=%%1 [QSA]\r\nRewriteRule ^igallery/(.*)/$ wgwebdata/igallery-json.php?code=%%1 [QSA]\r\n\r\n\r\n\r\n', 1, 1, 8, 3, 0);
+(5, 'Main Rewrite', 'RewriteRule ^app-plist-(.*).plist$ app-plist/?mobileAppId=$1 [QSA]', 1, 1, 8, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -3976,16 +3976,46 @@ CREATE TABLE IF NOT EXISTS `mobileapps` (
   `size` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `identifier` (`identifier`,`devtype`,`apptype`,`icon`,`sort`,`added`,`changed`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `mobileapps`
 --
 
 INSERT INTO `mobileapps` (`id`, `name`, `identifier`, `devtype`, `apptype`, `icon`, `sort`, `added`, `changed`, `version`, `size`) VALUES
-(1, 'polligraf', 'polligraf', 0, 0, 1, 0, '2012-09-24 16:15:19', '2012-09-27 13:55:37', '1.0', 0),
-(2, 'Motorsport', 'motorsport', 0, 0, 1, 0, '2012-09-24 16:43:33', '2012-09-27 13:54:24', '1.0', 0),
-(3, 'MP & Silva', 'com.fuerteint.MPSilva', 0, 0, 0, 0, '2012-09-27 13:25:07', '2012-09-27 13:56:16', '1.0', 0);
+(4, 'polligraf', 'com.fuerteint.polligraf', 0, 0, 0, 0, '2012-09-27 18:07:42', '2012-10-01 22:50:13', '1.0', 1608033),
+(8, 'AR Racer', 'com.fuerteint.enterprise.arracer', 0, 0, 0, 0, '2012-09-28 11:29:27', '2012-09-28 11:29:27', '', 0),
+(9, 'Motorsport', 'com.fuerteint.Skoda.enterprise', 0, 0, 0, 0, '2012-09-28 11:32:17', '2012-10-02 13:57:02', '1.0', 49502658),
+(10, 'polligraf', 'com.fuerteint.polligraf', 1, 0, 0, 0, '2012-10-01 22:50:28', '2012-10-01 22:50:28', '1.0', 1608033),
+(11, 'polligraf', 'com.fuerteint.polligraf', 2, 0, 0, 0, '2012-10-01 22:50:42', '2012-10-01 22:50:42', '1.0', 1608033);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mobileapps_companies`
+--
+
+CREATE TABLE IF NOT EXISTS `mobileapps_companies` (
+  `companies_id` bigint(20) unsigned NOT NULL,
+  `mobileapps_id` bigint(20) unsigned NOT NULL,
+  KEY `companies_id` (`companies_id`,`mobileapps_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `mobileapps_companies`
+--
+
+INSERT INTO `mobileapps_companies` (`companies_id`, `mobileapps_id`) VALUES
+(1, 8),
+(1, 10),
+(2, 8),
+(2, 10),
+(3, 8),
+(3, 10),
+(4, 8),
+(5, 8),
+(6, 8),
+(6, 11);
 
 -- --------------------------------------------------------
 
@@ -3994,17 +4024,25 @@ INSERT INTO `mobileapps` (`id`, `name`, `identifier`, `devtype`, `apptype`, `ico
 --
 
 CREATE TABLE IF NOT EXISTS `mobileapps_users` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `users_id` int(11) unsigned NOT NULL,
   `companies_id` bigint(20) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
   KEY `users_id` (`users_id`,`companies_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `mobileapps_users`
 --
 
+INSERT INTO `mobileapps_users` (`users_id`, `companies_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 5),
+(2, 6);
 
 -- --------------------------------------------------------
 
@@ -4289,16 +4327,19 @@ CREATE TABLE IF NOT EXISTS `pages` (
   KEY `FK_pages_templates` (`pages_templates_id`),
   KEY `home` (`home`),
   KEY `master` (`master`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `pages`
 --
 
 INSERT INTO `pages` (`id`, `system_websites_id`, `system_language_id`, `pages_templates_id`, `revision`, `name`, `identifier`, `title`, `heading1`, `heading2`, `heading3`, `rewrite`, `keywords`, `description`, `addtext1`, `addtext2`, `enabled`, `master`, `parentid`, `home`, `sort`, `head`, `page`, `note`, `redirect1`, `redirect2`, `redirect3`, `redirect4`) VALUES
-(1, 4, 5, 23, 10, 'Home Page', 'home-page', 'Test!', '', '', '', '', '', '', '', '', 1, 0, 0, 1, 0, '<style>\r\n#errors {\r\n	width:600px;\r\n	margin-top:50px;\r\n	margin-bottom:-30px;\r\n	margin-left:auto;\r\n	margin-right:auto;\r\n	text-align:center;\r\n	font-size:12px;\r\n}\r\n#errors ul {\r\n}\r\n#errors ul.red li {\r\n	color:#900;\r\n}\r\n#errors ul.green li {\r\n	color: #090;\r\n}\r\n#errors ul.orange li {\r\n	color:#C60;\r\n}\r\n#errors ul li {\r\n	margin-bottom:12px;\r\n}\r\n</style>', 'Hi David', '', 0, 2, '', ''),
-(2, 4, 5, 20, 6, 'My Apps', 'my-apps', 'My Apps', 'My Apps', '', '', '', '', '', '', '', 1, 0, 0, 0, 0, '', '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button">Add new app</a>\r\n</div>\r\n<div class="content">\r\n		{#FRONTEND_mobileapps_appslist}\r\n        {#FRONTEND_mobileapps_appdetail}\r\n</div>', '...', 1, 0, 'You have to be logged in to access this section', ''),
-(3, 4, 5, 26, 4, 'App PLIST', 'app-plist', '', '', '', '', '', '', '', '', '', 1, 0, 0, 0, 0, '', 'This page is using FRONTEND template in mobileapps module only!!!', '...', 1, 0, 'Go away! :)', '');
+(1, 4, 5, 23, 10, 'Home Page', 'home-page', 'Test!', '', '', '', '', '', '', '', '', 1, 0, 0, 1, 6, '<style>\r\n#errors {\r\n	width:600px;\r\n	margin-top:50px;\r\n	margin-bottom:-30px;\r\n	margin-left:auto;\r\n	margin-right:auto;\r\n	text-align:center;\r\n	font-size:12px;\r\n}\r\n#errors ul {\r\n}\r\n#errors ul.red li {\r\n	color:#900;\r\n}\r\n#errors ul.green li {\r\n	color: #090;\r\n}\r\n#errors ul.orange li {\r\n	color:#C60;\r\n}\r\n#errors ul li {\r\n	margin-bottom:12px;\r\n}\r\n</style>', 'Hi David', '', 0, 2, '', ''),
+(2, 4, 5, 20, 7, 'My Apps', 'my-apps', 'My Apps', 'My Apps', '', '', '', '', '', '', '', 1, 0, 0, 0, 4, '<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>', '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button">Add new app</a>\r\n</div>\r\n<div class="content">\r\n		{#FRONTEND_mobileapps_appslist}\r\n        {#FRONTEND_mobileapps_appdetail}\r\n</div>', '...', 1, 0, 'You have to be logged in to access this section', ''),
+(3, 4, 5, 26, 4, 'App PLIST', 'app-plist', '', '', '', '', '', '', '', '', '', 1, 0, 0, 0, 1, '', 'This page is using FRONTEND template in mobileapps module only!!!', '...', 1, 0, 'Go away! :)', ''),
+(4, 4, 5, 20, 2, 'Dashboard', 'dashboard', 'Dashboard', 'Dashboard', '', '', '', '', '', '', '', 1, 0, 0, 0, 5, '', 'Dashboard', '...', 0, 0, '', ''),
+(5, 4, 5, 20, 8, 'Groups', 'groups', 'groups', 'groups', '', '', '', '', '', '', '', 1, 0, 0, 0, 3, '', '<div class="content">\r\n	{#FRONTEND_mobileapps_companiesmenu}\r\n        {#FRONTEND_mobileapps_usersselector}\r\n</div>\r\n', '...', 0, 0, '', ''),
+(6, 4, 5, 20, 2, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 0, 0, 2, '', '', '...', 0, 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -4431,7 +4472,7 @@ CREATE TABLE IF NOT EXISTS `pages_revisions` (
   `redirect4` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `keys` (`system_websites_id`,`pages_templates_id`,`identifier`,`enabled`,`sort`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `pages_revisions`
@@ -4456,7 +4497,20 @@ INSERT INTO `pages_revisions` (`id`, `pages_id`, `system_websites_id`, `revision
 (16, 3, 4, 1, 5, 0, 'App PLIST', 'app-plist', '', '', '', '', '', '', '', '', '', 1, 0, 0, '', '', '...', 0, 0, '', ''),
 (17, 3, 4, 2, 5, 0, 'App PLIST', 'app-plist', '', '', '', '', '', '', '', '', '', 1, 0, 0, '', '', '...', 1, 0, 'Go away! :)', ''),
 (18, 3, 4, 3, 5, 26, 'App PLIST', 'app-plist', '', '', '', '', '', '', '', '', '', 1, 0, 0, '', '', '...', 1, 0, 'Go away! :)', ''),
-(19, 3, 4, 4, 5, 26, 'App PLIST', 'app-plist', '', '', '', '', '', '', '', '', '', 1, 0, 0, '', 'This page is using FRONTEND template in mobileapps module only!!!', '...', 1, 0, 'Go away! :)', '');
+(19, 3, 4, 4, 5, 26, 'App PLIST', 'app-plist', '', '', '', '', '', '', '', '', '', 1, 0, 0, '', 'This page is using FRONTEND template in mobileapps module only!!!', '...', 1, 0, 'Go away! :)', ''),
+(20, 4, 4, 1, 5, 0, 'Dashboard', 'dashboard', 'Dashboard', 'Dashboard', '', '', '', '', '', '', '', 1, 0, 0, '', 'Dashboard', '...', 0, 0, '', ''),
+(21, 4, 4, 2, 5, 20, 'Dashboard', 'dashboard', 'Dashboard', 'Dashboard', '', '', '', '', '', '', '', 1, 0, 0, '', '', '', 0, 0, '', ''),
+(22, 5, 4, 1, 5, 0, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 0, '', '', '...', 0, 0, '', ''),
+(23, 6, 4, 1, 5, 20, 'Companies', 'companies', 'Companies', 'Companies', '', '', '', '', '', '', '', 1, 0, 0, '', '', '...', 0, 0, '', ''),
+(24, 5, 4, 2, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 0, '', '', '', 0, 0, '', ''),
+(25, 5, 4, 3, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 3, '', '<div class="content">\r\n	{#FRONTEND_mobileapps_companiesmenu}\r\n        {#FRONTEND_mobileapps_usersselector}\r\n</div>', '...', 0, 0, '', ''),
+(26, 5, 4, 4, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 3, '', '<div class="content">\r\n	{#FRONTEND_mobileapps_companiesmenu}\r\n        {#FRONTEND_mobileapps_usersselector}\r\n	 <div class="clear"></div>\r\n</div>', '...', 0, 0, '', ''),
+(27, 5, 4, 5, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 3, '', '<div class="content">\r\n	{#FRONTEND_mobileapps_companiesmenu}\r\n<div class="clear"></div>\r\n\r\n        {#FRONTEND_mobileapps_usersselector}\r\n	 <div class="clear"></div>\r\n</div>\r\n<div class="clear"></div>\r\n', '...', 0, 0, '', ''),
+(28, 5, 4, 6, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 3, '', '<div class="content">\r\n	{#FRONTEND_mobileapps_companiesmenu}\r\n        {#FRONTEND_mobileapps_usersselector}\r\n	 <div class="clear"></div>\r\n</div>\r\n<div class="clear"></div>\r\n', '...', 0, 0, '', ''),
+(29, 5, 4, 7, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 3, '', '<div class="content">\r\n	{#FRONTEND_mobileapps_companiesmenu}\r\n        {#FRONTEND_mobileapps_usersselector}\r\n</div>\r\n', '...', 0, 0, '', ''),
+(30, 2, 4, 7, 5, 20, 'My Apps', 'my-apps', 'My Apps', 'My Apps', '', '', '', '', '', '', '', 1, 0, 4, '<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>', '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button">Add new app</a>\r\n</div>\r\n<div class="content">\r\n		{#FRONTEND_mobileapps_appslist}\r\n        {#FRONTEND_mobileapps_appdetail}\r\n</div>', '...', 1, 0, 'You have to be logged in to access this section', ''),
+(31, 5, 4, 8, 5, 20, 'Groups', 'groups', 'groups', 'groups', '', '', '', '', '', '', '', 1, 0, 0, '', '', '', 0, 0, '', ''),
+(32, 6, 4, 2, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 0, '', '', '', 0, 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -4486,7 +4540,7 @@ CREATE TABLE IF NOT EXISTS `pages_templates` (
 
 INSERT INTO `pages_templates` (`id`, `revision`, `name`, `identifier`, `master`, `registered`, `system_language_id`, `pages_templates_groups_id`, `template`, `note`) VALUES
 (20, 12, 'Main template', 'main-template', 1, 0, 1, 3, '{#TEMP_head}\r\n<body>\r\n<div id="container">\r\n	<div id="topLine"></div>\r\n    {#TEMP_header}\r\n    <div id="page">\r\n    	{#MOD_configuration_errors_main}\r\n        {#CONTENT}\r\n        <div class="clear"></div>\r\n    </div>\r\n    {#TEMP_footer}\r\n</div>\r\n</body>\r\n</html>', '...'),
-(24, 3, 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <!--<li><a href="#" title="Dashboard">Dashboard</a></li>-->\r\n        <li class="active"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <!--<li><a href="#" title="Users">Users</a></li>\r\n        <li><a href="#" title="Groups">Groups</a></li>-->\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>\r\n', '...'),
+(24, 8, 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <li class="{#ACTIVE_6}"><a href="{#LINK_6}" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_5}"><a href="{#LINK_5}" title="Groups">Groups</a></li>\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
 (22, 2, 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n  var _gaq = _gaq || [];\r\n  _gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n  _gaq.push([''_trackPageview'']);\r\n\r\n  (function() {\r\n    var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n    ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n    var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n  })();\r\n\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
 (23, 4, 'Login template', 'login-template', 1, 0, 1, 0, '{#TEMP_head}\r\n<body>\r\n<div id="container">\r\n	<div id="topLine"></div>\r\n    {#MOD_configuration_errors_login}\r\n	{#MOD_users_login_page-login}\r\n</div>\r\n</body>\r\n</html>', '...'),
 (25, 1, 'Footer', 'footer', 0, 0, 1, 0, '<div id="footer">\r\n\r\n</div>\r\n', '...'),
@@ -4536,7 +4590,7 @@ CREATE TABLE IF NOT EXISTS `pages_templates_revisions` (
   KEY `language` (`system_language_id`),
   KEY `website` (`pages_templates_groups_id`),
   KEY `added` (`added`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `pages_templates_revisions`
@@ -4560,7 +4614,12 @@ INSERT INTO `pages_templates_revisions` (`id`, `pages_templates_id`, `revision`,
 (15, 23, 4, '2012-09-27 12:31:59', 'Login template', 'login-template', 1, 0, 1, 0, '{#TEMP_head}\r\n<body>\r\n<div id="container">\r\n	<div id="topLine"></div>\r\n    {#MOD_configuration_errors_login}\r\n	{#MOD_users_login_page-login}\r\n</div>\r\n</body>\r\n</html>', '...'),
 (16, 20, 12, '2012-09-27 12:33:01', 'Main template', 'main-template', 1, 0, 1, 3, '{#TEMP_head}\r\n<body>\r\n<div id="container">\r\n	<div id="topLine"></div>\r\n    {#TEMP_header}\r\n    <div id="page">\r\n    	{#MOD_configuration_errors_main}\r\n        {#CONTENT}\r\n        <div class="clear"></div>\r\n    </div>\r\n    {#TEMP_footer}\r\n</div>\r\n</body>\r\n</html>', '...'),
 (17, 24, 3, '2012-09-27 12:45:47', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <!--<li><a href="#" title="Dashboard">Dashboard</a></li>-->\r\n        <li class="active"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <!--<li><a href="#" title="Users">Users</a></li>\r\n        <li><a href="#" title="Groups">Groups</a></li>-->\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>\r\n', '...'),
-(18, 26, 1, '2012-09-27 13:38:43', 'App PLIST', 'app-plist', 1, 0, 1, 0, '{#FRONTEND_mobileapps_plist}', '...');
+(18, 26, 1, '2012-09-27 13:38:43', 'App PLIST', 'app-plist', 1, 0, 1, 0, '{#FRONTEND_mobileapps_plist}', '...'),
+(19, 24, 4, '2012-10-01 21:16:19', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_3}"><a href="{#LINK_3}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <!--<li class="{#ACTIVE_2}"><a href="#" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="#" title="Groups">Groups</a></li>-->\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
+(20, 24, 5, '2012-10-01 21:18:58', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_3}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <!--<li class="{#ACTIVE_2}"><a href="#" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="#" title="Groups">Groups</a></li>-->\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
+(21, 24, 6, '2012-10-01 21:24:55', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <!--<li class="{#ACTIVE_2}"><a href="#" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="#" title="Groups">Groups</a></li>-->\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
+(22, 24, 7, '2012-10-01 21:29:06', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <li class="{#ACTIVE_5}"><a href="{#LINK_5}" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_6}"><a href="{#LINK_6}" title="Groups">Groups</a></li>\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
+(23, 24, 8, '2012-10-02 15:14:40', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <li class="{#ACTIVE_6}"><a href="{#LINK_6}" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_5}"><a href="{#LINK_5}" title="Groups">Groups</a></li>\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...');
 
 -- --------------------------------------------------------
 
@@ -5588,7 +5647,7 @@ CREATE TABLE IF NOT EXISTS `system_errors_templates` (
   `firstinlist` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `identifier` (`identifier`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `system_errors_templates`
@@ -5596,7 +5655,8 @@ CREATE TABLE IF NOT EXISTS `system_errors_templates` (
 
 INSERT INTO `system_errors_templates` (`id`, `name`, `identifier`, `errorbegin`, `groupokbegin`, `itemok`, `groupokend`, `groupalertbegin`, `itemalert`, `groupalertend`, `grouperrorbegin`, `itemerror`, `grouperrorend`, `errorend`, `groupmessages`, `firstinlist`) VALUES
 (4, 'main', 'main', '<div class="errors">', '<ul class="green">', '<li>{%Message}</li>', '</ul>', '<ul class="orange">', '<li>{%Message}</li>', '</ul>', '<ul class="red">', '<li>{%Message}</li>', '</ul>', '</div>', 1, 0),
-(5, 'login', 'login', '<div id="errors">', '<ul class="green">', '<li>{%Message}</li>', '</ul>', '<ul class="orange">', '<li>{%Message}</li>', '</ul>', '<ul class="red">', '<li>{%Message}</li>', '</ul>', '</div>', 1, 0);
+(5, 'login', 'login', '<div id="errors">', '<ul class="green">', '<li>{%Message}</li>', '</ul>', '<ul class="orange">', '<li>{%Message}</li>', '</ul>', '<ul class="red">', '<li>{%Message}</li>', '</ul>', '</div>', 1, 0),
+(6, 'nyve error message!', 'nyve-error-message', '<div class="errors">', '<ul class="green">', '<li>{%Message}</li>', '</ul>', '<ul class="orange">', '<li>{%Message}</li>', '</ul>', '<ul class="red">', '<li>{%Message}</li>', '</ul>', '</div>', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -5688,7 +5748,7 @@ CREATE TABLE IF NOT EXISTS `system_modules` (
   `added` datetime NOT NULL,
   `part` varchar(15) NOT NULL DEFAULT 'modules',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=54 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=55 ;
 
 --
 -- Dumping data for table `system_modules`
@@ -5744,7 +5804,8 @@ INSERT INTO `system_modules` (`id`, `name`, `added`, `part`) VALUES
 (48, 'iwallpapers', '2010-01-26 11:21:44', 'system'),
 (49, 'imessages', '2010-02-04 13:41:00', 'system'),
 (50, 'companies', '2012-09-21 12:36:59', 'system'),
-(51, 'mobileapps', '2012-09-21 12:36:59', 'system');
+(51, 'mobileapps', '2012-09-21 12:36:59', 'system'),
+(54, 'michaluvmodul', '2012-10-01 23:28:44', 'system');
 
 -- --------------------------------------------------------
 
@@ -5761,7 +5822,7 @@ CREATE TABLE IF NOT EXISTS `system_modules_permissions` (
   KEY `system_modules_id` (`system_modules_id`),
   KEY `system_teams_id` (`system_teams_id`),
   KEY `perm` (`perm`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=618 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=631 ;
 
 --
 -- Dumping data for table `system_modules_permissions`
@@ -5771,20 +5832,20 @@ INSERT INTO `system_modules_permissions` (`id`, `system_modules_id`, `system_tea
 (482, 42, 2, 1),
 (481, 40, 2, 1),
 (480, 36, 2, 1),
-(617, 13, 1, 1),
-(616, 32, 1, 1),
-(615, 12, 1, 1),
-(614, 35, 1, 1),
-(613, 11, 1, 1),
-(612, 51, 1, 1),
-(611, 9, 1, 1),
-(610, 8, 1, 1),
-(609, 6, 1, 1),
+(630, 13, 1, 1),
+(629, 32, 1, 1),
+(628, 12, 1, 1),
+(627, 35, 1, 1),
+(626, 11, 1, 1),
+(625, 51, 1, 1),
+(624, 54, 1, 1),
+(623, 9, 1, 1),
+(622, 8, 1, 1),
 (483, 10, 2, 1),
-(608, 4, 1, 1),
-(607, 52, 1, 1),
-(606, 2, 1, 1),
-(605, 50, 1, 1);
+(621, 6, 1, 1),
+(620, 4, 1, 1),
+(619, 2, 1, 1),
+(618, 50, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -5950,7 +6011,7 @@ CREATE TABLE IF NOT EXISTS `system_users` (
 --
 
 INSERT INTO `system_users` (`id`, `nickname`, `mail`, `pass`, `firstname`, `lastname`, `lastlogin`, `lastip`, `system_team_id`, `timever`, `codever`, `active`, `xdata`) VALUES
-(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-09-28 16:10:59', '127.0.0.1', 1, '1348853219', '76724', 1, ''),
+(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-10-02 14:49:17', '127.0.0.1', 1, '1349189917', '15531', 1, ''),
 (2, 'ninjabiscuit', 'andreww@fiftyfootsquid.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', 'Andrew', 'Walker', '2009-08-10 16:23:02', '87.194.126.191', 1, '1249914182', '31432', 1, ''),
 (3, 'editor', 'editor@xprogress.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'test', 'test', '2009-08-23 17:20:49', '78.86.171.36', 2, '1251041359', '2044', 1, ''),
 (4, 'ash', 'ashleymills@mac.com', '7ab515d12bd2cf431745511ac4ee13fed15ab578', 'Ashley', 'Mills', '2009-08-23 22:35:41', '78.86.171.36', 2, '1251059786', '17947', 1, ''),
@@ -6007,7 +6068,7 @@ CREATE TABLE IF NOT EXISTS `system_websites` (
 --
 
 INSERT INTO `system_websites` (`id`, `name`, `code`, `image`, `directory`, `sort`, `isdefault`, `alternativepath`, `added`, `changed`) VALUES
-(4, 'appstore.fuerteint.com', 'aps', '', '', 0, 1, 'http://localhost/appstore.fuerteint.com/', '2012-09-19 15:08:55', '2012-09-24 10:26:34');
+(4, 'appstore.fuerteint.com', 'aps', '', '', 0, 1, 'http://localhost/appstore.fuerteint.com/', '2012-09-19 15:08:55', '2012-10-02 11:33:04');
 
 -- --------------------------------------------------------
 
@@ -6168,17 +6229,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   KEY `keys` (`users_groups_id`,`nickname`,`mail`,`password`,`online`,`active`,`lastlogin`,`gender`,`system_countries_id`),
   KEY `FK_users_country` (`system_countries_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `users_groups_id`, `nickname`, `mail`, `password`, `question`, `ansver`, `added`, `online`, `changed`, `timever`, `codever`, `active`, `lastlogin`, `gender`, `lastip`, `firstname`, `lastname`, `system_countries_id`, `visits`, `downloads`, `xdata`) VALUES
-(1, 2, 'ondrej', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'que?', 'pasa', '2009-03-02 13:18:27', '2009-03-02 13:17:00', '2010-02-04 10:51:44', '', '', 1, '2012-09-27 16:31:16', 'm', '127.0.0.1', 'Ondrej', 'Rafaj', 56, 0, 0, ''),
-(2, 1, 'jakub.rafaj', 'jakub.rafaj@fuerteint.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', '', '', '2012-09-28 18:25:13', '2012-09-28 17:24:00', '2012-09-28 18:25:13', '', '', 0, '2012-09-28 17:24:00', 'm', '', 'Jakub', 'Rafaj', 56, 0, 0, ''),
-(3, 1, 'david.hancock', 'david.hancock@fuerteint.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', '', '', '2012-09-28 18:26:07', '2012-09-28 17:25:00', '2012-09-28 18:26:07', '', '', 0, '2012-09-28 17:25:00', 'm', '', 'David', 'Hancock', 222, 0, 0, ''),
-(4, 1, 'alex.siddall', 'alex@fuerteint.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', '', '', '2012-09-28 18:26:48', '2012-09-28 17:26:00', '2012-09-28 18:26:48', '', '', 1, '2012-09-28 17:26:00', 'm', '', 'Alex', 'Siddall', 222, 0, 0, '');
+(1, 2, 'ondrej', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'que?', 'pasa', '2009-03-02 13:18:27', '2009-03-02 13:17:00', '2010-02-04 10:51:44', '', '', 1, '2012-10-02 15:59:28', 'm', '127.0.0.1', 'Ondrej', 'Rafaj', 56, 0, 0, ''),
+(2, 1, 'jakub.rafaj', 'jakub.rafaj@fuerteint.com', 'aaaaaa', '', '', '2012-10-01 22:18:52', '2012-10-01 22:18:00', '2012-10-01 22:18:52', '', '', 1, '2012-10-01 22:18:00', 'm', '', 'Jakub', 'Rafaj', 56, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -6354,7 +6413,7 @@ INSERT INTO `users_templates` (`id`, `name`, `identifier`, `temptype`, `pager`, 
 (1, 'full', 'full', 0, 0, 0, 0, 0, '', 1, NULL, NULL, '', '', '', '', '', '', '', '', ''),
 (2, 'messlist', 'messlist', 2, 0, 0, 0, 0, '', 0, NULL, NULL, '', '', '', '', '', '', '', '', ''),
 (3, 'personalmessages', 'personalmessages', 2, 0, 0, 0, 0, '', 0, NULL, NULL, '', '', '', '', '', '', '', '', ''),
-(5, 'Page login', 'page-login', 6, 0, 0, 0, 0, 'mail', 0, '2', '1', '', '<form id="login" action="" method="post">\r\n    <h1><strong>Fuerte International</strong> Enterprise store </h1>\r\n    <p><input type="text" name="login" placeholder="Email" value="{%AutoName}" /></p>\r\n    <p>\r\n        <input type="password" name="password" placeholder="Password" value="" />\r\n        <a href="#">Forgotten Password?</a>\r\n    </p>\r\n    <p>\r\n        <button name="submit" type="submit">Login</button>\r\n    </p>\r\n</form>', '', '<div>\r\n	<h1>{%Lastname}, {%Firstname}</h1>\r\n	<p>Avatar: {%Avatar}</p>\r\n	<p>Nickname: {%Nickname}</p>\r\n	<p>Email: {%Mail}</p>\r\n	<p>Account created: {%Added}</p>\r\n	<p>Last login: {%Lastlogin}</p>\r\n	<p>Last login from: {%Lastip}</p>\r\n	<p>Country: {%Country}</p>\r\n	<p>Group: {%Group}</p>\r\n	 <p><a href="?logout">Logout</a></p>\r\n</div>', 'Sorry, unrecognized username or password.', 'You have been logged in successfully.', '', 'You don''t have enough permissions for this section.', 'You have been successfuly logged out.'),
+(5, 'Page login', 'page-login', 6, 0, 0, 0, 0, 'mail', 0, '2', '1', '', '<form id="login" action="" method="post">\r\n    <h1><strong>Fuerte International</strong> Enterprise store </h1>\r\n    <p><input type="email" name="login" placeholder="Email" autofocus="autofocus" value="{%AutoName}" /></p>\r\n    <p>\r\n        <input type="password" name="password" placeholder="Password" value="" />\r\n        <a href="#">Forgotten Password?</a>\r\n    </p>\r\n    <p>\r\n        <button name="go" type="submit">Login</button>\r\n    </p>\r\n</form>\r\n', '', '<div>\r\n	<h1>{%Lastname}, {%Firstname}</h1>\r\n	<p>Avatar: {%Avatar}</p>\r\n	<p>Nickname: {%Nickname}</p>\r\n	<p>Email: {%Mail}</p>\r\n	<p>Account created: {%Added}</p>\r\n	<p>Last login: {%Lastlogin}</p>\r\n	<p>Last login from: {%Lastip}</p>\r\n	<p>Country: {%Country}</p>\r\n	<p>Group: {%Group}</p>\r\n	 <p><a href="?logout">Logout</a></p>\r\n</div>', 'Sorry, unrecognized username or password.', 'You have been logged in successfully.', '', 'You don''t have enough permissions for this section.', 'You have been successfuly logged out.'),
 (6, 'Login line', 'login-line', 6, 0, 0, 0, 0, 'info', 0, '0', '0', '', '', '', '<p>{%Firstname} {%Lastname}&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{#LINK_1}?logout=1" title="Logout from AppStore">Logout</a></p>', '', '', '', '', 'You have been successfuly logged out.'),
 (7, 'Main registration', 'main-registration', 7, 0, 0, 1, 0, 'This nickname already exists.', 0, '33', '0', 'Password confirmation does not match.', '<form action="" method="post" id="registrationForm" class="form registration">\r\n    <h2>Step 1. Tell us about yourself</h2>\r\n    <fieldset>\r\n        <p>\r\n            <label for="firstname">First Name:</label>\r\n            <input type="text" name="firstname" id="firstname" value="{%Firstname}"  />\r\n        </p>\r\n        <p>\r\n            <label for="lastname">Last Name:</label>\r\n            <input type="text" name="lastname" id="lastname" value="{%Lastname}"  />\r\n        </p>\r\n        <p>\r\n            <label for="mail">Email:</label>\r\n            <input type="text" name="mail" id="mail" value="{%Mail}"  />\r\n            <a href="{#LINK_19}" title="Terms and Conditions" class="privacy">We respect your privacy</a> \r\n        </p>\r\n    </fieldset>\r\n    <h2>Step 2. Pick a username and password</h2>\r\n    <fieldset>\r\n        <p>\r\n            <label for="nickname">Username:</label>\r\n            <input type="text" name="nickname" id="nickname" value="{%Nickname}"  />\r\n        </p>\r\n        <p>\r\n            <label for="pass">Password:</label>\r\n            <input type="password" name="pass" id="pass"  />\r\n        </p>\r\n        <p>\r\n            <label for="passver">Confirm Password:</label>\r\n            <input type="password" name="passver" id="passver"  />\r\n        </p>\r\n    </fieldset>\r\n    <input type="hidden" name="register" value="1" />\r\n    <p>\r\n        <button type="reset" name="reset"><span>Clear</span></button>\r\n        <button type="submit" name="submitRegistration"><span>Create my xProgress Account</span></button>\r\n    </p>\r\n</form>\r\n', 'Please try it again.', '', 'Your account had been successfully created.', 'Please check your name.', 'Please check the password.', 'Please check your e-mail.', 'Please check the username.'),
 (8, 'edit account', 'edit-account', 7, 0, 0, 0, 0, '', 0, '0', '0', '', '<form action="" method="post" id="registrationForm" class="form registration">\r\n    <h2>Step 1. Tell us about yourself</h2>\r\n    <fieldset>\r\n        <p>\r\n            <label for="firstname">First Name:</label>\r\n            <input type="text" name="firstname" id="firstname" value="{%Firstname}"  />\r\n        </p>\r\n        <p>\r\n            <label for="lastname">Last Name:</label>\r\n            <input type="text" name="lastname" id="lastname" value="{%Lastname}"  />\r\n        </p>\r\n        <p>\r\n            <label for="mail">Email:</label>\r\n            <input type="text" name="mail" id="mail" value="{%Mail}"  />\r\n            <a href="{#LINK_19}" title="Terms and Conditions" class="privacy">We respect your privacy</a> \r\n        </p>\r\n    </fieldset>\r\n    <h2>Step 2. Pick a username and password</h2>\r\n    <fieldset>\r\n        <p>\r\n            <label for="nickname">Username:</label>\r\n            <input type="text" name="nickname" id="nickname" value="{%Nickname}"  />\r\n        </p>\r\n        <p>\r\n            <label for="pass">Password:</label>\r\n            <input type="password" name="pass" id="pass"  />\r\n        </p>\r\n        <p>\r\n            <label for="passver">Confirm Password:</label>\r\n            <input type="password" name="passver" id="passver"  />\r\n        </p>\r\n    </fieldset>\r\n    <input type="hidden" name="register" value="1" />\r\n    <p>\r\n        <button type="reset" name="reset"><span>Clear</span></button>\r\n        <button type="submit" name="submitRegistration"><span>Create my xProgress Account</span></button>\r\n    </p>\r\n</form>\r\n', '', '', 'registeredok', 'checkname', 'checkpass', 'checkmail', 'checknickname'),

@@ -9,15 +9,18 @@ $numberOfUsers = MobileappsUsersModel::getUsersCountForCompany($company->getId()
     </div>
     
     <form class="box" method="post" action="?companyId=<?php echo $company->getId(); ?>">
-        <h3>Number of apps: <?php echo '0/'.MobileappsModel::doCount(); ?></h3>
+        <h3>Number of apps: <?php echo MobileappsCompaniesModel::numberOfAppsInCompany($company->getId()).'/'.MobileappsModel::doCount(); ?></h3>
         <ul class="checkboxList">
         <?php
         $users = UsersModel::getUsersByLastname();
         foreach ($users as $user) {
 			$checked = MobileappsUsersModel::isUserInCompany($user->getId(), $company->getId());
 			$checked = ($checked) ? ' checked="checked"' : '';
+			$email = md5(trim($user->getMail()));
+			$gravatarUrl = 'http://www.gravatar.com/avatar/'.strtolower($email).'?s=26';
         ?>
 	        <li>
+	        	<img src="<?php echo $gravatarUrl; ?>" alt="<?php echo $user->getLastname().', '.$user->getFirstname(); ?>" />
 	        	<?php echo $user->getLastname().', '.$user->getFirstname(); ?>
 	        	<span><input type="checkbox" value="<?php echo $user->getId(); ?>" name="user[]"<?php echo $checked; ?> /></span>
 	        </li>

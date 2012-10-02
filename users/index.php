@@ -1,5 +1,5 @@
 <?php
-	$id = 5;
+	$id = 6;
 	$home = 1;
 	if (is_dir('../wgwebdata/')) {
 		chdir('../');

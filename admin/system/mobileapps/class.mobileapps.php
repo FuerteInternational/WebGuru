@@ -53,6 +53,18 @@ class moduleMobileapps {
 		return true;
 	}
 	
+	public static function doSaveCompaniesForApp() {
+		$save = array();
+		$save['mobileapps_id'] = (int)wgPost::getValue('appId');
+		if (!$save['mobileapps_id']) return false;
+		MobileappsCompaniesModel::deleteAllEntriesForApp($save['mobileapps_id']);
+		foreach (wgPost::getValue('company') as $companyId) {
+			$save['companies_id'] = $companyId;
+			MobileappsCompaniesModel::doInsert($save);
+		}
+		return true;
+	}
+	
 }
 		
 ?>
