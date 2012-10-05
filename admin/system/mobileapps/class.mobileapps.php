@@ -73,6 +73,38 @@ class moduleMobileapps {
 		return true;
 	}
 	
+	public static function deleteAppsGroupWithIdentiers($appIdentifier) {
+		
+	}
+	
+	public static function deleteAppWithId($appId) {
+		$appId = (int)$appId;
+		if (!$appId) return false;
+		$basicPath = wgPaths::getUserfilesPath('ftp').'mobileapps/';
+		// Deleting icons
+		wgIo::delete($basicPath.'img/'.$appId.'.png');
+		wgIo::delete($basicPath.'img/'.$appId.'@2x.png');
+		
+		// Deleting app
+		wgIo::delete($basicPath.'ipa/'.$appId.'.ipa');
+		wgIo::delete($basicPath.'ipa/'.$appId.'.plist');
+		
+		// Deleting references
+		$conn = new wgConnector();
+		$conn->where(MobileappsModel::COL_ID, $appId);
+		MobileappsModel::doDelete($conn);
+		
+// 		$conn = new wgConnector();
+// 		$conn->where(MobileappsUsersModel::col_, $appId);
+// 		MobileappsUsersModel::doDelete($conn);
+		
+		$conn = new wgConnector();
+		$conn->where(MobileappsCompaniesModel::COL_MOBILEAPPS_ID, $appId);
+		MobileappsCompaniesModel::doDelete($conn);
+		
+		return true;
+	}
+	
 }
 		
 ?>

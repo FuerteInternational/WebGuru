@@ -9,6 +9,7 @@ RewriteEngine on
 
 # Rule: Main Rewrite
 RewriteRule ^app-plist-(.*).plist$ app-plist/?mobileAppId=$1 [QSA]
+RewriteRule ^news-(.*?)-(.*)$ dashboard/?article=$1 [QSA]
 
 # Protected area: ondrej
 # ./temp/

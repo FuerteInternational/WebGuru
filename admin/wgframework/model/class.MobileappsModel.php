@@ -47,6 +47,17 @@ class MobileappsModel extends BaseMobileappsModel {
 		return parent::doSelect($conn);
 	}
 	
+	public static function isDataForIdentifier($identifier) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_IDENTIFIER, $identifier);
+		$conn->order(parent::COL_DEVTYPE, 'DESC');
+		$ok = (bool) parent::doCount($conn);
+		if ($ok && !moduleUsers::isAdmin()) {
+			//$ok = self::doesUserHaveAnAccess();
+		}
+		return $ok;
+	}
+	
 	public static function getPagerDataForDevVersion($devVersion, $page, $limit=20) {
 		$limit = (int) $limit;
 		if (!(bool) $limit) $limit = 20;

@@ -546,6 +546,27 @@ unset($grp);
 			$fname = 'generate'.ucfirst($params[2]);
 			if (method_exists($cl, $fname)) {
 				$ret = $cl->$fname($params);
+				
+				/*
+				// Generating {%ModuleUrl}
+				$code = NULL;
+				if (is_array($ret)) {
+					$code = $ret['content'];
+				}
+				else {
+					$code = $ret;
+				}
+				$code = $code.'{#ModuleUrl}'.$code;
+				$code = str_replace('{#ModuleUrl}', wgPaths::getModulePath('url', $mname), $code);
+				print $code;
+				//exit();
+				
+				if (is_array($ret)) {
+					$ret['content'] = $code;
+				}
+				else $ret = $code;
+				*/
+				
 				if (!empty($ret)) return $ret;
 				else array('content'=>'', 'pretext'=>'');
 			}

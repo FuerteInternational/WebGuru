@@ -231,6 +231,30 @@ div.errors ul li {
 #page div.content ul.menu a small span {
 	font-weight: bold;
 }
+#page div.content div.popupWindowShadow {
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	opacity:0.2;
+	z-index:250;
+	top:0px;
+	left:0px;
+}
+#page div.content div.popupWindow {
+	display:none;
+	position:fixed;
+	z-index:500;
+	width:808px;
+	margin-left:50px;
+	background-color:#DA0971;
+}
+#page div.content div.popupWindow div.content {
+	margin:8px;
+	background-color:#FFF;
+	min-height:300px;
+}
 #page div.content div.appDetail {
 	float: left;
 	width: 580px;

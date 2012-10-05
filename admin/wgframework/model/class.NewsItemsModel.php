@@ -108,7 +108,7 @@ class NewsItemsModel extends BaseNewsItemsModel {
 			$conn->where(parent::COL_DISPLAYFROM, date('Y-m-d H:i:s'), '<');
 			$conn->where(parent::COL_DISPLAYTO, date('Y-m-d H:i:s'), '>');
 		}
-		$conn->order(parent::COL_DATEFOR);
+		$conn->order(parent::COL_DATEFOR, 'DESC');
 		return parent::doPager($conn, $page, $limit);
 	}
 	

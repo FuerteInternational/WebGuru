@@ -11,19 +11,45 @@
 <meta name="description" content="{#KEYWORDS}" />
 <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-515522-56']);
-  _gaq.push(['_trackPageview']);
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-515522-56']);
+	_gaq.push(['_trackPageview']);
+	
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+	function confirmAction(message) {
+		confirmation = window.confirm(message);
+		if (confirmation) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 
 </script>
 {#HEAD}
 </head>
+
+
+<!-- NEWS TEMPLATE -->
+
+
+<ul class="menu">
+
+<li class="<?php echo ($v->getId() == {%Id}) ? 'active' : 'passive'; ?>">
+    <a href="?article={%Id}" title="{%Title}">
+        <img src="{%ModuleUrl}images/news@2x.png" alt="{%Title}" />
+        <strong>{%Title}</strong>
+        <small>{%Perex}</small>
+    </a>
+</li>
+
+</ul>
 
 
 <!-- LOGIN FORM TEMPLATE -->

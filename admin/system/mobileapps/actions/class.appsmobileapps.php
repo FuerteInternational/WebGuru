@@ -178,7 +178,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 	 *
 	 * @return bool Success
 	 */
-	private static function doSaveMobileapps() {
+	public static function doSaveMobileapps() {
 		$ok = false;
 		$id = 0;
 		$data = array();
