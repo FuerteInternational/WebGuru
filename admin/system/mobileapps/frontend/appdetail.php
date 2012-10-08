@@ -82,8 +82,10 @@ function togglePopupWindow() {
         	<li>Size: <span><?php echo wgIo::getSize((int)$app->getSize(), true); ?></span></li>
         </ul>
         <div class="controls">
+        	<?php if (moduleUsers::isAdmin()) { ?>
             <a href="<?php echo wgPaths::getAdminPath('url'); ?>?part=system&mod=mobileapps&page=apps&show=appsmobileapps&edit=<?php echo $app->getId(); ?>" title="Edit <?php echo $app->getName(); ?>" class="button edit" onclick="return toggleEdit('boxNo<?php echo $x; ?>')">Edit</a>
             <?php
+			}
             $wb = new wgBrowser();
             if ($wb->isiOS()) {
             ?>
@@ -92,18 +94,19 @@ function togglePopupWindow() {
             }
             elseif ($wb->isAndroidOS()) {
             ?>
-            <a href="?app=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$app->getId().'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
-            <a href="<?php echo $app->getAppIpaUrl(); ?>" title="Download <?php echo $app->getName(); ?>" class="button download">Download</a>
+            <!--<a href="?app=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$app->getId().'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>-->
+            <a href="?downloadAppId=<?php echo $app->getId(); ?>&mobileAppId=<?php echo $app->getIdentifier(); ?>" title="Download <?php echo $app->getName(); ?>" class="button download">Download</a>
             <?php
             }
             else {
             ?>
-            <a href="<?php echo $app->getAppIpaUrl(); ?>" title="Download <?php echo $app->getName(); ?>" class="button download">Download</a>
+            <a href="?downloadAppId=<?php echo $app->getId(); ?>&mobileAppId=<?php echo $app->getIdentifier(); ?>" title="Download <?php echo $app->getName(); ?>" class="button download">Download</a>
             <!--<a href="#" title="Replace #########" class="button replace">Replace</a>-->
             <?php
             }
             ?>
         </div>
+        <?php if (moduleUsers::isAdmin()) { ?>
         <p class="peopleInfo">
         	Admin
             <?php
@@ -116,7 +119,7 @@ function togglePopupWindow() {
         <?php
         // For futre reference. Uncomment if you want to keep the menu open after save
         //$isHidden = (isset($_GET['editBoxId']) && (int)$_GET['editBoxId'] == $x && false) ? '' :  'style="display: none;"';
-        $isHidden = 'style="display: none;"';
+        	$isHidden = 'style="display: none;"';
         ?>
         <form class="editForm" action="?mobileAppId=<?php echo $app->getIdentifier(); ?>" method="post" id="boxNo<?php echo $x; ?>"<?php echo $isHidden; ?>>
         	<h3>Number of companies: <?php echo MobileappsCompaniesModel::numberOfCompaniesForApp($app->getId()).' / '.CompaniesModel::doCount(); ?></h3>
@@ -143,6 +146,7 @@ function togglePopupWindow() {
 	        <input type="hidden" name="appId" value="<?php echo $app->getId(); ?>" />
 	        <input type="hidden" name="editBoxId" value="<?php echo $x; ?>" />
 		</form>
+		<?php } ?>
     </div>
     <?php
     	}

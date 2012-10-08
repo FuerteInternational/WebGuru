@@ -12,6 +12,8 @@
  * @since        19. September 2012
  */
 
+require_once('HTTP/Download.php');
+
 class moduleMobileapps {
 	
 	public $name            = NULL;
@@ -40,6 +42,44 @@ class moduleMobileapps {
 	}
 	
 	// ------------------------- class functions -------------------------
+	
+	public static function userHasPermissionToAccessAppWithId($id) {
+		$id = (int)$id;
+		if (moduleUsers::isAdmin()) {
+			return $id;
+		}
+		else {
+			$app = MobileappsModel::getOneSelfData($id);
+			if (!$app->getId()) return false;
+			$companies = MobileappsCompaniesModel::getCompaniesForApp($app->getId());
+			$userComps = MobileappsUsersModel::getCompaniesIdsForUser(moduleUsers::getId());
+			foreach ($companies as $company) {
+				foreach ($userComps as $uc) {
+					if ((int)$uc == (int)$company->getCompanyIdWhenRightJoin()) return $id;
+				}
+			}
+			return false;
+		}
+	}
+	
+	public static function downloadIpaWithId($id) {
+		$id = self::userHasPermissionToAccessAppWithId($id);
+		if (!$id) return false;
+		$app = MobileappsModel::getOneSelfData($id);
+		$params = array(
+			'file'                => $app->getAppIpaPath(),
+			'cache'               => false,
+			'contentdisposition'  => array(HTTP_DOWNLOAD_ATTACHMENT, wgValidation::safeFile($app->getName()).'-'.$app->getDevtypeIdentifier().'.ipa'),
+			'contenttype'         => 'application/x-gzip'
+		);
+		error_reporting(0);
+		$error = HTTP_Download::staticSend($params, false);
+		if ($error) {
+			wgError::add('Download error: '.$error->getMessage());
+			return true;
+		}
+		else exit();
+	}
 	
 	public static function canUserAccessApp($userId, $appId) {
 		$companies = MobileappsCompaniesModel::getCompaniesForApp($appId);

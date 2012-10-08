@@ -53,6 +53,10 @@ class MobileappsCompaniesModel extends BaseMobileappsCompaniesModel {
 		return $this->_result[3];
 	}
 	
+	public function getCompanyIdWhenRightJoin() {
+		return $this->_result[0];
+	}
+	
 	/*
 	public static function getSelfData() {
 		$conn = new wgConnector();

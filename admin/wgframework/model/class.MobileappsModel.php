@@ -128,5 +128,15 @@ class MobileappsModel extends BaseMobileappsModel {
 		return wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$this->getId().'.ipa';
 	}
 	
+	public function getAppIpaPath() {
+		return wgPaths::getUserfilesPath('ftp').'mobileapps/ipa/'.$this->getId().'.ipa';
+	}
+	
+	public function getDevtypeIdentifier() {
+		if ($this->getDevtype() == 2) return 'production';
+		elseif ($this->getDevtype() == 1) return 'beta';
+		else return 'development';
+	}
+	
 }
 ?>

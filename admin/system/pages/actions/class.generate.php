@@ -677,7 +677,6 @@ else echo \'passive\';
 			 	$temp = '<?php $wb = new wgBrowser(); if ($wb->isiOS()) { ?>'.$temp.'<?php } ?>'; // Just iOS
 			 }
 			 elseif ($reg == 8) $temp = '<?php $wb = new wgBrowser(); if ($wb->isAndroidOS()) { ?>'.$temp.'<?php } ?>'; // Just Android
-			 print $reg.'<br />';
 			 return $temp;
 		}
 		else return '';

@@ -2,28 +2,40 @@
 require_once(wgPaths::getModulePath('ftp', 'mobileapps').'actions/class.appsmobileapps.php');
 wgModules::runModule('mobileapps');
 wgModules::runModule('users');
-if (moduleUsers::isAdmin()) {
-	if (isset($_POST['doSaveCompaniesForApp'])) {
+
+
+if (isset($_GET['downloadAppId'])) {
+	$ok = moduleMobileapps::downloadIpaWithId($_GET['downloadAppId']);
+	if (!$ok) wgError::add('Sorry, you don\'t have a permission to download requested app!');
+}
+
+if (isset($_POST['doSaveCompaniesForApp'])) {
+	if (moduleUsers::isAdmin()) {
 		if (moduleMobileapps::doSaveCompaniesForApp()) {
 			wgError::add('The record has been successfully saved!', 2);
 		}
 		else {
 			wgError::add('Unable to save the data!');
 		}
-		wgPaths::redirect('?mobileAppId='.wgPost::getValue('mobileAppId').'&editBoxId='.wgPost::getValue('editBoxId'));
 	}
-	
-	if (isset($_POST['deleteCurrentBuild'])) {
+	else wgError::add('Action only allowed to administrators!');
+	wgPaths::redirect('?mobileAppId='.wgPost::getValue('mobileAppId').'&editBoxId='.wgPost::getValue('editBoxId'));
+}
+
+if (isset($_POST['deleteCurrentBuild'])) {
+	if (moduleUsers::isAdmin()) {
 		if (moduleMobileapps::deleteAppWithId(wgPost::getValue('appId'))) {
 			wgError::add('The app has been successfully deleted!', 2);
 		}
 		else {
 			wgError::add('Unable to delete the app!');
 		}
-		wgPaths::redirect('?mobileAppId='.wgPost::getValue('mobileAppId').'');
 	}
-	if (isset($_POST['submitIpaButton'])) {
-		print ':)';
+	else wgError::add('Action only allowed to administrators!');
+	wgPaths::redirect('?mobileAppId='.wgPost::getValue('mobileAppId').'');
+}
+if (isset($_POST['submitIpaButton'])) {
+	if (moduleUsers::isAdmin()) {
 		$ok = appsmobileappsActionsMobileapps::doSaveMobileapps();
 		if ($ok) {
 			wgError::add('The app has been successfully saved!', 2);
@@ -31,7 +43,8 @@ if (moduleUsers::isAdmin()) {
 		else {
 			wgError::add('Unable to save the app!');
 		}
-		wgPaths::redirect('?mobileAppId='.wgPost::getValue('mobileAppId').'');
 	}
+	else wgError::add('Action only allowed to administrators!');
+	wgPaths::redirect('?mobileAppId='.wgPost::getValue('mobileAppId').'');
 }
 ?>
