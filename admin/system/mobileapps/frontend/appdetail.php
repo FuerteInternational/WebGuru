@@ -84,12 +84,13 @@ function togglePopupWindow() {
         <div class="controls">
             <a href="<?php echo wgPaths::getAdminPath('url'); ?>?part=system&mod=mobileapps&page=apps&show=appsmobileapps&edit=<?php echo $app->getId(); ?>" title="Edit <?php echo $app->getName(); ?>" class="button edit" onclick="return toggleEdit('boxNo<?php echo $x; ?>')">Edit</a>
             <?php
-            if ((strstr($_SERVER['HTTP_USER_AGENT'],"iPad") || strstr($_SERVER['HTTP_USER_AGENT'],"iPhone"))) {
+            $wb = new wgBrowser();
+            if ($wb->isiOS()) {
             ?>
             <a href="itms-services://?action=download-manifest&url=itms-services://?action=download-manifest&url=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$app->getId().'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
             <?php
             }
-            elseif (strstr($_SERVER['HTTP_USER_AGENT'],"Android")) {
+            elseif ($wb->isAndroidOS()) {
             ?>
             <a href="?app=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$app->getId().'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
             <a href="<?php echo $app->getAppIpaUrl(); ?>" title="Download <?php echo $app->getName(); ?>" class="button download">Download</a>

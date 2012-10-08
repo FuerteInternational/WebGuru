@@ -53,7 +53,7 @@ $tpl->setCurrentBlock($block);
 
 
 //$var = array();
-$var['FULLCOLREGISTERED'] = formsHelper::getSelectBox('registered', $item->getRegistered(), array(0=>wgLang::get('foreveryone'), 1=>wgLang::get('forregistered'), 2=>wgLang::get('fornotregistered')));
+$var['FULLCOLREGISTERED'] = formsHelper::getSelectBox('registered', $item->getRegistered(), array(0=>wgLang::get('foreveryone'), 1=>wgLang::get('forregistered'), 2=>wgLang::get('fornotregistered'), 3=>wgLang::get('forallmobile'), 4=>wgLang::get('fornomobile'), 5=>wgLang::get('formobile'), 6=>wgLang::get('fortablets'), 7=>wgLang::get('forios'), 8=>wgLang::get('forandroid')));
 $params = array();
 $params['baseclass'] = 'SystemLanguageModel';
 $var['FULLCOLSYSTEMLANGUAGEID'] = formsHelper::getSelectBox('system_language_id', $item->getSystemLanguageId(), SystemLanguageModel::doSelect(), $params);

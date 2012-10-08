@@ -12,3 +12,9 @@ colsystemlanguageid;Language
 colpagestemplatesgroupsid;Template group
 colnote;Note
 settings;Settings
+forallmobile;For all mobile devices
+fornomobile;Don't display on any mobile device
+formobile;For mobile phones
+fortablets;For all tablets
+forios;For iOS only
+forandroid;For Android only

@@ -1,8 +1,8 @@
 <?php
 $system = array();
 $system['processtimer'] = microtime();
-//error_reporting({ERRORREP});
-error_reporting(0);
+error_reporting({ERRORREP});
+//error_reporting(0);
 define('DOCUMENTROOT', '{ROOTPATH}');
 $system['paths']['rootpath'] = '{ROOTPATH}';
 define('PAGEID', {PAGEID});
@@ -47,7 +47,9 @@ require('class.wgConnector.php');
 require('class.exceptions.php');
 
 function __autoload($class_name) {
-	if ($class_name == 'id' || eregi('_id', $class_name)) return;
+	if ($class_name == 'id' || preg_match('/(\_id)/', $class_name)) {
+		return;
+	}
 	include('class.'.$class_name.'.php');
 }
 

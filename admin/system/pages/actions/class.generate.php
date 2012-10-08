@@ -663,10 +663,21 @@ else echo \'passive\';
 		$conn->limit(1);
 		$ret = PagesTemplatesModel::doSelect($conn);
 		if (isset($ret[0]) &&!empty($ret[0])) {
+			$reg = (int)$ret[0]->getRegistered();
 			 $temp = $ret[0]->getTemplate();
-			 if ((bool) $ret[0]->getRegistered()) self::_addToModules('users');
-			 if ($ret[0]->getRegistered() == 1) $temp = '<?php if (moduleUsers::isLogged()) { ?>'.$temp.'<?php } ?>';
-			 elseif ($ret[0]->getRegistered() == 2) $temp = '<?php if (!moduleUsers::isLogged()) { ?>'.$temp.'<?php } ?>';
+			 if ($reg == 1 || $reg == 2) self::_addToModules('users');
+			 if ($reg == 1) $temp = '<?php if (moduleUsers::isLogged()) { ?>'.$temp.'<?php } ?>'; // Logged in users only
+			 elseif ($reg == 2) $temp = '<?php if (!moduleUsers::isLogged()) { ?>'.$temp.'<?php } ?>'; // Not logged in users only
+			 elseif ($reg == 3) $temp = '<?php $wb = new wgBrowser(); if ($wb->isMobile() || $wb->isTablet()) { ?>'.$temp.'<?php } ?>'; // All mobile
+			 elseif ($reg == 4) $temp = '<?php $wb = new wgBrowser(); if (!$wb->isMobile() && !$wb->isTablet()) { ?>'.$temp.'<?php } ?>'; // All mobile
+			 elseif ($reg == 5) $temp = '<?php $wb = new wgBrowser(); if ($wb->isMobile()) { ?>'.$temp.'<?php } ?>'; // Just mobile phones
+			 elseif ($reg == 6) $temp = '<?php $wb = new wgBrowser(); if ($wb->isTablet()) { ?>'.$temp.'<?php } ?>'; // Just tablets
+			 elseif ($reg == 7) {
+			 	print ':)';
+			 	$temp = '<?php $wb = new wgBrowser(); if ($wb->isiOS()) { ?>'.$temp.'<?php } ?>'; // Just iOS
+			 }
+			 elseif ($reg == 8) $temp = '<?php $wb = new wgBrowser(); if ($wb->isAndroidOS()) { ?>'.$temp.'<?php } ?>'; // Just Android
+			 print $reg.'<br />';
 			 return $temp;
 		}
 		else return '';

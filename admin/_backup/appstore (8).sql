@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 02, 2012 at 03:44 PM
+-- Generation Time: Oct 08, 2012 at 02:10 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -25,7 +25,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Table structure for table `blocks_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `blocks_groups` (
+DROP TABLE IF EXISTS `blocks_groups`;
+CREATE TABLE `blocks_groups` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -49,7 +50,8 @@ CREATE TABLE IF NOT EXISTS `blocks_groups` (
 -- Table structure for table `blocks_items`
 --
 
-CREATE TABLE IF NOT EXISTS `blocks_items` (
+DROP TABLE IF EXISTS `blocks_items`;
+CREATE TABLE `blocks_items` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `system_language_id` int(3) NOT NULL,
   `system_websites_id` int(4) NOT NULL,
@@ -74,7 +76,8 @@ CREATE TABLE IF NOT EXISTS `blocks_items` (
 -- Table structure for table `blocks_permissions`
 --
 
-CREATE TABLE IF NOT EXISTS `blocks_permissions` (
+DROP TABLE IF EXISTS `blocks_permissions`;
+CREATE TABLE `blocks_permissions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `blocks_groups_id` int(8) unsigned NOT NULL,
   `system_teams_id` int(8) unsigned NOT NULL,
@@ -95,7 +98,8 @@ CREATE TABLE IF NOT EXISTS `blocks_permissions` (
 -- Table structure for table `blog`
 --
 
-CREATE TABLE IF NOT EXISTS `blog` (
+DROP TABLE IF EXISTS `blog`;
+CREATE TABLE `blog` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `users_groups_id` int(8) unsigned NOT NULL,
@@ -116,7 +120,8 @@ INSERT INTO `blog` (`id`, `name`, `users_groups_id`, `system_websites_id`) VALUE
 -- Table structure for table `blogger_accounts`
 --
 
-CREATE TABLE IF NOT EXISTS `blogger_accounts` (
+DROP TABLE IF EXISTS `blogger_accounts`;
+CREATE TABLE `blogger_accounts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -136,7 +141,8 @@ CREATE TABLE IF NOT EXISTS `blogger_accounts` (
 -- Table structure for table `blog_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `blog_categories` (
+DROP TABLE IF EXISTS `blog_categories`;
+CREATE TABLE `blog_categories` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -157,7 +163,8 @@ CREATE TABLE IF NOT EXISTS `blog_categories` (
 -- Table structure for table `blog_files`
 --
 
-CREATE TABLE IF NOT EXISTS `blog_files` (
+DROP TABLE IF EXISTS `blog_files`;
+CREATE TABLE `blog_files` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `filename` varchar(200) NOT NULL,
@@ -184,7 +191,8 @@ CREATE TABLE IF NOT EXISTS `blog_files` (
 -- Table structure for table `blog_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `blog_groups` (
+DROP TABLE IF EXISTS `blog_groups`;
+CREATE TABLE `blog_groups` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `blog_id` int(8) unsigned NOT NULL,
   `blog_categories_id` int(11) unsigned DEFAULT NULL,
@@ -210,7 +218,8 @@ CREATE TABLE IF NOT EXISTS `blog_groups` (
 -- Table structure for table `blog_posts`
 --
 
-CREATE TABLE IF NOT EXISTS `blog_posts` (
+DROP TABLE IF EXISTS `blog_posts`;
+CREATE TABLE `blog_posts` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `blog_id` int(11) unsigned NOT NULL DEFAULT '0',
   `users_id` bigint(20) NOT NULL DEFAULT '0',
@@ -260,7 +269,8 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 -- Table structure for table `blog_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `blog_templates` (
+DROP TABLE IF EXISTS `blog_templates`;
+CREATE TABLE `blog_templates` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -320,7 +330,8 @@ INSERT INTO `blog_templates` (`id`, `name`, `identifier`, `temptype`, `dateforma
 -- Table structure for table `clicktrack_hits`
 --
 
-CREATE TABLE IF NOT EXISTS `clicktrack_hits` (
+DROP TABLE IF EXISTS `clicktrack_hits`;
+CREATE TABLE `clicktrack_hits` (
   `id` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `campaign_id` int(8) unsigned NOT NULL DEFAULT '0',
   `added` datetime NOT NULL,
@@ -344,7 +355,8 @@ CREATE TABLE IF NOT EXISTS `clicktrack_hits` (
 -- Table structure for table `comments_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `comments_groups` (
+DROP TABLE IF EXISTS `comments_groups`;
+CREATE TABLE `comments_groups` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `system_websites_id` int(4) DEFAULT NULL,
   `system_language_id` int(3) DEFAULT NULL,
@@ -371,7 +383,8 @@ INSERT INTO `comments_groups` (`id`, `system_websites_id`, `system_language_id`,
 -- Table structure for table `comments_messages`
 --
 
-CREATE TABLE IF NOT EXISTS `comments_messages` (
+DROP TABLE IF EXISTS `comments_messages`;
+CREATE TABLE `comments_messages` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comments_groups_id` int(8) NOT NULL DEFAULT '0',
   `for_id` int(11) NOT NULL DEFAULT '0',
@@ -405,7 +418,8 @@ CREATE TABLE IF NOT EXISTS `comments_messages` (
 -- Table structure for table `comments_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `comments_templates` (
+DROP TABLE IF EXISTS `comments_templates`;
+CREATE TABLE `comments_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -444,7 +458,8 @@ INSERT INTO `comments_templates` (`id`, `name`, `identifier`, `temptype`, `pager
 -- Table structure for table `companies`
 --
 
-CREATE TABLE IF NOT EXISTS `companies` (
+DROP TABLE IF EXISTS `companies`;
+CREATE TABLE `companies` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   `identifier` varchar(150) NOT NULL,
@@ -470,7 +485,8 @@ INSERT INTO `companies` (`id`, `name`, `identifier`) VALUES
 -- Table structure for table `crawler_cached`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_cached` (
+DROP TABLE IF EXISTS `crawler_cached`;
+CREATE TABLE `crawler_cached` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `addr` text NOT NULL,
   `root` varchar(255) NOT NULL,
@@ -508,7 +524,8 @@ CREATE TABLE IF NOT EXISTS `crawler_cached` (
 -- Table structure for table `crawler_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_categories` (
+DROP TABLE IF EXISTS `crawler_categories`;
+CREATE TABLE `crawler_categories` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `parent` int(11) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL,
@@ -538,7 +555,8 @@ INSERT INTO `crawler_categories` (`id`, `parent`, `name`, `catdescription`, `add
 -- Table structure for table `crawler_html`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_html` (
+DROP TABLE IF EXISTS `crawler_html`;
+CREATE TABLE `crawler_html` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `crawler_results_id` int(11) NOT NULL,
   `html` longblob NOT NULL,
@@ -557,7 +575,8 @@ CREATE TABLE IF NOT EXISTS `crawler_html` (
 -- Table structure for table `crawler_images`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_images` (
+DROP TABLE IF EXISTS `crawler_images`;
+CREATE TABLE `crawler_images` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `crawler_results_id` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
@@ -582,7 +601,8 @@ CREATE TABLE IF NOT EXISTS `crawler_images` (
 -- Table structure for table `crawler_links`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_links` (
+DROP TABLE IF EXISTS `crawler_links`;
+CREATE TABLE `crawler_links` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `crawler_results_id` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
@@ -606,7 +626,8 @@ CREATE TABLE IF NOT EXISTS `crawler_links` (
 -- Table structure for table `crawler_queries`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_queries` (
+DROP TABLE IF EXISTS `crawler_queries`;
+CREATE TABLE `crawler_queries` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `cqc_id` int(8) NOT NULL,
   `query` varchar(255) NOT NULL,
@@ -629,7 +650,8 @@ INSERT INTO `crawler_queries` (`id`, `cqc_id`, `query`, `added`, `users_id`) VAL
 -- Table structure for table `crawler_queries_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_queries_categories` (
+DROP TABLE IF EXISTS `crawler_queries_categories`;
+CREATE TABLE `crawler_queries_categories` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -651,7 +673,8 @@ CREATE TABLE IF NOT EXISTS `crawler_queries_categories` (
 -- Table structure for table `crawler_results`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_results` (
+DROP TABLE IF EXISTS `crawler_results`;
+CREATE TABLE `crawler_results` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `addr` text NOT NULL,
   `root` varchar(255) NOT NULL,
@@ -692,7 +715,8 @@ INSERT INTO `crawler_results` (`id`, `addr`, `root`, `crawler_websites_id`, `ara
 -- Table structure for table `crawler_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_templates` (
+DROP TABLE IF EXISTS `crawler_templates`;
+CREATE TABLE `crawler_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -720,7 +744,8 @@ CREATE TABLE IF NOT EXISTS `crawler_templates` (
 -- Table structure for table `crawler_websites`
 --
 
-CREATE TABLE IF NOT EXISTS `crawler_websites` (
+DROP TABLE IF EXISTS `crawler_websites`;
+CREATE TABLE `crawler_websites` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `crawler_categories_id` int(11) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -752,7 +777,8 @@ INSERT INTO `crawler_websites` (`id`, `crawler_categories_id`, `name`, `url`, `d
 -- Table structure for table `cron_jobs`
 --
 
-CREATE TABLE IF NOT EXISTS `cron_jobs` (
+DROP TABLE IF EXISTS `cron_jobs`;
+CREATE TABLE `cron_jobs` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -778,7 +804,8 @@ INSERT INTO `cron_jobs` (`id`, `name`, `identifier`, `datefrom`, `dateto`, `peri
 -- Table structure for table `cron_jobs_log`
 --
 
-CREATE TABLE IF NOT EXISTS `cron_jobs_log` (
+DROP TABLE IF EXISTS `cron_jobs_log`;
+CREATE TABLE `cron_jobs_log` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `cron_jobs_id` int(4) unsigned NOT NULL,
   `message` text NOT NULL,
@@ -803,7 +830,8 @@ INSERT INTO `cron_jobs_log` (`id`, `cron_jobs_id`, `message`, `added`, `iserror`
 -- Table structure for table `cron_userjobs`
 --
 
-CREATE TABLE IF NOT EXISTS `cron_userjobs` (
+DROP TABLE IF EXISTS `cron_userjobs`;
+CREATE TABLE `cron_userjobs` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `datefrom` datetime NOT NULL,
@@ -831,7 +859,8 @@ INSERT INTO `cron_userjobs` (`id`, `name`, `datefrom`, `dateto`, `period`, `last
 -- Table structure for table `cron_userjobs_log`
 --
 
-CREATE TABLE IF NOT EXISTS `cron_userjobs_log` (
+DROP TABLE IF EXISTS `cron_userjobs_log`;
+CREATE TABLE `cron_userjobs_log` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `cron_userjobs_id` int(11) unsigned NOT NULL,
   `message` varchar(255) NOT NULL,
@@ -856,7 +885,8 @@ INSERT INTO `cron_userjobs_log` (`id`, `cron_userjobs_id`, `message`, `added`, `
 -- Table structure for table `csnippets_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `csnippets_categories` (
+DROP TABLE IF EXISTS `csnippets_categories`;
+CREATE TABLE `csnippets_categories` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -878,7 +908,8 @@ INSERT INTO `csnippets_categories` (`id`, `name`, `identifier`, `description`) V
 -- Table structure for table `csnippets_snippets`
 --
 
-CREATE TABLE IF NOT EXISTS `csnippets_snippets` (
+DROP TABLE IF EXISTS `csnippets_snippets`;
+CREATE TABLE `csnippets_snippets` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `approved` tinyint(1) NOT NULL DEFAULT '0',
@@ -910,7 +941,8 @@ CREATE TABLE IF NOT EXISTS `csnippets_snippets` (
 -- Table structure for table `csnippets_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `csnippets_templates` (
+DROP TABLE IF EXISTS `csnippets_templates`;
+CREATE TABLE `csnippets_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `temptype` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL,
@@ -953,7 +985,8 @@ INSERT INTO `csnippets_templates` (`id`, `temptype`, `name`, `identifier`, `data
 -- Table structure for table `dda_firmy`
 --
 
-CREATE TABLE IF NOT EXISTS `dda_firmy` (
+DROP TABLE IF EXISTS `dda_firmy`;
+CREATE TABLE `dda_firmy` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `ic` varchar(50) NOT NULL,
@@ -978,7 +1011,8 @@ INSERT INTO `dda_firmy` (`id`, `name`, `ic`, `dic`, `zalozena`, `kapital`, `typ`
 -- Table structure for table `dda_kontakty`
 --
 
-CREATE TABLE IF NOT EXISTS `dda_kontakty` (
+DROP TABLE IF EXISTS `dda_kontakty`;
+CREATE TABLE `dda_kontakty` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `prijmeni` varchar(255) NOT NULL,
@@ -1004,7 +1038,8 @@ INSERT INTO `dda_kontakty` (`id`, `name`, `prijmeni`, `funkce`, `mail`, `telefon
 -- Table structure for table `dda_payment_types`
 --
 
-CREATE TABLE IF NOT EXISTS `dda_payment_types` (
+DROP TABLE IF EXISTS `dda_payment_types`;
+CREATE TABLE `dda_payment_types` (
   `id` int(4) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `cost` int(6) unsigned DEFAULT NULL,
@@ -1027,7 +1062,8 @@ INSERT INTO `dda_payment_types` (`id`, `name`, `cost`, `sort`, `default`) VALUES
 -- Table structure for table `dda_platby`
 --
 
-CREATE TABLE IF NOT EXISTS `dda_platby` (
+DROP TABLE IF EXISTS `dda_platby`;
+CREATE TABLE `dda_platby` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `users_id` int(11) unsigned NOT NULL,
   `added` datetime NOT NULL,
@@ -1051,7 +1087,8 @@ INSERT INTO `dda_platby` (`id`, `users_id`, `added`, `ammount`, `dda_payment_typ
 -- Table structure for table `dda_pohledavky`
 --
 
-CREATE TABLE IF NOT EXISTS `dda_pohledavky` (
+DROP TABLE IF EXISTS `dda_pohledavky`;
+CREATE TABLE `dda_pohledavky` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `users_id` int(11) unsigned NOT NULL,
   `dda_firmy_id` int(10) unsigned NOT NULL,
@@ -1078,7 +1115,8 @@ INSERT INTO `dda_pohledavky` (`id`, `users_id`, `dda_firmy_id`, `dda_firmy_dluzn
 -- Table structure for table `documents_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `documents_categories` (
+DROP TABLE IF EXISTS `documents_categories`;
+CREATE TABLE `documents_categories` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `parent` int(8) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1105,7 +1143,8 @@ INSERT INTO `documents_categories` (`id`, `parent`, `name`, `desc`, `added`, `ch
 -- Table structure for table `documents_items`
 --
 
-CREATE TABLE IF NOT EXISTS `documents_items` (
+DROP TABLE IF EXISTS `documents_items`;
+CREATE TABLE `documents_items` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `documents_categories_id` int(8) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1139,7 +1178,8 @@ INSERT INTO `documents_items` (`id`, `documents_categories_id`, `name`, `file`, 
 -- Table structure for table `documents_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `documents_templates` (
+DROP TABLE IF EXISTS `documents_templates`;
+CREATE TABLE `documents_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -1169,7 +1209,8 @@ INSERT INTO `documents_templates` (`id`, `name`, `identifier`, `temptype`, `page
 -- Table structure for table `dynamic_columns`
 --
 
-CREATE TABLE IF NOT EXISTS `dynamic_columns` (
+DROP TABLE IF EXISTS `dynamic_columns`;
+CREATE TABLE `dynamic_columns` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -1195,7 +1236,8 @@ CREATE TABLE IF NOT EXISTS `dynamic_columns` (
 -- Table structure for table `dynamic_modules`
 --
 
-CREATE TABLE IF NOT EXISTS `dynamic_modules` (
+DROP TABLE IF EXISTS `dynamic_modules`;
+CREATE TABLE `dynamic_modules` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -1222,7 +1264,8 @@ INSERT INTO `dynamic_modules` (`id`, `name`, `identifier`, `added`, `changed`, `
 -- Table structure for table `emails_addresses`
 --
 
-CREATE TABLE IF NOT EXISTS `emails_addresses` (
+DROP TABLE IF EXISTS `emails_addresses`;
+CREATE TABLE `emails_addresses` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `emails_groups_id` int(8) unsigned DEFAULT NULL,
   `mail` varchar(255) NOT NULL,
@@ -1247,7 +1290,8 @@ CREATE TABLE IF NOT EXISTS `emails_addresses` (
 -- Table structure for table `emails_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `emails_groups` (
+DROP TABLE IF EXISTS `emails_groups`;
+CREATE TABLE `emails_groups` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -1267,7 +1311,8 @@ INSERT INTO `emails_groups` (`id`, `name`) VALUES
 -- Table structure for table `emails_permissions`
 --
 
-CREATE TABLE IF NOT EXISTS `emails_permissions` (
+DROP TABLE IF EXISTS `emails_permissions`;
+CREATE TABLE `emails_permissions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `emails_groups_id` int(8) unsigned NOT NULL,
   `system_teams_id` int(8) unsigned NOT NULL,
@@ -1288,7 +1333,8 @@ CREATE TABLE IF NOT EXISTS `emails_permissions` (
 -- Table structure for table `emails_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `emails_templates` (
+DROP TABLE IF EXISTS `emails_templates`;
+CREATE TABLE `emails_templates` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -1321,7 +1367,8 @@ INSERT INTO `emails_templates` (`id`, `name`, `identifier`, `default`, `system_e
 -- Table structure for table `emails_templates_revisions`
 --
 
-CREATE TABLE IF NOT EXISTS `emails_templates_revisions` (
+DROP TABLE IF EXISTS `emails_templates_revisions`;
+CREATE TABLE `emails_templates_revisions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `emails_templates_id` int(11) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1350,7 +1397,8 @@ CREATE TABLE IF NOT EXISTS `emails_templates_revisions` (
 -- Table structure for table `emails_trimage`
 --
 
-CREATE TABLE IF NOT EXISTS `emails_trimage` (
+DROP TABLE IF EXISTS `emails_trimage`;
+CREATE TABLE `emails_trimage` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `email_templates_id` int(11) unsigned NOT NULL,
   `email_addresses_id` int(11) unsigned NOT NULL,
@@ -1374,7 +1422,8 @@ CREATE TABLE IF NOT EXISTS `emails_trimage` (
 -- Table structure for table `events`
 --
 
-CREATE TABLE IF NOT EXISTS `events` (
+DROP TABLE IF EXISTS `events`;
+CREATE TABLE `events` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `datestart` datetime NOT NULL,
@@ -1412,7 +1461,8 @@ INSERT INTO `events` (`id`, `name`, `datestart`, `dateend`, `country`, `activity
 -- Table structure for table `flash_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `flash_categories` (
+DROP TABLE IF EXISTS `flash_categories`;
+CREATE TABLE `flash_categories` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `parent` int(8) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1433,7 +1483,8 @@ CREATE TABLE IF NOT EXISTS `flash_categories` (
 -- Table structure for table `flash_items`
 --
 
-CREATE TABLE IF NOT EXISTS `flash_items` (
+DROP TABLE IF EXISTS `flash_items`;
+CREATE TABLE `flash_items` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `flash_categories_id` int(8) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -1459,7 +1510,8 @@ CREATE TABLE IF NOT EXISTS `flash_items` (
 -- Table structure for table `forms_fields`
 --
 
-CREATE TABLE IF NOT EXISTS `forms_fields` (
+DROP TABLE IF EXISTS `forms_fields`;
+CREATE TABLE `forms_fields` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `forms_items_id` int(8) unsigned NOT NULL,
   `name` varchar(150) NOT NULL,
@@ -1502,7 +1554,8 @@ INSERT INTO `forms_fields` (`id`, `forms_items_id`, `name`, `label`, `type`, `sy
 -- Table structure for table `forms_items`
 --
 
-CREATE TABLE IF NOT EXISTS `forms_items` (
+DROP TABLE IF EXISTS `forms_items`;
+CREATE TABLE `forms_items` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `system_language_id` int(3) DEFAULT NULL,
   `system_websites_id` int(4) DEFAULT NULL,
@@ -1544,7 +1597,8 @@ INSERT INTO `forms_items` (`id`, `system_language_id`, `system_websites_id`, `ma
 -- Table structure for table `forms_messages`
 --
 
-CREATE TABLE IF NOT EXISTS `forms_messages` (
+DROP TABLE IF EXISTS `forms_messages`;
+CREATE TABLE `forms_messages` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `forms_items_id` int(8) unsigned DEFAULT '0',
   `forms_messages_groups_id` int(8) unsigned NOT NULL,
@@ -1568,7 +1622,8 @@ CREATE TABLE IF NOT EXISTS `forms_messages` (
 -- Table structure for table `forms_messages_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `forms_messages_groups` (
+DROP TABLE IF EXISTS `forms_messages_groups`;
+CREATE TABLE `forms_messages_groups` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -1588,7 +1643,8 @@ INSERT INTO `forms_messages_groups` (`id`, `name`) VALUES
 -- Table structure for table `forms_messages_history`
 --
 
-CREATE TABLE IF NOT EXISTS `forms_messages_history` (
+DROP TABLE IF EXISTS `forms_messages_history`;
+CREATE TABLE `forms_messages_history` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `forms_messages_id` int(11) unsigned NOT NULL,
   `system_users_id` int(8) unsigned NOT NULL,
@@ -1610,7 +1666,8 @@ CREATE TABLE IF NOT EXISTS `forms_messages_history` (
 -- Table structure for table `forms_recipients`
 --
 
-CREATE TABLE IF NOT EXISTS `forms_recipients` (
+DROP TABLE IF EXISTS `forms_recipients`;
+CREATE TABLE `forms_recipients` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `mail` varchar(255) NOT NULL,
   `forms_items_id` int(8) unsigned NOT NULL,
@@ -1634,7 +1691,8 @@ INSERT INTO `forms_recipients` (`id`, `mail`, `forms_items_id`) VALUES
 -- Table structure for table `forms_sendmails`
 --
 
-CREATE TABLE IF NOT EXISTS `forms_sendmails` (
+DROP TABLE IF EXISTS `forms_sendmails`;
+CREATE TABLE `forms_sendmails` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `forms_items_id` int(8) unsigned NOT NULL,
   `emails_templates_id` int(11) unsigned NOT NULL,
@@ -1656,7 +1714,8 @@ CREATE TABLE IF NOT EXISTS `forms_sendmails` (
 -- Table structure for table `forms_subscriptions`
 --
 
-CREATE TABLE IF NOT EXISTS `forms_subscriptions` (
+DROP TABLE IF EXISTS `forms_subscriptions`;
+CREATE TABLE `forms_subscriptions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `emails_groups_id` int(8) unsigned NOT NULL,
   `forms_items_id` int(8) unsigned NOT NULL,
@@ -1676,7 +1735,8 @@ CREATE TABLE IF NOT EXISTS `forms_subscriptions` (
 -- Table structure for table `gallery_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `gallery_categories` (
+DROP TABLE IF EXISTS `gallery_categories`;
+CREATE TABLE `gallery_categories` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `parent` int(11) DEFAULT '0',
   `system_language_id` int(3) NOT NULL DEFAULT '0',
@@ -1711,7 +1771,8 @@ INSERT INTO `gallery_categories` (`id`, `parent`, `system_language_id`, `system_
 -- Table structure for table `gallery_items`
 --
 
-CREATE TABLE IF NOT EXISTS `gallery_items` (
+DROP TABLE IF EXISTS `gallery_items`;
+CREATE TABLE `gallery_items` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `h1` varchar(255) NOT NULL,
@@ -1741,7 +1802,8 @@ CREATE TABLE IF NOT EXISTS `gallery_items` (
 -- Table structure for table `gallery_types`
 --
 
-CREATE TABLE IF NOT EXISTS `gallery_types` (
+DROP TABLE IF EXISTS `gallery_types`;
+CREATE TABLE `gallery_types` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   `mime` varchar(150) NOT NULL,
@@ -1760,7 +1822,8 @@ CREATE TABLE IF NOT EXISTS `gallery_types` (
 -- Table structure for table `htaccess_code`
 --
 
-CREATE TABLE IF NOT EXISTS `htaccess_code` (
+DROP TABLE IF EXISTS `htaccess_code`;
+CREATE TABLE `htaccess_code` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `code` text NOT NULL,
@@ -1783,7 +1846,8 @@ CREATE TABLE IF NOT EXISTS `htaccess_code` (
 -- Table structure for table `htaccess_htpasswd`
 --
 
-CREATE TABLE IF NOT EXISTS `htaccess_htpasswd` (
+DROP TABLE IF EXISTS `htaccess_htpasswd`;
+CREATE TABLE `htaccess_htpasswd` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -1807,7 +1871,8 @@ INSERT INTO `htaccess_htpasswd` (`id`, `name`, `password`, `location`, `enabled`
 -- Table structure for table `htaccess_rows`
 --
 
-CREATE TABLE IF NOT EXISTS `htaccess_rows` (
+DROP TABLE IF EXISTS `htaccess_rows`;
+CREATE TABLE `htaccess_rows` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `rule` text NOT NULL,
@@ -1827,7 +1892,7 @@ CREATE TABLE IF NOT EXISTS `htaccess_rows` (
 --
 
 INSERT INTO `htaccess_rows` (`id`, `name`, `rule`, `type`, `system_users_id`, `system_modules_id`, `system_websites_id`, `sort`) VALUES
-(5, 'Main Rewrite', 'RewriteRule ^app-plist-(.*).plist$ app-plist/?mobileAppId=$1 [QSA]', 1, 1, 8, 4, 0);
+(5, 'Main Rewrite', 'RewriteRule ^app-plist-(.*).plist$ app-plist/?mobileAppId=$1 [QSA]\r\nRewriteRule ^news-(.*?)-(.*)$ dashboard/?article=$1 [QSA]', 1, 1, 8, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -1835,7 +1900,8 @@ INSERT INTO `htaccess_rows` (`id`, `name`, `rule`, `type`, `system_users_id`, `s
 -- Table structure for table `iblog_blogs`
 --
 
-CREATE TABLE IF NOT EXISTS `iblog_blogs` (
+DROP TABLE IF EXISTS `iblog_blogs`;
+CREATE TABLE `iblog_blogs` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `identifier` varchar(100) NOT NULL,
@@ -1871,7 +1937,8 @@ INSERT INTO `iblog_blogs` (`id`, `name`, `identifier`, `description`, `users_id`
 -- Table structure for table `iblog_devices`
 --
 
-CREATE TABLE IF NOT EXISTS `iblog_devices` (
+DROP TABLE IF EXISTS `iblog_devices`;
+CREATE TABLE `iblog_devices` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `users_id` int(11) unsigned NOT NULL,
   `device` varchar(60) NOT NULL,
@@ -1902,7 +1969,8 @@ INSERT INTO `iblog_devices` (`id`, `users_id`, `device`, `iblog_blogs_id`) VALUE
 -- Table structure for table `iblog_posts`
 --
 
-CREATE TABLE IF NOT EXISTS `iblog_posts` (
+DROP TABLE IF EXISTS `iblog_posts`;
+CREATE TABLE `iblog_posts` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `iblog_blogs_id` int(11) unsigned NOT NULL,
   `users_id` int(11) unsigned NOT NULL,
@@ -1939,7 +2007,8 @@ INSERT INTO `iblog_posts` (`id`, `iblog_blogs_id`, `users_id`, `name`, `identifi
 -- Table structure for table `iblog_urls`
 --
 
-CREATE TABLE IF NOT EXISTS `iblog_urls` (
+DROP TABLE IF EXISTS `iblog_urls`;
+CREATE TABLE `iblog_urls` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
   `url` varchar(255) NOT NULL,
@@ -1958,7 +2027,8 @@ CREATE TABLE IF NOT EXISTS `iblog_urls` (
 -- Table structure for table `igallery_galleries`
 --
 
-CREATE TABLE IF NOT EXISTS `igallery_galleries` (
+DROP TABLE IF EXISTS `igallery_galleries`;
+CREATE TABLE `igallery_galleries` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `code` varchar(100) NOT NULL,
@@ -1982,7 +2052,8 @@ INSERT INTO `igallery_galleries` (`id`, `name`, `code`, `users_id`, `added`, `ch
 -- Table structure for table `igallery_items`
 --
 
-CREATE TABLE IF NOT EXISTS `igallery_items` (
+DROP TABLE IF EXISTS `igallery_items`;
+CREATE TABLE `igallery_items` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `smallid` bigint(20) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -2013,7 +2084,8 @@ INSERT INTO `igallery_items` (`id`, `smallid`, `name`, `caption`, `file`, `longi
 -- Table structure for table `imenu_items`
 --
 
-CREATE TABLE IF NOT EXISTS `imenu_items` (
+DROP TABLE IF EXISTS `imenu_items`;
+CREATE TABLE `imenu_items` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `type` varchar(10) NOT NULL DEFAULT 'web',
@@ -2047,7 +2119,8 @@ INSERT INTO `imenu_items` (`id`, `name`, `type`, `image`, `imagetype`, `variable
 -- Table structure for table `imenu_menus`
 --
 
-CREATE TABLE IF NOT EXISTS `imenu_menus` (
+DROP TABLE IF EXISTS `imenu_menus`;
+CREATE TABLE `imenu_menus` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -2070,7 +2143,8 @@ INSERT INTO `imenu_menus` (`id`, `name`, `identifier`, `rewriteurl`) VALUES
 -- Table structure for table `imessages_fields`
 --
 
-CREATE TABLE IF NOT EXISTS `imessages_fields` (
+DROP TABLE IF EXISTS `imessages_fields`;
+CREATE TABLE `imessages_fields` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `imessages_forms_id` int(11) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -2521,7 +2595,8 @@ INSERT INTO `imessages_fields` (`id`, `imessages_forms_id`, `name`, `fcode`, `fi
 -- Table structure for table `imessages_forms`
 --
 
-CREATE TABLE IF NOT EXISTS `imessages_forms` (
+DROP TABLE IF EXISTS `imessages_forms`;
+CREATE TABLE `imessages_forms` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `users_id` int(11) unsigned NOT NULL,
@@ -2655,7 +2730,8 @@ INSERT INTO `imessages_forms` (`id`, `name`, `users_id`, `code`, `added`) VALUES
 -- Table structure for table `imessages_messages`
 --
 
-CREATE TABLE IF NOT EXISTS `imessages_messages` (
+DROP TABLE IF EXISTS `imessages_messages`;
+CREATE TABLE `imessages_messages` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `imessages_forms_id` int(11) unsigned NOT NULL,
   `data` longtext NOT NULL,
@@ -2678,7 +2754,8 @@ CREATE TABLE IF NOT EXISTS `imessages_messages` (
 -- Table structure for table `imessages_recipients`
 --
 
-CREATE TABLE IF NOT EXISTS `imessages_recipients` (
+DROP TABLE IF EXISTS `imessages_recipients`;
+CREATE TABLE `imessages_recipients` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `imessages_forms_id` int(11) unsigned NOT NULL,
   `mail` varchar(255) NOT NULL,
@@ -3193,7 +3270,8 @@ INSERT INTO `imessages_recipients` (`id`, `imessages_forms_id`, `mail`) VALUES
 -- Table structure for table `innoportal_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `innoportal_groups` (
+DROP TABLE IF EXISTS `innoportal_groups`;
+CREATE TABLE `innoportal_groups` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `variable` varchar(50) NOT NULL,
@@ -3213,7 +3291,8 @@ CREATE TABLE IF NOT EXISTS `innoportal_groups` (
 -- Table structure for table `innoportal_ideas`
 --
 
-CREATE TABLE IF NOT EXISTS `innoportal_ideas` (
+DROP TABLE IF EXISTS `innoportal_ideas`;
+CREATE TABLE `innoportal_ideas` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `idea` text NOT NULL,
@@ -3241,7 +3320,8 @@ CREATE TABLE IF NOT EXISTS `innoportal_ideas` (
 -- Table structure for table `ipromote_apps`
 --
 
-CREATE TABLE IF NOT EXISTS `ipromote_apps` (
+DROP TABLE IF EXISTS `ipromote_apps`;
+CREATE TABLE `ipromote_apps` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `ipromote_campaigns_id` int(11) unsigned NOT NULL,
@@ -3275,7 +3355,8 @@ INSERT INTO `ipromote_apps` (`id`, `name`, `ipromote_campaigns_id`, `added`, `li
 -- Table structure for table `ipromote_campaigns`
 --
 
-CREATE TABLE IF NOT EXISTS `ipromote_campaigns` (
+DROP TABLE IF EXISTS `ipromote_campaigns`;
+CREATE TABLE `ipromote_campaigns` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `users_id` int(11) unsigned NOT NULL,
@@ -3299,7 +3380,8 @@ INSERT INTO `ipromote_campaigns` (`id`, `name`, `users_id`, `system_users_id`, `
 -- Table structure for table `ipromote_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `ipromote_templates` (
+DROP TABLE IF EXISTS `ipromote_templates`;
+CREATE TABLE `ipromote_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -3334,7 +3416,8 @@ INSERT INTO `ipromote_templates` (`id`, `name`, `identifier`, `temptype`, `mess1
 -- Table structure for table `ispeed_cameras`
 --
 
-CREATE TABLE IF NOT EXISTS `ispeed_cameras` (
+DROP TABLE IF EXISTS `ispeed_cameras`;
+CREATE TABLE `ispeed_cameras` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `longitude` float(11,8) NOT NULL,
   `latitude` float(11,8) NOT NULL,
@@ -3355,7 +3438,8 @@ CREATE TABLE IF NOT EXISTS `ispeed_cameras` (
 -- Table structure for table `iwallpapers_images`
 --
 
-CREATE TABLE IF NOT EXISTS `iwallpapers_images` (
+DROP TABLE IF EXISTS `iwallpapers_images`;
+CREATE TABLE `iwallpapers_images` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `file` varchar(255) NOT NULL,
@@ -3429,7 +3513,8 @@ INSERT INTO `iwallpapers_images` (`id`, `name`, `file`, `ratingdata`, `votes`, `
 -- Table structure for table `jobnumbers`
 --
 
-CREATE TABLE IF NOT EXISTS `jobnumbers` (
+DROP TABLE IF EXISTS `jobnumbers`;
+CREATE TABLE `jobnumbers` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `shortname` varchar(255) NOT NULL,
@@ -3454,7 +3539,8 @@ CREATE TABLE IF NOT EXISTS `jobnumbers` (
 -- Table structure for table `joshtray_friends`
 --
 
-CREATE TABLE IF NOT EXISTS `joshtray_friends` (
+DROP TABLE IF EXISTS `joshtray_friends`;
+CREATE TABLE `joshtray_friends` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `joshtray_people_id` int(11) unsigned NOT NULL,
   `friend_id` int(11) unsigned NOT NULL,
@@ -3486,7 +3572,8 @@ INSERT INTO `joshtray_friends` (`id`, `joshtray_people_id`, `friend_id`) VALUES
 -- Table structure for table `joshtray_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `joshtray_groups` (
+DROP TABLE IF EXISTS `joshtray_groups`;
+CREATE TABLE `joshtray_groups` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -3505,7 +3592,8 @@ INSERT INTO `joshtray_groups` (`id`, `name`) VALUES
 -- Table structure for table `joshtray_images`
 --
 
-CREATE TABLE IF NOT EXISTS `joshtray_images` (
+DROP TABLE IF EXISTS `joshtray_images`;
+CREATE TABLE `joshtray_images` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `joshtray_people_id` int(11) unsigned NOT NULL,
   `filename` varchar(100) NOT NULL,
@@ -3526,7 +3614,8 @@ CREATE TABLE IF NOT EXISTS `joshtray_images` (
 -- Table structure for table `joshtray_messages`
 --
 
-CREATE TABLE IF NOT EXISTS `joshtray_messages` (
+DROP TABLE IF EXISTS `joshtray_messages`;
+CREATE TABLE `joshtray_messages` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `joshtray_people_id` int(11) unsigned NOT NULL,
   `from_id` int(10) unsigned DEFAULT NULL,
@@ -3632,7 +3721,8 @@ INSERT INTO `joshtray_messages` (`id`, `joshtray_people_id`, `from_id`, `message
 -- Table structure for table `joshtray_news`
 --
 
-CREATE TABLE IF NOT EXISTS `joshtray_news` (
+DROP TABLE IF EXISTS `joshtray_news`;
+CREATE TABLE `joshtray_news` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `joshtray_people_id` int(10) unsigned DEFAULT NULL,
   `joshtray_groups_id` int(10) unsigned DEFAULT NULL,
@@ -3660,7 +3750,8 @@ INSERT INTO `joshtray_news` (`id`, `joshtray_people_id`, `joshtray_groups_id`, `
 -- Table structure for table `joshtray_people`
 --
 
-CREATE TABLE IF NOT EXISTS `joshtray_people` (
+DROP TABLE IF EXISTS `joshtray_people`;
+CREATE TABLE `joshtray_people` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `joshtray_groups_id` int(8) unsigned NOT NULL DEFAULT '0',
   `firstname` varchar(255) NOT NULL,
@@ -3853,7 +3944,8 @@ INSERT INTO `joshtray_people` (`id`, `joshtray_groups_id`, `firstname`, `lastnam
 -- Table structure for table `joshtray_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `joshtray_templates` (
+DROP TABLE IF EXISTS `joshtray_templates`;
+CREATE TABLE `joshtray_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -3881,7 +3973,8 @@ INSERT INTO `joshtray_templates` (`id`, `name`, `identifier`, `temptype`, `pager
 -- Table structure for table `languages_definitions`
 --
 
-CREATE TABLE IF NOT EXISTS `languages_definitions` (
+DROP TABLE IF EXISTS `languages_definitions`;
+CREATE TABLE `languages_definitions` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `minchar` int(11) NOT NULL,
@@ -3910,7 +4003,8 @@ INSERT INTO `languages_definitions` (`id`, `name`, `minchar`, `maxchar`, `pages_
 -- Table structure for table `languages_translations`
 --
 
-CREATE TABLE IF NOT EXISTS `languages_translations` (
+DROP TABLE IF EXISTS `languages_translations`;
+CREATE TABLE `languages_translations` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `languages_definitions_id` bigint(20) unsigned NOT NULL,
   `system_languages_id` int(11) unsigned NOT NULL,
@@ -3931,7 +4025,8 @@ CREATE TABLE IF NOT EXISTS `languages_translations` (
 -- Table structure for table `links_urls`
 --
 
-CREATE TABLE IF NOT EXISTS `links_urls` (
+DROP TABLE IF EXISTS `links_urls`;
+CREATE TABLE `links_urls` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `url` varchar(255) NOT NULL DEFAULT '',
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -3962,7 +4057,8 @@ CREATE TABLE IF NOT EXISTS `links_urls` (
 -- Table structure for table `mobileapps`
 --
 
-CREATE TABLE IF NOT EXISTS `mobileapps` (
+DROP TABLE IF EXISTS `mobileapps`;
+CREATE TABLE `mobileapps` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   `identifier` varchar(150) NOT NULL,
@@ -3976,18 +4072,23 @@ CREATE TABLE IF NOT EXISTS `mobileapps` (
   `size` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `identifier` (`identifier`,`devtype`,`apptype`,`icon`,`sort`,`added`,`changed`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `mobileapps`
 --
 
 INSERT INTO `mobileapps` (`id`, `name`, `identifier`, `devtype`, `apptype`, `icon`, `sort`, `added`, `changed`, `version`, `size`) VALUES
+(15, 'SunOlympics', 'com.fuerteint.thesunolympicar.enterprise', 2, 0, 1, 0, '2012-10-02 17:08:30', '2012-10-02 17:09:05', '', 32914855),
+(13, 'MP & Silva', 'com.fuerteint.MPSilva', 0, 0, 1, 0, '2012-10-02 17:04:10', '2012-10-02 17:06:34', '1.0', 110787945),
 (4, 'polligraf', 'com.fuerteint.polligraf', 0, 0, 0, 0, '2012-09-27 18:07:42', '2012-10-01 22:50:13', '1.0', 1608033),
-(8, 'AR Racer', 'com.fuerteint.enterprise.arracer', 0, 0, 0, 0, '2012-09-28 11:29:27', '2012-09-28 11:29:27', '', 0),
-(9, 'Motorsport', 'com.fuerteint.Skoda.enterprise', 0, 0, 0, 0, '2012-09-28 11:32:17', '2012-10-02 13:57:02', '1.0', 49502658),
-(10, 'polligraf', 'com.fuerteint.polligraf', 1, 0, 0, 0, '2012-10-01 22:50:28', '2012-10-01 22:50:28', '1.0', 1608033),
-(11, 'polligraf', 'com.fuerteint.polligraf', 2, 0, 0, 0, '2012-10-01 22:50:42', '2012-10-01 22:50:42', '1.0', 1608033);
+(21, 'FuerteForms', 'com.fuerteint.fuerteforms', 0, 0, 0, 0, '2012-10-08 10:35:34', '2012-10-08 10:35:34', '1.0', 611575),
+(19, 'TheFun', 'com.fuerteint.thefun', 0, 0, 0, 0, '2012-10-05 16:28:03', '2012-10-05 16:28:03', '1.0', 1111603),
+(20, 'Motorsport', 'com.fuerteint.Skoda.enterprise', 0, 0, 0, 0, '2012-10-08 10:33:59', '2012-10-08 10:33:59', '1.0', 49502658),
+(11, 'polligraf', 'com.fuerteint.polligraf', 2, 0, 0, 0, '2012-10-01 22:50:42', '2012-10-01 22:50:42', '1.0', 1608033),
+(14, 'CALPOL®', 'com.fuerteint.calpolireland', 0, 0, 0, 0, '2012-10-02 17:05:11', '2012-10-02 17:05:11', '1.0', 46912052),
+(17, 'SunOlympics', 'com.fuerteint.thesunolympicar.enterprise', 0, 0, 0, 0, '2012-10-02 17:10:48', '2012-10-02 17:10:48', '', 32914855),
+(18, 'MP & Silva', 'com.fuerteint.MPSilva', 2, 0, 0, 0, '2012-10-02 17:11:28', '2012-10-02 17:11:28', '1.0', 71310552);
 
 -- --------------------------------------------------------
 
@@ -3995,7 +4096,8 @@ INSERT INTO `mobileapps` (`id`, `name`, `identifier`, `devtype`, `apptype`, `ico
 -- Table structure for table `mobileapps_companies`
 --
 
-CREATE TABLE IF NOT EXISTS `mobileapps_companies` (
+DROP TABLE IF EXISTS `mobileapps_companies`;
+CREATE TABLE `mobileapps_companies` (
   `companies_id` bigint(20) unsigned NOT NULL,
   `mobileapps_id` bigint(20) unsigned NOT NULL,
   KEY `companies_id` (`companies_id`,`mobileapps_id`)
@@ -4006,15 +4108,22 @@ CREATE TABLE IF NOT EXISTS `mobileapps_companies` (
 --
 
 INSERT INTO `mobileapps_companies` (`companies_id`, `mobileapps_id`) VALUES
-(1, 8),
-(1, 10),
-(2, 8),
-(2, 10),
-(3, 8),
-(3, 10),
-(4, 8),
-(5, 8),
-(6, 8),
+(1, 4),
+(1, 11),
+(1, 13),
+(1, 14),
+(1, 15),
+(1, 17),
+(1, 18),
+(2, 11),
+(3, 14),
+(4, 14),
+(4, 15),
+(4, 17),
+(4, 18),
+(5, 11),
+(5, 15),
+(5, 17),
 (6, 11);
 
 -- --------------------------------------------------------
@@ -4023,7 +4132,8 @@ INSERT INTO `mobileapps_companies` (`companies_id`, `mobileapps_id`) VALUES
 -- Table structure for table `mobileapps_users`
 --
 
-CREATE TABLE IF NOT EXISTS `mobileapps_users` (
+DROP TABLE IF EXISTS `mobileapps_users`;
+CREATE TABLE `mobileapps_users` (
   `users_id` int(11) unsigned NOT NULL,
   `companies_id` bigint(20) unsigned NOT NULL,
   KEY `users_id` (`users_id`,`companies_id`)
@@ -4034,13 +4144,14 @@ CREATE TABLE IF NOT EXISTS `mobileapps_users` (
 --
 
 INSERT INTO `mobileapps_users` (`users_id`, `companies_id`) VALUES
-(1, 1),
 (1, 2),
 (1, 3),
 (1, 4),
+(1, 6),
 (2, 1),
 (2, 2),
 (2, 3),
+(2, 4),
 (2, 5),
 (2, 6);
 
@@ -4050,7 +4161,8 @@ INSERT INTO `mobileapps_users` (`users_id`, `companies_id`) VALUES
 -- Table structure for table `motocatalogue_brands`
 --
 
-CREATE TABLE IF NOT EXISTS `motocatalogue_brands` (
+DROP TABLE IF EXISTS `motocatalogue_brands`;
+CREATE TABLE `motocatalogue_brands` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `description` text NOT NULL,
@@ -4072,7 +4184,8 @@ INSERT INTO `motocatalogue_brands` (`id`, `name`, `description`) VALUES
 -- Table structure for table `motocatalogue_images`
 --
 
-CREATE TABLE IF NOT EXISTS `motocatalogue_images` (
+DROP TABLE IF EXISTS `motocatalogue_images`;
+CREATE TABLE `motocatalogue_images` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `smallid` bigint(20) NOT NULL,
   `projects_items_id` int(11) unsigned NOT NULL,
@@ -4114,7 +4227,8 @@ CREATE TABLE IF NOT EXISTS `motocatalogue_images` (
 -- Table structure for table `motocatalogue_items`
 --
 
-CREATE TABLE IF NOT EXISTS `motocatalogue_items` (
+DROP TABLE IF EXISTS `motocatalogue_items`;
+CREATE TABLE `motocatalogue_items` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `pretext` text NOT NULL,
@@ -4150,7 +4264,8 @@ INSERT INTO `motocatalogue_items` (`id`, `name`, `pretext`, `description`, `cuba
 -- Table structure for table `motocatalogue_types`
 --
 
-CREATE TABLE IF NOT EXISTS `motocatalogue_types` (
+DROP TABLE IF EXISTS `motocatalogue_types`;
+CREATE TABLE `motocatalogue_types` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `description` text NOT NULL,
@@ -4172,7 +4287,8 @@ INSERT INTO `motocatalogue_types` (`id`, `name`, `description`) VALUES
 -- Table structure for table `news_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `news_categories` (
+DROP TABLE IF EXISTS `news_categories`;
+CREATE TABLE `news_categories` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `parent` varchar(8) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL,
@@ -4190,8 +4306,7 @@ CREATE TABLE IF NOT EXISTS `news_categories` (
 --
 
 INSERT INTO `news_categories` (`id`, `parent`, `name`, `system_users_id`, `added`, `changed`, `system_websites_id`) VALUES
-(1, '0', 'Main news', 1, '2009-02-19 18:52:02', '2009-12-17 18:04:03', 3),
-(2, '1', 'huuuuu', 1, '2009-02-19 18:56:21', '2009-02-19 18:56:21', 1);
+(1, '0', 'Main news', 1, '2009-02-19 18:52:02', '2009-12-17 18:04:03', 3);
 
 -- --------------------------------------------------------
 
@@ -4199,7 +4314,8 @@ INSERT INTO `news_categories` (`id`, `parent`, `name`, `system_users_id`, `added
 -- Table structure for table `news_items`
 --
 
-CREATE TABLE IF NOT EXISTS `news_items` (
+DROP TABLE IF EXISTS `news_items`;
+CREATE TABLE `news_items` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `news_categories_id` int(8) unsigned DEFAULT '0',
   `name` varchar(255) NOT NULL,
@@ -4214,12 +4330,15 @@ CREATE TABLE IF NOT EXISTS `news_items` (
   PRIMARY KEY (`id`),
   KEY `FK_news_items_user` (`system_users_id`),
   KEY `FK_news_items_cat` (`news_categories_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `news_items`
 --
 
+INSERT INTO `news_items` (`id`, `news_categories_id`, `name`, `added`, `changed`, `head`, `text`, `displayfrom`, `displayto`, `datefor`, `system_users_id`) VALUES
+(1, 0, 'We are launching the new AppStore!', '2012-10-05 10:59:22', '2012-10-05 10:59:22', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Aliquam elit nulla, pulvinar ut porta non, tincidunt in purus. Sed eu massa et magna aliquam lacinia. Maecenas a augue eget turpis adipiscing aliquam. Ut enim velit, gravida vitae egestas nec, sodales quis libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer sit amet turpis leo, nec eleifend nisl. Integer ac erat mi, hendrerit cursus nisi. Proin eu odio nisl, id pharetra lectus. Cras faucibus condimentum leo, eget sagittis velit faucibus ut.', '2012-10-05 09:42:00', '2013-10-05 09:42:00', '2012-10-05 09:42:00', 1),
+(2, 0, 'AppStore will be supporting Android builds soon!', '2012-10-05 11:00:02', '2012-10-05 11:00:02', 'Pellentesque et fringilla ipsum.', 'Praesent turpis erat, luctus vitae mattis et, molestie ac orci. Nulla facilisi. Nam pellentesque, quam in suscipit lobortis, lacus magna semper leo, eu sodales urna nisi eu risus. Cras congue tortor ut elit adipiscing fringilla. Vestibulum tincidunt facilisis feugiat. Maecenas fermentum faucibus nulla, sit amet cursus est ullamcorper eget. Maecenas purus lectus, elementum ut eleifend a, ornare ut lacus. Curabitur at tortor augue. Maecenas consectetur pharetra felis, vel pulvinar dui vestibulum vitae.', '2012-10-05 09:59:00', '2013-10-05 09:59:00', '2012-10-05 09:59:00', 1);
 
 -- --------------------------------------------------------
 
@@ -4227,7 +4346,8 @@ CREATE TABLE IF NOT EXISTS `news_items` (
 -- Table structure for table `news_rss`
 --
 
-CREATE TABLE IF NOT EXISTS `news_rss` (
+DROP TABLE IF EXISTS `news_rss`;
+CREATE TABLE `news_rss` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -4251,8 +4371,8 @@ CREATE TABLE IF NOT EXISTS `news_rss` (
 --
 
 INSERT INTO `news_rss` (`id`, `name`, `identifier`, `version`, `news_categories_id`, `showitems`, `link`, `folder`, `description`, `displaylanguage`, `copyright`, `ttl`, `image`, `imagetitle`) VALUES
-(2, 'Main cat', 'main-cat-v1-0', 1, 0, 20, 'index.php?pageid=1&amp;news={%CAT}', 'rss', '', 'en', 'c 2009 Rafiki', 15, '', ''),
-(3, 'Main cat', 'main-cat-v2-0', 2, 0, 20, 'index.php?pageid=1&amp;news={%CAT}', 'rss/', '', 'en', '', 15, '', '');
+(2, 'Main cat', 'main-cat-v1-0', 1, 0, 20, 'index.php?pageid=1&amp;news={%CAT}', 'rss', '', 'en', '&copy; 2012 Fuerte International', 15, '', ''),
+(3, 'Main cat', 'main-cat-v2-0', 2, 0, 20, 'index.php?pageid=1&amp;news={%CAT}', 'rss/', '', 'en', '&copy; 2012 Fuerte International', 15, '', '');
 
 -- --------------------------------------------------------
 
@@ -4260,7 +4380,8 @@ INSERT INTO `news_rss` (`id`, `name`, `identifier`, `version`, `news_categories_
 -- Table structure for table `news_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `news_templates` (
+DROP TABLE IF EXISTS `news_templates`;
+CREATE TABLE `news_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -4281,10 +4402,9 @@ CREATE TABLE IF NOT EXISTS `news_templates` (
 --
 
 INSERT INTO `news_templates` (`id`, `name`, `identifier`, `temptype`, `pager`, `perpage`, `addid`, `datasource`, `tempbegin`, `tempitem`, `tempend`, `notemp`) VALUES
-(1, 'All categories', 'all-categories', 0, 0, 20, 0, 4, '<div>', '<p>\r\n	<a href="{#WEBROOT}news-{%Id}-{%SafeName}/"><strong>{%Title}</strong></a><br />\r\n	<em>{%Date}</em><br />\r\n	{%Perex}\r\n</p>', '</div>\r\n{%PAGER}', '<p>There is NO article in this category</p>'),
 (2, 'Home categories', 'home-categories', 2, 0, 0, 1, 3, '<ul>', '	<li><a href="?newscat={%Id}">{%Name}</a></li>', '</ul>\r\n\r\n', '<h1>There is no category</h1>'),
-(3, 'Main article', 'main-article', 1, 0, 0, 0, 0, '', '<div>\r\n	<p><strong>{%Author}</strong> - <em>{%Date}</em></p>\r\n	<div class="perex">{%Perex}</div>\r\n	<div class="content">{%Content}</div>\r\n</div>', '', '<h1>There is no article</h1>'),
-(4, 'footer news', 'footer-news', 0, 0, 4, 0, 5, '', '<p><small>{%Date}</small>{%Title} <a href="{#WEBROOT}news-{%Id}-{%SafeName}/">Read more ...</a></p>\r\n', '', '<p>There is no article in this category</p>');
+(3, 'Main article', 'main-article', 1, 0, 0, 0, 0, '', '<div class="appDetail">\r\n    <div class="box noBorder">\r\n        <h3 class="appName">{%Title}</h3>\r\n    </div>\r\n    <div class="box">\r\n        <p><strong>{%Perex}</strong></p>\r\n        <p>{%Content}</p>\r\n    </div>\r\n</div>', '', '<h1>There is no article</h1>'),
+(4, 'Dashboard news', 'dashboard-news', 0, 0, 10, 0, 4, '<?php if (!isset($_GET[''article'']) || !$_GET[''article'']) $_GET[''article''] = $arr[''data''][0]->getId(); ?>\r\n<ul class="menu">', '<li class="<?php echo ($v->getId() == $_GET[''article'']) ? ''active'' : ''passive''; ?>">\r\n    <a href="{#WEBROOT}news-{%Id}-{%SafeName}" title="{%Title}">\r\n        <img src="{#WEBROOT}admin/system/mobileapps/images/news@2x.png" alt="{%Title}" />\r\n        <strong>{%Title}</strong>\r\n        <!--<small>{%Perex}</small>-->\r\n    </a>\r\n</li>', '</ul>', '');
 
 -- --------------------------------------------------------
 
@@ -4292,7 +4412,8 @@ INSERT INTO `news_templates` (`id`, `name`, `identifier`, `temptype`, `pager`, `
 -- Table structure for table `pages`
 --
 
-CREATE TABLE IF NOT EXISTS `pages` (
+DROP TABLE IF EXISTS `pages`;
+CREATE TABLE `pages` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `system_websites_id` int(4) NOT NULL DEFAULT '1',
   `system_language_id` int(3) NOT NULL DEFAULT '1',
@@ -4335,9 +4456,9 @@ CREATE TABLE IF NOT EXISTS `pages` (
 
 INSERT INTO `pages` (`id`, `system_websites_id`, `system_language_id`, `pages_templates_id`, `revision`, `name`, `identifier`, `title`, `heading1`, `heading2`, `heading3`, `rewrite`, `keywords`, `description`, `addtext1`, `addtext2`, `enabled`, `master`, `parentid`, `home`, `sort`, `head`, `page`, `note`, `redirect1`, `redirect2`, `redirect3`, `redirect4`) VALUES
 (1, 4, 5, 23, 10, 'Home Page', 'home-page', 'Test!', '', '', '', '', '', '', '', '', 1, 0, 0, 1, 6, '<style>\r\n#errors {\r\n	width:600px;\r\n	margin-top:50px;\r\n	margin-bottom:-30px;\r\n	margin-left:auto;\r\n	margin-right:auto;\r\n	text-align:center;\r\n	font-size:12px;\r\n}\r\n#errors ul {\r\n}\r\n#errors ul.red li {\r\n	color:#900;\r\n}\r\n#errors ul.green li {\r\n	color: #090;\r\n}\r\n#errors ul.orange li {\r\n	color:#C60;\r\n}\r\n#errors ul li {\r\n	margin-bottom:12px;\r\n}\r\n</style>', 'Hi David', '', 0, 2, '', ''),
-(2, 4, 5, 20, 7, 'My Apps', 'my-apps', 'My Apps', 'My Apps', '', '', '', '', '', '', '', 1, 0, 0, 0, 4, '<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>', '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button">Add new app</a>\r\n</div>\r\n<div class="content">\r\n		{#FRONTEND_mobileapps_appslist}\r\n        {#FRONTEND_mobileapps_appdetail}\r\n</div>', '...', 1, 0, 'You have to be logged in to access this section', ''),
+(2, 4, 5, 20, 10, 'My Apps', 'my-apps', 'My Apps', 'My Apps', '', '', '', '', '', '', '', 1, 0, 0, 0, 4, '<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>', '{#TEMP_add-new-app}\r\n<div class="content">\r\n		{#FRONTEND_mobileapps_appslist}\r\n        {#FRONTEND_mobileapps_appdetail}\r\n</div>', '...', 1, 0, 'You have to be logged in to access this section', ''),
 (3, 4, 5, 26, 4, 'App PLIST', 'app-plist', '', '', '', '', '', '', '', '', '', 1, 0, 0, 0, 1, '', 'This page is using FRONTEND template in mobileapps module only!!!', '...', 1, 0, 'Go away! :)', ''),
-(4, 4, 5, 20, 2, 'Dashboard', 'dashboard', 'Dashboard', 'Dashboard', '', '', '', '', '', '', '', 1, 0, 0, 0, 5, '', 'Dashboard', '...', 0, 0, '', ''),
+(4, 4, 5, 20, 3, 'Dashboard', 'dashboard', 'Dashboard', 'Dashboard', '', '', '', '', '', '', '', 1, 0, 0, 0, 5, '', '<div class="content">\r\n	{#MOD_news_list_dashboard-news}\r\n        {#MOD_news_detail_main-article}\r\n</div>', '...', 0, 0, '', ''),
 (5, 4, 5, 20, 8, 'Groups', 'groups', 'groups', 'groups', '', '', '', '', '', '', '', 1, 0, 0, 0, 3, '', '<div class="content">\r\n	{#FRONTEND_mobileapps_companiesmenu}\r\n        {#FRONTEND_mobileapps_usersselector}\r\n</div>\r\n', '...', 0, 0, '', ''),
 (6, 4, 5, 20, 2, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 0, 0, 2, '', '', '...', 0, 0, '', '');
 
@@ -4347,7 +4468,8 @@ INSERT INTO `pages` (`id`, `system_websites_id`, `system_language_id`, `pages_te
 -- Table structure for table `pages_alternatelang`
 --
 
-CREATE TABLE IF NOT EXISTS `pages_alternatelang` (
+DROP TABLE IF EXISTS `pages_alternatelang`;
+CREATE TABLE `pages_alternatelang` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `pages_id` int(11) unsigned NOT NULL,
   `system_language_id` int(3) NOT NULL,
@@ -4369,7 +4491,8 @@ CREATE TABLE IF NOT EXISTS `pages_alternatelang` (
 -- Table structure for table `pages_history`
 --
 
-CREATE TABLE IF NOT EXISTS `pages_history` (
+DROP TABLE IF EXISTS `pages_history`;
+CREATE TABLE `pages_history` (
   `id` int(10) unsigned NOT NULL,
   `added` datetime NOT NULL,
   `system_users_id` int(8) unsigned NOT NULL,
@@ -4400,7 +4523,8 @@ CREATE TABLE IF NOT EXISTS `pages_history` (
 -- Table structure for table `pages_languages`
 --
 
-CREATE TABLE IF NOT EXISTS `pages_languages` (
+DROP TABLE IF EXISTS `pages_languages`;
+CREATE TABLE `pages_languages` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `system_languages_id` int(3) NOT NULL,
   `code` varchar(120) NOT NULL,
@@ -4420,7 +4544,8 @@ CREATE TABLE IF NOT EXISTS `pages_languages` (
 -- Table structure for table `pages_permissions`
 --
 
-CREATE TABLE IF NOT EXISTS `pages_permissions` (
+DROP TABLE IF EXISTS `pages_permissions`;
+CREATE TABLE `pages_permissions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `system_teams_id` int(8) unsigned NOT NULL,
   `pages_id` int(10) unsigned NOT NULL,
@@ -4442,7 +4567,8 @@ CREATE TABLE IF NOT EXISTS `pages_permissions` (
 -- Table structure for table `pages_revisions`
 --
 
-CREATE TABLE IF NOT EXISTS `pages_revisions` (
+DROP TABLE IF EXISTS `pages_revisions`;
+CREATE TABLE `pages_revisions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `pages_id` int(11) unsigned NOT NULL,
   `system_websites_id` int(4) NOT NULL DEFAULT '1',
@@ -4472,7 +4598,7 @@ CREATE TABLE IF NOT EXISTS `pages_revisions` (
   `redirect4` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `keys` (`system_websites_id`,`pages_templates_id`,`identifier`,`enabled`,`sort`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
 
 --
 -- Dumping data for table `pages_revisions`
@@ -4510,7 +4636,11 @@ INSERT INTO `pages_revisions` (`id`, `pages_id`, `system_websites_id`, `revision
 (29, 5, 4, 7, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 3, '', '<div class="content">\r\n	{#FRONTEND_mobileapps_companiesmenu}\r\n        {#FRONTEND_mobileapps_usersselector}\r\n</div>\r\n', '...', 0, 0, '', ''),
 (30, 2, 4, 7, 5, 20, 'My Apps', 'my-apps', 'My Apps', 'My Apps', '', '', '', '', '', '', '', 1, 0, 4, '<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>', '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button">Add new app</a>\r\n</div>\r\n<div class="content">\r\n		{#FRONTEND_mobileapps_appslist}\r\n        {#FRONTEND_mobileapps_appdetail}\r\n</div>', '...', 1, 0, 'You have to be logged in to access this section', ''),
 (31, 5, 4, 8, 5, 20, 'Groups', 'groups', 'groups', 'groups', '', '', '', '', '', '', '', 1, 0, 0, '', '', '', 0, 0, '', ''),
-(32, 6, 4, 2, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 0, '', '', '', 0, 0, '', '');
+(32, 6, 4, 2, 5, 20, 'Users', 'users', 'Users', 'Users', '', '', '', '', '', '', '', 1, 0, 0, '', '', '', 0, 0, '', ''),
+(33, 4, 4, 3, 5, 20, 'Dashboard', 'dashboard', 'Dashboard', 'Dashboard', '', '', '', '', '', '', '', 1, 0, 5, '', '<div class="content">\r\n	{#MOD_news_list_dashboard-news}\r\n        {#MOD_news_detail_main-article}\r\n</div>', '...', 0, 0, '', ''),
+(34, 2, 4, 8, 5, 20, 'My Apps', 'my-apps', 'My Apps', 'My Apps', '', '', '', '', '', '', '', 1, 0, 4, '<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>', '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button" onclick="return showPopupWindow()">Add new app</a>\r\n</div>\r\n<div class="content">\r\n		{#FRONTEND_mobileapps_appslist}\r\n        {#FRONTEND_mobileapps_appdetail}\r\n</div>', '...', 1, 0, 'You have to be logged in to access this section', ''),
+(35, 2, 4, 9, 5, 20, 'My Apps', 'my-apps', 'My Apps', 'My Apps', '', '', '', '', '', '', '', 1, 0, 4, '<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>', '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button" onclick="return togglePopupWindow()">Add new app</a>\r\n</div>\r\n<div class="content">\r\n		{#FRONTEND_mobileapps_appslist}\r\n        {#FRONTEND_mobileapps_appdetail}\r\n</div>', '...', 1, 0, 'You have to be logged in to access this section', ''),
+(36, 2, 4, 10, 5, 20, 'My Apps', 'my-apps', 'My Apps', 'My Apps', '', '', '', '', '', '', '', 1, 0, 4, '<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>', '{#TEMP_add-new-app}\r\n<div class="content">\r\n		{#FRONTEND_mobileapps_appslist}\r\n        {#FRONTEND_mobileapps_appdetail}\r\n</div>', '...', 1, 0, 'You have to be logged in to access this section', '');
 
 -- --------------------------------------------------------
 
@@ -4518,7 +4648,8 @@ INSERT INTO `pages_revisions` (`id`, `pages_id`, `system_websites_id`, `revision
 -- Table structure for table `pages_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `pages_templates` (
+DROP TABLE IF EXISTS `pages_templates`;
+CREATE TABLE `pages_templates` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `revision` int(11) NOT NULL DEFAULT '1',
   `name` varchar(255) DEFAULT NULL,
@@ -4532,7 +4663,7 @@ CREATE TABLE IF NOT EXISTS `pages_templates` (
   PRIMARY KEY (`id`),
   KEY `language` (`system_language_id`),
   KEY `website` (`pages_templates_groups_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `pages_templates`
@@ -4541,10 +4672,11 @@ CREATE TABLE IF NOT EXISTS `pages_templates` (
 INSERT INTO `pages_templates` (`id`, `revision`, `name`, `identifier`, `master`, `registered`, `system_language_id`, `pages_templates_groups_id`, `template`, `note`) VALUES
 (20, 12, 'Main template', 'main-template', 1, 0, 1, 3, '{#TEMP_head}\r\n<body>\r\n<div id="container">\r\n	<div id="topLine"></div>\r\n    {#TEMP_header}\r\n    <div id="page">\r\n    	{#MOD_configuration_errors_main}\r\n        {#CONTENT}\r\n        <div class="clear"></div>\r\n    </div>\r\n    {#TEMP_footer}\r\n</div>\r\n</body>\r\n</html>', '...'),
 (24, 8, 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <li class="{#ACTIVE_6}"><a href="{#LINK_6}" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_5}"><a href="{#LINK_5}" title="Groups">Groups</a></li>\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
-(22, 2, 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n  var _gaq = _gaq || [];\r\n  _gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n  _gaq.push([''_trackPageview'']);\r\n\r\n  (function() {\r\n    var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n    ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n    var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n  })();\r\n\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
+(22, 10, 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n	var _gaq = _gaq || [];\r\n	_gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n	_gaq.push([''_trackPageview'']);\r\n	\r\n	(function() {\r\n		var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n		ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n		var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n	})();\r\n\r\n	function confirmAction(message) {\r\n		confirmation = window.confirm(message);\r\n		if (confirmation) {\r\n			return true;\r\n		}\r\n		else {\r\n			return false;\r\n		}\r\n	}\r\n	\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
 (23, 4, 'Login template', 'login-template', 1, 0, 1, 0, '{#TEMP_head}\r\n<body>\r\n<div id="container">\r\n	<div id="topLine"></div>\r\n    {#MOD_configuration_errors_login}\r\n	{#MOD_users_login_page-login}\r\n</div>\r\n</body>\r\n</html>', '...'),
 (25, 1, 'Footer', 'footer', 0, 0, 1, 0, '<div id="footer">\r\n\r\n</div>\r\n', '...'),
-(26, 1, 'App PLIST', 'app-plist', 1, 0, 1, 0, '{#FRONTEND_mobileapps_plist}', '...');
+(26, 1, 'App PLIST', 'app-plist', 1, 0, 1, 0, '{#FRONTEND_mobileapps_plist}', '...'),
+(27, 4, 'Add new app', 'add-new-app', 0, 4, 1, 0, '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button" onclick="return togglePopupWindow()">Add new app</a>\r\n</div>', '...');
 
 -- --------------------------------------------------------
 
@@ -4552,7 +4684,8 @@ INSERT INTO `pages_templates` (`id`, `revision`, `name`, `identifier`, `master`,
 -- Table structure for table `pages_templates_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `pages_templates_groups` (
+DROP TABLE IF EXISTS `pages_templates_groups`;
+CREATE TABLE `pages_templates_groups` (
   `id` int(4) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   `identifier` varchar(150) NOT NULL,
@@ -4573,7 +4706,8 @@ INSERT INTO `pages_templates_groups` (`id`, `name`, `identifier`, `folder`) VALU
 -- Table structure for table `pages_templates_revisions`
 --
 
-CREATE TABLE IF NOT EXISTS `pages_templates_revisions` (
+DROP TABLE IF EXISTS `pages_templates_revisions`;
+CREATE TABLE `pages_templates_revisions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `pages_templates_id` int(11) unsigned NOT NULL,
   `revision` int(11) NOT NULL DEFAULT '1',
@@ -4590,7 +4724,7 @@ CREATE TABLE IF NOT EXISTS `pages_templates_revisions` (
   KEY `language` (`system_language_id`),
   KEY `website` (`pages_templates_groups_id`),
   KEY `added` (`added`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
 -- Dumping data for table `pages_templates_revisions`
@@ -4619,7 +4753,19 @@ INSERT INTO `pages_templates_revisions` (`id`, `pages_templates_id`, `revision`,
 (20, 24, 5, '2012-10-01 21:18:58', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_3}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <!--<li class="{#ACTIVE_2}"><a href="#" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="#" title="Groups">Groups</a></li>-->\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
 (21, 24, 6, '2012-10-01 21:24:55', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <!--<li class="{#ACTIVE_2}"><a href="#" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="#" title="Groups">Groups</a></li>-->\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
 (22, 24, 7, '2012-10-01 21:29:06', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <li class="{#ACTIVE_5}"><a href="{#LINK_5}" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_6}"><a href="{#LINK_6}" title="Groups">Groups</a></li>\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
-(23, 24, 8, '2012-10-02 15:14:40', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <li class="{#ACTIVE_6}"><a href="{#LINK_6}" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_5}"><a href="{#LINK_5}" title="Groups">Groups</a></li>\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...');
+(23, 24, 8, '2012-10-02 15:14:40', 'Header', 'header', 0, 0, 1, 0, '<div id="header">\r\n    <h1><span>Fuerte International - {#H1}</span></h1>\r\n    <ul>\r\n        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>\r\n        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>\r\n        <li class="{#ACTIVE_6}"><a href="{#LINK_6}" title="Users">Users</a></li>\r\n        <li class="{#ACTIVE_5}"><a href="{#LINK_5}" title="Groups">Groups</a></li>\r\n    </ul>\r\n    {#MOD_users_login_login-line}\r\n</div>', '...'),
+(24, 22, 3, '2012-10-05 11:55:14', 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n  var _gaq = _gaq || [];\r\n  _gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n  _gaq.push([''_trackPageview'']);\r\n\r\n  (function() {\r\n    var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n    ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n    var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n  })();\r\n  \r\n  function confirmAction(message) {\r\n	  \r\n	  return false;\r\n  }\r\n\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
+(25, 22, 4, '2012-10-05 11:59:37', 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n	var _gaq = _gaq || [];\r\n	_gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n	_gaq.push([''_trackPageview'']);\r\n	\r\n	(function() {\r\n		var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n		ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n		var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n	})();\r\n\r\n	function confirmAction(message) {\r\n		confirmation = window.confirm(message);\r\n		if (confirmation) {\r\n			return true;\r\n		}\r\n		else {\r\n			return false;\r\n		}\r\n	}\r\n\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
+(26, 22, 5, '2012-10-05 15:19:40', 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n	var _gaq = _gaq || [];\r\n	_gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n	_gaq.push([''_trackPageview'']);\r\n	\r\n	(function() {\r\n		var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n		ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n		var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n	})();\r\n\r\n	function confirmAction(message) {\r\n		confirmation = window.confirm(message);\r\n		if (confirmation) {\r\n			return true;\r\n		}\r\n		else {\r\n			return false;\r\n		}\r\n	}\r\n	\r\n	function showPopupWindow() {\r\n		$(''.popupWindowShadow'').toggle(0.2, function() {\r\n			if ($(''.popupWindowShadow'').is('':visible'') == true) {\r\n				$(''.popupWindow'').show(0.2, function() {\r\n				\r\n				});\r\n			}\r\n			else {\r\n				$(''.popupWindow'').hide(0.2, function() {\r\n				\r\n				});\r\n			}\r\n		});\r\n	}\r\n\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
+(27, 22, 6, '2012-10-05 15:21:25', 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n	var _gaq = _gaq || [];\r\n	_gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n	_gaq.push([''_trackPageview'']);\r\n	\r\n	(function() {\r\n		var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n		ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n		var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n	})();\r\n\r\n	function confirmAction(message) {\r\n		confirmation = window.confirm(message);\r\n		if (confirmation) {\r\n			return true;\r\n		}\r\n		else {\r\n			return false;\r\n		}\r\n	}\r\n	\r\n	function showPopupWindow() {\r\n		$(''.popupWindowShadow'').toggle(0.2, function() {\r\n			if ($(''.popupWindowShadow'').is('':visible'') == true) {\r\n				$(''.popupWindow'').show(0.2, function() {\r\n				\r\n				});\r\n			}\r\n			else {\r\n				$(''.popupWindow'').hide(0.2, function() {\r\n				\r\n				});\r\n			}\r\n		});\r\n	 	 return false;\r\n	}\r\n\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
+(28, 22, 7, '2012-10-05 15:25:17', 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n	var _gaq = _gaq || [];\r\n	_gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n	_gaq.push([''_trackPageview'']);\r\n	\r\n	(function() {\r\n		var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n		ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n		var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n	})();\r\n\r\n	function confirmAction(message) {\r\n		confirmation = window.confirm(message);\r\n		if (confirmation) {\r\n			return true;\r\n		}\r\n		else {\r\n			return false;\r\n		}\r\n	}\r\n	\r\n	function togglePopupWindow() {\r\n		$(''.popupWindowShadow'').toggle(0.2, function() {\r\n			if ($(''.popupWindowShadow'').is('':visible'') == true) {\r\n				$(''.popupWindow'').show(0.2, function() {\r\n				\r\n				});\r\n			}\r\n			else {\r\n				$(''.popupWindow'').hide(0.2, function() {\r\n				\r\n				});\r\n			}\r\n		});\r\n	 	 return false;\r\n	}\r\n\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
+(29, 22, 8, '2012-10-05 15:26:49', 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n	var _gaq = _gaq || [];\r\n	_gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n	_gaq.push([''_trackPageview'']);\r\n	\r\n	(function() {\r\n		var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n		ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n		var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n	})();\r\n\r\n	function confirmAction(message) {\r\n		confirmation = window.confirm(message);\r\n		if (confirmation) {\r\n			return true;\r\n		}\r\n		else {\r\n			return false;\r\n		}\r\n	}\r\n	\r\n	function togglePopupWindow() {\r\n		$(''.popupWindowShadow'').toggle(0.5, function() {\r\n			if ($(''.popupWindowShadow'').is('':visible'') == true) {\r\n				$(''.popupWindow'').show(0.5, function() {\r\n				\r\n				});\r\n			}\r\n			else {\r\n				$(''.popupWindow'').hide(0.5, function() {\r\n				\r\n				});\r\n			}\r\n		});\r\n	 	 return false;\r\n	}\r\n\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
+(30, 22, 9, '2012-10-05 15:30:06', 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n	var _gaq = _gaq || [];\r\n	_gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n	_gaq.push([''_trackPageview'']);\r\n	\r\n	(function() {\r\n		var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n		ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n		var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n	})();\r\n\r\n	function confirmAction(message) {\r\n		confirmation = window.confirm(message);\r\n		if (confirmation) {\r\n			return true;\r\n		}\r\n		else {\r\n			return false;\r\n		}\r\n	}\r\n	\r\n	function togglePopupWindow() {\r\n		$(''.popupWindowShadow'').toggle("slow", function() {\r\n			if ($(''.popupWindowShadow'').is('':visible'') == true) {\r\n				$(''.popupWindow'').show("slow", function() {\r\n				\r\n				});\r\n			}\r\n			else {\r\n				$(''.popupWindow'').hide("slow", function() {\r\n				\r\n				});\r\n			}\r\n		});\r\n	 	 return false;\r\n	}\r\n\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
+(31, 22, 10, '2012-10-05 15:57:53', 'Head', 'head', 0, 0, 1, 0, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml">\r\n<head>\r\n<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\r\n<title>{#TITLE} - Mobile Application Store - Fuerte International</title>\r\n<link href="{#WEBROOT}assets/basic/css/styles.css" rel="stylesheet" type="text/css" />\r\n<meta name="keywords" content="{#KEYWORDS}" />\r\n<meta name="description" content="{#KEYWORDS}" />\r\n<script type="text/javascript">\r\n\r\n	var _gaq = _gaq || [];\r\n	_gaq.push([''_setAccount'', ''UA-515522-56'']);\r\n	_gaq.push([''_trackPageview'']);\r\n	\r\n	(function() {\r\n		var ga = document.createElement(''script''); ga.type = ''text/javascript''; ga.async = true;\r\n		ga.src = (''https:'' == document.location.protocol ? ''https://ssl'' : ''http://www'') + ''.google-analytics.com/ga.js'';\r\n		var s = document.getElementsByTagName(''script'')[0]; s.parentNode.insertBefore(ga, s);\r\n	})();\r\n\r\n	function confirmAction(message) {\r\n		confirmation = window.confirm(message);\r\n		if (confirmation) {\r\n			return true;\r\n		}\r\n		else {\r\n			return false;\r\n		}\r\n	}\r\n	\r\n</script>\r\n{#HEAD}\r\n</head>', '...'),
+(32, 27, 1, '2012-10-08 14:11:36', 'Add new app', 'add-new-app', 0, 0, 1, 0, '', '...'),
+(33, 27, 2, '2012-10-08 14:12:36', 'Add new app', 'add-new-app', 0, 0, 1, 0, '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button" onclick="return togglePopupWindow()">Add new app</a>\r\n</div>', '...'),
+(34, 27, 3, '2012-10-08 14:18:43', 'Add new app', 'add-new-app', 0, 3, 1, 0, '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button" onclick="return togglePopupWindow()">Add new app</a>\r\n</div>', '...'),
+(35, 27, 4, '2012-10-08 15:08:38', 'Add new app', 'add-new-app', 0, 4, 1, 0, '<div class="actionButtons">\r\n    <a href="{#WEBROOT}/admin/?part=system&mod=mobileapps&page=apps" class="button" onclick="return togglePopupWindow()">Add new app</a>\r\n</div>', '...');
 
 -- --------------------------------------------------------
 
@@ -4627,7 +4773,8 @@ INSERT INTO `pages_templates_revisions` (`id`, `pages_templates_id`, `revision`,
 -- Table structure for table `payments_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `payments_categories` (
+DROP TABLE IF EXISTS `payments_categories`;
+CREATE TABLE `payments_categories` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `parent` int(8) unsigned NOT NULL,
@@ -4653,7 +4800,8 @@ INSERT INTO `payments_categories` (`id`, `name`, `parent`, `head`, `description`
 -- Table structure for table `payments_costs`
 --
 
-CREATE TABLE IF NOT EXISTS `payments_costs` (
+DROP TABLE IF EXISTS `payments_costs`;
+CREATE TABLE `payments_costs` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
@@ -4677,7 +4825,8 @@ INSERT INTO `payments_costs` (`id`, `name`, `description`, `costs`, `added`, `ch
 -- Table structure for table `payments_customers`
 --
 
-CREATE TABLE IF NOT EXISTS `payments_customers` (
+DROP TABLE IF EXISTS `payments_customers`;
+CREATE TABLE `payments_customers` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `users_id` int(11) unsigned NOT NULL,
   `payments_services_id` int(8) unsigned DEFAULT NULL,
@@ -4707,7 +4856,8 @@ INSERT INTO `payments_customers` (`id`, `users_id`, `payments_services_id`, `add
 -- Table structure for table `payments_fundings`
 --
 
-CREATE TABLE IF NOT EXISTS `payments_fundings` (
+DROP TABLE IF EXISTS `payments_fundings`;
+CREATE TABLE `payments_fundings` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `payments_services_id` int(8) unsigned NOT NULL,
   `percent` int(3) NOT NULL DEFAULT '100',
@@ -4731,7 +4881,8 @@ INSERT INTO `payments_fundings` (`id`, `payments_services_id`, `percent`, `added
 -- Table structure for table `payments_payments`
 --
 
-CREATE TABLE IF NOT EXISTS `payments_payments` (
+DROP TABLE IF EXISTS `payments_payments`;
+CREATE TABLE `payments_payments` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `added` datetime NOT NULL,
   `changed` datetime NOT NULL,
@@ -4762,7 +4913,8 @@ INSERT INTO `payments_payments` (`id`, `added`, `changed`, `ammount`, `users_id`
 -- Table structure for table `payments_permissions`
 --
 
-CREATE TABLE IF NOT EXISTS `payments_permissions` (
+DROP TABLE IF EXISTS `payments_permissions`;
+CREATE TABLE `payments_permissions` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `system_users_id` int(8) unsigned NOT NULL,
   `payments_services_id` int(8) unsigned NOT NULL,
@@ -4783,7 +4935,8 @@ CREATE TABLE IF NOT EXISTS `payments_permissions` (
 -- Table structure for table `payments_services`
 --
 
-CREATE TABLE IF NOT EXISTS `payments_services` (
+DROP TABLE IF EXISTS `payments_services`;
+CREATE TABLE `payments_services` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `payments_categories_id` int(8) unsigned NOT NULL,
@@ -4811,7 +4964,8 @@ INSERT INTO `payments_services` (`id`, `name`, `payments_categories_id`, `price`
 -- Table structure for table `projects_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `projects_categories` (
+DROP TABLE IF EXISTS `projects_categories`;
+CREATE TABLE `projects_categories` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `parent` int(11) DEFAULT '0',
   `name` varchar(255) NOT NULL,
@@ -4841,7 +4995,8 @@ CREATE TABLE IF NOT EXISTS `projects_categories` (
 -- Table structure for table `projects_details`
 --
 
-CREATE TABLE IF NOT EXISTS `projects_details` (
+DROP TABLE IF EXISTS `projects_details`;
+CREATE TABLE `projects_details` (
   `id_pd` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name_pd` varchar(255) NOT NULL,
   `identifier_pd` varchar(255) NOT NULL,
@@ -4867,7 +5022,8 @@ CREATE TABLE IF NOT EXISTS `projects_details` (
 -- Table structure for table `projects_images`
 --
 
-CREATE TABLE IF NOT EXISTS `projects_images` (
+DROP TABLE IF EXISTS `projects_images`;
+CREATE TABLE `projects_images` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `smallid` bigint(20) NOT NULL,
   `projects_items_id` int(11) unsigned NOT NULL,
@@ -4909,7 +5065,8 @@ CREATE TABLE IF NOT EXISTS `projects_images` (
 -- Table structure for table `projects_images_details`
 --
 
-CREATE TABLE IF NOT EXISTS `projects_images_details` (
+DROP TABLE IF EXISTS `projects_images_details`;
+CREATE TABLE `projects_images_details` (
   `id_pid` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name_pid` varchar(255) NOT NULL,
   `identifier_pid` varchar(255) NOT NULL,
@@ -4930,7 +5087,8 @@ CREATE TABLE IF NOT EXISTS `projects_images_details` (
 -- Table structure for table `projects_items`
 --
 
-CREATE TABLE IF NOT EXISTS `projects_items` (
+DROP TABLE IF EXISTS `projects_items`;
+CREATE TABLE `projects_items` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `projects_categories_id` int(11) unsigned DEFAULT NULL,
   `name` varchar(255) NOT NULL,
@@ -4980,7 +5138,8 @@ INSERT INTO `projects_items` (`id`, `projects_categories_id`, `name`, `identifie
 -- Table structure for table `projects_listings`
 --
 
-CREATE TABLE IF NOT EXISTS `projects_listings` (
+DROP TABLE IF EXISTS `projects_listings`;
+CREATE TABLE `projects_listings` (
   `id_pl` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `pc_id_pl` int(8) NOT NULL,
   `name_pl` varchar(255) NOT NULL,
@@ -5009,7 +5168,8 @@ CREATE TABLE IF NOT EXISTS `projects_listings` (
 -- Table structure for table `projects_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `projects_templates` (
+DROP TABLE IF EXISTS `projects_templates`;
+CREATE TABLE `projects_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -5051,7 +5211,8 @@ INSERT INTO `projects_templates` (`id`, `name`, `identifier`, `pager`, `perpage`
 -- Table structure for table `rating_points`
 --
 
-CREATE TABLE IF NOT EXISTS `rating_points` (
+DROP TABLE IF EXISTS `rating_points`;
+CREATE TABLE `rating_points` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `added` datetime NOT NULL,
   `ip` varchar(20) NOT NULL,
@@ -5073,7 +5234,8 @@ CREATE TABLE IF NOT EXISTS `rating_points` (
 -- Table structure for table `rating_points_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `rating_points_groups` (
+DROP TABLE IF EXISTS `rating_points_groups`;
+CREATE TABLE `rating_points_groups` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `variable` varchar(50) NOT NULL,
@@ -5095,7 +5257,8 @@ INSERT INTO `rating_points_groups` (`id`, `name`, `variable`, `type`, `note`) VA
 -- Table structure for table `rssreader_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `rssreader_templates` (
+DROP TABLE IF EXISTS `rssreader_templates`;
+CREATE TABLE `rssreader_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -5124,7 +5287,8 @@ CREATE TABLE IF NOT EXISTS `rssreader_templates` (
 -- Table structure for table `rssreader_urls`
 --
 
-CREATE TABLE IF NOT EXISTS `rssreader_urls` (
+DROP TABLE IF EXISTS `rssreader_urls`;
+CREATE TABLE `rssreader_urls` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -5146,7 +5310,8 @@ CREATE TABLE IF NOT EXISTS `rssreader_urls` (
 -- Table structure for table `system_actualizations`
 --
 
-CREATE TABLE IF NOT EXISTS `system_actualizations` (
+DROP TABLE IF EXISTS `system_actualizations`;
+CREATE TABLE `system_actualizations` (
   `id` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `string` text NOT NULL,
   `added` datetime NOT NULL,
@@ -5165,7 +5330,8 @@ CREATE TABLE IF NOT EXISTS `system_actualizations` (
 -- Table structure for table `system_addons`
 --
 
-CREATE TABLE IF NOT EXISTS `system_addons` (
+DROP TABLE IF EXISTS `system_addons`;
+CREATE TABLE `system_addons` (
   `id` int(4) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
@@ -5185,7 +5351,8 @@ INSERT INTO `system_addons` (`id`, `name`) VALUES
 -- Table structure for table `system_codebackups`
 --
 
-CREATE TABLE IF NOT EXISTS `system_codebackups` (
+DROP TABLE IF EXISTS `system_codebackups`;
+CREATE TABLE `system_codebackups` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `filename` varchar(255) NOT NULL,
   `added` datetime NOT NULL,
@@ -5204,7 +5371,8 @@ CREATE TABLE IF NOT EXISTS `system_codebackups` (
 -- Table structure for table `system_countries`
 --
 
-CREATE TABLE IF NOT EXISTS `system_countries` (
+DROP TABLE IF EXISTS `system_countries`;
+CREATE TABLE `system_countries` (
   `id` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `iso1` char(2) NOT NULL,
@@ -5464,7 +5632,8 @@ INSERT INTO `system_countries` (`id`, `name`, `iso1`, `iso2`) VALUES
 -- Table structure for table `system_encoding`
 --
 
-CREATE TABLE IF NOT EXISTS `system_encoding` (
+DROP TABLE IF EXISTS `system_encoding`;
+CREATE TABLE `system_encoding` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `code` varchar(40) NOT NULL,
@@ -5628,7 +5797,8 @@ INSERT INTO `system_encoding` (`id`, `name`, `code`, `num`, `show`, `default`) V
 -- Table structure for table `system_errors_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `system_errors_templates` (
+DROP TABLE IF EXISTS `system_errors_templates`;
+CREATE TABLE `system_errors_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -5664,7 +5834,8 @@ INSERT INTO `system_errors_templates` (`id`, `name`, `identifier`, `errorbegin`,
 -- Table structure for table `system_images`
 --
 
-CREATE TABLE IF NOT EXISTS `system_images` (
+DROP TABLE IF EXISTS `system_images`;
+CREATE TABLE `system_images` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `filename` varchar(255) NOT NULL,
@@ -5687,7 +5858,8 @@ CREATE TABLE IF NOT EXISTS `system_images` (
 -- Table structure for table `system_images_folders`
 --
 
-CREATE TABLE IF NOT EXISTS `system_images_folders` (
+DROP TABLE IF EXISTS `system_images_folders`;
+CREATE TABLE `system_images_folders` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `system_websites_id` int(4) DEFAULT '1',
@@ -5709,7 +5881,8 @@ INSERT INTO `system_images_folders` (`id`, `name`, `system_websites_id`, `parent
 -- Table structure for table `system_language`
 --
 
-CREATE TABLE IF NOT EXISTS `system_language` (
+DROP TABLE IF EXISTS `system_language`;
+CREATE TABLE `system_language` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `code` char(3) NOT NULL,
@@ -5742,7 +5915,8 @@ INSERT INTO `system_language` (`id`, `name`, `code`, `image`, `directory`, `sort
 -- Table structure for table `system_modules`
 --
 
-CREATE TABLE IF NOT EXISTS `system_modules` (
+DROP TABLE IF EXISTS `system_modules`;
+CREATE TABLE `system_modules` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
   `added` datetime NOT NULL,
@@ -5813,7 +5987,8 @@ INSERT INTO `system_modules` (`id`, `name`, `added`, `part`) VALUES
 -- Table structure for table `system_modules_permissions`
 --
 
-CREATE TABLE IF NOT EXISTS `system_modules_permissions` (
+DROP TABLE IF EXISTS `system_modules_permissions`;
+CREATE TABLE `system_modules_permissions` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `system_modules_id` int(6) unsigned DEFAULT NULL,
   `system_teams_id` int(8) unsigned DEFAULT NULL,
@@ -5822,7 +5997,7 @@ CREATE TABLE IF NOT EXISTS `system_modules_permissions` (
   KEY `system_modules_id` (`system_modules_id`),
   KEY `system_teams_id` (`system_teams_id`),
   KEY `perm` (`perm`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=631 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=656 ;
 
 --
 -- Dumping data for table `system_modules_permissions`
@@ -5832,20 +6007,20 @@ INSERT INTO `system_modules_permissions` (`id`, `system_modules_id`, `system_tea
 (482, 42, 2, 1),
 (481, 40, 2, 1),
 (480, 36, 2, 1),
-(630, 13, 1, 1),
-(629, 32, 1, 1),
-(628, 12, 1, 1),
-(627, 35, 1, 1),
-(626, 11, 1, 1),
-(625, 51, 1, 1),
-(624, 54, 1, 1),
-(623, 9, 1, 1),
-(622, 8, 1, 1),
+(655, 13, 1, 1),
+(654, 32, 1, 1),
+(653, 12, 1, 1),
+(652, 35, 1, 1),
+(651, 11, 1, 1),
+(650, 10, 1, 1),
+(649, 51, 1, 1),
+(648, 9, 1, 1),
+(647, 8, 1, 1),
 (483, 10, 2, 1),
-(621, 6, 1, 1),
-(620, 4, 1, 1),
-(619, 2, 1, 1),
-(618, 50, 1, 1);
+(646, 6, 1, 1),
+(645, 4, 1, 1),
+(644, 2, 1, 1),
+(643, 50, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -5853,7 +6028,8 @@ INSERT INTO `system_modules_permissions` (`id`, `system_modules_id`, `system_tea
 -- Table structure for table `system_query_analyzer`
 --
 
-CREATE TABLE IF NOT EXISTS `system_query_analyzer` (
+DROP TABLE IF EXISTS `system_query_analyzer`;
+CREATE TABLE `system_query_analyzer` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
   `query` text NOT NULL,
   `count` int(16) NOT NULL,
@@ -5873,7 +6049,8 @@ CREATE TABLE IF NOT EXISTS `system_query_analyzer` (
 -- Table structure for table `system_rewrites`
 --
 
-CREATE TABLE IF NOT EXISTS `system_rewrites` (
+DROP TABLE IF EXISTS `system_rewrites`;
+CREATE TABLE `system_rewrites` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `rule` varchar(255) NOT NULL,
   `document` varchar(255) NOT NULL,
@@ -5893,7 +6070,8 @@ CREATE TABLE IF NOT EXISTS `system_rewrites` (
 -- Table structure for table `system_settings`
 --
 
-CREATE TABLE IF NOT EXISTS `system_settings` (
+DROP TABLE IF EXISTS `system_settings`;
+CREATE TABLE `system_settings` (
   `id` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `group` varchar(40) NOT NULL,
   `prop` varchar(40) NOT NULL,
@@ -5913,7 +6091,8 @@ CREATE TABLE IF NOT EXISTS `system_settings` (
 -- Table structure for table `system_teams`
 --
 
-CREATE TABLE IF NOT EXISTS `system_teams` (
+DROP TABLE IF EXISTS `system_teams`;
+CREATE TABLE `system_teams` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `note` text NOT NULL,
@@ -5937,7 +6116,8 @@ INSERT INTO `system_teams` (`id`, `name`, `note`, `ipfilter`, `superadmin`) VALU
 -- Table structure for table `system_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `system_templates` (
+DROP TABLE IF EXISTS `system_templates`;
+CREATE TABLE `system_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -5987,7 +6167,8 @@ INSERT INTO `system_templates` (`id`, `name`, `identifier`, `module`, `pager`, `
 -- Table structure for table `system_users`
 --
 
-CREATE TABLE IF NOT EXISTS `system_users` (
+DROP TABLE IF EXISTS `system_users`;
+CREATE TABLE `system_users` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `nickname` varchar(60) NOT NULL,
   `mail` varchar(150) NOT NULL,
@@ -6011,7 +6192,7 @@ CREATE TABLE IF NOT EXISTS `system_users` (
 --
 
 INSERT INTO `system_users` (`id`, `nickname`, `mail`, `pass`, `firstname`, `lastname`, `lastlogin`, `lastip`, `system_team_id`, `timever`, `codever`, `active`, `xdata`) VALUES
-(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-10-02 14:49:17', '127.0.0.1', 1, '1349189917', '15531', 1, ''),
+(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-10-08 13:34:25', '127.0.0.1', 1, '1349705357', '35083', 1, ''),
 (2, 'ninjabiscuit', 'andreww@fiftyfootsquid.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', 'Andrew', 'Walker', '2009-08-10 16:23:02', '87.194.126.191', 1, '1249914182', '31432', 1, ''),
 (3, 'editor', 'editor@xprogress.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'test', 'test', '2009-08-23 17:20:49', '78.86.171.36', 2, '1251041359', '2044', 1, ''),
 (4, 'ash', 'ashleymills@mac.com', '7ab515d12bd2cf431745511ac4ee13fed15ab578', 'Ashley', 'Mills', '2009-08-23 22:35:41', '78.86.171.36', 2, '1251059786', '17947', 1, ''),
@@ -6024,7 +6205,8 @@ INSERT INTO `system_users` (`id`, `nickname`, `mail`, `pass`, `firstname`, `last
 -- Table structure for table `system_validations`
 --
 
-CREATE TABLE IF NOT EXISTS `system_validations` (
+DROP TABLE IF EXISTS `system_validations`;
+CREATE TABLE `system_validations` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(80) NOT NULL,
   `regex` varchar(255) NOT NULL,
@@ -6048,7 +6230,8 @@ INSERT INTO `system_validations` (`id`, `name`, `regex`, `function`, `revert`, `
 -- Table structure for table `system_websites`
 --
 
-CREATE TABLE IF NOT EXISTS `system_websites` (
+DROP TABLE IF EXISTS `system_websites`;
+CREATE TABLE `system_websites` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `code` char(3) NOT NULL,
@@ -6076,7 +6259,8 @@ INSERT INTO `system_websites` (`id`, `name`, `code`, `image`, `directory`, `sort
 -- Table structure for table `system_websites_permissions`
 --
 
-CREATE TABLE IF NOT EXISTS `system_websites_permissions` (
+DROP TABLE IF EXISTS `system_websites_permissions`;
+CREATE TABLE `system_websites_permissions` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `system_websites_id` int(4) NOT NULL,
   `system_users_id` int(8) unsigned NOT NULL,
@@ -6097,7 +6281,8 @@ CREATE TABLE IF NOT EXISTS `system_websites_permissions` (
 -- Table structure for table `tinyurls_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `tinyurls_templates` (
+DROP TABLE IF EXISTS `tinyurls_templates`;
+CREATE TABLE `tinyurls_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -6125,7 +6310,8 @@ CREATE TABLE IF NOT EXISTS `tinyurls_templates` (
 -- Table structure for table `tinyurls_urls`
 --
 
-CREATE TABLE IF NOT EXISTS `tinyurls_urls` (
+DROP TABLE IF EXISTS `tinyurls_urls`;
+CREATE TABLE `tinyurls_urls` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -6147,7 +6333,8 @@ CREATE TABLE IF NOT EXISTS `tinyurls_urls` (
 -- Table structure for table `twitter_accounts`
 --
 
-CREATE TABLE IF NOT EXISTS `twitter_accounts` (
+DROP TABLE IF EXISTS `twitter_accounts`;
+CREATE TABLE `twitter_accounts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -6172,7 +6359,8 @@ INSERT INTO `twitter_accounts` (`id`, `name`, `password`, `added`, `users_id`, `
 -- Table structure for table `twitter_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `twitter_templates` (
+DROP TABLE IF EXISTS `twitter_templates`;
+CREATE TABLE `twitter_templates` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -6203,7 +6391,8 @@ INSERT INTO `twitter_templates` (`id`, `name`, `identifier`, `temptype`, `limit`
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `users_groups_id` int(8) unsigned NOT NULL,
   `nickname` varchar(20) NOT NULL,
@@ -6236,8 +6425,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `users_groups_id`, `nickname`, `mail`, `password`, `question`, `ansver`, `added`, `online`, `changed`, `timever`, `codever`, `active`, `lastlogin`, `gender`, `lastip`, `firstname`, `lastname`, `system_countries_id`, `visits`, `downloads`, `xdata`) VALUES
-(1, 2, 'ondrej', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'que?', 'pasa', '2009-03-02 13:18:27', '2009-03-02 13:17:00', '2010-02-04 10:51:44', '', '', 1, '2012-10-02 15:59:28', 'm', '127.0.0.1', 'Ondrej', 'Rafaj', 56, 0, 0, ''),
-(2, 1, 'jakub.rafaj', 'jakub.rafaj@fuerteint.com', 'aaaaaa', '', '', '2012-10-01 22:18:52', '2012-10-01 22:18:00', '2012-10-01 22:18:52', '', '', 1, '2012-10-01 22:18:00', 'm', '', 'Jakub', 'Rafaj', 56, 0, 0, '');
+(1, 1, 'ondrej', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'que?', 'pasa', '2009-03-02 13:18:27', '2009-03-02 13:17:00', '2012-10-02 18:59:50', '', '', 1, '2012-10-08 14:34:28', 'm', '127.0.0.1', 'Ondrej', 'Rafaj', 56, 0, 0, ''),
+(2, 2, 'jakub.rafaj', 'jakub.rafaj@fuerteint.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', '', '', '2012-10-01 22:18:52', '2012-10-01 22:18:00', '2012-10-02 17:16:40', '', '', 1, '2012-10-02 17:15:00', 'm', '127.0.0.1', 'Jakub', 'Rafaj', 56, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -6245,7 +6434,8 @@ INSERT INTO `users` (`id`, `users_groups_id`, `nickname`, `mail`, `password`, `q
 -- Table structure for table `users_fields`
 --
 
-CREATE TABLE IF NOT EXISTS `users_fields` (
+DROP TABLE IF EXISTS `users_fields`;
+CREATE TABLE `users_fields` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   `note` text NOT NULL,
@@ -6270,7 +6460,8 @@ CREATE TABLE IF NOT EXISTS `users_fields` (
 -- Table structure for table `users_fields_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `users_fields_groups` (
+DROP TABLE IF EXISTS `users_fields_groups`;
+CREATE TABLE `users_fields_groups` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `users_groups_id` int(8) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -6290,7 +6481,8 @@ CREATE TABLE IF NOT EXISTS `users_fields_groups` (
 -- Table structure for table `users_friends`
 --
 
-CREATE TABLE IF NOT EXISTS `users_friends` (
+DROP TABLE IF EXISTS `users_friends`;
+CREATE TABLE `users_friends` (
   `users_id` int(11) unsigned NOT NULL,
   `fiend_id` int(11) unsigned NOT NULL,
   `added` datetime NOT NULL,
@@ -6310,7 +6502,8 @@ CREATE TABLE IF NOT EXISTS `users_friends` (
 -- Table structure for table `users_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `users_groups` (
+DROP TABLE IF EXISTS `users_groups`;
+CREATE TABLE `users_groups` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `system_websites_id` int(4) DEFAULT NULL,
@@ -6327,8 +6520,8 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
 --
 
 INSERT INTO `users_groups` (`id`, `name`, `system_websites_id`, `system_language_id`, `emails_templates_id`) VALUES
-(1, 'Registered', 1, 1, 1),
-(2, 'Clients', 1, 1, 1);
+(1, 'Admin', 4, 1, 1),
+(2, 'Clients', 4, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -6336,7 +6529,8 @@ INSERT INTO `users_groups` (`id`, `name`, `system_websites_id`, `system_language
 -- Table structure for table `users_invitations`
 --
 
-CREATE TABLE IF NOT EXISTS `users_invitations` (
+DROP TABLE IF EXISTS `users_invitations`;
+CREATE TABLE `users_invitations` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `code` int(8) unsigned NOT NULL,
   `users_groups_id` int(8) unsigned DEFAULT NULL,
@@ -6356,7 +6550,8 @@ CREATE TABLE IF NOT EXISTS `users_invitations` (
 -- Table structure for table `users_messages`
 --
 
-CREATE TABLE IF NOT EXISTS `users_messages` (
+DROP TABLE IF EXISTS `users_messages`;
+CREATE TABLE `users_messages` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `users_id` int(11) unsigned DEFAULT NULL,
   `from_id` int(11) unsigned DEFAULT NULL,
@@ -6379,7 +6574,8 @@ CREATE TABLE IF NOT EXISTS `users_messages` (
 -- Table structure for table `users_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `users_templates` (
+DROP TABLE IF EXISTS `users_templates`;
+CREATE TABLE `users_templates` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `identifier` varchar(255) NOT NULL,
@@ -6425,7 +6621,8 @@ INSERT INTO `users_templates` (`id`, `name`, `identifier`, `temptype`, `pager`, 
 -- Table structure for table `youtube_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `youtube_categories` (
+DROP TABLE IF EXISTS `youtube_categories`;
+CREATE TABLE `youtube_categories` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `parent` int(8) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -6452,7 +6649,8 @@ INSERT INTO `youtube_categories` (`id`, `parent`, `name`, `description`, `added`
 -- Table structure for table `youtube_videos`
 --
 
-CREATE TABLE IF NOT EXISTS `youtube_videos` (
+DROP TABLE IF EXISTS `youtube_videos`;
+CREATE TABLE `youtube_videos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `added` datetime NOT NULL,

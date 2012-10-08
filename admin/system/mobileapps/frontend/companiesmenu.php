@@ -1,6 +1,6 @@
 <?php
 $arr = CompaniesModel::getSelfData();
-$companyId = (int)$_GET['companyId'];
+$companyId = (int)((isset($_GET['companyId'])) ? $_GET['companyId'] : 0);
 if (!$companyId) $companyId = (!empty($arr)) ? $arr[0]->getId() : 0;
 $completeNumberOfUsers = UsersModel::doCount(array());
 ?>

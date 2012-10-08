@@ -6,7 +6,7 @@ else {
 	$ids = MobileappsUsersModel::getCompaniesIdsForUser(moduleUsers::getId());
 	$arr = MobileappsModel::getGroupedSelfDataForCompanyIds($ids);
 }
-$mobileAppId = $_GET['mobileAppId'];
+$mobileAppId = (isset($_GET['mobileAppId'])) ? $_GET['mobileAppId'] : '';
 if (!$mobileAppId || !MobileappsModel::isDataForIdentifier($mobileAppId)) $mobileAppId = (!empty($arr)) ? $arr[0]->getIdentifier() : '';
 
 ?>
