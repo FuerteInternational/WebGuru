@@ -1,5 +1,20 @@
 <?php
 
+$uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()"></div>
+<div class="popupWindow">
+	<div class="content">
+		<form action="" method="post" enctype="multipart/form-data">
+			<input type="file" name="file" id="ipaFile" style="display:none;" onchange="startUploadingApp()" />
+			<a href="#" class="button" id="uploadIpaFileButton"  onclick="return clickUploadButton()">Pick an app</a>
+			<button type="submit" style="display:none;" id="submitIpaButton" name="submitIpaButton">Submit</button>
+			<p id="infoText" style="display:none;">Your application is being uploaded now! Please wait for a page refresh.</p>
+		</form>
+	</div>
+</div>
+';
+
+if (!moduleUsers::isAdmin()) $uploadNewAppForm = '';
+
 if ($mobileAppId) {
 	$arr = MobileappsModel::getSelfDataForIdentifier($mobileAppId);
 	$app = MobileappsModel::getItemGeneralItemInfo($mobileAppId);
@@ -46,17 +61,7 @@ function togglePopupWindow() {
 }
 
 </script>
-<div class="popupWindowShadow" onclick="togglePopupWindow()"></div>
-<div class="popupWindow">
-	<div class="content">
-		<form action="" method="post" enctype="multipart/form-data">
-			<input type="file" name="file" id="ipaFile" style="display:none;" onchange="startUploadingApp()" />
-			<a href="#" class="button" id="uploadIpaFileButton"  onclick="return clickUploadButton()">Pick an app</a>
-			<button type="submit" style="display:none;" id="submitIpaButton" name="submitIpaButton">Submit</button>
-			<p id="infoText" style="display:none;">Your application is being uploaded now! Please wait for a page refresh.</p>
-		</form>
-	</div>
-</div>
+<?php echo $uploadNewAppForm; ?>
 <div class="appDetail" style="margin-top: <?php echo $space; ?>px;">
     <div class="box noBorder">
         <h3 class="appName"><?php echo $app->getName(); ?></h3>
@@ -162,7 +167,7 @@ function togglePopupWindow() {
 <?php
 }
 else {
-?>
+	echo $uploadNewAppForm; ?>
 <div class="appDetail">
     <div class="box noBorder">
         <h3 class="appName">No app has been selected</h3>
