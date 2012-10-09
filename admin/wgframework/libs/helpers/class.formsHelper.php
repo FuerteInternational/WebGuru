@@ -7,6 +7,8 @@ class formsHelper extends baseHelper {
 	
 	// TODO: improve data access !!!!
 	public static function getSelectBox($name, $selected=NULL, $data=array(), $params=array(), $addNullValue=false) {
+		$isNumeric = true;
+		if (is_string($selected)) $isNumeric = false; 
 		if (!isset($params['id'])) $params['id'] = $name;
 		$class = NULL;
 		if (isset($params['baseclass'])) {
@@ -18,7 +20,7 @@ class formsHelper extends baseHelper {
 		else $data = parent::getBasicData($data, parent::DATA_VAL_NAME);
 		$code = '<select'.$params.'>';
 		if ((bool) $addNullValue) {
-			$code .= '<option value="0"'.(($selected == 0) ? ' selected="selected"' : NULL).'>'.$addNullValue.'</option>';
+			$code .= '<option value="'.($isNumeric ? '0' : '').'"'.(($selected == 0) ? ' selected="selected"' : NULL).'>'.$addNullValue.'</option>';
 		}
 		foreach ($data as $k=>$v) {
 			
