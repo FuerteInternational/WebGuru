@@ -1,0 +1,448 @@
+/* General section */
+* {
+	margin:0;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+	color:#000;
+}
+html {
+	background-color:#ECECEC;
+}
+body {
+}
+a {
+}
+a:hover {
+}
+p {
+}
+li {
+	list-style: none;
+}
+button, .button {
+	display: block;
+	border-style:none;
+	background-color:#646464;
+	color:#FFF;
+	width:164px;
+	height:34px;
+	line-height:34px;
+	font-weight:bold;
+	text-decoration: none;
+	text-align: center;
+	float: left;
+	cursor: pointer;	
+}
+.clear {
+	clear: both;
+	height: 32px;
+}
+#container {
+}
+
+#topLine {
+	height:12px;
+	background-color:#646464;
+}
+
+/* Errors section */
+
+div.errors {
+	padding-top:16px;
+	text-align:center;
+	font-size:12px;
+	margin-bottom:-16px;
+}
+div.errors ul {
+	border:solid 1px;
+	padding:3px;
+	margin-left:16px;
+	margin-right:16px;
+	margin-bottom:6px;
+}
+div.errors ul li {
+}
+div.errors ul.red {
+	color:#900;
+	background-color:#FFF2F2;
+}
+div.errors ul.green {
+	color:#090;
+	background-color:#F5FFF6;
+}
+div.errors ul.orange {
+	color:#C60;
+	background-color:#FFFAEB;
+}
+div.errors ul.red li {
+	color:#900;
+}
+div.errors ul.green li {
+	color:#090;
+}
+div.errors ul.orange li {
+	color:#C60;
+}
+div.errors ul li {
+	margin-top:3px;
+	margin-bottom:3px;
+}
+
+/* Header section */
+
+#header {
+	margin-top:20px;
+	width:970px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#header h1 {
+	height:52px;
+	line-height: 52px;
+	background-color: #FFF;
+	width: 180px;
+	background-image: url("../img/F1_logo_content.png");
+	background-repeat: no-repeat;
+	background-position: 16px center;
+}
+#header h1 span {
+	display: none;
+}
+#header ul {
+	float: left;
+	margin-left: 180px;
+	margin-top: -52px;
+}
+#header ul li {
+	float: left;
+}
+#header ul li a {
+	display: block;
+	float: left;
+	width: 100px;
+	height:52px;
+	line-height: 52px;
+	text-decoration: none;
+	background-color: #FFF;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+}
+#header ul li.active a {
+	color: #646464;
+}
+#header ul li a:hover {
+	color: #646464;
+}
+#header p {
+	height:52px;
+	line-height: 52px;
+	float: right;
+	width: 200px;
+	margin-top: -52px;
+	font-size: 11px;
+	color: #CCC;
+	text-align: right;
+}
+#header p a {
+	color: #646464;
+}
+
+/* Page section */
+
+#page {
+	clear: both;
+	width:970px;
+	background-color:#FFF;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#page div.actionButtons {
+	padding-top: 32px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+#page div.actionButtons button, #page div.actionButtons a.button {
+	margin-right: 16px;
+}
+#page div.content {
+	clear: both;
+	margin-left: 30px;
+	margin-right: 16px;
+	padding-top:32px;
+}
+#page div.content ul.menu {
+	margin-bottom: 50px;
+	width: 330px;
+	float: left;
+}
+#page div.content ul.menu li {
+}
+#page div.content ul.menu li.active {
+}
+#page div.content ul.menu a {
+	text-decoration: none;
+	display: block;
+	height: 69px;
+	padding-left: 32px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background-color:#FFF;
+}
+#page div.content ul.menu li.active a {
+	border-left: solid 4px #646464;
+	padding-left: 28px;
+	background-color:#F9F9F9;
+}
+#page div.content ul.menu a:hover {
+	padding-left: 28px;
+	border-left-width: 4px;
+	border-left-style: solid;
+	border-left-color: #FEEFEC;
+	background-color: #FEFEFE;
+}
+#page div.content ul.menu a img {
+	width: 57px;
+	height: 57px;
+	margin-top: 6px;
+	float: left;
+	-moz-border-radius:8px;
+	border-radius:8px;
+}
+#page div.content ul.menu a strong {
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+	padding-top: 16px;
+	margin-left: 70px;
+}
+#page div.content ul.menu a small {
+	display: block;
+	font-size: 10px;
+	color: #CCC;
+	margin-left: 70px;
+}
+#page div.content ul.menu a small span {
+	font-weight: bold;
+}
+#page div.content div.popupWindowShadow {
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	opacity:0.2;
+	z-index:250;
+	top:0px;
+	left:0px;
+}
+#page div.content div.popupWindow {
+	display:none;
+	position:fixed;
+	z-index:500;
+	width:808px;
+	margin-left:50px;
+	background-color:#646464;
+}
+#page div.content div.popupWindow div.content {
+	margin:8px;
+	background-color:#FFF;
+	min-height:300px;
+}
+#page div.content div.appDetail {
+	float: left;
+	width: 580px;
+	background-color:#F9F9F9;
+	padding-top:24px;
+}
+#page div.content div.appDetail .appName {
+	font-size:18px;
+	margin-bottom:6px!important;
+}
+#page div.content div.appDetail .appBundleId {
+	font-size:12px;
+	color:#999;
+	margin-bottom:32px;
+}
+#page div.content div.appDetail .rightButton {
+	float:right;
+	margin-top:-70px;
+}
+#page div.content div.appDetail .box {
+	border: solid 1px #CDCDCD;
+	clear: both;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	margin-left: 30px;
+	padding-top: 22px;
+	padding-right: 22px;
+	padding-left: 22px;
+}
+#page div.content div.appDetail .box .bigAppDetailIcon {
+	float: right;
+	-moz-border-radius:12px;
+	border-radius:12px;
+}
+#page div.content div.appDetail .noBorder {
+	padding-right: 23px;
+	999padding-left: 23px;
+	border:none;
+}
+#page div.content div.appDetail .box h3 {
+	margin-bottom:16px;
+}
+#page div.content div.appDetail .box ul.values {
+	margin-bottom:16px;
+}
+#page div.content div.appDetail .box ul.values li {
+	color:#666;
+	font-size:12px;
+	margin-bottom:6px;
+	width:408px;
+}
+#page div.content div.appDetail .box ul.values li span {
+	display:block;
+	float:right;
+	color:#666;
+	width:234px;
+}
+#page div.content div.appDetail .box ul.checkboxList {
+	margin-bottom:16px;
+}
+#page div.content div.appDetail .box ul.checkboxList img {
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-right:16px;
+	float:left;
+}
+#page div.content div.appDetail .box ul.checkboxList li {
+	display:block;
+	height:36px;
+	line-height:36px;
+	padding-left:16px;
+	color:#666;
+	font-size:12px;
+	margin-bottom:2px;
+}
+#page div.content div.appDetail .box ul.checkboxList li:hover {
+	background-color: #FFF;
+}
+#page div.content div.appDetail .box ul.checkboxList li span {
+}
+#page div.content div.appDetail .box ul.checkboxList li input {
+	float:right;
+	margin-top:12px;
+	margin-right:16px;
+}
+#page div.content div.appDetail .box .controls {
+	height:32px;
+	margin-bottom:32px;
+}
+#page div.content div.appDetail .box .controls {
+	height:32px;
+	margin-bottom:32px;
+}
+#page div.content div.appDetail p.peopleInfo {
+	margin-bottom: 32px;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 38px;
+	background-image: url(../img/F1_logo_who.png);
+	background-repeat: no-repeat;
+	background-position: 6px center;
+}
+#page div.content div.appDetail button, #page div.content div.appDetail .button {
+	background-color:#656565;
+	margin-right:16px;
+	width:118px;
+	height:32px;
+}
+
+/* Login section */
+
+#login {
+	width:600px;
+	height:460px;
+	margin-top:50px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#FFF;
+	background-image: url("../img/F1_logo_login.png");
+	background-repeat: no-repeat;
+	background-position: center 30px;
+}
+#login h1 {
+	text-align:center;
+	color:#666;
+	font-weight:normal;
+	font-size:22px;
+	padding-top:130px;
+	margin-bottom:50px;
+}
+#login h1 strong {
+	display:block;
+	color:#000;
+	font-weight:bold;
+}
+#login p {
+	margin-bottom:14px;
+	text-align:center;
+}
+#login p input {
+	width:321px;
+	height:50px;
+	background-color:#F9F9F9!important;
+	border-color:#B7B7B7;
+	border-width:1px;
+	border-style:solid;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:15px;
+	-webkit-appearance: none;
+}
+input:focus {
+	background: transparent;
+}
+input:-webkit-autofill {
+	background-color:#F00;	
+}
+#login p input[type="password"] {
+	width:286px;
+	padding-left:50px;
+	background-image: url("../img/F1_ico_lock.png")!important;
+	background-repeat: no-repeat;
+	background-position: 18px center;
+}
+#login p input[type="password"]:focus {
+	outline: none;
+}
+#login p a {
+	display:block;
+	width:336px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-left:132px;
+	text-align:right;
+	color:#646464;
+	font-size:12px;
+	padding-top:3px;
+}
+#login p a:hover {
+	text-decoration:none;
+}
+#login p button {
+	width:164px;
+	margin-top:18px;
+	margin-left:218px;
+}
+
+/* Footer section */
+
+#footer {
+}
