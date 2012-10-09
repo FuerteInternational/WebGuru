@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:56
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseSystemTemplatesModel extends DbModel {
@@ -414,7 +414,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getId', __LINE__, __FILE__);
@@ -470,7 +470,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getPager() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getPager', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getPager', __LINE__, __FILE__);
@@ -484,7 +484,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getLimit() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getLimit', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getLimit', __LINE__, __FILE__);
@@ -498,7 +498,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getTemptype() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (int) $this->_result[6];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getTemptype', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getTemptype', __LINE__, __FILE__);
@@ -512,7 +512,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getDatasource() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getDatasource', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getDatasource', __LINE__, __FILE__);
@@ -526,7 +526,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getGroup1() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(8, $this->_result)) return (string) $this->_result[8];
+			if (array_key_exists(8, $this->_result)) return (int) $this->_result[8];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getGroup1', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getGroup1', __LINE__, __FILE__);
@@ -540,7 +540,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getGroup2() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(9, $this->_result)) return (string) $this->_result[9];
+			if (array_key_exists(9, $this->_result)) return (int) $this->_result[9];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getGroup2', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getGroup2', __LINE__, __FILE__);
@@ -554,7 +554,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getGroup3() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getGroup3', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getGroup3', __LINE__, __FILE__);
@@ -722,7 +722,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getInt1() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(22, $this->_result)) return (string) $this->_result[22];
+			if (array_key_exists(22, $this->_result)) return (int) $this->_result[22];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getInt1', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getInt1', __LINE__, __FILE__);
@@ -736,7 +736,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getInt2() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(23, $this->_result)) return (string) $this->_result[23];
+			if (array_key_exists(23, $this->_result)) return (int) $this->_result[23];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getInt2', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getInt2', __LINE__, __FILE__);
@@ -750,7 +750,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getInt3() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(24, $this->_result)) return (string) $this->_result[24];
+			if (array_key_exists(24, $this->_result)) return (int) $this->_result[24];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getInt3', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getInt3', __LINE__, __FILE__);
@@ -764,7 +764,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getTint1() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(25, $this->_result)) return (string) $this->_result[25];
+			if (array_key_exists(25, $this->_result)) return (int) $this->_result[25];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getTint1', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getTint1', __LINE__, __FILE__);
@@ -778,7 +778,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getTint2() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(26, $this->_result)) return (string) $this->_result[26];
+			if (array_key_exists(26, $this->_result)) return (int) $this->_result[26];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getTint2', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getTint2', __LINE__, __FILE__);
@@ -792,7 +792,7 @@ class BaseSystemTemplatesModel extends DbModel {
 	 */
 	public function getTint3() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(27, $this->_result)) return (string) $this->_result[27];
+			if (array_key_exists(27, $this->_result)) return (int) $this->_result[27];
 			else parent::throwGetColException('Not set SystemTemplatesModel::getTint3', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemTemplatesModel::getTint3', __LINE__, __FILE__);

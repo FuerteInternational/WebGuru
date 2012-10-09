@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseImessagesFieldsModel extends DbModel {
@@ -274,7 +274,7 @@ class BaseImessagesFieldsModel extends DbModel {
 	 */
 	public function getImessagesFormsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set ImessagesFieldsModel::getImessagesFormsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ImessagesFieldsModel::getImessagesFormsId', __LINE__, __FILE__);
@@ -330,7 +330,7 @@ class BaseImessagesFieldsModel extends DbModel {
 	 */
 	public function getMandatory() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set ImessagesFieldsModel::getMandatory', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ImessagesFieldsModel::getMandatory', __LINE__, __FILE__);
@@ -344,7 +344,7 @@ class BaseImessagesFieldsModel extends DbModel {
 	 */
 	public function getSort() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (int) $this->_result[6];
 			else parent::throwGetColException('Not set ImessagesFieldsModel::getSort', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ImessagesFieldsModel::getSort', __LINE__, __FILE__);
@@ -358,7 +358,7 @@ class BaseImessagesFieldsModel extends DbModel {
 	 */
 	public function getValidation() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set ImessagesFieldsModel::getValidation', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ImessagesFieldsModel::getValidation', __LINE__, __FILE__);

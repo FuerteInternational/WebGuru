@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseInnoportalIdeasModel extends DbModel {
@@ -330,7 +330,7 @@ class BaseInnoportalIdeasModel extends DbModel {
 	 */
 	public function getInnoportalGroupsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set InnoportalIdeasModel::getInnoportalGroupsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From InnoportalIdeasModel::getInnoportalGroupsId', __LINE__, __FILE__);
@@ -344,7 +344,7 @@ class BaseInnoportalIdeasModel extends DbModel {
 	 */
 	public function getRating() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set InnoportalIdeasModel::getRating', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From InnoportalIdeasModel::getRating', __LINE__, __FILE__);
@@ -358,7 +358,7 @@ class BaseInnoportalIdeasModel extends DbModel {
 	 */
 	public function getComments() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set InnoportalIdeasModel::getComments', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From InnoportalIdeasModel::getComments', __LINE__, __FILE__);
@@ -372,7 +372,7 @@ class BaseInnoportalIdeasModel extends DbModel {
 	 */
 	public function getAnsvered() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (int) $this->_result[6];
 			else parent::throwGetColException('Not set InnoportalIdeasModel::getAnsvered', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From InnoportalIdeasModel::getAnsvered', __LINE__, __FILE__);
@@ -428,7 +428,7 @@ class BaseInnoportalIdeasModel extends DbModel {
 	 */
 	public function getVotes() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set InnoportalIdeasModel::getVotes', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From InnoportalIdeasModel::getVotes', __LINE__, __FILE__);
@@ -442,7 +442,7 @@ class BaseInnoportalIdeasModel extends DbModel {
 	 */
 	public function getUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(11, $this->_result)) return (string) $this->_result[11];
+			if (array_key_exists(11, $this->_result)) return (int) $this->_result[11];
 			else parent::throwGetColException('Not set InnoportalIdeasModel::getUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From InnoportalIdeasModel::getUsersId', __LINE__, __FILE__);

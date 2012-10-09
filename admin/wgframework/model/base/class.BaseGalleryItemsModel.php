@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseGalleryItemsModel extends DbModel {
@@ -435,7 +435,7 @@ class BaseGalleryItemsModel extends DbModel {
 	 */
 	public function getUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(9, $this->_result)) return (string) $this->_result[9];
+			if (array_key_exists(9, $this->_result)) return (int) $this->_result[9];
 			else parent::throwGetColException('Not set GalleryItemsModel::getUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From GalleryItemsModel::getUsersId', __LINE__, __FILE__);
@@ -449,7 +449,7 @@ class BaseGalleryItemsModel extends DbModel {
 	 */
 	public function getSystemUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set GalleryItemsModel::getSystemUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From GalleryItemsModel::getSystemUsersId', __LINE__, __FILE__);
@@ -505,7 +505,7 @@ class BaseGalleryItemsModel extends DbModel {
 	 */
 	public function getSort() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(14, $this->_result)) return (string) $this->_result[14];
+			if (array_key_exists(14, $this->_result)) return (int) $this->_result[14];
 			else parent::throwGetColException('Not set GalleryItemsModel::getSort', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From GalleryItemsModel::getSort', __LINE__, __FILE__);

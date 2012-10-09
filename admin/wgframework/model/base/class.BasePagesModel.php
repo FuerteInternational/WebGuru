@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BasePagesModel extends DbModel {
@@ -400,7 +400,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set PagesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getId', __LINE__, __FILE__);
@@ -414,7 +414,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getSystemWebsitesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set PagesModel::getSystemWebsitesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getSystemWebsitesId', __LINE__, __FILE__);
@@ -428,7 +428,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getSystemLanguageId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set PagesModel::getSystemLanguageId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getSystemLanguageId', __LINE__, __FILE__);
@@ -442,7 +442,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getPagesTemplatesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set PagesModel::getPagesTemplatesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getPagesTemplatesId', __LINE__, __FILE__);
@@ -456,7 +456,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getRevision() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set PagesModel::getRevision', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getRevision', __LINE__, __FILE__);
@@ -624,7 +624,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getEnabled() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(16, $this->_result)) return (string) $this->_result[16];
+			if (array_key_exists(16, $this->_result)) return (int) $this->_result[16];
 			else parent::throwGetColException('Not set PagesModel::getEnabled', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getEnabled', __LINE__, __FILE__);
@@ -638,7 +638,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getMaster() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(17, $this->_result)) return (string) $this->_result[17];
+			if (array_key_exists(17, $this->_result)) return (int) $this->_result[17];
 			else parent::throwGetColException('Not set PagesModel::getMaster', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getMaster', __LINE__, __FILE__);
@@ -652,7 +652,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getParentid() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(18, $this->_result)) return (string) $this->_result[18];
+			if (array_key_exists(18, $this->_result)) return (int) $this->_result[18];
 			else parent::throwGetColException('Not set PagesModel::getParentid', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getParentid', __LINE__, __FILE__);
@@ -666,7 +666,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getHome() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(19, $this->_result)) return (string) $this->_result[19];
+			if (array_key_exists(19, $this->_result)) return (int) $this->_result[19];
 			else parent::throwGetColException('Not set PagesModel::getHome', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getHome', __LINE__, __FILE__);
@@ -680,7 +680,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getSort() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(20, $this->_result)) return (string) $this->_result[20];
+			if (array_key_exists(20, $this->_result)) return (int) $this->_result[20];
 			else parent::throwGetColException('Not set PagesModel::getSort', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getSort', __LINE__, __FILE__);
@@ -736,7 +736,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getRedirect1() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(24, $this->_result)) return (string) $this->_result[24];
+			if (array_key_exists(24, $this->_result)) return (int) $this->_result[24];
 			else parent::throwGetColException('Not set PagesModel::getRedirect1', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getRedirect1', __LINE__, __FILE__);
@@ -750,7 +750,7 @@ class BasePagesModel extends DbModel {
 	 */
 	public function getRedirect2() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(25, $this->_result)) return (string) $this->_result[25];
+			if (array_key_exists(25, $this->_result)) return (int) $this->_result[25];
 			else parent::throwGetColException('Not set PagesModel::getRedirect2', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PagesModel::getRedirect2', __LINE__, __FILE__);

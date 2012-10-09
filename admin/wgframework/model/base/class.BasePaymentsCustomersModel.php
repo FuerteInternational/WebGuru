@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BasePaymentsCustomersModel extends DbModel {
@@ -281,7 +281,7 @@ class BasePaymentsCustomersModel extends DbModel {
 	 */
 	public function getUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set PaymentsCustomersModel::getUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PaymentsCustomersModel::getUsersId', __LINE__, __FILE__);
@@ -295,7 +295,7 @@ class BasePaymentsCustomersModel extends DbModel {
 	 */
 	public function getPaymentsServicesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set PaymentsCustomersModel::getPaymentsServicesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PaymentsCustomersModel::getPaymentsServicesId', __LINE__, __FILE__);
@@ -351,7 +351,7 @@ class BasePaymentsCustomersModel extends DbModel {
 	 */
 	public function getCredit() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (int) $this->_result[6];
 			else parent::throwGetColException('Not set PaymentsCustomersModel::getCredit', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PaymentsCustomersModel::getCredit', __LINE__, __FILE__);
@@ -365,7 +365,7 @@ class BasePaymentsCustomersModel extends DbModel {
 	 */
 	public function getReminders() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set PaymentsCustomersModel::getReminders', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From PaymentsCustomersModel::getReminders', __LINE__, __FILE__);

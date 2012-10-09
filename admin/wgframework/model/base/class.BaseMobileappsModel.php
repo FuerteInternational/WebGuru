@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseMobileappsModel extends DbModel {
@@ -323,7 +323,7 @@ class BaseMobileappsModel extends DbModel {
 	 */
 	public function getDevtype() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set MobileappsModel::getDevtype', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MobileappsModel::getDevtype', __LINE__, __FILE__);
@@ -365,7 +365,7 @@ class BaseMobileappsModel extends DbModel {
 	 */
 	public function getSort() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (int) $this->_result[6];
 			else parent::throwGetColException('Not set MobileappsModel::getSort', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MobileappsModel::getSort', __LINE__, __FILE__);
@@ -421,7 +421,7 @@ class BaseMobileappsModel extends DbModel {
 	 */
 	public function getSize() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set MobileappsModel::getSize', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MobileappsModel::getSize', __LINE__, __FILE__);

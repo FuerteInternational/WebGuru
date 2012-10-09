@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseBlogFilesModel extends DbModel {
@@ -337,7 +337,7 @@ class BaseBlogFilesModel extends DbModel {
 	 */
 	public function getSize() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set BlogFilesModel::getSize', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogFilesModel::getSize', __LINE__, __FILE__);

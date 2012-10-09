@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseBlogTemplatesModel extends DbModel {
@@ -400,7 +400,7 @@ class BaseBlogTemplatesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set BlogTemplatesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogTemplatesModel::getId', __LINE__, __FILE__);
@@ -442,7 +442,7 @@ class BaseBlogTemplatesModel extends DbModel {
 	 */
 	public function getTemptype() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set BlogTemplatesModel::getTemptype', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogTemplatesModel::getTemptype', __LINE__, __FILE__);
@@ -484,7 +484,7 @@ class BaseBlogTemplatesModel extends DbModel {
 	 */
 	public function getLimit() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (int) $this->_result[6];
 			else parent::throwGetColException('Not set BlogTemplatesModel::getLimit', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogTemplatesModel::getLimit', __LINE__, __FILE__);
@@ -498,7 +498,7 @@ class BaseBlogTemplatesModel extends DbModel {
 	 */
 	public function getPager() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set BlogTemplatesModel::getPager', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogTemplatesModel::getPager', __LINE__, __FILE__);
@@ -512,7 +512,7 @@ class BaseBlogTemplatesModel extends DbModel {
 	 */
 	public function getSearch() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(8, $this->_result)) return (string) $this->_result[8];
+			if (array_key_exists(8, $this->_result)) return (int) $this->_result[8];
 			else parent::throwGetColException('Not set BlogTemplatesModel::getSearch', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogTemplatesModel::getSearch', __LINE__, __FILE__);
@@ -554,7 +554,7 @@ class BaseBlogTemplatesModel extends DbModel {
 	 */
 	public function getUseedit() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(11, $this->_result)) return (string) $this->_result[11];
+			if (array_key_exists(11, $this->_result)) return (int) $this->_result[11];
 			else parent::throwGetColException('Not set BlogTemplatesModel::getUseedit', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogTemplatesModel::getUseedit', __LINE__, __FILE__);
@@ -638,7 +638,7 @@ class BaseBlogTemplatesModel extends DbModel {
 	 */
 	public function getBlogCatsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(17, $this->_result)) return (string) $this->_result[17];
+			if (array_key_exists(17, $this->_result)) return (int) $this->_result[17];
 			else parent::throwGetColException('Not set BlogTemplatesModel::getBlogCatsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogTemplatesModel::getBlogCatsId', __LINE__, __FILE__);
@@ -652,7 +652,7 @@ class BaseBlogTemplatesModel extends DbModel {
 	 */
 	public function getBlogId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(18, $this->_result)) return (string) $this->_result[18];
+			if (array_key_exists(18, $this->_result)) return (int) $this->_result[18];
 			else parent::throwGetColException('Not set BlogTemplatesModel::getBlogId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogTemplatesModel::getBlogId', __LINE__, __FILE__);
@@ -666,7 +666,7 @@ class BaseBlogTemplatesModel extends DbModel {
 	 */
 	public function getSystemWebsitesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(19, $this->_result)) return (string) $this->_result[19];
+			if (array_key_exists(19, $this->_result)) return (int) $this->_result[19];
 			else parent::throwGetColException('Not set BlogTemplatesModel::getSystemWebsitesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogTemplatesModel::getSystemWebsitesId', __LINE__, __FILE__);

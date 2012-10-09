@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseEmailsTrimageModel extends DbModel {
@@ -253,7 +253,7 @@ class BaseEmailsTrimageModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set EmailsTrimageModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From EmailsTrimageModel::getId', __LINE__, __FILE__);
@@ -267,7 +267,7 @@ class BaseEmailsTrimageModel extends DbModel {
 	 */
 	public function getEmailTemplatesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set EmailsTrimageModel::getEmailTemplatesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From EmailsTrimageModel::getEmailTemplatesId', __LINE__, __FILE__);
@@ -281,7 +281,7 @@ class BaseEmailsTrimageModel extends DbModel {
 	 */
 	public function getEmailAddressesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set EmailsTrimageModel::getEmailAddressesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From EmailsTrimageModel::getEmailAddressesId', __LINE__, __FILE__);

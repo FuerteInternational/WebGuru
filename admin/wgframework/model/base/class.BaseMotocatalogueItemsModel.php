@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseMotocatalogueItemsModel extends DbModel {
@@ -337,7 +337,7 @@ class BaseMotocatalogueItemsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set MotocatalogueItemsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MotocatalogueItemsModel::getId', __LINE__, __FILE__);
@@ -435,7 +435,7 @@ class BaseMotocatalogueItemsModel extends DbModel {
 	 */
 	public function getPrice() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set MotocatalogueItemsModel::getPrice', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MotocatalogueItemsModel::getPrice', __LINE__, __FILE__);
@@ -463,7 +463,7 @@ class BaseMotocatalogueItemsModel extends DbModel {
 	 */
 	public function getTechnicalApprove() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(9, $this->_result)) return (string) $this->_result[9];
+			if (array_key_exists(9, $this->_result)) return (int) $this->_result[9];
 			else parent::throwGetColException('Not set MotocatalogueItemsModel::getTechnicalApprove', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MotocatalogueItemsModel::getTechnicalApprove', __LINE__, __FILE__);
@@ -477,7 +477,7 @@ class BaseMotocatalogueItemsModel extends DbModel {
 	 */
 	public function getOrigin() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set MotocatalogueItemsModel::getOrigin', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MotocatalogueItemsModel::getOrigin', __LINE__, __FILE__);
@@ -491,7 +491,7 @@ class BaseMotocatalogueItemsModel extends DbModel {
 	 */
 	public function getLeasing() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(11, $this->_result)) return (string) $this->_result[11];
+			if (array_key_exists(11, $this->_result)) return (int) $this->_result[11];
 			else parent::throwGetColException('Not set MotocatalogueItemsModel::getLeasing', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MotocatalogueItemsModel::getLeasing', __LINE__, __FILE__);
@@ -505,7 +505,7 @@ class BaseMotocatalogueItemsModel extends DbModel {
 	 */
 	public function getTax() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(12, $this->_result)) return (string) $this->_result[12];
+			if (array_key_exists(12, $this->_result)) return (int) $this->_result[12];
 			else parent::throwGetColException('Not set MotocatalogueItemsModel::getTax', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MotocatalogueItemsModel::getTax', __LINE__, __FILE__);
@@ -547,7 +547,7 @@ class BaseMotocatalogueItemsModel extends DbModel {
 	 */
 	public function getPromo() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(15, $this->_result)) return (string) $this->_result[15];
+			if (array_key_exists(15, $this->_result)) return (int) $this->_result[15];
 			else parent::throwGetColException('Not set MotocatalogueItemsModel::getPromo', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MotocatalogueItemsModel::getPromo', __LINE__, __FILE__);

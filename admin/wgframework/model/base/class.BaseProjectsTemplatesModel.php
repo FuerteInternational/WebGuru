@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseProjectsTemplatesModel extends DbModel {
@@ -365,7 +365,7 @@ class BaseProjectsTemplatesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set ProjectsTemplatesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsTemplatesModel::getId', __LINE__, __FILE__);
@@ -407,7 +407,7 @@ class BaseProjectsTemplatesModel extends DbModel {
 	 */
 	public function getPager() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set ProjectsTemplatesModel::getPager', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsTemplatesModel::getPager', __LINE__, __FILE__);
@@ -421,7 +421,7 @@ class BaseProjectsTemplatesModel extends DbModel {
 	 */
 	public function getPerpage() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set ProjectsTemplatesModel::getPerpage', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsTemplatesModel::getPerpage', __LINE__, __FILE__);
@@ -435,7 +435,7 @@ class BaseProjectsTemplatesModel extends DbModel {
 	 */
 	public function getSearch() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set ProjectsTemplatesModel::getSearch', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsTemplatesModel::getSearch', __LINE__, __FILE__);
@@ -505,7 +505,7 @@ class BaseProjectsTemplatesModel extends DbModel {
 	 */
 	public function getSeo() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set ProjectsTemplatesModel::getSeo', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsTemplatesModel::getSeo', __LINE__, __FILE__);
@@ -519,7 +519,7 @@ class BaseProjectsTemplatesModel extends DbModel {
 	 */
 	public function getDatasource() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(11, $this->_result)) return (string) $this->_result[11];
+			if (array_key_exists(11, $this->_result)) return (int) $this->_result[11];
 			else parent::throwGetColException('Not set ProjectsTemplatesModel::getDatasource', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsTemplatesModel::getDatasource', __LINE__, __FILE__);
@@ -533,7 +533,7 @@ class BaseProjectsTemplatesModel extends DbModel {
 	 */
 	public function getProjectsCategoriesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(12, $this->_result)) return (string) $this->_result[12];
+			if (array_key_exists(12, $this->_result)) return (int) $this->_result[12];
 			else parent::throwGetColException('Not set ProjectsTemplatesModel::getProjectsCategoriesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsTemplatesModel::getProjectsCategoriesId', __LINE__, __FILE__);
@@ -673,7 +673,7 @@ class BaseProjectsTemplatesModel extends DbModel {
 	 */
 	public function getTemptype() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(22, $this->_result)) return (string) $this->_result[22];
+			if (array_key_exists(22, $this->_result)) return (int) $this->_result[22];
 			else parent::throwGetColException('Not set ProjectsTemplatesModel::getTemptype', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsTemplatesModel::getTemptype', __LINE__, __FILE__);

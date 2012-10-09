@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseFormsSendmailsModel extends DbModel {
@@ -239,7 +239,7 @@ class BaseFormsSendmailsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set FormsSendmailsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsSendmailsModel::getId', __LINE__, __FILE__);
@@ -253,7 +253,7 @@ class BaseFormsSendmailsModel extends DbModel {
 	 */
 	public function getFormsItemsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set FormsSendmailsModel::getFormsItemsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsSendmailsModel::getFormsItemsId', __LINE__, __FILE__);
@@ -267,7 +267,7 @@ class BaseFormsSendmailsModel extends DbModel {
 	 */
 	public function getEmailsTemplatesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set FormsSendmailsModel::getEmailsTemplatesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsSendmailsModel::getEmailsTemplatesId', __LINE__, __FILE__);
@@ -281,7 +281,7 @@ class BaseFormsSendmailsModel extends DbModel {
 	 */
 	public function getType() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set FormsSendmailsModel::getType', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsSendmailsModel::getType', __LINE__, __FILE__);

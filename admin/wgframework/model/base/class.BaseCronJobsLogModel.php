@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseCronJobsLogModel extends DbModel {
@@ -253,7 +253,7 @@ class BaseCronJobsLogModel extends DbModel {
 	 */
 	public function getCronJobsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set CronJobsLogModel::getCronJobsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CronJobsLogModel::getCronJobsId', __LINE__, __FILE__);
@@ -295,7 +295,7 @@ class BaseCronJobsLogModel extends DbModel {
 	 */
 	public function getIserror() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set CronJobsLogModel::getIserror', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CronJobsLogModel::getIserror', __LINE__, __FILE__);

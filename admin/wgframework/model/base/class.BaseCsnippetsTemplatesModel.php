@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseCsnippetsTemplatesModel extends DbModel {
@@ -344,7 +344,7 @@ class BaseCsnippetsTemplatesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set CsnippetsTemplatesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CsnippetsTemplatesModel::getId', __LINE__, __FILE__);
@@ -358,7 +358,7 @@ class BaseCsnippetsTemplatesModel extends DbModel {
 	 */
 	public function getTemptype() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set CsnippetsTemplatesModel::getTemptype', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CsnippetsTemplatesModel::getTemptype', __LINE__, __FILE__);
@@ -414,7 +414,7 @@ class BaseCsnippetsTemplatesModel extends DbModel {
 	 */
 	public function getCsnippetsCategoriesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set CsnippetsTemplatesModel::getCsnippetsCategoriesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CsnippetsTemplatesModel::getCsnippetsCategoriesId', __LINE__, __FILE__);
@@ -498,7 +498,7 @@ class BaseCsnippetsTemplatesModel extends DbModel {
 	 */
 	public function getUseseo() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(11, $this->_result)) return (string) $this->_result[11];
+			if (array_key_exists(11, $this->_result)) return (int) $this->_result[11];
 			else parent::throwGetColException('Not set CsnippetsTemplatesModel::getUseseo', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CsnippetsTemplatesModel::getUseseo', __LINE__, __FILE__);
@@ -512,7 +512,7 @@ class BaseCsnippetsTemplatesModel extends DbModel {
 	 */
 	public function getIssearch() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(12, $this->_result)) return (string) $this->_result[12];
+			if (array_key_exists(12, $this->_result)) return (int) $this->_result[12];
 			else parent::throwGetColException('Not set CsnippetsTemplatesModel::getIssearch', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CsnippetsTemplatesModel::getIssearch', __LINE__, __FILE__);
@@ -526,7 +526,7 @@ class BaseCsnippetsTemplatesModel extends DbModel {
 	 */
 	public function getPager() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(13, $this->_result)) return (string) $this->_result[13];
+			if (array_key_exists(13, $this->_result)) return (int) $this->_result[13];
 			else parent::throwGetColException('Not set CsnippetsTemplatesModel::getPager', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CsnippetsTemplatesModel::getPager', __LINE__, __FILE__);
@@ -540,7 +540,7 @@ class BaseCsnippetsTemplatesModel extends DbModel {
 	 */
 	public function getPerpage() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(14, $this->_result)) return (string) $this->_result[14];
+			if (array_key_exists(14, $this->_result)) return (int) $this->_result[14];
 			else parent::throwGetColException('Not set CsnippetsTemplatesModel::getPerpage', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CsnippetsTemplatesModel::getPerpage', __LINE__, __FILE__);
@@ -596,7 +596,7 @@ class BaseCsnippetsTemplatesModel extends DbModel {
 	 */
 	public function getFofred() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(18, $this->_result)) return (string) $this->_result[18];
+			if (array_key_exists(18, $this->_result)) return (int) $this->_result[18];
 			else parent::throwGetColException('Not set CsnippetsTemplatesModel::getFofred', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CsnippetsTemplatesModel::getFofred', __LINE__, __FILE__);

@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseNewsItemsModel extends DbModel {
@@ -281,7 +281,7 @@ class BaseNewsItemsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set NewsItemsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From NewsItemsModel::getId', __LINE__, __FILE__);
@@ -295,7 +295,7 @@ class BaseNewsItemsModel extends DbModel {
 	 */
 	public function getNewsCategoriesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set NewsItemsModel::getNewsCategoriesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From NewsItemsModel::getNewsCategoriesId', __LINE__, __FILE__);
@@ -421,7 +421,7 @@ class BaseNewsItemsModel extends DbModel {
 	 */
 	public function getSystemUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set NewsItemsModel::getSystemUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From NewsItemsModel::getSystemUsersId', __LINE__, __FILE__);

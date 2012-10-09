@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseLanguagesDefinitionsModel extends DbModel {
@@ -309,7 +309,7 @@ class BaseLanguagesDefinitionsModel extends DbModel {
 	 */
 	public function getMinchar() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set LanguagesDefinitionsModel::getMinchar', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LanguagesDefinitionsModel::getMinchar', __LINE__, __FILE__);
@@ -323,7 +323,7 @@ class BaseLanguagesDefinitionsModel extends DbModel {
 	 */
 	public function getMaxchar() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set LanguagesDefinitionsModel::getMaxchar', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LanguagesDefinitionsModel::getMaxchar', __LINE__, __FILE__);
@@ -337,7 +337,7 @@ class BaseLanguagesDefinitionsModel extends DbModel {
 	 */
 	public function getPagesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set LanguagesDefinitionsModel::getPagesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LanguagesDefinitionsModel::getPagesId', __LINE__, __FILE__);
@@ -351,7 +351,7 @@ class BaseLanguagesDefinitionsModel extends DbModel {
 	 */
 	public function getIsglobal() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set LanguagesDefinitionsModel::getIsglobal', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LanguagesDefinitionsModel::getIsglobal', __LINE__, __FILE__);
@@ -365,7 +365,7 @@ class BaseLanguagesDefinitionsModel extends DbModel {
 	 */
 	public function getSystemWebsitesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (int) $this->_result[6];
 			else parent::throwGetColException('Not set LanguagesDefinitionsModel::getSystemWebsitesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LanguagesDefinitionsModel::getSystemWebsitesId', __LINE__, __FILE__);
@@ -379,7 +379,7 @@ class BaseLanguagesDefinitionsModel extends DbModel {
 	 */
 	public function getEnabled() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set LanguagesDefinitionsModel::getEnabled', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LanguagesDefinitionsModel::getEnabled', __LINE__, __FILE__);
@@ -393,7 +393,7 @@ class BaseLanguagesDefinitionsModel extends DbModel {
 	 */
 	public function getDefaultLangId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(8, $this->_result)) return (string) $this->_result[8];
+			if (array_key_exists(8, $this->_result)) return (int) $this->_result[8];
 			else parent::throwGetColException('Not set LanguagesDefinitionsModel::getDefaultLangId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LanguagesDefinitionsModel::getDefaultLangId', __LINE__, __FILE__);
@@ -421,7 +421,7 @@ class BaseLanguagesDefinitionsModel extends DbModel {
 	 */
 	public function getAllowhtml() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set LanguagesDefinitionsModel::getAllowhtml', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LanguagesDefinitionsModel::getAllowhtml', __LINE__, __FILE__);

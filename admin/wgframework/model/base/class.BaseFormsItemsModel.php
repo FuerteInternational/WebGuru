@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseFormsItemsModel extends DbModel {
@@ -337,7 +337,7 @@ class BaseFormsItemsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set FormsItemsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsItemsModel::getId', __LINE__, __FILE__);
@@ -351,7 +351,7 @@ class BaseFormsItemsModel extends DbModel {
 	 */
 	public function getSystemLanguageId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set FormsItemsModel::getSystemLanguageId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsItemsModel::getSystemLanguageId', __LINE__, __FILE__);
@@ -365,7 +365,7 @@ class BaseFormsItemsModel extends DbModel {
 	 */
 	public function getSystemWebsitesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set FormsItemsModel::getSystemWebsitesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsItemsModel::getSystemWebsitesId', __LINE__, __FILE__);
@@ -393,7 +393,7 @@ class BaseFormsItemsModel extends DbModel {
 	 */
 	public function getFormsMessagesGroupId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set FormsItemsModel::getFormsMessagesGroupId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsItemsModel::getFormsMessagesGroupId', __LINE__, __FILE__);
@@ -435,7 +435,7 @@ class BaseFormsItemsModel extends DbModel {
 	 */
 	public function getUsehtml() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set FormsItemsModel::getUsehtml', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsItemsModel::getUsehtml', __LINE__, __FILE__);
@@ -463,7 +463,7 @@ class BaseFormsItemsModel extends DbModel {
 	 */
 	public function getUsetxt() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(9, $this->_result)) return (string) $this->_result[9];
+			if (array_key_exists(9, $this->_result)) return (int) $this->_result[9];
 			else parent::throwGetColException('Not set FormsItemsModel::getUsetxt', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsItemsModel::getUsetxt', __LINE__, __FILE__);

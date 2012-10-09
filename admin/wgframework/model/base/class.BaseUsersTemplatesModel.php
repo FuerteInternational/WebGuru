@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:56
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseUsersTemplatesModel extends DbModel {
@@ -351,7 +351,7 @@ class BaseUsersTemplatesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set UsersTemplatesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersTemplatesModel::getId', __LINE__, __FILE__);
@@ -393,7 +393,7 @@ class BaseUsersTemplatesModel extends DbModel {
 	 */
 	public function getTemptype() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set UsersTemplatesModel::getTemptype', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersTemplatesModel::getTemptype', __LINE__, __FILE__);
@@ -407,7 +407,7 @@ class BaseUsersTemplatesModel extends DbModel {
 	 */
 	public function getPager() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set UsersTemplatesModel::getPager', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersTemplatesModel::getPager', __LINE__, __FILE__);
@@ -421,7 +421,7 @@ class BaseUsersTemplatesModel extends DbModel {
 	 */
 	public function getPerpage() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set UsersTemplatesModel::getPerpage', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersTemplatesModel::getPerpage', __LINE__, __FILE__);
@@ -477,7 +477,7 @@ class BaseUsersTemplatesModel extends DbModel {
 	 */
 	public function getUseedit() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(9, $this->_result)) return (string) $this->_result[9];
+			if (array_key_exists(9, $this->_result)) return (int) $this->_result[9];
 			else parent::throwGetColException('Not set UsersTemplatesModel::getUseedit', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersTemplatesModel::getUseedit', __LINE__, __FILE__);

@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseIblogPostsModel extends DbModel {
@@ -309,7 +309,7 @@ class BaseIblogPostsModel extends DbModel {
 	 */
 	public function getIblogBlogsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set IblogPostsModel::getIblogBlogsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IblogPostsModel::getIblogBlogsId', __LINE__, __FILE__);
@@ -323,7 +323,7 @@ class BaseIblogPostsModel extends DbModel {
 	 */
 	public function getUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set IblogPostsModel::getUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IblogPostsModel::getUsersId', __LINE__, __FILE__);
@@ -421,7 +421,7 @@ class BaseIblogPostsModel extends DbModel {
 	 */
 	public function getViews() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(9, $this->_result)) return (string) $this->_result[9];
+			if (array_key_exists(9, $this->_result)) return (int) $this->_result[9];
 			else parent::throwGetColException('Not set IblogPostsModel::getViews', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IblogPostsModel::getViews', __LINE__, __FILE__);
@@ -435,7 +435,7 @@ class BaseIblogPostsModel extends DbModel {
 	 */
 	public function getComments() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set IblogPostsModel::getComments', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IblogPostsModel::getComments', __LINE__, __FILE__);
@@ -463,7 +463,7 @@ class BaseIblogPostsModel extends DbModel {
 	 */
 	public function getEnabled() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(12, $this->_result)) return (string) $this->_result[12];
+			if (array_key_exists(12, $this->_result)) return (int) $this->_result[12];
 			else parent::throwGetColException('Not set IblogPostsModel::getEnabled', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IblogPostsModel::getEnabled', __LINE__, __FILE__);

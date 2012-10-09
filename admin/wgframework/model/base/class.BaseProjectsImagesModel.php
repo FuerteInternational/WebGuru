@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseProjectsImagesModel extends DbModel {
@@ -407,7 +407,7 @@ class BaseProjectsImagesModel extends DbModel {
 	 */
 	public function getProjectsItemsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set ProjectsImagesModel::getProjectsItemsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsImagesModel::getProjectsItemsId', __LINE__, __FILE__);
@@ -645,7 +645,7 @@ class BaseProjectsImagesModel extends DbModel {
 	 */
 	public function getSize() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(19, $this->_result)) return (string) $this->_result[19];
+			if (array_key_exists(19, $this->_result)) return (int) $this->_result[19];
 			else parent::throwGetColException('Not set ProjectsImagesModel::getSize', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsImagesModel::getSize', __LINE__, __FILE__);
@@ -659,7 +659,7 @@ class BaseProjectsImagesModel extends DbModel {
 	 */
 	public function getItemtype() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(20, $this->_result)) return (string) $this->_result[20];
+			if (array_key_exists(20, $this->_result)) return (int) $this->_result[20];
 			else parent::throwGetColException('Not set ProjectsImagesModel::getItemtype', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsImagesModel::getItemtype', __LINE__, __FILE__);
@@ -673,7 +673,7 @@ class BaseProjectsImagesModel extends DbModel {
 	 */
 	public function getSort() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(21, $this->_result)) return (string) $this->_result[21];
+			if (array_key_exists(21, $this->_result)) return (int) $this->_result[21];
 			else parent::throwGetColException('Not set ProjectsImagesModel::getSort', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From ProjectsImagesModel::getSort', __LINE__, __FILE__);

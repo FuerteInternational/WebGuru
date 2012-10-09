@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseIpromoteTemplatesModel extends DbModel {
@@ -302,7 +302,7 @@ class BaseIpromoteTemplatesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set IpromoteTemplatesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IpromoteTemplatesModel::getId', __LINE__, __FILE__);
@@ -344,7 +344,7 @@ class BaseIpromoteTemplatesModel extends DbModel {
 	 */
 	public function getTemptype() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set IpromoteTemplatesModel::getTemptype', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IpromoteTemplatesModel::getTemptype', __LINE__, __FILE__);
@@ -414,7 +414,7 @@ class BaseIpromoteTemplatesModel extends DbModel {
 	 */
 	public function getRed1() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(8, $this->_result)) return (string) $this->_result[8];
+			if (array_key_exists(8, $this->_result)) return (int) $this->_result[8];
 			else parent::throwGetColException('Not set IpromoteTemplatesModel::getRed1', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IpromoteTemplatesModel::getRed1', __LINE__, __FILE__);
@@ -428,7 +428,7 @@ class BaseIpromoteTemplatesModel extends DbModel {
 	 */
 	public function getRed2() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(9, $this->_result)) return (string) $this->_result[9];
+			if (array_key_exists(9, $this->_result)) return (int) $this->_result[9];
 			else parent::throwGetColException('Not set IpromoteTemplatesModel::getRed2', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IpromoteTemplatesModel::getRed2', __LINE__, __FILE__);

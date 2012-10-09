@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:56
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseSystemModulesPermissionsModel extends DbModel {
@@ -246,7 +246,7 @@ class BaseSystemModulesPermissionsModel extends DbModel {
 	 */
 	public function getSystemModulesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set SystemModulesPermissionsModel::getSystemModulesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemModulesPermissionsModel::getSystemModulesId', __LINE__, __FILE__);
@@ -260,7 +260,7 @@ class BaseSystemModulesPermissionsModel extends DbModel {
 	 */
 	public function getSystemTeamsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set SystemModulesPermissionsModel::getSystemTeamsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemModulesPermissionsModel::getSystemTeamsId', __LINE__, __FILE__);
@@ -274,7 +274,7 @@ class BaseSystemModulesPermissionsModel extends DbModel {
 	 */
 	public function getPerm() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set SystemModulesPermissionsModel::getPerm', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemModulesPermissionsModel::getPerm', __LINE__, __FILE__);

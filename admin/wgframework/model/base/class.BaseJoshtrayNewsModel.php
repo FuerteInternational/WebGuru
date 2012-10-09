@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseJoshtrayNewsModel extends DbModel {
@@ -260,7 +260,7 @@ class BaseJoshtrayNewsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set JoshtrayNewsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From JoshtrayNewsModel::getId', __LINE__, __FILE__);
@@ -274,7 +274,7 @@ class BaseJoshtrayNewsModel extends DbModel {
 	 */
 	public function getJoshtrayPeopleId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set JoshtrayNewsModel::getJoshtrayPeopleId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From JoshtrayNewsModel::getJoshtrayPeopleId', __LINE__, __FILE__);
@@ -288,7 +288,7 @@ class BaseJoshtrayNewsModel extends DbModel {
 	 */
 	public function getJoshtrayGroupsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set JoshtrayNewsModel::getJoshtrayGroupsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From JoshtrayNewsModel::getJoshtrayGroupsId', __LINE__, __FILE__);
@@ -358,7 +358,7 @@ class BaseJoshtrayNewsModel extends DbModel {
 	 */
 	public function getShow() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set JoshtrayNewsModel::getShow', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From JoshtrayNewsModel::getShow', __LINE__, __FILE__);

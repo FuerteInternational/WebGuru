@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseCommentsMessagesModel extends DbModel {
@@ -323,7 +323,7 @@ class BaseCommentsMessagesModel extends DbModel {
 	 */
 	public function getCommentsGroupsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set CommentsMessagesModel::getCommentsGroupsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CommentsMessagesModel::getCommentsGroupsId', __LINE__, __FILE__);
@@ -337,7 +337,7 @@ class BaseCommentsMessagesModel extends DbModel {
 	 */
 	public function getForId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set CommentsMessagesModel::getForId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CommentsMessagesModel::getForId', __LINE__, __FILE__);
@@ -449,7 +449,7 @@ class BaseCommentsMessagesModel extends DbModel {
 	 */
 	public function getKarma() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set CommentsMessagesModel::getKarma', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CommentsMessagesModel::getKarma', __LINE__, __FILE__);
@@ -463,7 +463,7 @@ class BaseCommentsMessagesModel extends DbModel {
 	 */
 	public function getApproved() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(11, $this->_result)) return (string) $this->_result[11];
+			if (array_key_exists(11, $this->_result)) return (int) $this->_result[11];
 			else parent::throwGetColException('Not set CommentsMessagesModel::getApproved', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CommentsMessagesModel::getApproved', __LINE__, __FILE__);
@@ -505,7 +505,7 @@ class BaseCommentsMessagesModel extends DbModel {
 	 */
 	public function getUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(14, $this->_result)) return (string) $this->_result[14];
+			if (array_key_exists(14, $this->_result)) return (int) $this->_result[14];
 			else parent::throwGetColException('Not set CommentsMessagesModel::getUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CommentsMessagesModel::getUsersId', __LINE__, __FILE__);

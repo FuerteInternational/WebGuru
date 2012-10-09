@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:56
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseTinyurlsUrlsModel extends DbModel {
@@ -302,7 +302,7 @@ class BaseTinyurlsUrlsModel extends DbModel {
 	 */
 	public function getSystemWebsitesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set TinyurlsUrlsModel::getSystemWebsitesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From TinyurlsUrlsModel::getSystemWebsitesId', __LINE__, __FILE__);

@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseHtaccessRowsModel extends DbModel {
@@ -260,7 +260,7 @@ class BaseHtaccessRowsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set HtaccessRowsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From HtaccessRowsModel::getId', __LINE__, __FILE__);
@@ -302,7 +302,7 @@ class BaseHtaccessRowsModel extends DbModel {
 	 */
 	public function getType() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set HtaccessRowsModel::getType', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From HtaccessRowsModel::getType', __LINE__, __FILE__);
@@ -316,7 +316,7 @@ class BaseHtaccessRowsModel extends DbModel {
 	 */
 	public function getSystemUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set HtaccessRowsModel::getSystemUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From HtaccessRowsModel::getSystemUsersId', __LINE__, __FILE__);
@@ -330,7 +330,7 @@ class BaseHtaccessRowsModel extends DbModel {
 	 */
 	public function getSystemModulesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set HtaccessRowsModel::getSystemModulesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From HtaccessRowsModel::getSystemModulesId', __LINE__, __FILE__);
@@ -344,7 +344,7 @@ class BaseHtaccessRowsModel extends DbModel {
 	 */
 	public function getSystemWebsitesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (int) $this->_result[6];
 			else parent::throwGetColException('Not set HtaccessRowsModel::getSystemWebsitesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From HtaccessRowsModel::getSystemWebsitesId', __LINE__, __FILE__);
@@ -358,7 +358,7 @@ class BaseHtaccessRowsModel extends DbModel {
 	 */
 	public function getSort() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set HtaccessRowsModel::getSort', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From HtaccessRowsModel::getSort', __LINE__, __FILE__);

@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseFormsMessagesModel extends DbModel {
@@ -253,7 +253,7 @@ class BaseFormsMessagesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set FormsMessagesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsMessagesModel::getId', __LINE__, __FILE__);
@@ -267,7 +267,7 @@ class BaseFormsMessagesModel extends DbModel {
 	 */
 	public function getFormsItemsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set FormsMessagesModel::getFormsItemsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsMessagesModel::getFormsItemsId', __LINE__, __FILE__);
@@ -281,7 +281,7 @@ class BaseFormsMessagesModel extends DbModel {
 	 */
 	public function getFormsMessagesGroupsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set FormsMessagesModel::getFormsMessagesGroupsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsMessagesModel::getFormsMessagesGroupsId', __LINE__, __FILE__);
@@ -323,7 +323,7 @@ class BaseFormsMessagesModel extends DbModel {
 	 */
 	public function getReadflag() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set FormsMessagesModel::getReadflag', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsMessagesModel::getReadflag', __LINE__, __FILE__);

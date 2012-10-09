@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseSystemErrorsTemplatesModel extends DbModel {
@@ -316,7 +316,7 @@ class BaseSystemErrorsTemplatesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set SystemErrorsTemplatesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemErrorsTemplatesModel::getId', __LINE__, __FILE__);
@@ -512,7 +512,7 @@ class BaseSystemErrorsTemplatesModel extends DbModel {
 	 */
 	public function getGroupmessages() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(14, $this->_result)) return (string) $this->_result[14];
+			if (array_key_exists(14, $this->_result)) return (int) $this->_result[14];
 			else parent::throwGetColException('Not set SystemErrorsTemplatesModel::getGroupmessages', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemErrorsTemplatesModel::getGroupmessages', __LINE__, __FILE__);
@@ -526,7 +526,7 @@ class BaseSystemErrorsTemplatesModel extends DbModel {
 	 */
 	public function getFirstinlist() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(15, $this->_result)) return (string) $this->_result[15];
+			if (array_key_exists(15, $this->_result)) return (int) $this->_result[15];
 			else parent::throwGetColException('Not set SystemErrorsTemplatesModel::getFirstinlist', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From SystemErrorsTemplatesModel::getFirstinlist', __LINE__, __FILE__);

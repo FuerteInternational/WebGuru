@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseCrawlerTemplatesModel extends DbModel {
@@ -281,7 +281,7 @@ class BaseCrawlerTemplatesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set CrawlerTemplatesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CrawlerTemplatesModel::getId', __LINE__, __FILE__);
@@ -323,7 +323,7 @@ class BaseCrawlerTemplatesModel extends DbModel {
 	 */
 	public function getTypetemp() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set CrawlerTemplatesModel::getTypetemp', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CrawlerTemplatesModel::getTypetemp', __LINE__, __FILE__);
@@ -407,7 +407,7 @@ class BaseCrawlerTemplatesModel extends DbModel {
 	 */
 	public function getPager() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(9, $this->_result)) return (string) $this->_result[9];
+			if (array_key_exists(9, $this->_result)) return (int) $this->_result[9];
 			else parent::throwGetColException('Not set CrawlerTemplatesModel::getPager', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CrawlerTemplatesModel::getPager', __LINE__, __FILE__);
@@ -421,7 +421,7 @@ class BaseCrawlerTemplatesModel extends DbModel {
 	 */
 	public function getPerpage() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(10, $this->_result)) return (string) $this->_result[10];
+			if (array_key_exists(10, $this->_result)) return (int) $this->_result[10];
 			else parent::throwGetColException('Not set CrawlerTemplatesModel::getPerpage', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From CrawlerTemplatesModel::getPerpage', __LINE__, __FILE__);

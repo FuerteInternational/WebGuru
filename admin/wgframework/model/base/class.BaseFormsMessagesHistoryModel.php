@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseFormsMessagesHistoryModel extends DbModel {
@@ -239,7 +239,7 @@ class BaseFormsMessagesHistoryModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set FormsMessagesHistoryModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsMessagesHistoryModel::getId', __LINE__, __FILE__);
@@ -253,7 +253,7 @@ class BaseFormsMessagesHistoryModel extends DbModel {
 	 */
 	public function getFormsMessagesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set FormsMessagesHistoryModel::getFormsMessagesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsMessagesHistoryModel::getFormsMessagesId', __LINE__, __FILE__);
@@ -267,7 +267,7 @@ class BaseFormsMessagesHistoryModel extends DbModel {
 	 */
 	public function getSystemUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set FormsMessagesHistoryModel::getSystemUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsMessagesHistoryModel::getSystemUsersId', __LINE__, __FILE__);
@@ -295,7 +295,7 @@ class BaseFormsMessagesHistoryModel extends DbModel {
 	 */
 	public function getAction() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set FormsMessagesHistoryModel::getAction', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From FormsMessagesHistoryModel::getAction', __LINE__, __FILE__);

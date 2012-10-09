@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseIpromoteAppsModel extends DbModel {
@@ -288,7 +288,7 @@ class BaseIpromoteAppsModel extends DbModel {
 	 */
 	public function getIpromoteCampaignsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set IpromoteAppsModel::getIpromoteCampaignsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IpromoteAppsModel::getIpromoteCampaignsId', __LINE__, __FILE__);
@@ -358,7 +358,7 @@ class BaseIpromoteAppsModel extends DbModel {
 	 */
 	public function getSort() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set IpromoteAppsModel::getSort', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IpromoteAppsModel::getSort', __LINE__, __FILE__);

@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:58
  */
 
 class BaseBlocksItemsModel extends DbModel {
@@ -253,7 +253,7 @@ class BaseBlocksItemsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set BlocksItemsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlocksItemsModel::getId', __LINE__, __FILE__);
@@ -267,7 +267,7 @@ class BaseBlocksItemsModel extends DbModel {
 	 */
 	public function getSystemLanguageId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set BlocksItemsModel::getSystemLanguageId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlocksItemsModel::getSystemLanguageId', __LINE__, __FILE__);
@@ -281,7 +281,7 @@ class BaseBlocksItemsModel extends DbModel {
 	 */
 	public function getSystemWebsitesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set BlocksItemsModel::getSystemWebsitesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlocksItemsModel::getSystemWebsitesId', __LINE__, __FILE__);
@@ -295,7 +295,7 @@ class BaseBlocksItemsModel extends DbModel {
 	 */
 	public function getBlocksGroupsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(3, $this->_result)) return (string) $this->_result[3];
+			if (array_key_exists(3, $this->_result)) return (int) $this->_result[3];
 			else parent::throwGetColException('Not set BlocksItemsModel::getBlocksGroupsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlocksItemsModel::getBlocksGroupsId', __LINE__, __FILE__);
@@ -309,7 +309,7 @@ class BaseBlocksItemsModel extends DbModel {
 	 */
 	public function getEnabled() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set BlocksItemsModel::getEnabled', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlocksItemsModel::getEnabled', __LINE__, __FILE__);

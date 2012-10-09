@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:56
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseUsersModel extends DbModel {
@@ -358,7 +358,7 @@ class BaseUsersModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set UsersModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersModel::getId', __LINE__, __FILE__);
@@ -372,7 +372,7 @@ class BaseUsersModel extends DbModel {
 	 */
 	public function getUsersGroupsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set UsersModel::getUsersGroupsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersModel::getUsersGroupsId', __LINE__, __FILE__);
@@ -526,7 +526,7 @@ class BaseUsersModel extends DbModel {
 	 */
 	public function getActive() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(12, $this->_result)) return (string) $this->_result[12];
+			if (array_key_exists(12, $this->_result)) return (int) $this->_result[12];
 			else parent::throwGetColException('Not set UsersModel::getActive', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersModel::getActive', __LINE__, __FILE__);
@@ -610,7 +610,7 @@ class BaseUsersModel extends DbModel {
 	 */
 	public function getSystemCountriesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(18, $this->_result)) return (string) $this->_result[18];
+			if (array_key_exists(18, $this->_result)) return (int) $this->_result[18];
 			else parent::throwGetColException('Not set UsersModel::getSystemCountriesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersModel::getSystemCountriesId', __LINE__, __FILE__);
@@ -624,7 +624,7 @@ class BaseUsersModel extends DbModel {
 	 */
 	public function getVisits() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(19, $this->_result)) return (string) $this->_result[19];
+			if (array_key_exists(19, $this->_result)) return (int) $this->_result[19];
 			else parent::throwGetColException('Not set UsersModel::getVisits', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersModel::getVisits', __LINE__, __FILE__);
@@ -638,7 +638,7 @@ class BaseUsersModel extends DbModel {
 	 */
 	public function getDownloads() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(20, $this->_result)) return (string) $this->_result[20];
+			if (array_key_exists(20, $this->_result)) return (int) $this->_result[20];
 			else parent::throwGetColException('Not set UsersModel::getDownloads', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From UsersModel::getDownloads', __LINE__, __FILE__);

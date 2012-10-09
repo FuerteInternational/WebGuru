@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseLinksUrlsModel extends DbModel {
@@ -372,7 +372,7 @@ class BaseLinksUrlsModel extends DbModel {
 	 */
 	public function getLinksCategoriesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set LinksUrlsModel::getLinksCategoriesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LinksUrlsModel::getLinksCategoriesId', __LINE__, __FILE__);
@@ -400,7 +400,7 @@ class BaseLinksUrlsModel extends DbModel {
 	 */
 	public function getVisible() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set LinksUrlsModel::getVisible', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LinksUrlsModel::getVisible', __LINE__, __FILE__);
@@ -414,7 +414,7 @@ class BaseLinksUrlsModel extends DbModel {
 	 */
 	public function getUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(8, $this->_result)) return (string) $this->_result[8];
+			if (array_key_exists(8, $this->_result)) return (int) $this->_result[8];
 			else parent::throwGetColException('Not set LinksUrlsModel::getUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From LinksUrlsModel::getUsersId', __LINE__, __FILE__);

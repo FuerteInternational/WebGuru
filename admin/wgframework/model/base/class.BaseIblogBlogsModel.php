@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        8. October 2012 16:18:55
+ * @since        9. October 2012 16:29:59
  */
 
 class BaseIblogBlogsModel extends DbModel {
@@ -274,7 +274,7 @@ class BaseIblogBlogsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set IblogBlogsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IblogBlogsModel::getId', __LINE__, __FILE__);
@@ -330,7 +330,7 @@ class BaseIblogBlogsModel extends DbModel {
 	 */
 	public function getUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set IblogBlogsModel::getUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IblogBlogsModel::getUsersId', __LINE__, __FILE__);
@@ -344,7 +344,7 @@ class BaseIblogBlogsModel extends DbModel {
 	 */
 	public function getPosts() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (int) $this->_result[5];
 			else parent::throwGetColException('Not set IblogBlogsModel::getPosts', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IblogBlogsModel::getPosts', __LINE__, __FILE__);
@@ -358,7 +358,7 @@ class BaseIblogBlogsModel extends DbModel {
 	 */
 	public function getPictures() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (int) $this->_result[6];
 			else parent::throwGetColException('Not set IblogBlogsModel::getPictures', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IblogBlogsModel::getPictures', __LINE__, __FILE__);
