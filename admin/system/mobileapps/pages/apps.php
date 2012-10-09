@@ -52,9 +52,7 @@ if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $va
 	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize((int)$val->getSize(), true).')</small>';
 	$lv['LIDENTIFIER'] = $val->getIdentifier();
 	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
-	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
-	if ($val->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$val->getId().'.png';
-	$lv['LICON'] = $icon;
+	$lv['LICON'] = $val->getIconUrl();
 	$lv['LSORT'] = $val->getSort();
 	$lv['LADDED'] = $val->getAdded();
 	$lv['LCHANGED'] = wgSystem::formatDate($val->getChanged());
@@ -124,9 +122,7 @@ if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $va
 	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize((int)$val->getSize(), true).')</small>';
 	$lv['LIDENTIFIER'] = $val->getIdentifier();
 	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
-	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
-	if ($val->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$val->getId().'.png';
-	$lv['LICON'] = $icon;
+	$lv['LICON'] = $val->getIconUrl();
 	$lv['LSORT'] = $val->getSort();
 	$lv['LADDED'] = $val->getAdded();
 	$lv['LCHANGED'] = wgSystem::formatDate($val->getChanged());
@@ -197,9 +193,7 @@ if (!empty($arr['data']) && is_array($arr['data'])) foreach ($arr['data'] as $va
 	$lv['LNAME'] = $val->getName().' <small>('.wgIo::getSize((int)$val->getSize(), true).')</small>';
 	$lv['LIDENTIFIER'] = $val->getIdentifier();
 	$lv['LAPPTYPE'] =  wgPaths::getModulePath('url', 'mobileapps').'images/device-'.$val->getApptype().'.png';
-	$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
-	if ($val->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$val->getId().'.png';
-	$lv['LICON'] = $icon;
+	$lv['LICON'] = $val->getIconUrl();
 	$lv['LSORT'] = $val->getSort();
 	$lv['LADDED'] = $val->getAdded();
 	$lv['LCHANGED'] = wgSystem::formatDate($val->getChanged());

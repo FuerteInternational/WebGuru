@@ -76,79 +76,93 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 	// functions ---------------------------------------------------------------------------
 	
 	public function saveTempFile() {
-		$name = $_FILES['file']['name'];
+		$name = isset($_FILES['file']['name']) ? $_FILES['file']['name'] : '';
 		$filename = valid::safeText($name).'.zip';
-		$fileTmp = $_FILES['file']['tmp_name'];
-		
 		$dest = wgPaths::getTempPath().valid::safeText(microtime()).'-'.wgUsers::getId().'/';
 		wgIo::mkdir($dest);
 		
 		$arr = array('destination'=>$dest, 'filename'=>$filename, 'icon'=>0);
-		$icon = $_FILES['icon']['name'];
-		if ($icon) {
-			$iconTmp = $_FILES['icon']['tmp_name'];
-			$iconname = valid::safeText($name).'.png';
-			wgIo::uploadFile($iconname, $iconTmp, $dest);
-			$size = getimagesize($dest.$iconname);
-			$ok = true;
-			if ($size[0] != $size[1]) {
-				$ok = false;
-				wgError::add('iconwrongratio');
-			}
-			elseif ($size < 57) {
-				$ok = false;
-				wgError::add('icontoosmall');
-			}
-			if ($size['mime'] != 'image/png') {
-				$ok = false;
-				wgError::add('novalidpng');
-			}
-			
-			if ($ok) {
-				$arr['icon'] = 1;
-				$arr['iconname'] = $iconname;
-				wgError::add('iconcorrect', 2);
+		
+		// Saving icon
+// 		$icon = $_FILES['icon']['name'];
+// 		if ($icon) {
+// 			if ($_FILES['icon']['type'] == 'image/png') {
+// 				$iconname = $_FILES['icon']['name'];
+// 				$iconTmp = $_FILES['icon']['tmp_name'];
+// 				$iconname = valid::safeText($iconname).'.png';
+// 				wgIo::uploadFile($iconname, $iconTmp, $dest);
+// 				$size = getimagesize($dest.$iconname);
+// 				$ok = true;
+// 				if ($size[0] != $size[1]) {
+// 					$ok = false;
+// 					wgError::add('iconwrongratio');
+// 				}
+// 				elseif ($size < 57) {
+// 					$ok = false;
+// 					wgError::add('icontoosmall');
+// 				}
+// 				if ($size['mime'] != 'image/png') {
+// 					$ok = false;
+// 					wgError::add('novalidpng');
+// 				}
+				
+// 				if ($ok) {
+// 					$arr['icon'] = 1;
+// 					$arr['iconname'] = $iconname;
+// 					wgError::add('iconcorrect', 2);
+// 				}
+// 				else {
+// 					wgError::add('unabletosaveicon', 1);
+// 				}
+// 			}
+// 		}
+		
+		if (!empty($name)) {
+			$fileTmp = $_FILES['file']['tmp_name'];
+			wgIo::uploadFile($filename, $fileTmp, $dest);
+			$arr['size'] = filesize($dest.$filename);
+			$currentPath = getcwd();
+			chdir($dest);
+			$zip = new Archive_Zip('./'.$filename);
+			$zip->extract();
+			$zip = NULL;
+			chdir('../../');
+			$systemTempPath = getcwd().'/';
+			chdir($currentPath);
+			$appPath = $dest.'Payload/';
+			if (!is_dir($appPath)) return $arr;
+			$files = wgIo::getFolders($appPath);
+			$appPath .= $files[0].'/';
+			$iconFile = $appPath.'Icon@2x.png';
+			if (file_exists($iconFile)) {
+				$output = shell_exec('../bin/pngcrush -revert-iphone-optimizations -q '.$iconFile.' '.$dest.'icon.png');
+				$arr['tempicon'] = $dest.'icon.png';
 			}
 			else {
-				wgError::add('unabletosaveicon', 1);
+				$iconFile = $appPath.'Icon.png';
+				if (file_exists($iconFile)) {
+					$output = shell_exec('../bin/pngcrush -revert-iphone-optimizations -q '.$iconFile.' '.$dest.'icon.png');
+					$arr['tempicon'] = $dest.'icon.png';
+				}
 			}
-		}
-		wgIo::uploadFile($filename, $fileTmp, $dest);
-		
-		$arr['size'] = filesize($dest.$filename);
-		
-		$currentPath = getcwd();
-		chdir($dest);
-		$zip = new Archive_Zip('./'.$filename);
-		$zip->extract();
-		$zip = NULL;
-		chdir('../../');
-		$systemTempPath = getcwd().'/';
-		chdir($currentPath);
-		$appPath = $dest.'Payload/';
-		if (!is_dir($appPath)) return $arr;
-		$files = wgIo::getFolders($appPath);
-		$appPath .= $files[0].'/';
-		$plistFile = $appPath.'Info.plist';
-		if (file_exists($plistFile)) {						
-			$plist = new CFPropertyList();
-			
-			// Miluju Kacenku!!!
-			
-			$plist->parseBinary(file_get_contents($plistFile));
-			$data =  $plist->toArray();
-			$arr['version'] = $data['CFBundleShortVersionString'];
-			$arr['minOsVersion'] = $data['MinimumOSVersion'];
-			$arr['bundleIdentifier'] = $data['CFBundleIdentifier'];
-			$arr['name'] = $data['CFBundleDisplayName'];
-			$icons = $data['CFBundleIcons']['CFBundlePrimaryIcon']['CFBundleIconFiles'];
-//			if (is_array($icons)) {
-//				foreach ($icons as $k=>$v) {
-//					$iconPath = $appPath.$v;
-//					$size = getimagesize($iconPath);
-//				}
-//				$arr['icons'] = $icons;
-//			}
+			$plistFile = $appPath.'Info.plist';
+			if (file_exists($plistFile)) {						
+				$plist = new CFPropertyList();
+				$plist->parseBinary(file_get_contents($plistFile));
+				$data =  $plist->toArray();
+				$arr['version'] = $data['CFBundleShortVersionString'];
+				$arr['minOsVersion'] = $data['MinimumOSVersion'];
+				$arr['bundleIdentifier'] = $data['CFBundleIdentifier'];
+				$arr['name'] = $data['CFBundleDisplayName'];
+				$icons = $data['CFBundleIcons']['CFBundlePrimaryIcon']['CFBundleIconFiles'];
+// 				if (is_array($icons)) {
+// 					foreach ($icons as $k=>$v) {
+// 						$iconPath = $appPath.$v;
+// 						$size = getimagesize($iconPath);
+// 					}
+// 					$arr['icons'] = $icons;
+// 				}
+			}
 		}
 		return $arr;
 	}
@@ -160,13 +174,14 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		if (file_exists($data['destination'].$data['filename'])) {
 			wgIo::move($data['destination'].$data['filename'], $mobileAppsFolder.'ipa/'.$id.'.ipa');
 		}
-		if (isset($data['iconname'])) {
-			wgIo::copy($data['destination'].$data['iconname'], $mobileAppsFolder.'img/'.$id.'.png');
+		print_r($data['tempicon']);
+		if (isset($data['tempicon'])) {
+			wgIo::copy($data['tempicon'], $mobileAppsFolder.'img/'.$id.'.png');
 			$img = new wgImages($mobileAppsFolder.'img/'.$id.'.png');
 			$img->resize(57, 57);
 			$img->save($mobileAppsFolder.'img/'.$id.'.png', 'png');
 			
-			wgIo::move($data['destination'].$data['iconname'], $mobileAppsFolder.'img/'.$id.'@2x.png');
+			wgIo::move($data['tempicon'], $mobileAppsFolder.'img/'.$id.'@2x.png');
 			$img = new wgImages($mobileAppsFolder.'img/'.$id.'@2x.png');
 			$img->resize(114, 114);
 			$img->save($mobileAppsFolder.'img/'.$id.'.png', '@2xpng');
@@ -179,9 +194,11 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 	 * @return bool Success
 	 */
 	public static function doSaveMobileapps() {
+		print ':)';
+		$data = self::saveTempFile();
 		$ok = false;
 		$id = 0;
-		$data = array();
+		//$data = array();
 		$save = array();
 		$save['devtype'] = (int)wgPost::getValue('devtype');
 		$save['apptype'] = 0; // 0 - iPhone; 1 - Android
@@ -201,7 +218,6 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 				wgError::add('icondeleted', 2);
 			}
 			self::$_par['edit'] = $id;
-			$data = self::saveTempFile();
 			if ($file) {
 				$save['name'] = $data['name'];
 				$save['identifier'] = $data['bundleIdentifier'];
@@ -216,14 +232,13 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 				wgError::add('nofileattached');
 			}
 			else {
-				$data = self::saveTempFile();
 				if (isset($data['name'])) {
 					$save['name'] = $data['name'];
 					$save['identifier'] = $data['bundleIdentifier'];
 					$save['version'] = $data['version'];
 					$save['size'] = $data['size'];
 					$mobileAppsFolder = wgPaths::getUserfilesPath().'mobileapps/';
-					$save['icon'] = (int)file_exists($mobileAppsFolder.'img/'.$id.'.png');
+					$save['icon'] = 1;
 					$id = (int) MobileappsModel::doInsert($save);
 					self::$_par['edit'] = $id;
 					$ok = (bool) $id;
@@ -233,9 +248,11 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 				}
 			}
 		}
-		if ($id && !empty($data)) self::saveFile($id, $data);
+		if ($id && !empty($data)) {
+			self::saveFile($id, $data);
+			self::generatePlistFor($data, $id);
+		}
 		if (isset($data['destination'])) wgIo::delete($data['destination']);
-		self::generatePlistFor($data, $id);
 		return $ok;
 	}
 
@@ -256,6 +273,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 	}
 	
 	private static function generatePlistFor($data, $id) {
+		if (!isset($data['identifier']) || !$data['identifier']) return false;
 		$temp = '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">

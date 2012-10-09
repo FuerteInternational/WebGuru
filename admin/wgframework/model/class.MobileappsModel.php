@@ -15,6 +15,10 @@ class MobileappsModel extends BaseMobileappsModel {
 	
 	
 	// --------------------- Predefined functions for Mobileapps ---------------------
+	
+	public static function getIdOfAnExistingApp($devtype, $bundleId) {
+		
+	}
 
 	public static function getSelfData() {
 		$conn = new wgConnector();
@@ -109,18 +113,16 @@ class MobileappsModel extends BaseMobileappsModel {
 	}
 	
 	public function getIconUrl() {
-		$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
-		if ($this->getIcon()) {
-			if ($this->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$this->getId().'.png';
-		}
+		$icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$this->getId().'.png';
+		$iconFtp = wgPaths::getUserfilesPath('ftp').'mobileapps/img/'.$this->getId().'.png';
+		if (!file_exists($iconFtp)) $icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
 		return $icon;
 	}
 	
 	public function getLargeIconUrl() {
-		$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon@2x.png';
-		if ($this->getIcon()) {
-			if ($this->getIcon()) $icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$this->getId().'@2x.png';
-		}
+		$icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$this->getId().'@2x.png';
+		$iconFtp = wgPaths::getUserfilesPath('ftp').'mobileapps/img/'.$this->getId().'@2x.png';
+		if (!file_exists($iconFtp)) $icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon@2x.png';
 		return $icon;
 	}
 	
