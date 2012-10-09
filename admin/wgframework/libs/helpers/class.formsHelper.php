@@ -6,9 +6,7 @@ class formsHelper extends baseHelper {
 	const CHECKED = ' checked="checked"';
 	
 	// TODO: improve data access !!!!
-	public static function getSelectBox($name, $selected=NULL, $data=array(), $params=array(), $addNullValue=false) {
-		$isNumeric = true;
-		if (is_string($selected)) $isNumeric = false; 
+	public static function getSelectBox($name, $selected=NULL, $data=array(), $params=array(), $addNullValue=false, $isNumeric=true) {
 		if (!isset($params['id'])) $params['id'] = $name;
 		$class = NULL;
 		if (isset($params['baseclass'])) {

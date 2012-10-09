@@ -56,7 +56,7 @@ $var['COLID'] = $item->getId();
 $var['COLNAME'] = $item->getName();
 $var['COLIDENTIFIER'] = $item->getIdentifier();
 $var['COLTEMPLATENAME'] = $item->getTemplatename();
-$var['COLTEMPLATEFOLDERFULL'] = formsHelper::getSelectBox('templatename', $item->getTemplatename(), wgIo::getFolders(wgPaths::getPath('ftp').'assets/'), array(), false);
+$var['COLTEMPLATEFOLDERFULL'] = formsHelper::getSelectBox('templatename', $item->getTemplatename(), wgIo::getFolders(wgPaths::getPath('ftp').'assets/'), array(), false, false);
 
 $var = wgSystem::getFormCallback($var);
 
