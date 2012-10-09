@@ -779,8 +779,11 @@ require(\'model/extended/extended.'.$name.'.php\');
 			$type = strtolower(preg_replace('/(\(.*)/si', '', $col[1]));
 			$pre = NULL;
 			$pos = NULL;
-			if ($type == 'int' || $type == 'tinyint') $return = 'int';
-			elseif ($type == 'datetime' || $type == 'timestamp') {
+			if ($type == 'int' || $type == 'timestamp' || $type == 'tinyint' || $type == 'smallint' || $type == 'mediumint' || $type == 'bigint') $return = 'int';
+			elseif ($type == 'float' || $type == 'double') $return = 'float';
+			elseif ($type == 'bool') $return = 'boolean';
+			elseif ($type == 'float') $return = 'float';
+			elseif ($type == 'datetime') {
 				$pre = 'strtotime(';
 				$pos = ')';
 				$return = 'int';
