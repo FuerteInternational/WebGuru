@@ -1,0 +1,2 @@
+switchadmin;Template switch
+descswitchadmin;Switch templates in your frontend easily

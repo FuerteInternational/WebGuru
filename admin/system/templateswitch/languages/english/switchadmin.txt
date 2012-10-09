@@ -1,0 +1,6 @@
+tempswadmin;Template admin
+tempswsettings;Settings
+colid;Id
+colname;Template name
+coltemplatename;Template folder
+colidentifier;Template identifier

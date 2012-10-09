@@ -302,23 +302,17 @@ class install'.self::$_par['mucft'].' {
 	 */
 	function __construct() {
 		
-		$this->tables[] = \'
+		$this->tables[] = "";
 		
-		\';
+		//$this->tables[] = "";
 		
-		$this->tables[] = \'
+		//$this->tables[] = "";
 		
-		\';
+		$this->queries[] = "";
 		
-		$this->tables[] = \'
+		//$this->queries[] = "";
 		
-		\';
-		
-		$this->queries[] = \'\';
-		
-		$this->queries[] = \'\';
-		
-		$this->queries[] = \'\';
+		//$this->queries[] = "";
 		
 	}
 }

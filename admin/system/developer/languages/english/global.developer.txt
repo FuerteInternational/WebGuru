@@ -17,3 +17,4 @@ selectmod;Select module;
 tablename;Table name
 data;Include data
 rows;Entries
+modulecreated;Module has been successfully created

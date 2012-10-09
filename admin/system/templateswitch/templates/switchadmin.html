@@ -1,0 +1,87 @@
+<!-- BEGIN tempswadmin -->
+<table>
+	<colgroup>
+		<col style="width: 5%;" />
+		<col style="width: 25%;" />
+		<col style="width: 50%;" />
+		<col style="width: 10%;" />
+		<col style="width: 10%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>{wCOLID}</th>
+			<th>{wCOLNAME}</th>
+			<th>{wCOLIDENTIFIER}</th>
+			<th>{wEDIT}</th>
+			<th>{wDELETE}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN listtempswadmin -->
+		<tr>
+			<td>{LID}</td>
+			<td>{LNAME}</td>
+			<td class="wgcode">{LTEMPLATECODE}</td>
+			<td>{EDITROW}</td>
+			<td>{DELETEROW}</td>
+		</tr>
+		<!-- END listtempswadmin -->
+	</tbody>
+</table>
+{DATAPAGER}
+<form action="{ACTION}" method="post">
+	<p><input name="new" type="submit" value="{wCREATENEW}" /></p>
+</form>
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	<p>
+			<label>{wCOLNAME}:</label>
+			<input name="name" id="name" type="text" value="{COLNAME}" />
+		</p>
+		<p>
+			<label>{wCOLIDENTIFIER}:</label>
+			<input name="identifier" id="identifier" type="text" value="{COLIDENTIFIER}" />
+		</p>
+		<p>
+			<label>{wCOLTEMPLATENAME}:</label>
+			<!--<input name="templatename" id="templatename" type="text" value="{COLTEMPLATENAME}" />-->
+			{COLTEMPLATEFOLDERFULL}
+		</p>
+		<p class="bottombuttons">
+			<input name="edit" type="hidden" value="{COLID}" />
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END tempswadmin -->
+
+<!-- BEGIN tempswsettings -->
+<form action="{ACTION}" method="post">
+	<fieldset><legend>{wEDIT}</legend>
+		<p class="topbuttons">
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+		<p>
+			<label>{wNEWMODULE}:</label>
+			<input name="pagetempswsettings" id="pagetempswsettings" type="text" value="{PAGETEMPSWSETTINGS}" />
+		</p>
+		<p class="bottombuttons">
+			<input name="act" type="hidden" value="{ACTIONNAME}" />
+			<input name="reset" type="reset" value="{wRESET}" />
+			<input name="apply" type="submit" value="{wAPPLY}" />
+			<input name="submit" type="submit" value="{wSAVE}" />
+		</p>
+	</fieldset>
+</form>
+<!-- END tempswsettings -->
+
