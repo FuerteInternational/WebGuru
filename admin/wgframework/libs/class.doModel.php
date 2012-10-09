@@ -780,7 +780,7 @@ require(\'model/extended/extended.'.$name.'.php\');
 			$pre = NULL;
 			$pos = NULL;
 			if ($type == 'int' || $type == 'tinyint') $return = 'int';
-			if ($type == 'datetime' || $type == 'timestamp') {
+			elseif ($type == 'datetime' || $type == 'timestamp') {
 				$pre = 'strtotime(';
 				$pos = ')';
 				$return = 'int';
