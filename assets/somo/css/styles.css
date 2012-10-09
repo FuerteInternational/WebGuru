@@ -363,6 +363,12 @@ div.errors ul li {
 	width:118px;
 	height:32px;
 }
+#page div.content div.appDetail .box .boxCopy {
+	margin-top:16px;
+	margin-bottom:32px;
+	font-size:12px;
+	color:#666;
+}
 
 /* Login section */
 

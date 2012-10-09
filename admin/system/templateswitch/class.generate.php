@@ -24,5 +24,10 @@ class generateTemplateswitch {
 		return $s->getTemplatename();
 	}
 	
+	public function generateSwitchname($p) {
+		$s = TemplateswitchModel::getTemplateByIdentifier($p[3]);
+		return $s->getName();
+	}
+	
 }
 ?>
