@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        9. October 2012 16:29:59
+ * @since        9. October 2012 18:42:00
  */
 
 class BaseIgalleryItemsModel extends DbModel {
@@ -281,7 +281,7 @@ class BaseIgalleryItemsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set IgalleryItemsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IgalleryItemsModel::getId', __LINE__, __FILE__);
@@ -295,7 +295,7 @@ class BaseIgalleryItemsModel extends DbModel {
 	 */
 	public function getSmallid() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set IgalleryItemsModel::getSmallid', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IgalleryItemsModel::getSmallid', __LINE__, __FILE__);
@@ -351,7 +351,7 @@ class BaseIgalleryItemsModel extends DbModel {
 	 */
 	public function getLongitude() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(5, $this->_result)) return (string) $this->_result[5];
+			if (array_key_exists(5, $this->_result)) return (float) $this->_result[5];
 			else parent::throwGetColException('Not set IgalleryItemsModel::getLongitude', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IgalleryItemsModel::getLongitude', __LINE__, __FILE__);
@@ -365,7 +365,7 @@ class BaseIgalleryItemsModel extends DbModel {
 	 */
 	public function getLatitude() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(6, $this->_result)) return (string) $this->_result[6];
+			if (array_key_exists(6, $this->_result)) return (float) $this->_result[6];
 			else parent::throwGetColException('Not set IgalleryItemsModel::getLatitude', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IgalleryItemsModel::getLatitude', __LINE__, __FILE__);
@@ -379,7 +379,7 @@ class BaseIgalleryItemsModel extends DbModel {
 	 */
 	public function getIgalleryGalleriesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set IgalleryItemsModel::getIgalleryGalleriesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From IgalleryItemsModel::getIgalleryGalleriesId', __LINE__, __FILE__);

@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        9. October 2012 16:29:58
+ * @since        9. October 2012 18:42:00
  */
 
 class BaseBlogPostsModel extends DbModel {
@@ -379,7 +379,7 @@ class BaseBlogPostsModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set BlogPostsModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogPostsModel::getId', __LINE__, __FILE__);
@@ -407,7 +407,7 @@ class BaseBlogPostsModel extends DbModel {
 	 */
 	public function getUsersId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(2, $this->_result)) return (string) $this->_result[2];
+			if (array_key_exists(2, $this->_result)) return (int) $this->_result[2];
 			else parent::throwGetColException('Not set BlogPostsModel::getUsersId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogPostsModel::getUsersId', __LINE__, __FILE__);
@@ -645,7 +645,7 @@ class BaseBlogPostsModel extends DbModel {
 	 */
 	public function getParent() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(19, $this->_result)) return (string) $this->_result[19];
+			if (array_key_exists(19, $this->_result)) return (int) $this->_result[19];
 			else parent::throwGetColException('Not set BlogPostsModel::getParent', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogPostsModel::getParent', __LINE__, __FILE__);
@@ -687,7 +687,7 @@ class BaseBlogPostsModel extends DbModel {
 	 */
 	public function getViews() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(22, $this->_result)) return (string) $this->_result[22];
+			if (array_key_exists(22, $this->_result)) return (int) $this->_result[22];
 			else parent::throwGetColException('Not set BlogPostsModel::getViews', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogPostsModel::getViews', __LINE__, __FILE__);
@@ -701,7 +701,7 @@ class BaseBlogPostsModel extends DbModel {
 	 */
 	public function getRssviews() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(23, $this->_result)) return (string) $this->_result[23];
+			if (array_key_exists(23, $this->_result)) return (int) $this->_result[23];
 			else parent::throwGetColException('Not set BlogPostsModel::getRssviews', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogPostsModel::getRssviews', __LINE__, __FILE__);

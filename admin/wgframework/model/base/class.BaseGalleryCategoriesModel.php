@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        9. October 2012 16:29:59
+ * @since        9. October 2012 18:42:00
  */
 
 class BaseGalleryCategoriesModel extends DbModel {
@@ -407,7 +407,7 @@ class BaseGalleryCategoriesModel extends DbModel {
 	 */
 	public function getMainThumbId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(8, $this->_result)) return (string) $this->_result[8];
+			if (array_key_exists(8, $this->_result)) return (int) $this->_result[8];
 			else parent::throwGetColException('Not set GalleryCategoriesModel::getMainThumbId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From GalleryCategoriesModel::getMainThumbId', __LINE__, __FILE__);

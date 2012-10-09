@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        9. October 2012 16:29:58
+ * @since        9. October 2012 18:42:00
  */
 
 class BaseBlogFilesModel extends DbModel {
@@ -267,7 +267,7 @@ class BaseBlogFilesModel extends DbModel {
 	 */
 	public function getId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(0, $this->_result)) return (string) $this->_result[0];
+			if (array_key_exists(0, $this->_result)) return (int) $this->_result[0];
 			else parent::throwGetColException('Not set BlogFilesModel::getId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogFilesModel::getId', __LINE__, __FILE__);
@@ -323,7 +323,7 @@ class BaseBlogFilesModel extends DbModel {
 	 */
 	public function getBlogPostsId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(4, $this->_result)) return (string) $this->_result[4];
+			if (array_key_exists(4, $this->_result)) return (int) $this->_result[4];
 			else parent::throwGetColException('Not set BlogFilesModel::getBlogPostsId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogFilesModel::getBlogPostsId', __LINE__, __FILE__);
@@ -365,7 +365,7 @@ class BaseBlogFilesModel extends DbModel {
 	 */
 	public function getViews() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(7, $this->_result)) return (string) $this->_result[7];
+			if (array_key_exists(7, $this->_result)) return (int) $this->_result[7];
 			else parent::throwGetColException('Not set BlogFilesModel::getViews', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogFilesModel::getViews', __LINE__, __FILE__);
@@ -379,7 +379,7 @@ class BaseBlogFilesModel extends DbModel {
 	 */
 	public function getDownloads() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(8, $this->_result)) return (string) $this->_result[8];
+			if (array_key_exists(8, $this->_result)) return (int) $this->_result[8];
 			else parent::throwGetColException('Not set BlogFilesModel::getDownloads', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From BlogFilesModel::getDownloads', __LINE__, __FILE__);

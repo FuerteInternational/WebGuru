@@ -10,7 +10,7 @@
  * @author       WebGuruCMS3 Framework CMS dbModel generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    3.0.0.0
- * @since        9. October 2012 16:29:59
+ * @since        9. October 2012 18:42:00
  */
 
 class BaseMobileappsUsersModel extends DbModel {
@@ -190,7 +190,7 @@ class BaseMobileappsUsersModel extends DbModel {
 	 */
 	public function getCompaniesId() {
 		if ((bool) $this->_result) {
-			if (array_key_exists(1, $this->_result)) return (string) $this->_result[1];
+			if (array_key_exists(1, $this->_result)) return (int) $this->_result[1];
 			else parent::throwGetColException('Not set MobileappsUsersModel::getCompaniesId', __LINE__, __FILE__);
 		}
 		else return parent::throwNoResException('No result From MobileappsUsersModel::getCompaniesId', __LINE__, __FILE__);
