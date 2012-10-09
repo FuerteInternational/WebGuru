@@ -23,13 +23,22 @@ class formsHelper extends baseHelper {
 			$code .= '<option value="'.($isNumeric ? '0' : '').'"'.(($selected == 0) ? ' selected="selected"' : NULL).'>'.$addNullValue.'</option>';
 		}
 		foreach ($data as $k=>$v) {
-			
-			if ((bool) $selected) {
-				if ($selected == $k) $sel = self::SELECTED;
+			if ($isNumeric) {
+				if ((bool) $selected) {
+					if ($selected == $k) $sel = self::SELECTED;
+					else $sel = NULL;
+				}
 				else $sel = NULL;
+				$code .= '<option value="'.$k.'"'.$sel.'>'.$v.'</option>';
 			}
-			else $sel = NULL;
-			$code .= '<option value="'.$k.'"'.$sel.'>'.$v.'</option>';
+			else {
+				if ((bool) $selected) {
+					if ($selected == $v) $sel = self::SELECTED;
+					else $sel = NULL;
+				}
+				else $sel = NULL;
+				$code .= '<option value="'.$v.'"'.$sel.'>'.$v.'</option>';
+			}
 		}
 		$code .= '</select>';
 		return $code;

@@ -112,6 +112,7 @@ var pixelpage = {
 	},
 	
 	generateWeb: function(generating, SSID) {
+		
 		pixelpage.vars.origText = $('#generateweb span').html();
 		$('#generateweb span').html(generating);
 		$('#generateweb').attr('disabled', 'disabled');

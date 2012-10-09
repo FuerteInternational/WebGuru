@@ -58,7 +58,6 @@ $var['COLIDENTIFIER'] = $item->getIdentifier();
 $var['COLTEMPLATENAME'] = $item->getTemplatename();
 $var['COLTEMPLATEFOLDERFULL'] = formsHelper::getSelectBox('templatename', $item->getTemplatename(), wgIo::getFolders(wgPaths::getPath('ftp').'assets/'), array(), false);
 
-
 $var = wgSystem::getFormCallback($var);
 
 $tpl->setVariable($var);
