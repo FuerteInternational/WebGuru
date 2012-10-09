@@ -133,15 +133,23 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 			if (!is_dir($appPath)) return $arr;
 			$files = wgIo::getFolders($appPath);
 			$appPath .= $files[0].'/';
-			$iconFile = $appPath.'Icon@2x.png';
+			$iconFile = $appPath.'Icon.png';
 			if (file_exists($iconFile)) {
-				$output = shell_exec('../bin/pngcrush -revert-iphone-optimizations -q '.$iconFile.' '.$dest.'icon.png');
+				wgIo::copy($iconFile, $dest.'icon.png');
+				wgIo::copy(wgPaths::getPath('ftp').'bin/normalize', $dest.'normalize');
+				//chdir($dest);
+				$output = shell_exec('chmod -x '.$dest.'normalize');
+				$output = shell_exec('python '.$dest.'normalize');
+				//$output = shell_exec('ls '.$dest);
+				print $output;
+				//$output = shell_exec('../bin/pngcrush -revert-iphone-optimizations -q '.$iconFile.' '.$dest.'icon.png');
 				$arr['tempicon'] = $dest.'icon.png';
+				exit();
 			}
 			else {
-				$iconFile = $appPath.'Icon.png';
+				$iconFile = $appPath.'Icon@2x.png';
 				if (file_exists($iconFile)) {
-					$output = shell_exec('../bin/pngcrush -revert-iphone-optimizations -q '.$iconFile.' '.$dest.'icon.png');
+					//$output = shell_exec('../bin/pngcrush -revert-iphone-optimizations -q '.$iconFile.' '.$dest.'icon.png');
 					$arr['tempicon'] = $dest.'icon.png';
 				}
 			}
@@ -174,7 +182,6 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		if (file_exists($data['destination'].$data['filename'])) {
 			wgIo::move($data['destination'].$data['filename'], $mobileAppsFolder.'ipa/'.$id.'.ipa');
 		}
-		print_r($data['tempicon']);
 		if (isset($data['tempicon'])) {
 			wgIo::copy($data['tempicon'], $mobileAppsFolder.'img/'.$id.'.png');
 			$img = new wgImages($mobileAppsFolder.'img/'.$id.'.png');
@@ -198,7 +205,6 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		$data = self::saveTempFile();
 		$ok = false;
 		$id = 0;
-		//$data = array();
 		$save = array();
 		$save['devtype'] = (int)wgPost::getValue('devtype');
 		$save['apptype'] = 0; // 0 - iPhone; 1 - Android
@@ -252,7 +258,8 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 			self::saveFile($id, $data);
 			self::generatePlistFor($data, $id);
 		}
-		if (isset($data['destination'])) wgIo::delete($data['destination']);
+		//if (isset($data['destination'])) wgIo::delete($data['destination']);
+		wgError::add('Not deleting destination!!!');
 		return $ok;
 	}
 
