@@ -35,17 +35,16 @@ $arr = BpTechnologiesModel::getSelfData();
     <flagship id='9' abbr='ASI' name='Advanced Seismic Imaging'>
       <description>djbsfoobsfo osifnsfv sf s sfg sf sfg sfg sf</description>
       <technologies>
-      <?php
+        <?php
       foreach ($arr as $t) {
-      ?>
-        <technology id='<?php echo $t->getId(); ?>' abbr='<?php echo $t->getAbbr(); ?>' name='<?php echo $t->getName(); ?>'>
+      ?><technology id='<?php echo $t->getId(); ?>' abbr='<?php echo $t->getAbbr(); ?>' name='<?php echo $t->getName(); ?>'>
           <image id="2" name="FWI Image" path="/assets/2.jpg" />
           <video id="1" name="FWI Video" path="/assets/1.mp4" />
           <introduction><?php echo $t->getIntroduction(); ?></introduction>
           <outline><?php echo $t->getOutline(); ?></outline>
           <keypoints><?php echo $t->getKeypoints(); ?></keypoints>
-        </technology>
-        <?php } ?>
+        </technology><?php } ?>
+        
     </flagship>
     <flagship id='10' abbr='PRL' name='Pushing Reservoir Limits'>
       <description />
