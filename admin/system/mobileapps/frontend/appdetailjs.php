@@ -36,7 +36,8 @@ function clickUploadButton() {
 function startUploadingApp() {
 	$('#uploadIpaFileBuildSelectBox').hide();
 	$('#uploadIpaFileButton').hide();
-	$('#infoText').show("slow");
+	$('#infoText').show();
+	$('#infoTextProgressBar').show();
 	$('#submitAppDataButton').click();
 }
 

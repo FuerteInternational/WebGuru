@@ -23,7 +23,8 @@ $uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()
                 <input type="file" name="file" id="ipaFile" style="display:none;" onchange="startUploadingApp()" />
                 <a href="#" class="button" id="uploadIpaFileButton"  onclick="return clickUploadButton()">Pick an app</a>
                 <button type="submit" style="display:none;" id="submitAppDataButton" name="submitAppDataButton">Submit</button>
-                <p id="infoText" style="display:none;">Your application is being uploaded now! Please wait for a page refresh.</p>
+                <p id="infoText">Your application is being uploaded now! Please wait for a page refresh.</p>
+				<p id="infoTextProgressBar">&nbsp;</p>
 				<p class="infoText">
 					<strong>Help:</strong><br />
 					Please upload one of the following formats:<br />

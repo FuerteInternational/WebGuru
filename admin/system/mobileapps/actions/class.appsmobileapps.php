@@ -88,7 +88,9 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 			wgIo::uploadFile($filename, $fileTmp, $dest);
 			$arr['size'] = filesize($dest.$filename);
 			
-			shell_exec('unzip '.$dest.$filename.' -d '.$dest.'');
+			$output = shell_exec('unzip '.$dest.$filename.' -d '.$dest.'');
+			print $output;
+			exit();
 			
 			$appPath = $dest.'Payload/';
 			if (!is_dir($appPath)) return $arr;
