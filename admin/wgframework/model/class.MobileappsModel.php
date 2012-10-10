@@ -17,7 +17,12 @@ class MobileappsModel extends BaseMobileappsModel {
 	// --------------------- Predefined functions for Mobileapps ---------------------
 	
 	public static function getIdOfAnExistingApp($devtype, $bundleId) {
-		
+		$conn = new wgConnector();
+		$conn->where(parent::COL_DEVTYPE, (int)$devtype);
+		$conn->where(parent::COL_IDENTIFIER, wgValidation::safeFile($bundleId));
+		$arr = parent::doSelect($conn);
+		if (!empty($arr)) return $arr[0]->getId();
+		return 0;
 	}
 
 	public static function getSelfData() {

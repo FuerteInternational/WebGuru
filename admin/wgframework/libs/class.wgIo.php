@@ -217,7 +217,10 @@ class wgIo extends wgCookies {
 				return true;
 			}
 		}
-		else return unlink($path);
+		else {
+			if (!file_exists($path) && !is_dir($path)) return true;
+			return unlink($path);
+		}
 	}
 	
 	/**

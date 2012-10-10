@@ -1,13 +1,82 @@
-<?php
 
+
+<?php
 $uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()"></div>
 <div class="popupWindow">
 	<div class="content">
-		<form action="" method="post" enctype="multipart/form-data">
-			<input type="file" name="file" id="ipaFile" style="display:none;" onchange="startUploadingApp()" />
-			<a href="#" class="button" id="uploadIpaFileButton"  onclick="return clickUploadButton()">Pick an app</a>
-			<button type="submit" style="display:none;" id="submitIpaButton" name="submitIpaButton">Submit</button>
-			<p id="infoText" style="display:none;">Your application is being uploaded now! Please wait for a page refresh.</p>
+		<ul id="popupUploadSelector">
+			<li class="active" id="popupUploadSelectorLi0"><a href="#" onclick="return switchUploadTab(0)">iOS or Android binary</a></li>
+			<li id="popupUploadSelectorLi1"><a href="#" onclick="return switchUploadTab(1)">Web App</a></li>
+			<li id="popupUploadSelectorLi2"><a href="#" onclick="return switchUploadTab(2)">External Store App</a></li>
+		</ul>
+		<form id="fieldSet0" action="" method="post" enctype="multipart/form-data">
+			<fieldset><legend>iOS or Android binary</legend>
+                <h3>Create a new app by uploading a file or using one of the other options</h3>
+                <p id="uploadIpaFileBuildSelectBox">
+					<label>Select type of the build:</label>
+					<select name="devtype" id="devtypeSelectBox">
+						<option value="0">Development build</option>
+						<option value="1">Beta build</option>
+						<option value="2">Production build</option>
+					</select>
+				</p>
+                <input type="file" name="file" id="ipaFile" style="display:none;" onchange="startUploadingApp()" />
+                <a href="#" class="button" id="uploadIpaFileButton"  onclick="return clickUploadButton()">Pick an app</a>
+                <button type="submit" style="display:none;" id="submitAppDataButton" name="submitAppDataButton">Submit</button>
+                <p id="infoText" style="display:none;">Your application is being uploaded now! Please wait for a page refresh.</p>
+				<p class="infoText">
+					<strong>Help:</strong><br />
+					Please upload one of the following formats:<br />
+					iOS (iPhone, iPad, iPod) devices ........ <strong>.ipa</strong> file<br />
+					Android based devices ....................... <strong>.apk</strong> file
+				</p>
+        	</fieldset>
+		</form>
+		<form id="fieldSet1" action="" method="post" enctype="multipart/form-data">
+			<fieldset><legend>Web App</legend>
+                <h3>Link to any web app and have it appear as an icon on the end user\'s home screen</h3>
+                <p>
+					<label>Select type of the build:</label>
+					<select name="devtype" id="devtypeSelectBox">
+						<option value="0">Development build</option>
+						<option value="1">Beta build</option>
+						<option value="2">Production build</option>
+					</select>
+				</p>
+                <p>
+					<label>Select type of the build:</label>
+					<input type="text" name="webapp" id="webappInput" onchange="verifyLink(\'webappInput\')" />
+				</p>
+                <button type="submit" name="submitWebAppButton">Submit</button>
+				<p class="infoText">
+					<strong>Help:</strong><br />
+					Link to any web app and have it appear as an icon on the end user\'s home screen.<br />
+					The app will launch in the default browser on the device.
+        	</fieldset>
+		</form>
+		<form id="fieldSet2" action="" method="post" enctype="multipart/form-data">
+			<fieldset><legend>External Store App</legend>
+                <h3>Link to apps that are in an external app store</h3>
+                <p>
+					<label>Select type of the build:</label>
+					<select name="devtype" id="devtypeSelectBox">
+						<option value="0">Development build</option>
+						<option value="1">Beta build</option>
+						<option value="2">Production build</option>
+					</select>
+				</p>
+                <p>
+					<label>Select type of the build:</label>
+					<input type="text" name="extstore" id="extStoreInput" onchange="verifyLink(\'extStoreInput\')" />
+				</p>
+                <button type="submit" name="submitExtStoreButton">Submit</button>
+				<p class="infoText">
+					<strong>Help:</strong><br />
+					Link to apps that are in an external app store.<br />
+					Visit a store to copy and paste the app\'s URL.<br /><br />
+					<a href="https://market.android.com/" target="_blank">Android Marketplace</a><br />
+					<a href="http://itunes.apple.com/linkmaker/" target="_blank">iTunes App Store</a><br />
+        	</fieldset>
 		</form>
 	</div>
 </div>
@@ -23,50 +92,15 @@ if ($mobileAppId) {
 	$space -= (250 * count($arr));
 	if ($space < 0) $space = 0;
 	
+	echo $uploadNewAppForm;
 ?>
-<script type="text/javascript">
-
-function toggleEdit(element) {
-	$('#' + element).toggle("fast", function() {
-		
-	});
-	return false;
-}
-
-function clickUploadButton() {
-	$('#ipaFile').click();
-	return false;
-}
-
-function startUploadingApp() {
-	$('#uploadIpaFileButton').hide();
-	$('#infoText').show("slow");
-	$('#submitIpaButton').click();
-}
-
-function togglePopupWindow() {
-	$('.popupWindowShadow').toggle("slow", function() {
-		if ($('.popupWindowShadow').is(':visible') == true) {
-			$('.popupWindow').show("slow", function() {
-			
-			});
-		}
-		else {
-			$('.popupWindow').hide("slow", function() {
-			
-			});
-		}
-	});
-	return false;
-}
-
-</script>
-<?php echo $uploadNewAppForm; ?>
 <div class="appDetail" style="margin-top: <?php echo $space; ?>px;">
     <div class="box noBorder">
         <h3 class="appName"><?php echo $app->getName(); ?></h3>
         <p class="appBundleId"><?php echo $app->getIdentifier(); ?></p>
-        <!--<a href="<?php echo wgPaths::getAdminPath('url'); ?>?part=system&mod=mobileapps&page=apps" class="button rightButton">Delete</a>-->
+        <?php if (moduleUsers::isAdmin()) { ?>
+        <a href="?deleteAllApps=<?php echo $app->getIdentifier(); ?>" class="button rightButton" onclick="return confirmAction('Are you sure you want to delete ALL versions of this app?')">Delete</a>
+        <?php } ?>
     </div>
     <?php
     $x = 0;

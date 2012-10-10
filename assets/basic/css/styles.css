@@ -254,6 +254,97 @@ div.errors ul li {
 	margin:8px;
 	background-color:#FFF;
 	min-height:300px;
+	padding-bottom:36px;
+}
+#page div.content div.popupWindow div.content ul {
+	display:block;
+	width:600px;
+	height:36px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#page div.content div.popupWindow div.content ul li {
+	float:left;
+}
+#page div.content div.popupWindow div.content ul li.active {
+}
+#page div.content div.popupWindow div.content ul li a {
+	display:block;
+	width:190px;
+	height:36px;
+	line-height:36px;
+	background-color:#DA0971;
+	color:#CCC;
+	margin-left:5px;
+	margin-right:5px;
+	text-decoration:none;
+	font-weight:bold;
+	text-align:center;
+}
+#page div.content div.popupWindow div.content ul li.active a {
+	color:#FFF;
+}
+#page div.content div.popupWindow div.content ul li a:hover {
+	text-decoration:underline;
+}
+#page div.content div.popupWindow div.content ul li.active a:hover {
+	text-decoration:none;
+}
+#page div.content div.popupWindow div.content fieldset {
+	border-color: #FFF;
+	padding-top: 16px;
+	padding-right: 16px;
+	padding-bottom: 32px;
+	padding-left: 16px;
+	margin-top: 0px;
+	margin-right: 16px;
+	margin-left: 16px;
+}
+#page div.content div.popupWindow div.content fieldset legend {
+	display:none;
+}
+#page div.content div.popupWindow div.content fieldset h3 {
+	margin-bottom:32px;
+	text-align: center;
+}
+#page div.content div.popupWindow div.content fieldset p {
+	margin-bottom:32px;
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+	font-size:12px;
+}
+#page div.content div.popupWindow div.content fieldset p label {
+	display:block;
+	float:left;
+	width:250px;
+	color:#666;
+}
+#page div.content div.popupWindow div.content fieldset p select, #page div.content div.popupWindow div.content fieldset p input {
+	width:340px;
+}
+#page div.content div.popupWindow div.content fieldset .button, #page div.content div.popupWindow div.content fieldset button {
+	float:none;
+	margin-top:16px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#page div.content div.popupWindow div.content fieldset p.infoText {
+	margin-top:36px;
+}
+#page div.content div.popupWindow div.content fieldset p.infoText a {
+	font-weight:bold;
+}
+#page div.content div.popupWindow div.content fieldset p.infoText a:hover {
+	text-decoration:none;
+}
+#page div.content div.popupWindow div.content #fieldSet0 {
+}
+#page div.content div.popupWindow div.content #fieldSet1 {
+	display:none;
+}
+#page div.content div.popupWindow div.content #fieldSet2 {
+	display:none;
 }
 #page div.content div.appDetail {
 	float: left;

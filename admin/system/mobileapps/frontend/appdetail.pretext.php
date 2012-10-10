@@ -34,7 +34,7 @@ if (isset($_POST['deleteCurrentBuild'])) {
 	else wgError::add('Action only allowed to administrators!');
 	wgPaths::redirect('?mobileAppId='.wgPost::getValue('mobileAppId').'');
 }
-if (isset($_POST['submitIpaButton'])) {
+if (isset($_POST['submitAppDataButton'])) {
 	if (moduleUsers::isAdmin()) {
 		$ok = appsmobileappsActionsMobileapps::doSaveMobileapps();
 		if ($ok) {
@@ -46,5 +46,21 @@ if (isset($_POST['submitIpaButton'])) {
 	}
 	else wgError::add('Action only allowed to administrators!');
 	wgPaths::redirect('?mobileAppId='.wgPost::getValue('mobileAppId').'');
+}
+if (isset($_GET['deleteAllApps'])) {
+	if (moduleUsers::isAdmin()) {
+		if (moduleMobileapps::deleteAllAppWithId($_GET['deleteAllApps'])) {
+			wgError::add('All apps has been successfully deleted!', 2);
+			wgPaths::redirect('?done=:)');
+		}
+		else {
+			wgError::add('Unable to delete selected apps!');
+			wgPaths::redirect('?mobileAppId='.$_GET['deleteAllApps'].'');
+		}
+	}
+	else {
+		wgError::add('Action only allowed to administrators!');
+		wgPaths::redirect('?mobileAppId='.$_GET['deleteAllApps'].'');
+	}
 }
 ?>

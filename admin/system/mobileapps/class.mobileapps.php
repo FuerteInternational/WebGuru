@@ -121,6 +121,7 @@ class moduleMobileapps {
 		$appId = (int)$appId;
 		if (!$appId) return false;
 		$basicPath = wgPaths::getUserfilesPath('ftp').'mobileapps/';
+		
 		// Deleting icons
 		wgIo::delete($basicPath.'img/'.$appId.'.png');
 		wgIo::delete($basicPath.'img/'.$appId.'@2x.png');
@@ -129,19 +130,23 @@ class moduleMobileapps {
 		wgIo::delete($basicPath.'ipa/'.$appId.'.ipa');
 		wgIo::delete($basicPath.'ipa/'.$appId.'.plist');
 		
-		// Deleting references
+		// Deleting database references
 		$conn = new wgConnector();
 		$conn->where(MobileappsModel::COL_ID, $appId);
 		MobileappsModel::doDelete($conn);
-		
-// 		$conn = new wgConnector();
-// 		$conn->where(MobileappsUsersModel::col_, $appId);
-// 		MobileappsUsersModel::doDelete($conn);
 		
 		$conn = new wgConnector();
 		$conn->where(MobileappsCompaniesModel::COL_MOBILEAPPS_ID, $appId);
 		MobileappsCompaniesModel::doDelete($conn);
 		
+		return true;
+	}
+	
+	public static function deleteAllAppWithId($bundleId) {
+		$arr = MobileappsModel::getSelfDataForIdentifier(wgValidation::safeFile($bundleId));
+		foreach ($arr as $app) {
+			self::deleteAppWithId($app->getId());
+		}
 		return true;
 	}
 	

@@ -83,74 +83,35 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 		
 		$arr = array('destination'=>$dest, 'filename'=>$filename, 'icon'=>0);
 		
-		// Saving icon
-// 		$icon = $_FILES['icon']['name'];
-// 		if ($icon) {
-// 			if ($_FILES['icon']['type'] == 'image/png') {
-// 				$iconname = $_FILES['icon']['name'];
-// 				$iconTmp = $_FILES['icon']['tmp_name'];
-// 				$iconname = valid::safeText($iconname).'.png';
-// 				wgIo::uploadFile($iconname, $iconTmp, $dest);
-// 				$size = getimagesize($dest.$iconname);
-// 				$ok = true;
-// 				if ($size[0] != $size[1]) {
-// 					$ok = false;
-// 					wgError::add('iconwrongratio');
-// 				}
-// 				elseif ($size < 57) {
-// 					$ok = false;
-// 					wgError::add('icontoosmall');
-// 				}
-// 				if ($size['mime'] != 'image/png') {
-// 					$ok = false;
-// 					wgError::add('novalidpng');
-// 				}
-				
-// 				if ($ok) {
-// 					$arr['icon'] = 1;
-// 					$arr['iconname'] = $iconname;
-// 					wgError::add('iconcorrect', 2);
-// 				}
-// 				else {
-// 					wgError::add('unabletosaveicon', 1);
-// 				}
-// 			}
-// 		}
-		
 		if (!empty($name)) {
 			$fileTmp = $_FILES['file']['tmp_name'];
 			wgIo::uploadFile($filename, $fileTmp, $dest);
 			$arr['size'] = filesize($dest.$filename);
-			$currentPath = getcwd();
-			chdir($dest);
-			$zip = new Archive_Zip('./'.$filename);
-			$zip->extract();
-			$zip = NULL;
-			chdir('../../');
-			$systemTempPath = getcwd().'/';
-			chdir($currentPath);
+			
+			shell_exec('unzip '.$dest.$filename.' -d '.$dest.'');
+			
 			$appPath = $dest.'Payload/';
 			if (!is_dir($appPath)) return $arr;
 			$files = wgIo::getFolders($appPath);
 			$appPath .= $files[0].'/';
-			$iconFile = $appPath.'Icon.png';
+			$iconFile = $appPath.'Icon@2x.png';
 			if (file_exists($iconFile)) {
-				wgIo::copy($iconFile, $dest.'icon.png');
-				wgIo::copy(wgPaths::getPath('ftp').'bin/normalize', $dest.'normalize');
+				//wgIo::copy($iconFile, $dest.'icon.png');
+				//wgIo::copy(wgPaths::getPath('ftp').'bin/normalize', $dest.'normalize');
 				//chdir($dest);
-				$output = shell_exec('chmod -x '.$dest.'normalize');
-				$output = shell_exec('python '.$dest.'normalize');
+				//$output = shell_exec('chmod -x '.$dest.'normalize');
+				//$output = shell_exec('python '.$dest.'normalize');
 				//$output = shell_exec('ls '.$dest);
-				print $output;
+				//print $output;
 				//$output = shell_exec('../bin/pngcrush -revert-iphone-optimizations -q '.$iconFile.' '.$dest.'icon.png');
-				$arr['tempicon'] = $dest.'icon.png';
-				exit();
+				//$arr['tempicon'] = $dest.'icon.png';
+				//exit();
 			}
 			else {
-				$iconFile = $appPath.'Icon@2x.png';
+				$iconFile = $appPath.'Icon.png';
 				if (file_exists($iconFile)) {
 					//$output = shell_exec('../bin/pngcrush -revert-iphone-optimizations -q '.$iconFile.' '.$dest.'icon.png');
-					$arr['tempicon'] = $dest.'icon.png';
+					//$arr['tempicon'] = $dest.'icon.png';
 				}
 			}
 			$plistFile = $appPath.'Info.plist';
@@ -158,11 +119,11 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 				$plist = new CFPropertyList();
 				$plist->parseBinary(file_get_contents($plistFile));
 				$data =  $plist->toArray();
-				$arr['version'] = $data['CFBundleShortVersionString'];
-				$arr['minOsVersion'] = $data['MinimumOSVersion'];
-				$arr['bundleIdentifier'] = $data['CFBundleIdentifier'];
-				$arr['name'] = $data['CFBundleDisplayName'];
-				$icons = $data['CFBundleIcons']['CFBundlePrimaryIcon']['CFBundleIconFiles'];
+				$arr['version'] = isset($data['CFBundleShortVersionString']) ? $data['CFBundleShortVersionString'] : '';
+				$arr['minOsVersion'] = isset($data['MinimumOSVersion']) ? $data['MinimumOSVersion'] : '';
+				$arr['bundleIdentifier'] = isset($data['CFBundleIdentifier']) ? $data['CFBundleIdentifier'] : '';
+				$arr['name'] = isset($data['CFBundleDisplayName']) ? $data['CFBundleDisplayName'] : '';
+				$icons = isset($data['CFBundleIcons']['CFBundlePrimaryIcon']['CFBundleIconFiles']) ? $data['CFBundleIcons']['CFBundlePrimaryIcon']['CFBundleIconFiles'] : array();
 // 				if (is_array($icons)) {
 // 					foreach ($icons as $k=>$v) {
 // 						$iconPath = $appPath.$v;
@@ -201,12 +162,12 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 	 * @return bool Success
 	 */
 	public static function doSaveMobileapps() {
-		print ':)';
 		$data = self::saveTempFile();
 		$ok = false;
 		$id = 0;
 		$save = array();
 		$save['devtype'] = (int)wgPost::getValue('devtype');
+		if (!(bool) wgPost::getValue('edit')) wgPost::setValue('edit', MobileappsModel::getIdOfAnExistingApp($save['devtype'], $data['bundleIdentifier']));
 		$save['apptype'] = 0; // 0 - iPhone; 1 - Android
 		$save['icon'] = 0;
 		$save['sort'] = (int)wgPost::getValue('sort');
@@ -258,8 +219,11 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 			self::saveFile($id, $data);
 			self::generatePlistFor($data, $id);
 		}
-		//if (isset($data['destination'])) wgIo::delete($data['destination']);
-		wgError::add('Not deleting destination!!!');
+		if (isset($data['destination'])) wgIo::delete($data['destination']);
+		//wgError::add('Not deleting destination!!!');
+		if ($ok) {
+			wgPost::setValue('mobileAppId', $data['bundleIdentifier']);
+		}
 		return $ok;
 	}
 
