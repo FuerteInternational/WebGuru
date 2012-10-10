@@ -43,7 +43,7 @@ $arr = BpTechnologiesModel::getSelfData();
           <video id="1" name="FWI Video" path="/assets/1.mp4" />
           <introduction><?php echo $t->getIntroduction(); ?></introduction>
           <outline><?php echo $t->getOutline(); ?></outline>
-          <keypoints><?php echo $t->getKeypoint(); ?></keypoints>
+          <keypoints><?php echo $t->getKeypoints(); ?></keypoints>
         </technology>
         <?php } ?>
     </flagship>
