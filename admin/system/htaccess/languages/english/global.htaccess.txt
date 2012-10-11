@@ -1,0 +1,11 @@
+rewrites;Rewrites
+colname;Rewrite name
+coltype;Type
+rewrite;Rewrite
+errorpage;Error page
+htpasswd;.HTPASSWD
+colsystemwebsitesid;For website
+colsystemmodulesid;Module
+colsort;Sort index
+editor;Editor
+colrule;Rewrite rule

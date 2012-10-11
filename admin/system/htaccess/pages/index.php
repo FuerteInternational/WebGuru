@@ -72,7 +72,7 @@ $lv = array();
 
 $var['COLID'] = $item->getId();
 $var['COLNAME'] = $item->getName();
-$var['COLRULE'] = $item->getRule();
+$var['COLRULE'] = eregi_replace('\$', '&#36;', $item->getRule());
 $params = array();
 //$params['baseclass'] = 'SystemUsersModel';
 $var['COLTYPE'] = formsHelper::getSelectBox('type', $item->getType(), HtaccessRowsModel::getRowsTypes(), $params);

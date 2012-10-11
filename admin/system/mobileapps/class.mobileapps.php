@@ -62,6 +62,11 @@ class moduleMobileapps {
 		}
 	}
 	
+	public static function getDownloadFilenameForAppWithId($id) {
+		$app = MobileappsModel::getOneSelfData((int)$id);
+		return wgValidation::safeFile($app->getName()).'-'.$app->getDevtypeIdentifier().'-'.$app->getId().'.ipa';
+	}
+	
 	public static function downloadIpaWithId($id) {
 		$id = self::userHasPermissionToAccessAppWithId($id);
 		if (!$id) return false;
@@ -69,8 +74,8 @@ class moduleMobileapps {
 		$params = array(
 			'file'                => $app->getAppIpaPath(),
 			'cache'               => false,
-			'contentdisposition'  => array(HTTP_DOWNLOAD_ATTACHMENT, wgValidation::safeFile($app->getName()).'-'.$app->getDevtypeIdentifier().'.ipa'),
-			'contenttype'         => 'application/x-gzip'
+			'contentdisposition'  => array(HTTP_DOWNLOAD_ATTACHMENT, self::getDownloadFilenameForAppWithId($id)),
+			'contenttype'         => 'application/octet-stream'
 		);
 		error_reporting(0);
 		$error = HTTP_Download::staticSend($params, false);

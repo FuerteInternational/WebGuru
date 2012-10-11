@@ -89,8 +89,8 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 			$arr['size'] = filesize($dest.$filename);
 			
 			$output = shell_exec('unzip '.$dest.$filename.' -d '.$dest.'');
-			print $output;
-			exit();
+			//print $output;
+			//exit();
 			
 			$appPath = $dest.'Payload/';
 			if (!is_dir($appPath)) return $arr;
@@ -246,7 +246,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 	}
 	
 	private static function generatePlistFor($data, $id) {
-		if (!isset($data['identifier']) || !$data['identifier']) return false;
+		if (!isset($data['bundleIdentifier']) || !$data['bundleIdentifier']) return false;
 		$temp = '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -260,7 +260,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>'.wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$id.'.ipa</string>
+					<string>'.wgPaths::getPagePath(2, 'url').moduleMobileapps::getDownloadFilenameForAppWithId($id).'</string>
 				</dict>
 			</array>
 			<key>metadata</key>
