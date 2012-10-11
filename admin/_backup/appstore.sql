@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 10, 2012 at 06:11 PM
+-- Generation Time: Oct 11, 2012 at 02:13 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -1917,7 +1917,7 @@ CREATE TABLE `htaccess_rows` (
 --
 
 INSERT INTO `htaccess_rows` (`id`, `name`, `rule`, `type`, `system_users_id`, `system_modules_id`, `system_websites_id`, `sort`) VALUES
-(5, 'Main Rewrite', 'RewriteRule ^app-plist-(.*).plist$ app-plist/?mobileAppId=$1 [QSA]\r\nRewriteRule ^news-(.*?)-(.*)$ dashboard/?article=$1 [QSA]', 1, 1, 8, 4, 0);
+(5, 'Main Rewrite', 'RewriteRule ^app-plist-(.*).plist$ app-plist/?mobileAppId=$1 [QSA]\r\nRewriteRule ^news-(.*?)-(.*)$ dashboard/?article=$1 [QSA]\r\nRewriteRule ^my-apps/(.*)-(.*)-(.*).ipa$ my-apps/?downloadAppId=$3 [QSA]\r\n\r\n', 1, 1, 8, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -4097,15 +4097,15 @@ CREATE TABLE `mobileapps` (
   `size` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `identifier` (`identifier`,`devtype`,`apptype`,`icon`,`sort`,`added`,`changed`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `mobileapps`
 --
 
 INSERT INTO `mobileapps` (`id`, `name`, `identifier`, `devtype`, `apptype`, `icon`, `sort`, `added`, `changed`, `version`, `size`) VALUES
-(21, 'FuerteForms', 'com.fuerteint.fuerteforms', 0, 0, 0, 0, '2012-10-10 19:10:14', '2012-10-10 19:11:10', '1.0', 611575),
-(20, 'polligraf', 'com.fuerteint.polligraf', 0, 0, 0, 0, '2012-10-10 18:55:40', '2012-10-10 18:57:49', '1.0', 1608033);
+(24, 'New Audi A3', 'com.somoglobal.a32012', 0, 0, 1, 0, '2012-10-11 15:08:46', '2012-10-11 15:08:46', '', 114791323),
+(25, 'CALPOL®', 'com.fuerteint.calpolireland', 0, 0, 1, 0, '2012-10-11 15:09:15', '2012-10-11 15:09:15', '1.0', 46912052);
 
 -- --------------------------------------------------------
 
@@ -6205,7 +6205,7 @@ CREATE TABLE `system_users` (
 --
 
 INSERT INTO `system_users` (`id`, `nickname`, `mail`, `pass`, `firstname`, `lastname`, `lastlogin`, `lastip`, `system_team_id`, `timever`, `codever`, `active`, `xdata`) VALUES
-(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-10-10 17:04:48', '127.0.0.1', 1, '1349891502', '80395', 1, '');
+(1, 'admin', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'Ondrej', 'Rafaj', '2012-10-11 13:58:37', '192.168.105.131', 1, '1349963919', '78664', 1, '');
 
 -- --------------------------------------------------------
 
@@ -6231,6 +6231,35 @@ CREATE TABLE `system_validations` (
 
 INSERT INTO `system_validations` (`id`, `name`, `regex`, `function`, `revert`, `sort`) VALUES
 (1, 'empty', '', 'empty', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `system_websites`
+--
+
+DROP TABLE IF EXISTS `system_websites`;
+CREATE TABLE `system_websites` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `code` char(3) NOT NULL,
+  `image` varchar(15) DEFAULT NULL,
+  `directory` varchar(255) DEFAULT NULL,
+  `sort` int(3) DEFAULT NULL,
+  `isdefault` tinyint(1) NOT NULL DEFAULT '0',
+  `alternativepath` varchar(255) NOT NULL,
+  `added` datetime NOT NULL,
+  `changed` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `LANGUAGES_NAME` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `system_websites`
+--
+
+INSERT INTO `system_websites` (`id`, `name`, `code`, `image`, `directory`, `sort`, `isdefault`, `alternativepath`, `added`, `changed`) VALUES
+(4, 'appstore.fuerteint.com', 'aps', '', '', 0, 1, 'http://192.168.105.178/appstore.fuerteint.com/', '2012-09-19 15:08:55', '2012-10-09 18:10:46');
 
 -- --------------------------------------------------------
 
@@ -6427,7 +6456,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `users_groups_id`, `nickname`, `mail`, `password`, `question`, `ansver`, `added`, `online`, `changed`, `timever`, `codever`, `active`, `lastlogin`, `gender`, `lastip`, `firstname`, `lastname`, `system_countries_id`, `visits`, `downloads`, `xdata`) VALUES
-(1, 1, 'ondrej', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'que?', 'pasa', '2009-03-02 13:18:27', '2009-03-02 13:17:00', '2012-10-02 18:59:50', '', '', 1, '2012-10-10 18:09:13', 'm', '192.168.105.178', 'Ondrej', 'Rafaj', 56, 0, 0, ''),
+(1, 1, 'ondrej', 'ondrej.rafaj@gmail.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', 'que?', 'pasa', '2009-03-02 13:18:27', '2009-03-02 13:17:00', '2012-10-02 18:59:50', '', '', 1, '2012-10-11 14:55:29', 'm', '127.0.0.1', 'Ondrej', 'Rafaj', 56, 0, 0, ''),
 (2, 2, 'jakub.rafaj', 'jakub.rafaj@fuerteint.com', '26150cd292e4450ab8e6f799cce7b391bf2f1aef', '', '', '2012-10-01 22:18:52', '2012-10-01 22:18:00', '2012-10-02 17:16:40', '', '', 1, '2012-10-08 15:23:39', 'm', '127.0.0.1', 'Jakub', 'Rafaj', 56, 0, 0, ''),
 (3, 1, 'gianna', 'gianna@somoglobal.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', '', '', '0000-00-00 00:00:00', '2012-10-09 18:56:00', '2012-10-09 19:56:09', '', '', 1, '2012-10-09 18:56:00', 'f', '', 'Gianna', 'Illenseer', 222, 0, 0, ''),
 (4, 2, 'max', 'max@somoglobal.com', 'f7a9e24777ec23212c54d7a350bc5bea5477fdbb', '', '', '0000-00-00 00:00:00', '2012-10-09 18:56:00', '2012-10-09 19:56:49', '', '', 1, '2012-10-09 18:56:00', '', '', 'Max', 'Willis', 222, 0, 0, ''),

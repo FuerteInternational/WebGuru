@@ -260,7 +260,7 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>'.wgPaths::getPagePath(2, 'url').moduleMobileapps::getDownloadFilenameForAppWithId($id).'</string>
+					<string>'.wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$id.'.ipa</string>
 				</dict>
 			</array>
 			<key>metadata</key>
