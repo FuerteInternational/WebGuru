@@ -118,7 +118,9 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 				$data =  $plist->toArray();
 				wgIo::writeFile($dest.'Info.plist', $plist->toXML(true));
 				$arr['version'] = isset($data['CFBundleShortVersionString']) ? $data['CFBundleShortVersionString'] : '';
+				if (empty($arr['version'])) $arr['version']	= isset($data['CFBundleVersion']) ? $data['CFBundleVersion'] : '';
 				$arr['minOsVersion'] = isset($data['MinimumOSVersion']) ? $data['MinimumOSVersion'] : '';
+				$arr['sdk'] = isset($data['DTSDKName']) ? $data['DTSDKName'] : '';
 				$arr['bundleIdentifier'] = isset($data['CFBundleIdentifier']) ? $data['CFBundleIdentifier'] : '';
 				$arr['name'] = isset($data['CFBundleDisplayName']) ? $data['CFBundleDisplayName'] : '';
 				$icons = isset($data['CFBundleIcons']['CFBundlePrimaryIcon']['CFBundleIconFiles']) ? $data['CFBundleIcons']['CFBundlePrimaryIcon']['CFBundleIconFiles'] : array();
@@ -128,6 +130,9 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 						$size = getimagesize($iconPath);
 					}
 					$arr['icons'] = $icons;
+				}
+				if (empty($arr['icons']) && isset($data['CFBundleIconFile'])) {
+					$arr['icons'][] = $data['CFBundleIconFile'];
 				}
 			}
 			
@@ -149,7 +154,6 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 				$output = shell_exec('python ./normalize');
 				chdir($currentCwd);
 			}
-			
 			$biggestIcon = NULL;
 			$biggestIconSize = 0;
 			foreach ($icons as $icon) {
