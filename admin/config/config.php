@@ -13,9 +13,9 @@
 // Database connection
 $conf['db']['host']                 = "localhost";                     // Database host computer (default: localhost)
 
-$conf['db']['user']                 = "root";		                   // User name (default: root)
+$conf['db']['user']                 = "appstore";		               // User name (default: root)
 
-$conf['db']['pass']                 = "";		                       // infdbpass
+$conf['db']['pass']                 = "Sn33z3";		                   // infdbpass
 $conf['db']['dtbs']                 = "appstore";      		           // infdbdtbs
 $conf['db']['pref']                 = "";                              // infdbpref
 
@@ -23,7 +23,7 @@ $conf['db']['pref']                 = "";                              // infdbp
 // System definitions
 $conf['define']['develop']          = 1;                               // infdefinedevelop
 $conf['define']['filemode']         = 493;                             // infdefinefilemode
-$conf['define']['webroot']          = "http://192.168.105.178/appstore.fuerteint.com/";     // infdefinewebroot
+$conf['define']['webroot']          = "http://192.168.1.18/appstore.fuerteint.com/";     // infdefinewebroot
 $conf['define']['adminfolder']      = "admin/";                        // infdefineadminfolder
 $conf['define']['tempfolder']       = "temp/";                         // infdefinetempfolder
 $conf['define']['usrffolder']       = "userfiles/";                    // infdefineusrffolder

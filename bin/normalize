@@ -20,8 +20,12 @@ def getNormalizedPNG(filename):
     
     chunkPos = len(newPNG)
     
-    # For each chunk in the PNG file
+    idatAcc = ""
+    breakLoop = False
+    
+    # For each chunk in the PNG file    
     while chunkPos < len(oldPNG):
+        skip = False
         
         # Reading chunk
         chunkLength = oldPNG[chunkPos:chunkPos+4]
@@ -39,14 +43,27 @@ def getNormalizedPNG(filename):
 
         # Parsing the image chunk
         if chunkType == "IDAT":
+            # Store the chunk data for later decompression
+            idatAcc += chunkData
+            skip = True
+
+        # Removing CgBI chunk        
+        if chunkType == "CgBI":
+            skip = True
+
+        # Add all accumulated IDATA chunks
+        if chunkType == "IEND":
             try:
                 # Uncompressing the image chunk
                 bufSize = width * height * 4 + height
-                chunkData = decompress( chunkData, -8, bufSize)
+                chunkData = decompress( idatAcc, -15, bufSize)
                 
             except Exception, e:
                 # The PNG image is normalized
+                print e
                 return None
+
+            chunkType = "IDAT"
 
             # Swapping red & blue bytes for each pixel
             newdata = ""
@@ -67,17 +84,15 @@ def getNormalizedPNG(filename):
             chunkCRC = crc32(chunkType)
             chunkCRC = crc32(chunkData, chunkCRC)
             chunkCRC = (chunkCRC + 0x100000000) % 0x100000000
+            breakLoop = True
 
-        # Removing CgBI chunk 
-        if chunkType != "CgBI":
+        if not skip:
             newPNG += pack(">L", chunkLength)
             newPNG += chunkType
             if chunkLength > 0:
                 newPNG += chunkData
             newPNG += pack(">L", chunkCRC)
-
-        # Stopping the PNG file parsing
-        if chunkType == "IEND":
+        if breakLoop:
             break
         
     return newPNG
@@ -102,7 +117,7 @@ def getFiles(base):
         return
 
     files = os.listdir(base)
-    for  file in files:
+    for file in files:
         filepath = os.path.join(base, file)
         try:
             st = os.lstat(filepath)
@@ -121,33 +136,18 @@ def getFiles(base):
     if base == ".":
         return _dirs, _pngs
 
-print "-----------------------------------"
-print " iPhone PNG Images Normalizer v1.0"
-print "-----------------------------------"
-print " "
-print "[+] Searching PNG files...",
 dirs, pngs = getFiles(".")
-print "ok"
 
 if len(pngs) == 0:
-    print " "
-    print "[!] Alert: There are no PNG files found. Move this python file to the folder that contains the PNG files to normalize."
+    print "0"
     exit()
     
-print " "
-print " -  %d PNG files were found at this folder (and subfolders)." % len(pngs)
-print " "
-while True:
-    normalize = raw_input("[?] Do you want to normalize all images (Y/N)? ").lower()
-    if len(normalize) > 0 and (normalize[0] == "y" or normalize[0] == "n"):
-        break
 
 normalized = 0
-if normalize[0] == "y":
-    for  ipng in xrange(len(pngs)):
-        perc = (float(ipng) / len(pngs)) * 100.0
-        print "%.2f%% %s" % (perc, pngs[ipng])
-        if updatePNG(pngs[ipng]):
-            normalized += 1
-print " "
-print "[+] %d PNG files were normalized." % normalized
+for ipng in xrange(len(pngs)):
+    perc = (float(ipng) / len(pngs)) * 100.0
+    if updatePNG(pngs[ipng]):
+        normalized += 1
+
+print "%d" % normalized
+exit()
