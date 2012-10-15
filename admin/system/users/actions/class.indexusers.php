@@ -73,7 +73,8 @@ final class indexusersActionsUsers extends BaseActions {
 				}
 			}
 			if (!(bool) wgPost::getValue('nickname') && $mand) {
-				wgSystem::setPostValue('nickname', wgText::safeText(wgPost::getValue('firstname')).'.'.wgPost::getValue('lastname')); wgError::add(wgLang::get('autonicknameis').': '.wgPost::getValue('nickname'), 1);
+				wgSystem::setPostValue('nickname', wgText::safeFile(wgPost::getValue('firstname').'.'.wgPost::getValue('lastname')));
+				wgError::add(wgLang::get('autonicknameis').': '.wgPost::getValue('nickname'), 1);
 			}
 			if ($mand) {
 				$ok = (bool) self::doSaveUsers();
