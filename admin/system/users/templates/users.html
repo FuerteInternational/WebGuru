@@ -39,66 +39,97 @@
 			<input name="apply" type="submit" value="{wAPPLY}" />
 			<input name="submit" type="submit" value="{wSAVE}" />
 		</p>
-	<p>
+		<p>
 			<label>{wCOLUSERSGROUPSID}:</label>
 			{FULLCOLUSERSGROUPSID}
+		</p>
+		<p>
+			<label class="mandatory">{wCOLFIRSTNAME}*:</label>
+			<input name="firstname" id="firstname" type="text" value="{COLFIRSTNAME}" />
+		</p>
+		<p>
+			<label class="mandatory">{wCOLLASTNAME}*:</label>
+			<input name="lastname" id="lastname" type="text" value="{COLLASTNAME}" />
 		</p>
 		<p>
 			<label>{wCOLNICKNAME}:</label>
 			<input name="nickname" id="nickname" type="text" value="{COLNICKNAME}" />
 		</p>
-		<p>
-			<label>{wCOLMAIL}:</label>
+		<p class="mandatory">
+			<label>{wCOLMAIL}*:</label>
 			<input name="mail" id="mail" type="text" value="{COLMAIL}" />
 		</p>
-		<p>
-			<label>{wCOLPASSWORD}:</label>
-			<input name="password" id="password" type="text" value="{COLPASSWORD}" />
+        <script type="text/javascript">
+		<!--
+		function checkPassword() {
+			var text1 = $('#password').val();
+			var text2 = $('#password2').val();
+			if (text1.length < 5) {
+				$('#passwordMessage').text('{wPASSTOOSHORT}');
+				$('#passwordMessage').addClass('red');
+				$('#passwordMessage').removeClass('green');
+			}
+			else {
+				if (text1 == text2) {
+					$('#passwordMessage').text('{wPASSWORDOK}');
+					$('#passwordMessage').addClass('green');
+					$('#passwordMessage').removeClass('red');
+				}
+				else {
+					$('#passwordMessage').text("{wPASSWORDDONTMATCH}");
+					$('#passwordMessage').addClass('red');
+					$('#passwordMessage').removeClass('green');
+				}
+			}
+		}
+		-->
+		</script>
+		<p{SOMETIMESMANDATORY}>
+			<label>{COLPASSWORDORCHANGE}{SOMETIMESMANDATORYSTAR}:</label>
+			<input name="password" id="password" type="text" value="{COLPASSWORD}" onkeyup="checkPassword()" />
 		</p>
-		<p>
+		<p{SOMETIMESMANDATORY}>
+			<label>{wCONFIRMPASSWORD}{SOMETIMESMANDATORYSTAR}:</label>
+			<input name="password2" id="password2" type="text" value="{COLPASSWORDB}" onkeyup="checkPassword()" />
+            <small id="passwordMessage"></small>
+		</p>
+		<!--<p>
 			<label>{wCOLQUESTION}:</label>
 			<input name="question" id="question" type="text" value="{COLQUESTION}" />
 		</p>
 		<p>
 			<label>{wCOLANSVER}:</label>
 			<input name="ansver" id="ansver" type="text" value="{COLANSVER}" />
-		</p>
-		<p>
-			<label>{wCOLONLINE}:</label>
-			{FULLCOLONLINE}
-		</p>
-		<p>
+		</p>-->
+		<!--<p>
 			<label>{wCOLTIMEVER}:</label>
 			<input name="timever" id="timever" type="text" value="{COLTIMEVER}" />
 		</p>
 		<p>
 			<label>{wCOLCODEVER}:</label>
 			<input name="codever" id="codever" type="text" value="{COLCODEVER}" />
-		</p>
+		</p>-->
 		<p>
 			<label>{wCOLACTIVE}:</label>
 			{FULLCOLACTIVE}
 		</p>
-		<p>
+		<p{HIDENOEDIT}>
+			<label>{wCOLONLINE}:</label>
+			{FULLCOLONLINE}
+		</p>
+		<p{HIDENOEDIT}>
 			<label>{wCOLLASTLOGIN}:</label>
 			{FULLCOLLASTLOGIN}
 		</p>
 		<p>
 			<label>{wCOLGENDER}:</label>
-			<input name="gender" id="gender" type="text" value="{COLGENDER}" />
+			<!--<input name="gender" id="gender" type="text" value="{COLGENDER}" />-->
+            {COLFULLGENDER}
 		</p>
-		<p>
+		<!--<p>
 			<label>{wCOLLASTIP}:</label>
 			<input name="lastip" id="lastip" type="text" value="{COLLASTIP}" />
-		</p>
-		<p>
-			<label>{wCOLFIRSTNAME}:</label>
-			<input name="firstname" id="firstname" type="text" value="{COLFIRSTNAME}" />
-		</p>
-		<p>
-			<label>{wCOLLASTNAME}:</label>
-			<input name="lastname" id="lastname" type="text" value="{COLLASTNAME}" />
-		</p>
+		</p>-->
 		<p>
 			<label>{wCOLSYSTEMCOUNTRIESID}:</label>
 			{FULLCOLSYSTEMCOUNTRIESID}

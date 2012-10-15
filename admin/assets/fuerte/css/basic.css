@@ -56,13 +56,16 @@ li {
 	cursor: pointer;
 }
 .red {
-	color:#FF0000;
+	color:#FF0000!important;
 }
 .green {
-	color:#009900;
+	color:#009900!important;
 }
 .bold {
 	font-weight:bold;
+}
+.mandatory {
+	color:#900;
 }
 #errors {
 	margin-bottom:8px;

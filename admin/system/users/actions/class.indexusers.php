@@ -47,11 +47,30 @@ final class indexusersActionsUsers extends BaseActions {
 		$ok = false;
 		if (wgSystem::isSave() || wgSystem::isApply()) {
 			$mand = true;
-			if (!(bool) wgPost::getValue('firstname')) { wgError::add('nofirstname');
+			if (!(bool) wgPost::getValue('firstname')) {
+				wgError::add('nofirstname');
 				$mand = false;
 			}
-			if (!(bool) wgPost::getValue('lastname')) { wgError::add('nolastname');
+		if (!(bool) wgPost::getValue('lastname')) {
+				wgError::add('nolastname');
 				$mand = false;
+			}
+		if (!wgValidation::email(wgPost::getValue('mail'))) {
+				wgError::add('pleasecheckyourmail');
+				$mand = false;
+			}
+			$pass = wgPost::getValue('password');
+			if (empty($pass)) {
+				if (!(bool) wgPost::getValue('edit')) {
+					wgError::add('passwordempty');
+					$mand = false;
+				}
+			}
+			else {
+				if (wgPost::getValue('password') != wgPost::getValue('password2')) {
+					wgError::add('passworddontmatch');
+					$mand = false;
+				}
 			}
 			if (!(bool) wgPost::getValue('nickname') && $mand) {
 				wgSystem::setPostValue('nickname', wgText::safeText(wgPost::getValue('firstname')).'.'.wgPost::getValue('lastname')); wgError::add(wgLang::get('autonicknameis').': '.wgPost::getValue('nickname'), 1);
@@ -83,6 +102,13 @@ final class indexusersActionsUsers extends BaseActions {
 		$save['nickname'] = wgPost::getValue('nickname');
 		$save['mail'] = wgPost::getValue('mail');
 		$save['password'] = wgPost::getValue('password');
+		if (empty($save['password'])) {
+			unset($save['password']);
+			if ((bool) wgPost::getValue('edit')) {
+				return false;
+			}
+		}
+		else $save['password'] = sha1($save['password']);
 		$save['question'] = wgPost::getValue('question');
 		$save['ansver'] = wgPost::getValue('ansver');
 		if (!(bool) wgPost::getValue('edit')) $save['added'] = 'NOW()';
