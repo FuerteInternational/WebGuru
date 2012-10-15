@@ -64,7 +64,8 @@ class moduleMobileapps {
 	
 	public static function getDownloadFilenameForAppWithId($id) {
 		$app = MobileappsModel::getOneSelfData((int)$id);
-		return wgValidation::safeFile($app->getName()).'-'.$app->getDevtypeIdentifier().'-'.$app->getId().'.ipa';
+		$ext = ((int)$app->getApptype() == 0) ? '.ipa' : '.apk';
+		return wgValidation::safeFile($app->getName()).'-'.$app->getDevtypeIdentifier().'-'.$app->getId().$ext;
 	}
 	
 	public static function downloadIpaWithId($id) {
@@ -75,7 +76,7 @@ class moduleMobileapps {
 			'file'                => $app->getAppIpaPath(),
 			'cache'               => false,
 			'contentdisposition'  => array(HTTP_DOWNLOAD_ATTACHMENT, self::getDownloadFilenameForAppWithId($id)),
-			'contenttype'         => 'application/octet-stream'
+			'contenttype'         => (((int)$app->getApptype() == 0) ? 'application/octet-stream' : 'application/vnd.android.package-archive')
 		);
 		error_reporting(0);
 		$error = HTTP_Download::staticSend($params, false);

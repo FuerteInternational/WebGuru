@@ -117,25 +117,27 @@ if ($mobileAppId) {
     	<img src="<?php echo $app->getLargeIconUrl(); ?>" alt="<?php echo $app->getName(); ?>" style="float: right" class="bigAppDetailIcon" />
         <h3><?php echo $devVersion; ?></h3>
         <ul class="values">
-            <li>Version: <span><?php echo $app->getVersion(); ?></span></li>
+            <li>Version: <span><?php echo $app->getFormattedVersion(); ?></span></li>
             <li>Build date: <span><?php echo $app->getFormattedDateChanged(); ?></span></li>
         	<li>Size: <span><?php echo wgIo::getSize((int)$app->getSize(), true); ?></span></li>
+            <li>Platform: <span><?php echo ((int)$app->getApptype() == 0) ? 'iOS' : 'Android'; ?></span></li>
         </ul>
         <div class="controls">
         	<?php if (moduleUsers::isAdmin()) { ?>
             <a href="<?php echo wgPaths::getAdminPath('url'); ?>?part=system&mod=mobileapps&page=apps&show=appsmobileapps&edit=<?php echo $app->getId(); ?>" title="Edit <?php echo $app->getName(); ?>" class="button edit" onclick="return toggleEdit('boxNo<?php echo $x; ?>')">Edit</a>
             <?php
 			}
-            $wb = new wgBrowser();
             if ($wb->isiOS()) {
+				if (!(int)$app->getApptype() == 1) {
             ?>
             <a href="itms-services://?action=download-manifest&url=itms-services://?action=download-manifest&url=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$app->getId().'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>
             <?php
+            	}
             }
             elseif ($wb->isAndroidOS()) {
             ?>
             <!--<a href="?app=<?php echo wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$app->getId().'.plist';?>" title="Install <?php echo $app->getName(); ?>" class="button install">Install app</a>-->
-            <a href="?downloadAppId=<?php echo $app->getId(); ?>&mobileAppId=<?php echo $app->getIdentifier(); ?>" title="Download <?php echo $app->getName(); ?>" class="button download">Download</a>
+            <a href="?downloadAppId=<?php echo $app->getId(); ?>&mobileAppId=<?php echo $app->getIdentifier(); ?>" title="Download <?php echo $app->getName(); ?>" class="button download"><?php echo ((int)$app->getApptype() == 0) ? 'Download' : 'Install'; ?></a>
             <?php
             }
             else {

@@ -33,6 +33,13 @@ class MobileappsModel extends BaseMobileappsModel {
 	
 	public static function getGroupedSelfData() {
 		$conn = new wgConnector();
+// 		$wb = new wgBrowser();
+// 		if ($wb->isiOS()) {
+// 			$conn->where(parent::COL_APPTYPE, 0);
+// 		}
+// 		elseif ($wb->isAndroidOS()) {
+// 			$conn->where(parent::COL_APPTYPE, 1);
+// 		}
 		$conn->order(parent::COL_NAME, 'ASC');
 		$conn->group(parent::COL_IDENTIFIER);
 		return parent::doSelect($conn);
@@ -43,6 +50,13 @@ class MobileappsModel extends BaseMobileappsModel {
 		$conn->onJoin(parent::COL_ID, MobileappsCompaniesModel::COL_MOBILEAPPS_ID);
 		foreach ($companyIds as $companyId) {
 			//$conn->where(MobileappsCompaniesModel::COL_MOBILEAPPS_ID, $companyId, '=', 'OR');
+		}
+		$wb = new wgBrowser();
+		if ($wb->isiOS()) {
+			$conn->where(parent::COL_APPTYPE, 0);
+		}
+		elseif ($wb->isAndroidOS()) {
+			$conn->where(parent::COL_APPTYPE, 1);
 		}
 		$conn->order(parent::COL_NAME, 'ASC');
 		$conn->group(parent::COL_IDENTIFIER);
@@ -132,17 +146,24 @@ class MobileappsModel extends BaseMobileappsModel {
 	}
 	
 	public function getAppIpaUrl() {
-		return wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$this->getId().'.ipa';
+		$ext = ((int)$this->getApptype() == 0) ? '.ipa' : '.apk';
+		return wgPaths::getUserfilesPath('url').'mobileapps/ipa/'.$this->getId().$ext;
 	}
 	
 	public function getAppIpaPath() {
-		return wgPaths::getUserfilesPath('ftp').'mobileapps/ipa/'.$this->getId().'.ipa';
+		$ext = ((int)$this->getApptype() == 0) ? '.ipa' : '.apk';
+		return wgPaths::getUserfilesPath('ftp').'mobileapps/ipa/'.$this->getId().$ext;
 	}
 	
 	public function getDevtypeIdentifier() {
 		if ($this->getDevtype() == 2) return 'production';
 		elseif ($this->getDevtype() == 1) return 'beta';
 		else return 'development';
+	}
+	
+	public function getFormattedVersion() {
+		$v = $this->getVersion();
+		return (empty($v) ? 'n/a' : $v);
 	}
 	
 }
