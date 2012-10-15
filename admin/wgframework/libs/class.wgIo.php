@@ -295,11 +295,11 @@ class wgIo extends wgCookies {
 	* @return bool true on success or false
 	*/ 
 	public static function writeFile($path, $data='', $mode='w') {
+		if (!is_dir(dirname($path))) self::mkdir(dirname($path));
 		if (!$handle = fopen($path, $mode)) return false;
 		$ret = true;
 		if(!fwrite($handle, $data)) $ret=false;
 		fclose($handle);
-		
 		self::setChmod($path, 0755);
 		return $ret;
 	}

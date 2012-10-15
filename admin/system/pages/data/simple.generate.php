@@ -67,14 +67,14 @@ $mod = new wgModules();
 {PRETEXT}
 //if ((bool) DEVELOP) if (!empty(counter::$debug)) wgError::add(counter::$debug);
 ?>{TEMPLATE}<?php
-//if (false) {
+if (false) {
 	$title = '{TITLE}';
 	if (isset($system['seo']['title']) && !empty($system['seo']['title'])) $title = $system['seo']['title'];
 	define('_BBC_PAGE_NAME', $title);
 	define('_BBCLONE_DIR', './admin/thirdparty/bbclone/');
 	define('COUNTER', _BBCLONE_DIR.'mark_page.php');
 	if (is_readable(COUNTER)) include_once(COUNTER);
-//}
+}
 $db->disconnect();
 $db = NULL;
 session_write_close();

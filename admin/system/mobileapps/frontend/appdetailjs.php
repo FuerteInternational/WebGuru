@@ -44,12 +44,12 @@ function startUploadingApp() {
 function togglePopupWindow() {
 	$('.popupWindowShadow').toggle("slow", function() {
 		if ($('.popupWindowShadow').is(':visible') == true) {
-			$('.popupWindow').show("slow", function() {
+			$('.popupWindow').fadeIn("slow", function() {
 			
 			});
 		}
 		else {
-			$('.popupWindow').hide("slow", function() {
+			$('.popupWindow').fadeOut("fast", function() {
 			
 			});
 		}

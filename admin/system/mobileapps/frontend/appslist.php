@@ -21,7 +21,7 @@ if (!$mobileAppId || !MobileappsModel::isDataForIdentifier($mobileAppId)) $mobil
 	?>
     <li<?php echo $active; ?>>
         <a href="?mobileAppId=<?php echo $app->getIdentifier(); ?>" title="<?php echo $app->getName(); ?>">
-            <img src="<?php echo $app->getIconUrl(); ?>" alt="<?php echo $app->getName(); ?>" />
+            <img src="<?php echo MobileappsModel::getIconUrlForAnyIdentifier($app->getIdentifier()); ?>" alt="<?php echo $app->getName(); ?>" />
             <strong><?php echo $app->getName(); ?></strong>
             <small>Version: <span><?php echo ((int)$app->getApptype() == 0) ? 'iOS' : 'Android'; ?></span></small>
             <small>Version: <span><?php echo $app->getFormattedVersion(); ?></span></small>

@@ -41,6 +41,7 @@ class MobileappsModel extends BaseMobileappsModel {
 // 			$conn->where(parent::COL_APPTYPE, 1);
 // 		}
 		$conn->order(parent::COL_NAME, 'ASC');
+		//$conn->order(parent::COL_DEVTYPE, 'ASC');
 		$conn->group(parent::COL_IDENTIFIER);
 		return parent::doSelect($conn);
 	}
@@ -79,6 +80,20 @@ class MobileappsModel extends BaseMobileappsModel {
 			//$ok = self::doesUserHaveAnAccess();
 		}
 		return $ok;
+	}
+	
+	public static function getIconUrlForAnyIdentifier($bundleId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_IDENTIFIER, $bundleId);
+		$conn->order(parent::COL_APPTYPE, 'DESC');
+		$arr = parent::doSelect($conn);
+		$icon = wgPaths::getModulePath('url', 'mobileapps').'images/icon.png';
+		foreach ($arr as $app) {
+			$icon = wgPaths::getUserfilesPath('url').'mobileapps/img/'.$app->getId().'.png';
+			$iconFtp = wgPaths::getUserfilesPath('ftp').'mobileapps/img/'.$app->getId().'.png';
+			if (file_exists($iconFtp)) return $icon;
+		}
+		return $icon;
 	}
 	
 	public static function getPagerDataForDevVersion($devVersion, $page, $limit=20) {

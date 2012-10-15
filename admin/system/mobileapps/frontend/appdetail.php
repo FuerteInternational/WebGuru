@@ -86,8 +86,8 @@ $uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()
 if (!moduleUsers::isAdmin()) $uploadNewAppForm = '';
 
 if ($mobileAppId) {
-	$arr = MobileappsModel::getSelfDataForIdentifier($mobileAppId);
 	$app = MobileappsModel::getItemGeneralItemInfo($mobileAppId);
+	$arr = MobileappsModel::getSelfDataForIdentifier($mobileAppId);
 	
 	$space = (69 + 24) * $selectedItem;
 	$space -= (250 * count($arr));

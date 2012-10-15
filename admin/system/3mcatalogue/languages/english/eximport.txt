@@ -1,3 +1,0 @@
-importcatalogue;Import catalogue
-xlsimportfile;Excel file (.xls)
-import;Import
