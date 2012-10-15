@@ -119,6 +119,12 @@ class moduleMobileapps {
 		return true;
 	}
 	
+	public static function deleteCompanyWithId($companyId) {
+		MobileappsCompaniesModel::deleteAllEntriesForCompany($companyId);
+		MobileappsUsersModel::deleteAllEntriesForCompany($companyId);
+		return CompaniesModel::deleteCompanyWithId($companyId);
+	}
+	
 	public static function deleteAppsGroupWithIdentiers($appIdentifier) {
 		
 	}

@@ -42,6 +42,12 @@ class MobileappsCompaniesModel extends BaseMobileappsCompaniesModel {
 		return parent::doDelete($conn);
 	}
 	
+	public static function deleteAllEntriesForCompany($companyId) {
+		$conn = new wgConnector();
+		$conn->where(parent::COL_COMPANIES_ID, (int)$companyId);
+		return parent::doDelete($conn);
+	}
+	
 	public static function getCompaniesForApp($appId) {
 		$conn = new wgConnector();
 		$conn->where(parent::COL_MOBILEAPPS_ID, $appId);

@@ -6,6 +6,7 @@ $numberOfUsers = MobileappsUsersModel::getUsersCountForCompany($company->getId()
     <div class="box noBorder">
         <h3 class="appName"><?php echo $company->getName(); ?></h3>
         <p class="appBundleId">Number of users:  <?php echo $numberOfUsers.'/'.$completeNumberOfUsers; ?></p>
+        <a href="?deleteCompany=<?php echo $company->getId(); ?>" class="button rightButton" onclick="return confirmAction('Are you sure you want to delete <?php echo $company->getName(); ?>?')">Delete</a>
     </div>
     
     <form class="box" method="post" action="?companyId=<?php echo $company->getId(); ?>">
