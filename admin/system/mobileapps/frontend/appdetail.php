@@ -26,7 +26,7 @@ $uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()
                 <p id="infoText">Your application is being uploaded now! Please wait for a page refresh.</p>
 				<p id="infoTextProgressBar">&nbsp;</p>
 				<p class="infoText">
-					<strong>Help:</strong><br />
+					<strong>Hint:</strong><br />
 					Please upload one of the following formats:<br />
 					iOS (iPhone, iPad, iPod) devices ........ <strong>.ipa</strong> file<br />
 					Android based devices ....................... <strong>.apk</strong> file
@@ -50,7 +50,7 @@ $uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()
 				</p>
                 <button type="submit" name="submitWebAppButton">Submit</button>
 				<p class="infoText">
-					<strong>Help:</strong><br />
+					<strong>Hint:</strong><br />
 					Link to any web app and have it appear as an icon on the end user\'s home screen.<br />
 					The app will launch in the default browser on the device.
         	</fieldset>
@@ -61,8 +61,6 @@ $uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()
                 <p>
 					<label>Select type of the build:</label>
 					<select name="devtype" id="devtypeSelectBox">
-						<option value="0">Development build</option>
-						<option value="1">Beta build</option>
 						<option value="2">Production build</option>
 					</select>
 				</p>
@@ -72,7 +70,7 @@ $uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()
 				</p>
                 <button type="submit" name="submitExtStoreButton">Submit</button>
 				<p class="infoText">
-					<strong>Help:</strong><br />
+					<strong>Hint:</strong><br />
 					Link to apps that are in an external app store.<br />
 					Visit a store to copy and paste the app\'s URL.<br /><br />
 					<a href="https://market.android.com/" target="_blank">Android Marketplace</a><br />
@@ -114,6 +112,7 @@ if ($mobileAppId) {
 		//if (true) {
 	?>
     <div class="box">
+    	<a name="topBoxAnchor"></a>
     	<img src="<?php echo $app->getLargeIconUrl(); ?>" alt="<?php echo $app->getName(); ?>" style="float: right" class="bigAppDetailIcon" />
         <h3><?php echo $devVersion; ?></h3>
         <ul class="values">
