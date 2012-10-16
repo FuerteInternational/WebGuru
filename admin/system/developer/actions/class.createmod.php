@@ -559,7 +559,7 @@ final class '.$page.'Actions'.ucfirst(self::$_par['modid']).' extends BaseAction
  * @package      WebGuru3
  * @subpackage   modules/'.self::$_par['modid'].'/'.$subpackage.'
  * @author       '.self::$_par['mauth'].'
- * @author       WebGuruCMS3 Framework CMS admin generator (http://www.webgurucms.com)
+ * @author       Fuerte International WebGuruCMS3 Framework CMS admin generator (http://www.webgurucms.com)
  * @version      1.0.0.0
  * @wgversion    '.WGVERSION.'
  * @wgdeveloper  '.$module->version.'

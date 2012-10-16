@@ -1,4 +1,7 @@
-modulename;Module name
-version;Version
-size;Size
-name;Name
+modulename;Module name;
+version;Version;
+size;Size;
+name;Name;
+domodules;Create module packages;
+backup;Backup;
+adminstyles;Admin styles;

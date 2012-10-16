@@ -18,3 +18,5 @@ tablename;Table name
 data;Include data
 rows;Entries
 modulecreated;Module has been successfully created
+notwritable;File is not writable
+backupgeneratedto;Backup has been generated in;

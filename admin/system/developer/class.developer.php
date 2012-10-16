@@ -27,7 +27,7 @@ class moduleDeveloper {
 	private function _init() {
 		$this->name    = 'Developer';
 		$this->code    = 'developer';
-		$this->version = '1.0.0.1';
+		$this->version = '1.0.0.2';
 		$this->author  = 'Ondrej Rafaj';
 		
 		$this->_module = dbSystem::getModulesByName($this->code);

@@ -29,7 +29,7 @@ foreach ($modules as $pname=>$part) if (!empty($part) && is_array($part)) {
 		$m = wgModules::runModule($mymod['name']);
 		if (!isset($m->version)) $m->version = 'N/A';
 		$tpl->setCurrentBlock('modulelist');
-		if ($pname == 'system') $tpl->setVariable('LMODCHECKED', ' checked="checked"');
+		//if ($pname == 'system') $tpl->setVariable('LMODCHECKED', ' checked="checked"');
 		$tpl->setVariable('LPART', $pname);
 		$tpl->setVariable('LMODID', $mymod['name']);
 		$tpl->setVariable('LMODNAME', wgLang::get($mymod['name']));
@@ -41,11 +41,11 @@ foreach ($modules as $pname=>$part) if (!empty($part) && is_array($part)) {
 }
 $tpl->setCurrentBlock('partlist');
 $tpl->setVariable('LMODGROUP', wgLang::get('adminstyles'));
-$styles = wgIo::getFolders(wgPaths::getAdminPath().'issues/');
+$styles = wgIo::getFolders(wgPaths::getAdminPath().'assets/');
 $version = 'N/A';
 foreach ($styles as $style) {
 	$tpl->setCurrentBlock('modulelist');
-	if ($pname == 'system') $tpl->setVariable('LMODCHECKED', ' checked="checked"');
+	$tpl->setVariable('LMODCHECKED', ' checked="checked"');
 	$tpl->setVariable('LPART', 'issues');
 	$tpl->setVariable('LMODID', $style);
 	$tpl->setVariable('LMODNAME', wgLang::get($style));
@@ -83,7 +83,7 @@ foreach ($modules as $pname=>$part) if (!empty($part) && is_array($part)) {
 		$m = wgModules::runModule($mymod['name']);
 		if (!isset($m->version)) $m->version = 'N/A';
 		$tpl->setCurrentBlock('modulelist');
-		if ($pname == 'system') $tpl->setVariable('LMODCHECKED', ' checked="checked"');
+		//if ($pname == 'system') $tpl->setVariable('LMODCHECKED', ' checked="checked"');
 		$tpl->setVariable('LPART', $pname);
 		$tpl->setVariable('LMODID', $mymod['name']);
 		$tpl->setVariable('LMODNAME', wgLang::get($mymod['name']));
