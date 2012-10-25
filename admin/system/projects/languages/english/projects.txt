@@ -5,3 +5,4 @@ gopager;gopager
 colname;Project name
 coldate;Project date
 colviews;Views
+allprojects;All projects

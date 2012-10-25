@@ -282,13 +282,25 @@
 #content .box form p input[type="radio"] {
 }
 #content .box form p input[type="button"] {
+	padding-top:3px;
+	padding-left:6px;
+	padding-right:6px;
+	padding-bottom:3px;
 }
 #content .box form p input[type="submit"] {
 	float:right;
 	font-weight:bold;
+	padding-top:3px;
+	padding-left:6px;
+	padding-right:6px;
+	padding-bottom:3px;
 }
 #content .box form p input[type="reset"] {
 	float:left;
+	padding-top:3px;
+	padding-left:6px;
+	padding-right:6px;
+	padding-bottom:3px;
 }
 #content .box table {
 	width:100%;
