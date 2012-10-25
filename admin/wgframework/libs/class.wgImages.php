@@ -181,12 +181,14 @@ class wgImages {
 					$thumbW = ($thumbW*$height)/$thumbH;
 					$thumbH = $height;
 				}
+				//$this->image = imagecreatetruecolor($thumbW, $thumbH);
+				//imagecopyresampled($this->image, $this->source, 0, 0, 0, 0, $thumbW, $thumbH, $oldW, $oldH);
+				
 				$this->image = imagecreatetruecolor($thumbW, $thumbH);
-				if($type == "gif" || $type == "png" || true){
-					imagecolortransparent($new, imagecolorallocatealpha($this->image, 0, 0, 0, 127));
-					imagealphablending($this->image, false);
-					imagesavealpha($this->image, true);
-				}
+				imagealphablending($this->image, false);
+				imagesavealpha($this->image, true);
+				$transparent = imagecolorallocatealpha($this->image, 255, 255, 255, 127);
+				imagefilledrectangle($this->image, 0, 0, $thumbW, $thumbH, $transparent);
 				imagecopyresampled($this->image, $this->source, 0, 0, 0, 0, $thumbW, $thumbH, $oldW, $oldH);
 				$this->resampled = true;
 			}	
@@ -196,11 +198,10 @@ class wgImages {
 				$thumbW = $width;
 				$thumbH = $height;
 				$this->image = imagecreatetruecolor($thumbW, $thumbH);
-				if($type == "gif" || $type == "png" || true){
-					imagecolortransparent($new, imagecolorallocatealpha($this->image, 0, 0, 0, 127));
-					imagealphablending($this->image, false);
-					imagesavealpha($this->image, true);
-				}
+				imagealphablending($this->image, false);
+				imagesavealpha($this->image, true);
+				$transparent = imagecolorallocatealpha($this->image, 255, 255, 255, 127);
+				imagefilledrectangle($this->image, 0, 0, $thumbW, $thumbH, $transparent);
 				imagecopyresampled($this->image, $this->source, 0, 0, 0, 0, $thumbW, $thumbH, $oldW, $oldH);
 				$this->resampled = true;
 			}	
