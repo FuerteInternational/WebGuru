@@ -94,7 +94,7 @@
             break;
           }
         }
-        return "<a href=../../script/\""+escapeHTML(url)+"\">"+escapeHTML(text)+"</a>";
+        return "<a href=../../../script/\""+escapeHTML(url)+"\">"+escapeHTML(text)+"</a>";
       });
     }
 

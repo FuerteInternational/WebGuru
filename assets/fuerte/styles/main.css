@@ -4,10 +4,12 @@ body {
 	color: #5f5f5f;
 	position: relative;
 	background: #f8f8f8;
-	zoom:85%;
 }
 a {
 	color: #5f5f5f;
+}
+a img {
+	border: 0;
 }
 ul {
 	margin: 0;
@@ -53,6 +55,7 @@ ul {
 }
 .desktop #header {
 	padding-top: 64px;
+	overflow: visible;
 }
 .desktop #main {
 	padding-top: 128px;
@@ -70,10 +73,10 @@ ul {
 	background: url(../images/who-are-we.jpg) no-repeat left 150px;
 }
 .contact #main {
-	background: url(../images/contact-us-bg.jpg) no-repeat 30px 50px;
+	background: url(../images/contact-us-bg.jpg) no-repeat 30px 90px;
 }
 .news #main {
-	background: url(../../images/news-bg.jpg) no-repeat left 300px;
+	background: url(../images/news-bg.jpg) no-repeat left 300px;
 }
 body.news:before {
 	position: absolute;
@@ -82,7 +85,7 @@ body.news:before {
 	content: '';
 	width: 126px;
 	height: 225px;
-	background: url(../../images/news.png) no-repeat left top;
+	background: url(../images/news.png) no-repeat left top;
 	z-index: 100;
 }
 .portfolio #main {
@@ -160,9 +163,9 @@ body.news:before {
 	margin-right: 290px;
 }
 .news .mainContent {
-	margin-top: 75px;
+	margin-top: 120px;
 	margin-right: 60px;
-	width: 465px;
+	width: 45%;
 	float: right;
 }
 .alterText {
@@ -173,8 +176,15 @@ body.news:before {
 	left: 200px;
 	top: 400px;
 }
+
 .signpost {
-	float: right;
+	position: absolute;
+	z-index: 3;
+	background: url(../images/navigation-bg.png) no-repeat left top;
+	width: 156px;
+	height: 198px;
+	right: 60px;
+	top: 30px;
 }
 .signpost a {
 	position: absolute;
@@ -182,37 +192,69 @@ body.news:before {
 	text-indent: -999em;
 }
 .signpost .aboutUs {
+	width: 70px;
+	height: 90px;
+	top: 0;
+	right: 45px;
+}
+.signpost .portfolio {
+	width: 90px;
+	height: 45px;
+	top: 70px;
+	right: 0;
+}
+.signpost .news {
+	width: 50px;
+	height: 50px;
+	top: 150px;
+	right: 55px;
+}
+.signpost .contact {
+	width: 90px;
+	height: 40px;
+	top: 125px;
+	right: 0;
+}
+.home .signpost {
+	background: none;
+	position: static;
+	width: auto;
+	height: auto;
+	right: auto;
+	top: auto;
+}
+.home .signpost .aboutUs {
 	width: 110px;
 	height: 110px;
 	top: 274px;
 	right: 765px;
 }
-.signpost .portfolio {
+.home .signpost .portfolio {
 	width: 96px;
 	height: 96px;
 	top: 763px;
 	right: 304px;
 }
-.signpost .news {
+.home .signpost .news {
 	width: 68px;
 	height: 68px;
 	top: 817px;
 	right: 715px;
 }
-.signpost .contact {
+.home .signpost .contact {
 	width: 100px;
 	height: 100px;
 	top: 248px;
 	right: 154px;
 }
-.signpost .twitter {
+.home .signpost .twitter {
 	width: 30px;
 	height: 30px;
 	top: 872px;
 	right: 260px;
 	background: none;
 }
-.signpost .linkedin {
+.home .signpost .linkedin {
 	width: 30px;
 	height: 30px;
 	top: 849px;
@@ -233,6 +275,7 @@ body.news:before {
 }
 .desktop .iosSliderWrap {
 	margin-top: 120px;
+	position: relative;
 }
 .mobile .iosSliderWrap {
 	margin: 0 -31px;
@@ -249,6 +292,8 @@ body.news:before {
 .desktop .iosSlider .image {
 	height: 533px;
 	background: url(../images/slider-bg.png) no-repeat center 0;
+	text-align:center;
+	padding-top: 25px;
 }
 .mobile .iosSlider .image {
 	height: 291px;
@@ -290,7 +335,31 @@ body.news:before {
 }
 .desktop .iosSliderWrap .prev, .desktop .iosSliderWrap .next {
 	margin-top: 0;
-	top: 460px;
+	top: 220px;
+}
+.desktop .iosSliderWrap .prev:hover {
+	background-position: -102px bottom;
+}
+.desktop .iosSliderWrap .next:hover {
+	background-position: left bottom;
+}
+.desktop .iosSliderWrap:before {
+	position: absolute;
+	left: 54%;
+	top: -102px;
+	background: url(../images/decoration-portfolio.png) no-repeat left top;
+	content: '';
+	width: 249px;
+	height: 137px;
+}
+.desktop .iosSliderWrap:after {
+	position: absolute;
+	background: url(../images/arrow-up-2.png) no-repeat left top;
+	content: '';
+	width: 93px;
+	height: 48px;
+	left: 65%;
+	top: 540px;
 }
 .mobile .longText {
 	padding-right: 65px;
@@ -302,7 +371,7 @@ body.news:before {
 	position: absolute;
 	right: 0;
 	top: -10px;
-	background: url(../../images/arrow-down.png) no-repeat left top;
+	background: url(../images/arrow-down.png) no-repeat left top;
 	content: '';
 	width: 37px;
 	height: 97px;
@@ -358,13 +427,21 @@ body.news:before {
 }
 .map {
 	float: right;
-	border: 7px solid #5bbadd;
+	display: block;
+	background: #5bbadd;
+	padding: 7px;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
 }
+.map img {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	display: block;
+}
 .desktop .contacts {
-	padding: 320px 60px 60px;
+	padding: 350px 60px 60px;
 	position: relative;
 	overflow: hidden;
 }
@@ -389,14 +466,14 @@ body.news:before {
 .desktop .london:before {
 	right: -15px;
 	top: -30px;
-	background: url(../../images/arrow-right.png) no-repeat left top;
+	background: url(../images/arrow-right.png) no-repeat left top;
 	width: 60px;
 	height: 33px;
 }
 .desktop .prague:before {
 	left: 0;
 	top: -70px;
-	background: url(../../images/arrow-up.png) no-repeat left top;
+	background: url(../images/arrow-up.png) no-repeat left top;
 	width: 31px;
 	height: 61px;
 }
@@ -428,10 +505,11 @@ body.news:before {
 .getInTouch .email {
 	margin-left: 0;
 	margin-top: -0.2em;
-	background-image: url(../../images/icon-email.png);
+	background-image: url(../images/icon-email.png);
 	text-indent: -999em;
 	overflow: hidden;
 	clear: left;
+	width: 0;
 }
 .getInTouch .spacious {
 	margin-bottom: 1.5em;
@@ -509,7 +587,7 @@ body.news:before {
 	border-radius: 20px;
 	margin-bottom: 75px;
 	padding: 0 30px 0 130px;
-	background: url(../../images/twitter.png) no-repeat 30px 15px;
+	background: url(../images/twitter.png) no-repeat 30px 15px;
 }
 .followUs h2 {
 	color: #00b1f0;
@@ -554,27 +632,27 @@ body.news:before {
 	.home #main {
 		background-position: left top;
 	}
-	.signpost .aboutUs {
+	.home .signpost .aboutUs {
 		left: 265px;
 		right: auto;
 	}
-	.signpost .portfolio {
+	.home .signpost .portfolio {
 		left: 738px;
 		right: auto;
 	}
-	.signpost .news {
+	.home .signpost .news {
 		left: 357px;
 		right: auto;
 	}
-	.signpost .contact {
+	.home .signpost .contact {
 		left: 885px;
 		right: auto;
 	}
-	.signpost .twitter {
+	.home .signpost .twitter {
 		left: 844px;
 		right: auto;
 	}
-	.signpost .linkedin {
+	.home .signpost .linkedin {
 		left: 822px;
 		right: auto;
 	}
