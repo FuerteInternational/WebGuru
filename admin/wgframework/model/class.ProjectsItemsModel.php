@@ -39,7 +39,7 @@ class ProjectsItemsModel extends BaseProjectsItemsModel {
 	public static function getFrontendProjects($cat=0, $order='DESC', $limit=10, $date=NULL) {
 		$limit = (int) $limit;
 		if (!(bool) $limit) $limit = 10; 
-		if ($order != 'DESC') $order = 'ASC';
+		//if ($order != 'DESC') $order = 'ASC';
 		$conn = new wgConnector();
 		if ((bool) $cat) $conn->where(parent::COL_PROJECTS_CATEGORIES_ID, (int) $cat);
 		if (!empty($date)) {
@@ -49,7 +49,7 @@ class ProjectsItemsModel extends BaseProjectsItemsModel {
 				$conn->where('MONTH('.parent::COL_DATE.')', $parts[1], '=');
 			}
 		}
-		$conn->order(parent::COL_DATE, $order);
+		$conn->order($order, false);
 		$conn->limit($limit);
 		return parent::doSelect($conn);
 	}
