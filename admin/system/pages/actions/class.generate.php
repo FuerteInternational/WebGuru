@@ -384,7 +384,7 @@ class generate {
 		if (isset($bv['BREADCRUMBS'])) $var['BREADCRUMBS']   = self::getBreadcrumbs($page);
 		if (isset($bv['ADDTEXT1'])) $var['ADDTEXT1']         = $page->getAddtext1();
 		if (isset($bv['ADDTEXT2'])) $var['ADDTEXT2']         = $page->getAddtext2();
-		if (isset($bv['NOTE'])) $var['NOTE']                 = $page->getNote();
+		if (isset($bv['NOTE'])) $var['NOTE']                 = self::parseTemplate($page->getNote());
 		/*foreach ($var as $k=>$v) $var[$k] = '<?php if (isset($web[\''.strtolower($k).'\'])) echo $web[\''.strtolower($k).'\']; else { ?>'.$v.'<?php } ?>';*/
 		if (isset($bv['REWRITE'])) $var['REWRITE']           = $page->getRewrite();
 		if (isset($bv['LANGCODE'])) $var['LANGCODE']         = '<?php echo wgLang::getFrontCode(); ?>';
