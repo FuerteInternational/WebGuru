@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * XML to Array and Back class
  * 
