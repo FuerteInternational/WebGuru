@@ -116,7 +116,7 @@ class wgIo extends wgCookies {
 	
 	public static function getTempFile($name) {
 		$ssid = wgGet::getValue('wgssid');
-		if (empty($ssid)) return false;
+		if (empty($ssid)) $ssid = session_id();
 		$folder = wgPaths::getPath().'temp/';
 		$path = $folder.$ssid.'-'.$name.'.wgtmp';
 		return (bool) self::readFile($path);

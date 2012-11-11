@@ -89,7 +89,7 @@ include("init/init.basic.php");
         <link><![CDATA['.wgPaths::getPath('url').']]></link>
         <description><![CDATA['.$feed->getDescription().']]></description>
         <language>'.$feed->getDisplaylanguage().'</language>
-        <lastBuildDate>'.date('r').'</lastBuildDate>
+        <lastBuildDate>'.date('r', time()).'</lastBuildDate>
         <copyright><![CDATA['.$feed->getCopyright().']]></copyright>
         <docs></docs>
         <ttl>'.$feed->getTtl().'</ttl>

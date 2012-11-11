@@ -15,6 +15,9 @@
 $wgscriptstart = microtime();
 // setting error reporting
 error_reporting(E_ALL ^ E_DEPRECATED);
+// setting default timezone
+// TODO: add timezone to the config file or elsewhere
+date_default_timezone_set('Etc/GMT');
 // setting session id if any
 session_start();
 if (isset($_GET['wgssid']) && !empty($_GET['wgssid'])) session_id($_GET['wgssid']);
