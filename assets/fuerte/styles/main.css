@@ -192,6 +192,7 @@ body.news:before {
 .detail .mainContent p {
 	margin-right: 360px;
 	margin-left: 60px;
+	margin-bottom:6px;
 }
 .mobile .mainContent .projectImage {
 	margin: 0 -31px;
