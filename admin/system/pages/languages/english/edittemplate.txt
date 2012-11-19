@@ -1,20 +1,40 @@
+forpcandtablet;For desktop browsers and Tablets
 nogroup;No group
+
 colname;Name
+
 colidentifier;Identifier
+
 colmaster;Master template
+
 coltemplate;Template
+
 template;Template
+
 foreveryone;For everyone
+
 forregistered;For registered users
+
 fornotregistered;For not registered users
+
 colregistered;Permissions
+
 colsystemlanguageid;Language
+
 colpagestemplatesgroupsid;Template group
+
 colnote;Note
+
 settings;Settings
+
 forallmobile;For all mobile devices
+
 fornomobile;Don't display on any mobile device
+
 formobile;For mobile phones
+
 fortablets;For all tablets
+
 forios;For iOS only
+
 forandroid;For Android only

@@ -1,3 +1,12 @@
+basicimg;Main image
+deleteimage;Delete image
+videocode;Video code
+videocodes;Video codes
+thumb;Thumbnail
+filename;Filename
+views;Views
+downloads;Downloads
+attachments;Attachments
 homecat;homecat
 colprojectscategoriesid;Project category
 colname;Project name

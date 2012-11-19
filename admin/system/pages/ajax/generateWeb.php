@@ -18,15 +18,13 @@ require('./init/init.admin.php');
 $a=0;
 $b=0;
 
+
 $par = wgGet::getValue('parameter');
 
 $gpath = wgPaths::getModulePath('pages');
-print $gpath;
 require('./system/pages/actions/class.generate.php');
 $mPag = $mod->runModule('pages');
-
 print generate::generateWeb(wgSystem::getCurrentWebsite());
-
 //print '<br />'.round(memory_get_usage() / 1048576, 4);
 
 //echo ':-)';

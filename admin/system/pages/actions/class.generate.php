@@ -228,10 +228,8 @@ class generate {
 		$mt = microtime();
 		self::_init();
 		self::_getPagesForWebsite($id);
-		//print_r(self::$_pages);
 		$folder = wgPaths::getPath().'wgwebdata/';
 		wgIo::mkdir($folder);
-		//wgIo::deleteContent($folder);
 		$count = count(self::$_pages);
 		$a=0;
 		foreach (self::$_pages as $id=>$page) {
@@ -239,7 +237,6 @@ class generate {
 			self::_writeOnePage($id);
 			$a++;
 		}
-		//self::_doForAll();
 		self::generateModulesAutoFunctions();
 		return (int) $a;
 	}
@@ -384,7 +381,7 @@ class generate {
 		if (isset($bv['BREADCRUMBS'])) $var['BREADCRUMBS']   = self::getBreadcrumbs($page);
 		if (isset($bv['ADDTEXT1'])) $var['ADDTEXT1']         = $page->getAddtext1();
 		if (isset($bv['ADDTEXT2'])) $var['ADDTEXT2']         = $page->getAddtext2();
-		if (isset($bv['NOTE'])) $var['NOTE']                 = self::parseTemplate($page->getNote());
+		if (isset($bv['NOTE'])) $var['NOTE']                 = self::parseTemplate($page->getNote(), $page);
 		/*foreach ($var as $k=>$v) $var[$k] = '<?php if (isset($web[\''.strtolower($k).'\'])) echo $web[\''.strtolower($k).'\']; else { ?>'.$v.'<?php } ?>';*/
 		if (isset($bv['REWRITE'])) $var['REWRITE']           = $page->getRewrite();
 		if (isset($bv['LANGCODE'])) $var['LANGCODE']         = '<?php echo wgLang::getFrontCode(); ?>';
@@ -673,10 +670,10 @@ else echo \'passive\';
 			 elseif ($reg == 5) $temp = '<?php $wb = new wgBrowser(); if ($wb->isMobile()) { ?>'.$temp.'<?php } ?>'; // Just mobile phones
 			 elseif ($reg == 6) $temp = '<?php $wb = new wgBrowser(); if ($wb->isTablet()) { ?>'.$temp.'<?php } ?>'; // Just tablets
 			 elseif ($reg == 7) {
-			 	print ':)';
 			 	$temp = '<?php $wb = new wgBrowser(); if ($wb->isiOS()) { ?>'.$temp.'<?php } ?>'; // Just iOS
 			 }
 			 elseif ($reg == 8) $temp = '<?php $wb = new wgBrowser(); if ($wb->isAndroidOS()) { ?>'.$temp.'<?php } ?>'; // Just Android
+			 elseif ($reg == 9) $temp = '<?php $wb = new wgBrowser(); if ($wb->isTablet() || (!$wb->isAndroidOS() && !$wb->isiOS())) { ?>'.$temp.'<?php } ?>'; // Just PC or tablets
 			 return $temp;
 		}
 		else return '';
@@ -738,6 +735,7 @@ else echo \'passive\';
 		$var['ROOTPATH']                       = $rootpath;
 		$var['PAGEID']                         = $page->getPrimaryKey();
 		$var['LANGCODE']   					   = '';
+		
 		$var['LANGID']    					   = $page->getSystemLanguageId('tblevents', 'listofevents');
 		$var['WEBID']    					   = $page->getSystemWebsitesId();
 		$var['TITLE']  						   = str_ireplace("'", "\'", $page->getTitle());
