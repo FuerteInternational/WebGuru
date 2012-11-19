@@ -310,6 +310,9 @@ body.news:before {
 .mobile .projectImage {
 	height: 291px;
 	background: url(../images/m-slider-bg.png) no-repeat left 0;
+	padding-top: 30px;
+	padding-left: 30px;
+	margin-bottom:-30px;
 }
 .desktop .iosSlider .text1 {
 	margin: 0 auto;
@@ -344,7 +347,7 @@ body.news:before {
 	margin-right: 0;
 }
 .mobile .iosSlider .text2 .buttons {
-	padding: 0;
+	padding: -30px;
 	float: right;
 }
 .mobile .iosSlider .text2 .buttons li {
