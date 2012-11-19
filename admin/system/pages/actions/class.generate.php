@@ -673,7 +673,7 @@ else echo \'passive\';
 			 	$temp = '<?php $wb = new wgBrowser(); if ($wb->isiOS()) { ?>'.$temp.'<?php } ?>'; // Just iOS
 			 }
 			 elseif ($reg == 8) $temp = '<?php $wb = new wgBrowser(); if ($wb->isAndroidOS()) { ?>'.$temp.'<?php } ?>'; // Just Android
-			 elseif ($reg == 9) $temp = '<?php $wb = new wgBrowser(); if ($wb->isTablet() || (!$wb->isAndroidOS() && !$wb->isiOS())) { ?>'.$temp.'<?php } ?>'; // Just PC or tablets
+			 elseif ($reg == 9) $temp = '<?php $wb = new wgBrowser(); if (!$wb->isMobile()) { ?>'.$temp.'<?php } ?>'; // Just PC or tablets
 			 return $temp;
 		}
 		else return '';
