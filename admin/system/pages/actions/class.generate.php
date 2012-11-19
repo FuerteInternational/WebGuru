@@ -667,7 +667,7 @@ else echo \'passive\';
 			 elseif ($reg == 2) $temp = '<?php if (!moduleUsers::isLogged()) { ?>'.$temp.'<?php } ?>'; // Not logged in users only
 			 elseif ($reg == 3) $temp = '<?php $wb = new wgBrowser(); if ($wb->isMobile() || $wb->isTablet()) { ?>'.$temp.'<?php } ?>'; // All mobile
 			 elseif ($reg == 4) $temp = '<?php $wb = new wgBrowser(); if (!$wb->isMobile() && !$wb->isTablet()) { ?>'.$temp.'<?php } ?>'; // All mobile
-			 elseif ($reg == 5) $temp = '<?php $wb = new wgBrowser(); if ($wb->isMobile()) { ?>'.$temp.'<?php } ?>'; // Just mobile phones
+			 elseif ($reg == 5) $temp = '<?php $wb = new wgBrowser(); if ($wb->isMobile() && !$wb->isTablet()) { ?>'.$temp.'<?php } ?>'; // Just mobile phones
 			 elseif ($reg == 6) $temp = '<?php $wb = new wgBrowser(); if ($wb->isTablet()) { ?>'.$temp.'<?php } ?>'; // Just tablets
 			 elseif ($reg == 7) {
 			 	$temp = '<?php $wb = new wgBrowser(); if ($wb->isiOS()) { ?>'.$temp.'<?php } ?>'; // Just iOS
