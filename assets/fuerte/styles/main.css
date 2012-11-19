@@ -5,6 +5,10 @@ body {
 	position: relative;
 	background: #f8f8f8;
 }
+.mobile {
+	background: #fff;
+	min-width: 640px;
+}
 a {
 	color: #5f5f5f;
 }
@@ -22,7 +26,7 @@ ul {
 	top: 0;
 }
 #header, #main, #more {
-	padding: 57px 67px 0;
+	padding: 60px 60px 0;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
@@ -42,9 +46,14 @@ ul {
 	background: -o-linear-gradient(top, #368daa 0%,#35b0e4 2%,#89c5d5 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #368daa 0%,#35b0e4 2%,#89c5d5 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #368daa 0%,#35b0e4 2%,#89c5d5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#35b0e4', endColorstr='#89c5d5',GradientType=0 ); /* IE6-8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#35b0e4', endColorstr='#89c5d5',GradientType=0 )";
 	padding-bottom: 51px;
 	padding-top: 30px;
 	min-height: 187px;
+}
+.mobile #more {
+	padding-top: 40px;
 }
 .desktop #header, .desktop #main, .desktop #footer {
 	min-width: 1004px;
@@ -66,10 +75,10 @@ ul {
 .desktop #more {
 	min-width: 884px;
 }
-.home #main {
-	background: url(../images/home-bg.jpg) no-repeat right top;
+.noFlash.home #main {
+	background: url(../images/home-bg.jpg) no-repeat 300px 30px;
 }
-.aboutUs #main {
+.noFlash.aboutUs #main {
 	background: url(../images/who-are-we.jpg) no-repeat left 150px;
 }
 .contact #main {
@@ -77,6 +86,9 @@ ul {
 }
 .news #main {
 	background: url(../images/news-bg.jpg) no-repeat left 300px;
+}
+.mobile #main {
+	background: url(../images/m-page-bg.png) repeat-x left 230px;
 }
 body.news:before {
 	position: absolute;
@@ -137,15 +149,33 @@ body.news:before {
 }
 .home .mainContent {
 	float: left;
-	width: 180px;
+	width: 280px;
 	padding-top: 80px;
 	margin-left: 60px;
+	position: relative;
+	z-index: 2;
+	min-height: 450px;
+}
+.home.noFlash .mainContent {
+	position: relative;
+	top: auto;
 }
 .aboutUs .mainContent {
 	float: right;
 	width: 375px;
 	margin-right: 86px;
 	margin-top: 165px;
+	position: relative;
+	z-index: 2;
+}
+.aboutUs .mainContent:before {
+	position: absolute;
+	background: url(../images/arrow-left.png) no-repeat left top;
+	content: '';
+	width: 93px;
+	height: 50px;
+	left: -105px;
+	top: 40px;
 }
 .contact .mainContent {
 	clear: both;
@@ -157,7 +187,7 @@ body.news:before {
 }
 .mainContent p {
 	font-size: 1.4em;
-	line-height: 1.2em;
+	line-height: 1.3em;
 }
 .contact .mainContent p {
 	margin-right: 290px;
@@ -168,117 +198,96 @@ body.news:before {
 	width: 45%;
 	float: right;
 }
+.detail .mainContent {
+	margin: 60px 60px 0;
+}
+.detail .mainContent h2 {
+	font-size: 3.3em;
+	margin-left: 60px;
+}
+.detail .mainContent p {
+	margin-right: 360px;
+	margin-left: 60px;
+}
+.mobile .mainContent .projectImage {
+	margin: 0 -31px;
+}
+.mobile .mainContent h2 {
+	font-size: 3em;
+	margin-bottom: 0.3em;
+}
+.mobile .mainContent .alterText {
+	font-size: 2.4em;
+	margin: 0;
+}
 .alterText {
 	color: #a0a0a0;
+}
+.mobile .iosSlider .text1 .alterText {
+	font-size: 2.4em;
+	font-weight: 600;
 }
 .aboutUs .mainImage {
 	position: absolute;
 	left: 200px;
-	top: 400px;
+	top: 290px;
 }
-
-.signpost {
-	position: absolute;
+.extraContent {
+	margin: 0 60px;
+	position: relative;
 	z-index: 3;
-	background: url(../images/navigation-bg.png) no-repeat left top;
-	width: 156px;
-	height: 198px;
-	right: 60px;
-	top: 30px;
+	margin-bottom: 60px;
+	clear: both;
 }
-.signpost a {
-	position: absolute;
-	overflow: hidden;
-	text-indent: -999em;
+.aboutUs .extraContent {
+	margin-right: 86px;
+	margin-top: 760px;
 }
-.signpost .aboutUs {
-	width: 70px;
-	height: 90px;
-	top: 0;
-	right: 45px;
+.extraContent h2 {
+	font-size: 3.3em;
+	color: #00b1f0;
+	margin-bottom: 1.5em;
 }
-.signpost .portfolio {
-	width: 90px;
-	height: 45px;
-	top: 70px;
-	right: 0;
+.extraContent h3 {
+	font-size: 2.4em;
+	clear: both;
 }
-.signpost .news {
-	width: 50px;
-	height: 50px;
-	top: 150px;
-	right: 55px;
+.extraContent p {
+	font-size: 1.4em;
+	line-height: 1.3em;
 }
-.signpost .contact {
-	width: 90px;
-	height: 40px;
-	top: 125px;
-	right: 0;
+.home .extraContent p {
+	margin-right: 380px;
 }
-.home .signpost {
-	background: none;
-	position: static;
-	width: auto;
-	height: auto;
-	right: auto;
-	top: auto;
-}
-.home .signpost .aboutUs {
-	width: 110px;
-	height: 110px;
-	top: 274px;
-	right: 765px;
-}
-.home .signpost .portfolio {
-	width: 96px;
-	height: 96px;
-	top: 763px;
-	right: 304px;
-}
-.home .signpost .news {
-	width: 68px;
-	height: 68px;
-	top: 817px;
-	right: 715px;
-}
-.home .signpost .contact {
-	width: 100px;
-	height: 100px;
-	top: 248px;
-	right: 154px;
-}
-.home .signpost .twitter {
-	width: 30px;
-	height: 30px;
-	top: 872px;
-	right: 260px;
-	background: none;
-}
-.home .signpost .linkedin {
-	width: 30px;
-	height: 30px;
-	top: 849px;
-	right: 283px;
-	background: none;
+.extraImage {
+	float: right;
+	width: 300px;
+	position: relative;
+	top: -3em;
+	margin-bottom: 2em;
 }
 .iosSlider {
 	position: relative;
 	top: 0;
 	left: 0;
 	overflow: hidden;
+	z-index: 2;
 }
 .desktop .iosSlider {
-	height: 750px;
+	height: 790px;
 }
 .mobile .iosSlider {
-	height: 400px;
+	height: 480px;
+}
+.mobile .flex-viewport {
+	padding: 0 40px;
 }
 .desktop .iosSliderWrap {
 	margin-top: 120px;
 	position: relative;
 }
 .mobile .iosSliderWrap {
-	margin: 0 -31px;
+	margin: 0 -60px 30px;
 }
 .iosSlider .slider {
 	width: 100%;
@@ -289,20 +298,26 @@ body.news:before {
 	height: 100%;
 	padding: 5px 0 5px 0;
 }
-.desktop .iosSlider .image {
+.desktop .projectImage {
 	height: 533px;
 	background: url(../images/slider-bg.png) no-repeat center 0;
 	text-align:center;
 	padding-top: 25px;
 }
-.mobile .iosSlider .image {
+.detail .projectImage {
+	margin: 0 -60px;
+}
+.mobile .projectImage {
 	height: 291px;
 	background: url(../images/m-slider-bg.png) no-repeat left 0;
 }
-.iosSlider .text1 {
+.desktop .iosSlider .text1 {
 	margin: 0 auto;
 	padding: 0 60px;
 	max-width: 1004px;
+}
+.mobile .iosSlider .text1 {
+	padding: 0 30px;
 }
 .iosSlider .text1 h2 {
 	font-size: 3.3em;
@@ -314,10 +329,31 @@ body.news:before {
 	font-size: 1.4em;
 	line-height: 1.2em;
 }
+.iosSlider a {
+	color: #00b1f0;
+}
 .iosSlider .text1 .alterText {
 	margin: 0 0 30px;
 }
-.iosSliderWrap .prev, .iosSliderWrap .next {
+.iosSlider .text2 {
+	margin: 30px 30px 0;
+}
+.iosSlider .text2 .button {
+	float: left;
+	color: #fff;
+	margin-right: 0;
+}
+.mobile .iosSlider .text2 .buttons {
+	padding: 0;
+	float: right;
+}
+.mobile .iosSlider .text2 .buttons li {
+	margin-right: 0;
+}
+.flex-control-nav {
+	display: none;
+}
+.iosSliderWrap .flex-prev, .iosSliderWrap .flex-next {
 	position: absolute;
 	left: 0;
 	width: 100px;
@@ -328,29 +364,35 @@ body.news:before {
 	overflow: hidden;
 	z-index: 100;
 }
-.iosSliderWrap .next {
+.mobile .iosSliderWrap .flex-prev {
+	margin-top: -383px;
+}
+.mobile .iosSliderWrap .flex-next {
+	margin-top: -397px;
+}
+.iosSliderWrap .flex-next {
 	right: 0;
 	left: auto;
 	background-position: left top;
 }
-.desktop .iosSliderWrap .prev, .desktop .iosSliderWrap .next {
+.desktop .iosSliderWrap .flex-prev, .desktop .iosSliderWrap .flex-next {
 	margin-top: 0;
 	top: 220px;
 }
-.desktop .iosSliderWrap .prev:hover {
+.desktop .iosSliderWrap .flex-prev:hover {
 	background-position: -102px bottom;
 }
-.desktop .iosSliderWrap .next:hover {
+.desktop .iosSliderWrap .flex-next:hover {
 	background-position: left bottom;
 }
 .desktop .iosSliderWrap:before {
 	position: absolute;
-	left: 54%;
+	left: 43%;
 	top: -102px;
 	background: url(../images/decoration-portfolio.png) no-repeat left top;
 	content: '';
-	width: 249px;
-	height: 137px;
+	width: 607px;
+	height: 550px;
 }
 .desktop .iosSliderWrap:after {
 	position: absolute;
@@ -394,6 +436,16 @@ body.news:before {
 	display: inline-block;
 	margin-right: 30px;
 }
+.detail .buttons {
+	position: absolute;
+	right: 60px;
+	top: 250px;
+}
+.detail .buttons li {
+	display: block;
+	margin-bottom: 25px;
+	text-align: center;
+}
 .button {
 	font-size: 2.4em;
 	font-weight: bold;
@@ -406,6 +458,8 @@ body.news:before {
 	background: -o-linear-gradient(top, #8ac5d5 0%,#37b1e3 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #8ac5d5 0%,#37b1e3 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #8ac5d5 0%,#37b1e3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ac5d5', endColorstr='#37b1e3',GradientType=0 ); /* IE6-8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ac5d5', endColorstr='#37b1e3',GradientType=0 )";
 	border: 1px solid #5eaec6;
 	border-bottom-width: 3px;
 	border-right-width: 3px;
@@ -419,7 +473,6 @@ body.news:before {
 }
 .mobile .button {
 	position: relative;
-	top: -15px;
 	margin-right: 50px;
 }
 .mobile .store {
@@ -483,6 +536,7 @@ body.news:before {
 }
 .mobile .contacts h2 {
 	color: #fff;
+	font-size: 3em;
 }
 .mobile .contacts li {
 	margin-bottom: 50px;
@@ -492,6 +546,9 @@ body.news:before {
 	font-weight: bold;
 	font-size: 1.4em;
 	line-height: 1.2em;
+}
+.mobile .getInTouch, .mobile .address {
+	font-size: 2.4em;
 }
 .getInTouch dt {
 	float: left;
@@ -576,9 +633,10 @@ body.news:before {
 	text-align: center;
 }
 .clients li {
+	display: inline;
 	display: inline-block;
-	margin-left: 2.65%;
-	margin-right: 2.65%;
+	margin-left: 2.45%;
+	margin-right: 2.45%;
 }
 .followUs {
 	border: 2px dotted #00b1f0;
@@ -588,20 +646,41 @@ body.news:before {
 	margin-bottom: 75px;
 	padding: 0 30px 0 130px;
 	background: url(../images/twitter.png) no-repeat 30px 15px;
+	min-height: 7em;
+}
+.followUs:after {
+	border-top: 1px solid #999;
+	position: absolute;
+	top: -45px;
+	left: 0;
+	content: '';
+	width: 100%;
+	z-index: 100;
 }
 .followUs h2 {
 	color: #00b1f0;
 	font-size: 3.3em;
 	margin-bottom: 0;
+	line-height: 1.1em;
+}
+.mobile .followUs {
+	margin: 80px 0 30px;
+	position: relative;
 }
 .tweet_list li {
 	clear: both;
 	margin-bottom: 60px;
 	overflow: hidden;
 }
+.mobile .tweet_list li {
+	margin-bottom: 30px;
+}
 .tweet_list .tweet_avatar {
 	float: left;
 	margin-right: 30px;
+}
+.mobile .tweet_list .tweet_avatar {
+	margin-right: 20px;
 }
 .tweet_list .tweet_text {
 	font-size: 1.4em;
@@ -611,10 +690,21 @@ body.news:before {
 	margin-bottom: 10px;
 	line-height: 1.3em;
 }
+.mobile .tweet_list .tweet_text {
+	font-size: 2.4em;
+	margin-left: 104px;
+}
 .tweet_list .tweet_time {
 	font-size: 1.2em;
 	font-weight: bold;
 	display: block;
+	line-height: 1.1em;
+}
+.mobile .tweet_list .tweet_time {
+	font-size: 2em;
+	color: #777;
+	font-weight: 400;
+	margin-left: 104px;
 }
 .tweet_list .tweet_time a {
 	text-decoration: none;
@@ -625,35 +715,152 @@ body.news:before {
 	margin: 0 auto;
 	position: relative;
 	padding-bottom: 100px;
-	height: 200px;
+	height: 60px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#flashWho {
+	position: absolute;
+}
+
+
+
+.signpost {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.noFlash .signpost {
+	background: url(../images/signpost-bg.png) no-repeat left top;
+}
+.signpost a {
+	position: absolute;
+	min-height: 20px;
+	top: 9px;
+	background: #f8f8f8;
+	font-size: 1.7em;
+	color: #3fb7e3;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top: 4px;
+	font-weight: bold;
+}
+.signpost a.active, .signpost a:hover, .home .signpost a {
+	overflow: hidden;
+	text-indent: -999em;
+	background: transparent;
+}
+.signpost .aboutUs {
+	width: 135px;
+	left: 56px;
+}
+.signpost .news {
+	width: 70px;
+	left: 200px;
+}
+.signpost .portfolio {
+	width: 113px;
+	left: 277px;
+}
+.signpost .contact {
+	width: 121px;
+	left: 397px;
+}
+.home .signpost {
+	background: none;
+}
+.home .signpost .aboutUs {
+	width: 74px;
+	height: 70px;
+	top: 56px;
+	left: 86px;
+}
+.home .signpost .portfolio {
+	width: 62px;
+	height: 58px;
+	top: 383px;
+	left: 404px;
+}
+.home .signpost .news {
+	width: 45px;
+	height: 42px;
+	top: 419px;
+	left: 148px;
+}
+.home .signpost .contact {
+	width: 68px;
+	height: 63px;
+	top: 38px;
+	left: 501px;
+}
+.home .signpost .twitter {
+	width: 24px;
+	height: 20px;
+	top: 455px;
+	left: 472px;
+}
+.home .signpost .linkedin {
+	width: 24px;
+	height: 20px;
+	top: 438px;
+	left: 455px;
+}
+
+
+#flashSignpost {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.home #flashSignpost {
+	position: absolute;
+	right: auto;
+	left: 40px;
+	top: 158px;
+}
+.noFlash #flashSignpost {
+	width: 518px;
+	height: 42px;
+	display: block;
+	margin-right: 86px;
+	margin-top: 60px;
+}
+.home.noFlash #flashSignpost {
+	width: 755px;
+	height: 780px;
+	left: 385px;
+	margin: 0;
+}
+
+
+
 @media screen and (max-width: 1160px) {
-	.home #main {
-		background-position: left top;
-	}
-	.home .signpost .aboutUs {
-		left: 265px;
-		right: auto;
-	}
-	.home .signpost .portfolio {
-		left: 738px;
-		right: auto;
-	}
-	.home .signpost .news {
-		left: 357px;
-		right: auto;
-	}
-	.home .signpost .contact {
-		left: 885px;
-		right: auto;
-	}
-	.home .signpost .twitter {
-		left: 844px;
-		right: auto;
-	}
-	.home .signpost .linkedin {
-		left: 822px;
-		right: auto;
+	.clients li {
+		margin-left: 1.95%;
+		margin-right: 1.95%;
 	}
 }
