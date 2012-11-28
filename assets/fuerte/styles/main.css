@@ -247,6 +247,8 @@ body.news:before {
 	font-size: 3.3em;
 	color: #00b1f0;
 	margin-bottom: 1.5em;
+	line-height: 1em;
+	display: inline-block;
 }
 .extraContent h3 {
 	font-size: 2.4em;
@@ -797,37 +799,37 @@ body.news:before {
 .home .signpost .aboutUs {
 	width: 74px;
 	height: 70px;
-	top: 56px;
+	top: 156px;
 	left: 86px;
 }
 .home .signpost .portfolio {
 	width: 62px;
 	height: 58px;
-	top: 383px;
+	top: 483px;
 	left: 404px;
 }
 .home .signpost .news {
 	width: 45px;
 	height: 42px;
-	top: 419px;
+	top: 519px;
 	left: 148px;
 }
 .home .signpost .contact {
 	width: 68px;
 	height: 63px;
-	top: 38px;
+	top: 138px;
 	left: 501px;
 }
 .home .signpost .twitter {
 	width: 24px;
 	height: 20px;
-	top: 455px;
+	top: 555px;
 	left: 472px;
 }
 .home .signpost .linkedin {
 	width: 24px;
 	height: 20px;
-	top: 438px;
+	top: 538px;
 	left: 455px;
 }
 
@@ -841,7 +843,7 @@ body.news:before {
 	position: absolute;
 	right: auto;
 	left: 350px;
-	top: 60px;
+	top: 58px;
 }
 .noFlash #flashSignpost {
 	width: 518px;
