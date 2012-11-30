@@ -392,6 +392,8 @@ div.errors ul li {
 	float: right;
 	-moz-border-radius:12px;
 	border-radius:12px;
+	width:114px;
+	height:114px;
 }
 #page div.content div.appDetail .noBorder {
 	padding-right: 23px;
