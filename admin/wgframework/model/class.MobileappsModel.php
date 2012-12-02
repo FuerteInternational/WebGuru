@@ -47,10 +47,11 @@ class MobileappsModel extends BaseMobileappsModel {
 	}
 	
 	public static function getGroupedSelfDataForCompanyIds($companyIds) {
+		if (empty($companyIds)) return array();
 		$conn = new wgConnector();
 		$conn->onJoin(parent::COL_ID, MobileappsCompaniesModel::COL_MOBILEAPPS_ID);
 		foreach ($companyIds as $companyId) {
-			//$conn->where(MobileappsCompaniesModel::COL_MOBILEAPPS_ID, $companyId, '=', 'OR');
+			$conn->where(MobileappsCompaniesModel::COL_COMPANIES_ID, $companyId, '=', 'OR');
 		}
 		$wb = new wgBrowser();
 		if ($wb->isiOS()) {

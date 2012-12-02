@@ -204,5 +204,21 @@ $v->setDefaultResults(wgSystem::getPost());
 		return $data;
 	}
 	
+	public function generateUserslist($p) {
+		$data = array();
+		$user = wgParse::parseFrontendTemplate('{%Lastname}, {%Firstname}', new UsersModel());
+		$data['content'] = '<?php if (moduleUsers::isAdmin()) { ?><script type="text/javascript">
+function changeUser() {
+	window.location = "{#LINK_'.(int)$p[4].'}?showUserApps=" + $("#userList").val();			
+}
+</script><?php $tempV = $v; ?>';
+		$data['content'] .= '<select name="userList" id="userList" onchange="changeUser();"><option value="<?php echo $v->getId(); ?>">'.$user.' (You)</option>';
+		$data['content'] .= '<?php $arr = UsersModel::getGroupUsers('.(int)$p[3].');';
+		$data['content'] .= '$selected = " selected=\"selected\"";';
+		$data['content'] .= 'foreach ($arr as $v) { $s = ($v->getId() == $_GET["showUserApps"]) ? $selected : ""; ?><option value="<?php echo $v->getId(); ?>"<?php echo $s; ?>>'.$user.'</option><?php } ?>';
+		$data['content'] .= '</select><?php $v = $tempV; } ?>';
+		return $data;
+	}
+	
 }
 ?>

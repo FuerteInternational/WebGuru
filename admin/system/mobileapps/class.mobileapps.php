@@ -100,7 +100,8 @@ class moduleMobileapps {
 		$save['companies_id'] = (int)wgPost::getValue('companyId');
 		if (!$save['companies_id']) return false;
 		MobileappsUsersModel::deleteAllEntriesForCompany($save['companies_id']);
-		foreach (wgPost::getValue('user') as $companyId) {
+		$arr = wgPost::getValue('user');
+		if ($arr) foreach ($arr as $companyId) {
 			$save['users_id'] = $companyId;
 			MobileappsUsersModel::doInsert($save);
 		}
@@ -112,7 +113,8 @@ class moduleMobileapps {
 		$save['mobileapps_id'] = (int)wgPost::getValue('appId');
 		if (!$save['mobileapps_id']) return false;
 		MobileappsCompaniesModel::deleteAllEntriesForApp($save['mobileapps_id']);
-		foreach (wgPost::getValue('company') as $companyId) {
+		$arr = wgPost::getValue('company');
+		if ($arr) foreach ($arr as $companyId) {
 			$save['companies_id'] = $companyId;
 			MobileappsCompaniesModel::doInsert($save);
 		}

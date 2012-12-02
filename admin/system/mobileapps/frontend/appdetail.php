@@ -93,8 +93,9 @@ if ($mobileAppId) {
 	
 	echo $uploadNewAppForm;
 ?>
-<div class="appDetail" style="margin-top: <?php echo $space; ?>px;">
-    <div class="box noBorder">
+<!--<div class="appDetail" style="margin-top: <?php echo $space; ?>px;">-->
+<div class="appDetail">
+<div class="box noBorder">
         <h3 class="appName"><?php echo $app->getName(); ?></h3>
         <p class="appBundleId"><?php echo $app->getIdentifier(); ?></p>
         <?php if (moduleUsers::isAdmin()) { ?>
@@ -206,7 +207,7 @@ else {
 	echo $uploadNewAppForm; ?>
 <div class="appDetail">
     <div class="box noBorder">
-        <h3 class="appName">No app has been selected</h3>
+        <h3 class="appName">Unfortunately no app has been assigned to your user account yet, please contact your account administrator!</h3>
     </div>
 </div>
 <?php
