@@ -1,13 +1,11 @@
-
-
 <?php
 $uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()"></div>
 <div class="popupWindow">
 	<div class="content">
 		<ul id="popupUploadSelector">
-			<!--<li class="active" id="popupUploadSelectorLi0"><a href="#" onclick="return switchUploadTab(0)">iOS or Android binary</a></li>
+			<li class="active" id="popupUploadSelectorLi0"><a href="#" onclick="return switchUploadTab(0)">iOS or Android binary</a></li>
 			<li id="popupUploadSelectorLi1"><a href="#" onclick="return switchUploadTab(1)">Web App</a></li>
-			<li id="popupUploadSelectorLi2"><a href="#" onclick="return switchUploadTab(2)">External Store App</a></li>-->
+			<li id="popupUploadSelectorLi2"><a href="#" onclick="return switchUploadTab(2)">External Store App</a></li>
 		</ul>
 		<form id="fieldSet0" action="" method="post" enctype="multipart/form-data">
 			<fieldset><legend>iOS or Android binary</legend>
@@ -83,22 +81,17 @@ $uploadNewAppForm = '<div class="popupWindowShadow" onclick="togglePopupWindow()
 
 if (!moduleUsers::isAdmin()) $uploadNewAppForm = '';
 
-if ($mobileAppId) {
-	$app = MobileappsModel::getItemGeneralItemInfo($mobileAppId);
-	$arr = MobileappsModel::getSelfDataForIdentifier($mobileAppId);
-	
-	$space = (69 + 24) * $selectedItem;
-	$space -= (250 * count($arr));
-	if ($space < 0) $space = 0;
-	$space += 330;
-	
-	echo $uploadNewAppForm;
+$space = (69 + 24) * $selectedItem;
+if ($space < 0) $space = 0;
+$space += 80;
+
+if (false) {
 ?>
 <div class="appDetail" style="min-height: <?php echo $space; ?>px;">
 <div class="box noBorder">
         <h3 class="appName"><?php echo $app->getName(); ?></h3>
         <p class="appBundleId"><?php echo $app->getIdentifier(); ?></p>
-        <?php if (moduleUsers::isAdmin() && !$_GET['showUserApps']) { ?>
+        <?php if (moduleUsers::isAdmin()) { ?>
         <a href="?deleteAllApps=<?php echo $app->getIdentifier(); ?>" class="button rightButton" onclick="return confirmAction('Are you sure you want to delete ALL versions of this app?')">Delete</a>
         <?php } ?>
     </div>
@@ -109,9 +102,7 @@ if ($mobileAppId) {
 		if ($app->getDevtype() == 0) $devVersion = 'Development version';
 		elseif ($app->getDevtype() == 1) $devVersion = 'Beta version';
 		if ($app->getDevtype() == 2) $devVersion = 'Production version';
-		if ($_GET['showUserApps']) $ok = moduleMobileapps::canUserAccessApp((int)$_GET['showUserApps'], $app->getId());
-		else $ok = moduleMobileapps::canUserAccessApp(moduleUsers::getId(), $app->getId()) || moduleUsers::isAdmin();
-		if ($ok) {
+		if (moduleMobileapps::canUserAccessApp(moduleUsers::getId(), $app->getId()) || moduleUsers::isAdmin()) {
 		//if (true) {
 	?>
     <div class="box">
@@ -125,7 +116,7 @@ if ($mobileAppId) {
             <li>Platform: <span><?php echo ((int)$app->getApptype() == 0) ? 'iOS' : 'Android'; ?></span></li>
         </ul>
         <div class="controls">
-        	<?php if (moduleUsers::isAdmin() && !$_GET['showUserApps']) { ?>
+        	<?php if (moduleUsers::isAdmin()) { ?>
             <a href="<?php echo wgPaths::getAdminPath('url'); ?>?part=system&mod=mobileapps&page=apps&show=appsmobileapps&edit=<?php echo $app->getId(); ?>" title="Edit <?php echo $app->getName(); ?>" class="button edit" onclick="return toggleEdit('boxNo<?php echo $x; ?>')">Edit</a>
             <?php
 			}
@@ -207,9 +198,9 @@ if ($mobileAppId) {
 }
 else {
 	echo $uploadNewAppForm; ?>
-<div class="appDetail">
+<div class="appDetail" style="min-height: <?php echo $space; ?>px;">
     <div class="box noBorder">
-        <h3 class="appName">Unfortunately no app has been assigned to your user account yet, please contact your account administrator!</h3>
+        <h3 class="appName">User admin panel is not ready yet, please use user panel in the <a href="/admin/">admin CMS</a></h3>
     </div>
 </div>
 <?php

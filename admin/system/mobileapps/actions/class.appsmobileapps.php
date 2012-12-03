@@ -161,6 +161,12 @@ final class appsmobileappsActionsMobileapps extends BaseActions {
 					if (empty($arr['icons']) && isset($data['CFBundleIconFile'])) {
 						$arr['icons'][] = $data['CFBundleIconFile'];
 					}
+					if (empty($arr['icons']) && isset($data['CFBundleIconFiles'])) {
+						$arr['icons'] = $data['CFBundleIconFiles'];
+					}
+// 					print_r($arr['icons']);
+// 					print_r($data);
+// 					exit();
 				}
 				
 				$icons = array();

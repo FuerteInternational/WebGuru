@@ -338,7 +338,7 @@ class generate {
 			if ((bool) $page->getRedirect1()) {
 				$path = wgPaths::getPagePath($page->getRedirect1(), 'url');
 				$err = NULL;
-				if ((bool) $page->getRedirect3()) $err = NL.'	wgError::add(\''.$page->getRedirect3().'\');';
+				if ((bool) $page->getRedirect3()) $err = NL.'	if (!isset($_GET["logout"])) wgError::add(\''.$page->getRedirect3().'\');';
 				$out .= 'if (!moduleUsers::isLogged()) {'.$err.'
 	wgPaths::redirect(\''.$path.'\');
 }';

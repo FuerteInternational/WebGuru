@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Dashboard - Mobile Application Store - Fuerte International</title>
+<link href="http://192.168.1.20/appstore.fuerteint.com/assets/basic/css/styles.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="shortcut icon" href="http://192.168.1.20/appstore.fuerteint.com/assets/basic/img/favicon.ico">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div id="container">
+	<div id="topLine"></div>
+    <div id="header">
+    <h1><span>Fuerte International - Dashboard</span></h1>
+    <ul>
+        <li class="active"><a href="http://192.168.1.20/appstore.fuerteint.com/dashboard/" title="Dashboard">Dashboard</a></li>
+        <li class="passive"><a href="http://192.168.1.20/appstore.fuerteint.com/my-apps/" title="Apps">Apps</a></li>
+            </ul>
+    <p> | test test&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost/appstore.fuerteint.com/?logout=1" title="Logout from AppStore">Logout</a></p></div>
+    <div id="page">
+
+
+
+<div class="content">
+    <div id="dashboard">
+        <h2>Welcome</h2>
+        <div id="noteBoard">
+        	<p><strong>Quick Tip:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit hendrerit est eget hendrerit. Suspendisse potenti.</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit hendrerit est eget hendrerit. Suspendisse potenti. Proin blandit nisi eu elit ullamcorper a laoreet est ultricies. Donec eget tortor libero. Etiam nec nulla eros. Fusce ultricies sapien vel leo sagittis lacinia. Aliquam erat volutpat.</p>
+        <p>In pretium lobortis ante. Nam nulla tellus, pellentesque vel sodales in, mattis consectetur mi. Aliquam venenatis sollicitudin orci, sit amet mattis quam tincidunt vel. Nulla facilisi.</p>
+        <p>Duis vestibulum massa et lectus congue dictum. Proin posuere ipsum nibh. Nunc luctus vehicula mi ut rhoncus. Praesent velit est, pharetra non dignissim vel, rutrum ut lectus. Duis at massa ligula, rutrum eleifend lectus.</p>
+        <ul>
+            <li class="upload">
+                <strong>Upload apps</strong>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit hendrerit est eget hendrerit. Suspendisse potenti. Proin blandit nisi eu elit ullamcorper a laoreet est ultricies.
+                <a href="{#LINK_2}" title="">Upload</a>
+            </li>
+            <li class="users">
+                <strong>Manage users</strong>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit hendrerit est eget hendrerit. Suspendisse potenti. Proin blandit nisi eu elit ullamcorper a laoreet est ultricies.
+                <a href="{#LINK_6}" title="">Manage</a>
+            </li>
+            <li class="sync">
+                <strong>Sync apps</strong>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit hendrerit est eget hendrerit. Suspendisse potenti. Proin blandit nisi eu elit ullamcorper a laoreet est ultricies.
+                <a href="#" title="">Upload</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div></div>        <div class="clear"></div>
+    </div>
+    
+    
+    
+<div id="footer">
+	<ul class="right">
+        <li class="{#ACTIVE_4}"><a href="{#LINK_4}" title="Dashboard">Dashboard</a></li>
+        <li class="{#ACTIVE_2}"><a href="{#LINK_2}" title="Apps">Apps</a></li>
+        <?php if (moduleUsers::isAdmin() && !$_GET['showUserApps']) { ?><li class="{#ACTIVE_6}"><a href="{#LINK_6}" title="Users">Users</a></li>
+        <li class="{#ACTIVE_5}"><a href="{#LINK_5}" title="Groups">Groups</a></li><?php } ?>
+    </ul>
+	<ul class="left">
+    	<li>Designed &amp; developed by <a href="http://www.fuerteint.com/" title="App development company!">Fuerte International</a> &copy; {#YEAR}
+    </ul>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>	

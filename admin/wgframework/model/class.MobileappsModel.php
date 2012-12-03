@@ -25,6 +25,11 @@ class MobileappsModel extends BaseMobileappsModel {
 		return 0;
 	}
 
+	public static function getAllAppsCount() {
+		$conn = new wgConnector();
+		return parent::doCount($conn);
+	}
+	
 	public static function getSelfData() {
 		$conn = new wgConnector();
 		$conn->order(parent::COL_NAME, 'ASC');

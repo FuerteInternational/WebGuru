@@ -206,6 +206,11 @@ $v->setDefaultResults(wgSystem::getPost());
 	
 	public function generateUserslist($p) {
 		$data = array();
+		$data['modules'][] = 'users';
+		$data['once'][] = 'if (isset($_GET["showUserApps"]) && $_GET["showUserApps"] == moduleUsers::getId()) { $_GET["showUserApps"] = 0; setcookie("showUserApps", 0, time()-60, "/"); } if (isset($_GET["showUserApps"])) {
+	setcookie("showUserApps", (int)$_GET["showUserApps"], time()+60*60*24*30, "/");
+} else if (isset($_COOKIE["showUserApps"])) $_GET["showUserApps"] = (int)$_COOKIE["showUserApps"];'.NL;
+		$data['pretext'] = '';
 		$user = wgParse::parseFrontendTemplate('{%Lastname}, {%Firstname}', new UsersModel());
 		$data['content'] = '<?php if (moduleUsers::isAdmin()) { ?><script type="text/javascript">
 function changeUser() {
@@ -216,7 +221,7 @@ function changeUser() {
 		$data['content'] .= '<?php $arr = UsersModel::getGroupUsers('.(int)$p[3].');';
 		$data['content'] .= '$selected = " selected=\"selected\"";';
 		$data['content'] .= 'foreach ($arr as $v) { $s = ($v->getId() == $_GET["showUserApps"]) ? $selected : ""; ?><option value="<?php echo $v->getId(); ?>"<?php echo $s; ?>>'.$user.'</option><?php } ?>';
-		$data['content'] .= '</select><?php $v = $tempV; } ?>';
+		$data['content'] .= '</select><?php $v = $tempV; } else { ?>'.$user.'<?php } ?>';
 		return $data;
 	}
 	

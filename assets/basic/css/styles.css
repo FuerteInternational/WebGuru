@@ -181,6 +181,12 @@ div.errors ul li {
 }
 #page div.content ul.menu li {
 }
+#page div.content ul.menu li#noAppInMenu {
+	height: 135px;
+	background-image: url(../img/F1_dash_upload.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
 #page div.content ul.menu li.active {
 }
 #page div.content ul.menu a {
@@ -554,7 +560,131 @@ input:-webkit-autofill {
 	margin-left:218px;
 }
 
+/* Dashboard section */
+
+#dashboard {
+	padding-bottom:40px;
+}
+#dashboard h2 {
+	font-size:1.3em;
+	margin-bottom:23px;
+}
+#dashboard p {
+	margin-bottom:12px;
+	color:#333;
+	font-size:0.9em;
+	width:500px;
+}
+#dashboard #noteBoard {
+	width: 234px;
+	height: 150px;
+	background-image: url(../img/F1_board_note.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+	font-size:0.8em;
+	color:#666;
+}
+#dashboard #noteBoard {
+	width: 234px;
+	height: 150px;
+	background-image: url(../img/F1_board_note.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+	font-size:0.8em;
+	color:#666;
+	float:right;
+	margin-right:30px;
+}
+#dashboard #noteBoard p {
+	width: 154px;
+	height: 150px;
+	margin-left:40px;
+	padding-top:40px;
+}
+#dashboard ul {
+	height:350px;
+	margin-top:70px;
+}
+#dashboard ul li {
+	float: left;
+	height: 300px;
+	width: 30%;
+	margin-right: 3%;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center top;
+	color:#333;
+	font-size:0.8em;
+}
+#dashboard ul li strong {
+	display:block;
+	padding-top:170px;
+	margin-bottom:6px;
+	font-size:1.1em;
+}
+#dashboard ul li a {
+	display:block;
+	margin-top:16px;
+	background-color:#656565;
+	width:116px;
+	height:36px;
+	line-height:36px;
+	font-weight:bold;
+	color:#FFF;
+	text-decoration:none;
+	margin-left:auto;
+	margin-right:auto;
+}
+#dashboard ul li a:hover {
+	background-color:#767676;
+}
+#dashboard ul li.upload {
+	background-image: url(../img/F1_dash_upload.png);
+}
+#dashboard ul li.users {
+	background-image: url(../img/F1_dash_users.png);
+}
+#dashboard ul li.sync {
+	background-image: url(../img/F1_dash_sync.png);
+}
+
 /* Footer section */
 
 #footer {
+	width:950px;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:40px;
+	background-color:#FFF;
+	height:40px;
+	line-height:40px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:0.7em;
+	font-weight:bold;
+}
+#footer ul {
+	height:40px;
+}
+#footer ul.left {
+	float:left;
+}
+#footer ul.right {
+	float:right;
+}
+#footer ul li {
+	height:40px;
+	float:left;
+	padding-left:20px;
+	padding-right:20px;
+}
+#footer ul li a {
+	text-decoration:none;
+}
+#footer ul li.active a {
+	color:#DA0971;
+}
+#footer ul li a:hover {
+	text-decoration:underline;
 }

@@ -9,8 +9,11 @@ else {
 }
 $mobileAppId = (isset($_GET['mobileAppId'])) ? $_GET['mobileAppId'] : '';
 if (!$mobileAppId || !MobileappsModel::isDataForIdentifier($mobileAppId)) $mobileAppId = (!empty($arr)) ? $arr[0]->getIdentifier() : '';
-if (empty($arr)) $mobileAppId = 0;
-
+if (empty($arr)) {
+	$mobileAppId = 0;
+	echo '<ul class="menu"><li id="noAppInMenu"></li></ul>';
+}
+else {
 ?>
 <ul class="menu">
 	<?php
@@ -33,3 +36,4 @@ if (empty($arr)) $mobileAppId = 0;
 	}
     ?>
 </ul>
+<?php } ?>
