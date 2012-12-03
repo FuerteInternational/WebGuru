@@ -210,7 +210,7 @@ $v->setDefaultResults(wgSystem::getPost());
 		$data['once'][] = 'if (isset($_GET["showUserApps"]) && $_GET["showUserApps"] == moduleUsers::getId()) { $_GET["showUserApps"] = 0; setcookie("showUserApps", 0, time()-60, "/"); } if (isset($_GET["showUserApps"])) {
 	setcookie("showUserApps", (int)$_GET["showUserApps"], time()+60*60*24*30, "/");
 } else if (isset($_COOKIE["showUserApps"])) $_GET["showUserApps"] = (int)$_COOKIE["showUserApps"];'.NL;
-		$data['pretext'] = '';
+		$data['once'][] = 'if (!isset($_GET["showUserApps"])) $_GET["showUserApps"] = 0;';
 		$user = wgParse::parseFrontendTemplate('{%Lastname}, {%Firstname}', new UsersModel());
 		$data['content'] = '<?php if (moduleUsers::isAdmin()) { ?><script type="text/javascript">
 function changeUser() {
