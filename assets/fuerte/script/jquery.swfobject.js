@@ -127,7 +127,7 @@ this.jQuery = this.jQuery || { fn: {} };
 		defaultFlashParamAttrs: {
 			allowfullscreen: true,
 			allownetworking: 'all',
-			allowScriptAccess: 'always',
+			allowscriptaccess: 'sameDomain',
 			base: '',
 			bgcolor: '',
 			flashvars: {},
