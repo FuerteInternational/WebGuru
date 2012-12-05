@@ -7,7 +7,7 @@ body {
 }
 .mobile {
 	background: #fff;
-	min-width: 640px;
+	width: 640px;
 }
 a {
 	color: #5f5f5f;
@@ -302,7 +302,7 @@ body.news:before {
 }
 .desktop .projectImage {
 	height: 533px;
-	background: url(../images/slider-bg.png) no-repeat center top;
+	background: url(../images/slider-bg.png) no-repeat center 0;
 	text-align:center;
 	padding-top: 25px;
 }
@@ -311,10 +311,8 @@ body.news:before {
 }
 .mobile .projectImage {
 	height: 291px;
-	background: url(../images/m-slider-bg.png) no-repeat left 0;
-	padding-top: 30px;
-	padding-left: 30px;
-	margin-bottom:-30px;
+	background: url(../images/m-slider-bg.png) no-repeat center 0;
+	padding: 0 30px;
 }
 .desktop .iosSlider .text1 {
 	margin: 0 auto;
@@ -322,7 +320,7 @@ body.news:before {
 	max-width: 1004px;
 }
 .mobile .iosSlider .text1 {
-	padding: 0 30px;
+	padding: 0 60px;
 }
 .iosSlider .text1 h2 {
 	font-size: 3.3em;
@@ -341,7 +339,7 @@ body.news:before {
 	margin: 0 0 30px;
 }
 .iosSlider .text2 {
-	margin: 30px 30px 0;
+	padding: 0 60px;
 }
 .iosSlider .text2 .button {
 	float: left;
@@ -844,7 +842,7 @@ body.news:before {
 .home #flashSignpost {
 	position: absolute;
 	right: auto;
-	left: 205px;
+	left: 350px;
 	top: 58px;
 }
 .noFlash #flashSignpost {
