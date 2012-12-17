@@ -1,0 +1,158 @@
+/* CSS Document */
+
+html {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#container {
+  width: 100%;
+  background: url('images/bg_stars_pattern.png') repeat;
+  background-color: #a5dbf1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content_container {
+  margin: 0 auto 0 auto;
+  position: relative;
+  width: 843px;
+  height: 840px;
+  padding-bottom: 130px;
+}
+
+#content {
+  margin: 0 auto 0 auto;
+  background: url('images/bg_box_repeat_y.png') 0% 0% repeat-y;
+  width: 843px;
+  height: 661px;
+}
+
+#visit_us {
+  width: 377px;
+  height: 96px;
+  display: block;
+  background: url('images/btn_visit_us.png') 0% 0% no-repeat;
+  margin: -78px auto 0 auto;
+  line-height: 96px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  padding-left: 40px;
+  text-decoration: none;
+}
+
+#content_footer {
+  background: url('images/bg_box_bottom.png') 0% 0% no-repeat;
+  width: 843px;
+  height: 179px;
+}
+
+#footer {
+  width: 100%;
+  background: url('images/bg_footer_x.png') 50% 0% repeat-x;
+  height: 208px;
+}
+
+#footer_texts {
+  width: 733px;
+  height: 18px;
+  font-size: 11px;
+  color: #f4f4f4;
+  margin: 0px auto 0 auto;
+  font-weight: 600;
+  padding-top: 36px;
+}
+
+#copyright {
+  float: left;
+}
+
+a#footer_texts_c {
+  float: left;
+  color: #f4f4f4;
+  text-decoration: underline;
+}
+
+a#footer_texts_lin {
+  height: 18px;
+  width: 18px;
+  float: left;
+  background: url('images/ico_linkedin.png') 0% 0% no-repeat;
+  margin-left: 15px;
+}
+
+a#footer_texts_t {
+  height: 18px;
+  width: 18px;
+  float: left;
+  background: url('images/ico_twitter.png') 0% 0% no-repeat;
+  margin-left: 5px;
+}
+
+#vimeo {
+  width: 605px;
+  width: 532px;
+  height: 423px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  margin-left: -266px;
+  top: 55px;
+}
+
+#fuerte_logo {
+  width: 237px;
+  height: 96px;
+  position: absolute;
+  background: url('images/logo.png') 0% 0% no-repeat;
+  left: -2px;
+}
+
+#text1 {
+  width: 843px;
+  height: 109px;
+  position: absolute;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  color: #4bb6e0;
+  top: 466px;
+}
+
+#text2 {
+  width: 843px;
+  height: 63px;
+  position: absolute;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: #5f5f5f;
+  top: 594px;
+}
+
+#text2 a {
+  text-decoration: underline;
+  color: #5f5f5f;
+}
+
+#text3 {
+  width: 843px;
+  height: 68px;
+  position: absolute;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #a1a0a0;
+  top: 678px;
+}
