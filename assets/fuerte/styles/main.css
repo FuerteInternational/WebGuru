@@ -310,9 +310,14 @@ body.news:before {
 	margin: 0 -60px;
 }
 .mobile .projectImage {
+	width: 561px;
 	height: 291px;
-	background: url(../images/m-slider-bg.png) no-repeat center 0;
-	padding: 0 30px;
+	background: url(../images/m-slider-bg.png) no-repeat left 0;
+	margin-bottom: -30px;
+	text-align: left;
+}
+.mobile .projectImage img {
+	margin: 30px 30px 0;
 }
 .desktop .iosSlider .text1 {
 	margin: 0 auto;
@@ -347,7 +352,7 @@ body.news:before {
 	margin-right: 0;
 }
 .mobile .iosSlider .text2 .buttons {
-	padding: -30px;
+	padding-left: 0;
 	float: right;
 }
 .mobile .iosSlider .text2 .buttons li {
