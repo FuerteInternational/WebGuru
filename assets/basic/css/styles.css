@@ -34,6 +34,7 @@ button, .button {
 	float: left;
 	cursor: pointer;	
 }
+
 .clear {
 	clear: both;
 	height: 32px;
@@ -194,7 +195,6 @@ div.errors ul li {
 	display: block;
 	height: 69px;
 	padding-left: 32px;
-	margin-top: 8px;
 	margin-bottom: 8px;
 	padding-top: 8px;
 	padding-bottom: 8px;
@@ -213,9 +213,8 @@ div.errors ul li {
 	background-color: #FEFEFE;
 }
 #page div.content ul.menu a img {
-	width: 57px;
-	height: 57px;
 	margin-top: 6px;
+	margin-right: 16px;
 	float: left;
 	-moz-border-radius:8px;
 	border-radius:8px;
@@ -296,15 +295,17 @@ div.errors ul li {
 #page div.content div.popupWindow div.content ul li.active a:hover {
 	text-decoration:none;
 }
-#page div.content div.popupWindow div.content fieldset {
-	border-color: #FFF;
-	padding-top: 16px;
+#page div.content div.popupWindow div.content form {
+	padding: 0 16px;
+}
+#page div.content fieldset {
+	border-color: #bbb;
+	border-style: solid;
+	border-width: 1px;
 	padding-right: 16px;
 	padding-bottom: 32px;
 	padding-left: 16px;
 	margin-top: 0px;
-	margin-right: 16px;
-	margin-left: 16px;
 }
 #page div.content div.popupWindow div.content fieldset legend {
 	display:none;
@@ -313,6 +314,22 @@ div.errors ul li {
 	margin-bottom:32px;
 	text-align: center;
 }
+
+div.appDetail fieldset {
+	margin-bottom: 16px;
+}
+div.appDetail fieldset legend {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+div.appDetail fieldset p {
+	clear: both;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 16px;
+}
+
 #page div.content div.popupWindow div.content fieldset p {
 	margin-bottom:32px;
 	width:600px;
@@ -320,14 +337,55 @@ div.errors ul li {
 	margin-right:auto;
 	font-size:12px;
 }
-#page div.content div.popupWindow div.content fieldset p label {
-	display:block;
-	float:left;
-	width:250px;
+
+#passwordMessage {
+	float: right;
+}
+
+.green {	
+	color: green;
+}
+.red {
+	color: red;
+}
+
+#page div.content div.stats {
+	text-align: right;
+	float: right;
+	font-size: 80%;
 	color:#666;
 }
-#page div.content div.popupWindow div.content fieldset p select, #page div.content div.popupWindow div.content fieldset p input {
-	width:340px;
+
+#page div.content fieldset label {
+	display:block;
+	width:120px;
+	height:36px;
+	line-height:36px;
+	color:#666;
+	font-size:12px;
+	margin-bottom:2px;
+	float:left;
+}
+#page div.content fieldset p select, #page div.content fieldset p input {
+	width:240px;
+}
+#page div.content fieldset p select, #page div.content fieldset p input[type=text], #page div.content fieldset p select, #page div.content fieldset p input[type=password] {
+	margin-left:25px;
+	margin-top:7px;
+	width:260px;
+	font-size:12px;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+#page div.content fieldset p select, #page div.content fieldset p input[type=file] {
+	margin-left:25px;
+	margin-top:7px;
+	width:260px;
+	font-size:12px;
+	padding-top:3px;
+	padding-bottom:3px;
+	line-height:34px;
+	color:#666;
 }
 #page div.content div.popupWindow div.content fieldset .button, #page div.content div.popupWindow div.content fieldset button {
 	float:none;
@@ -369,7 +427,6 @@ div.errors ul li {
 	float: left;
 	width: 580px;
 	background-color:#F9F9F9;
-	padding-top:24px;
 }
 #page div.content div.appDetail .appName {
 	font-size:18px;
@@ -398,8 +455,6 @@ div.errors ul li {
 	float: right;
 	-moz-border-radius:12px;
 	border-radius:12px;
-	width:114px;
-	height:114px;
 }
 #page div.content div.appDetail .noBorder {
 	padding-right: 23px;
@@ -424,6 +479,22 @@ div.errors ul li {
 	color:#666;
 	width:234px;
 }
+
+.maptypeSelect div:hover {
+	background-color: #bbb;
+}
+.maptypeSelect input {
+	float: right;
+}
+.cubeMap {
+	/*width:40px;
+	height:30px;
+	background: url(../img/cube_map.jpg) no-repeat left top;*/
+}
+.sphericalMap {
+	/*background: url(../img/spherical_map.jpg) no-repeat left top;*/
+}
+
 #page div.content div.appDetail .box ul.checkboxList {
 	margin-bottom:16px;
 }
@@ -456,6 +527,16 @@ div.errors ul li {
 	height:32px;
 	margin-bottom:32px;
 }
+#page div.content div.appDetail .box fieldset .controls {
+	margin-bottom:0px;
+}
+#page div.content div.appDetail .box fieldset hr {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.versionValuesHeader {
+	padding-bottom:12px;
+}
 #page div.content div.appDetail .box .controls {
 	height:32px;
 	margin-bottom:32px;
@@ -469,12 +550,21 @@ div.errors ul li {
 	background-repeat: no-repeat;
 	background-position: 6px center;
 }
+
 #page div.content div.appDetail button, #page div.content div.appDetail .button {
+	background-color:#DA0971;
+	margin-right:16px;
+	width:118px;
+	height:32px;
+}
+
+#page div.content div.appDetail button:disabled, #page div.content div.appDetail .button:disabled {
 	background-color:#656565;
 	margin-right:16px;
 	width:118px;
 	height:32px;
 }
+
 #page div.content div.appDetail .box .boxCopy {
 	margin-top:16px;
 	margin-bottom:32px;
